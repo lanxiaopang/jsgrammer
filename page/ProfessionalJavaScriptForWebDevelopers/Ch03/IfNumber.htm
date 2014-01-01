@@ -12,15 +12,15 @@
         //        alert(isNaN("blue"));    //true cannot be converted to a number
         //        alert(isNaN(true));      //false can be converted to number 1
         //alert(isNaN(123));
-        alert(isNaN(""));        //false can be convert
+        //alert(isNaN(""));        //false can be convert
         //        alert(typeof());
         //        var res = "asdf";
         //        alert(parseInt(res));    //NaN
         //        alert(!isNaN(res));      //false
 
-        var res1 = "";
+        //var res1 = "";
         //        alert(parseInt(res1));              //NaN
-        alert(!isNaN(res1));                  //true 空字符串是数字
+        //alert(!isNaN(res1));                  //true 空字符串是数字
 
         //        var res2 ="123zsdfasd";
         ////        alert(parseInt(res2));              //123  转化为123
@@ -29,8 +29,21 @@
         //        var res3;
         ////        alert(res3);                        //undefined
         //        alert(!isNaN(res3));                   //false
-        var res = "";
-        if (!isNaN(parseInt(res))) {
+        var re = NaN;
+        var res = trim(re);
+        if(!isNaN(parseInt(res))){
+            if(parseInt(res)){
+                alert("111已满，请选择其他时间");
+            }else{
+                alert("未满");
+            }
+        }else{
+            alert("222已满，请选择其他时间");
+        }
+
+
+       /* var res =0;
+        if (!res && typeof (rep)!="undefined") {
             if (parseInt(res)) {
                 alert("预约申请名额已满，请选择其他时间2");
             } else {
@@ -38,11 +51,41 @@
             }
         } else {
             alert("预约申请名额已满，请选择其他时间1");
+        }*/
+
+        /*var exp = 123;
+        if (!exp && typeof(exp)!="undefined" && exp!=0)
+        {
+            alert("is null");
+        }*/
+
+        /*var value1="";
+        var re = /^[0-9]+[0-9]*]*$/;
+        if (re.test(value1))
+        {
+            alert("是数字");
+        }else{
+            alert("不是数字请输入数字");
+        }*/
+        function trim(str){ //删除左右两端的空格
+            if(str==null)return "";
+            return str.replace(/(^\s*)|(\s*$)/g, "");
+        }
+
+
+        function aa(){
+            alert("confirm");
         }
     </script>
 
 </head>
 <body>
 判断是否为数字isNaN(parseInt(res)或者用正则
+<form>
+
+    <input type="text"/>
+    <input type="button" onclick="aa();" value="confirm"/>
+
+</form>
 </body>
 </html>
