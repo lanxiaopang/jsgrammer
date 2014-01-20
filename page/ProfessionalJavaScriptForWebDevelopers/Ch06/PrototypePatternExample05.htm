@@ -4,7 +4,7 @@
     <title>Prototype Pattern Example</title>
     <script type="text/javascript">
             
-        function hasPrototypeProperty(object, name){
+        function hasPrototypeProperty(object, name){//判断是否有原型属性
             return !object.hasOwnProperty(name) && (name in object);
         }
             
