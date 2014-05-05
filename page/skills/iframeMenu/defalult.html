@@ -1,0 +1,22 @@
+<script type="text/javascript" src="jquery-1.7.2.js"> </script>
+<div style="width: 20%; float: left">
+<div id="butten" style="cursor: pointer;">
+局部刷新(框架加载页面)
+</div>
+<div id="hidden" style="display: none">
+我是隐藏的，点击局部刷新之后<br />
+我就显示，页面加载我不会消失
+</div>
+</div>
+<div id="page" style="width: 80%; float: right;">
+<iframe src='1.htm' frameborder='0' style='border: 0; width: 100%; height: 99.4%;'>
+</iframe>
+</div>
+<script type="text/javascript">
+$(function () {
+$("#butten").click(function () {
+$("#hidden").show();
+$("iframe").attr("src", "2.htm");
+});
+});
+</script>
