@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<select id="writesScc[0].applyReason">
+    <option value="01">001</option>
+    <option value="02">002</option>
+    <option value="03">003</option>
+    <option value="04">004</option>
+    <option value="05">005</option>
+    <option value="06">006</option>
+</select>
+<button onclick="addAt('writesScc[0].applyReason','05','005',4)">go</button>
+<script>
+    function addAt(selectCtlq, optionValue, optionText, position) {
+        var selectCtl = document.getElementById(selectCtlq);
+
+        //如果已经有了某个选项，先删除
+        for(var i=0;i <selectCtl.options.length;i++){
+            values=selectCtl.options[i].value//参数值
+            texts=selectCtl.options[i].text//内容值
+            if(values=="05"){
+                selectCtl.remove(i);
+                break;
+            }
+        }
+
+//        var userAgent = window.navigator.userAgent;
+//        if (userAgent.indexOf("MSIE") > 0) {
+//            var option = document.createElement("option");
+//            option.value = optionValue;
+//            option.innerText = optionText;
+//            selectCtl.insertBefore(option, selectCtl.options[position]);
+//        }
+//        else{
+//            selectCtl.insertBefore(new Option(optionText,optionValue), selectCtl.options[position]);
+//        }
+    }
+</script>
+</body>
+</html>

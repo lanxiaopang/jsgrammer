@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>单选按钮取消选中的三种方式</title>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+//
+            var $browsers = $("input[name=browser]");
+            var $cancel = $("#cancel");
+            var $byhide = $("#byhide");
+            var $remove = $("#remove");
+//
+            $cancel.click(function (e) {
+// 移除属性,两种方式都可
+//$browsers.removeAttr("checked");
+                $browsers.attr("checked", false);
+            });
+//
+            $byhide.click(function (e) {
+// 切换到一个隐藏域,两种方式均可
+//$("#hidebrowser").attr("checked",true);
+                $("#hidebrowser").attr("checked", "checked");
+            });
+//
+            $remove.click(function (e) {
+// 直接去的DOM元素,移除属性
+// 如果不使用jQuery,则可以移植此方式
+                var checkedbrowser = document.getElementsByName("browser");
+                /* www.jbxue.com
+                 $.each(checkedbrowser, function(i,v){
+                 v.checked = false;
+                 v.removeAttribute("checked");
+                 });
+                 */
+//
+                var len = checkedbrowser.length;
+                var i = 0;
+                for (; i < len; i++) {
+// 必须先赋值为false,再移除属性
+                    checkedbrowser[i].checked = false;
+// 不移除属性也可以
+//checkedbrowser[i].removeAttribute("checked");
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+<p>您喜欢哪款浏览器？</p>
+
+<form>
+    <input style="display:none;" id="hidebrowser" type="radio" name="browser" value="">
+    <input type="radio" name="browser" value="Internet Explorer">Internet Explorer<br/>
+    <input type="radio" name="browser" value="Firefox">Firefox<br/>
+    <input type="radio" name="browser" value="Netscape">Netscape<br/>
+    <input type="radio" name="browser" value="Opera">Opera<br/>
+    <br/>
+    <input type="button" id="cancel" value="取消选中方式1" size="20">
+    <input type="button" id="byhide" value="取消选中方式2" size="20">
+    <input type="button" id="remove" value="取消选中方式3" size="20">
+</form>
+
+</body>
+</html>

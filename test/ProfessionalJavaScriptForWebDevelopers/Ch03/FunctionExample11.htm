@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>把对象属性用作参数</title>
+    <script type="text/javascript">
+        function ArrayCopy(name,age,grade,sex,height,weiht)
+        {
+            alert("name:"+name+"　age:"+age+"　grade:"+grade+"　sex:"+sex+"　height:"+height+"　weiht:"+weiht);
+        }
+
+        function EasyCopy(args)
+        {
+            ArrayCopy(args.name||"",
+                    args.age||0,
+                    args.grade||"one",
+                    args.sex||"可选",
+                    args.height||100,
+                    args.weight||100 )
+        }
+
+        function show()
+        {
+            EasyCopy({name:'lily',age:'13',grade:'three'});
+            EasyCopy({name:'mark',height:'180',weight:180});
+        }
+        show();
+    </script>
+</head>
+<body>
+把对象属性用作参数:这样可以不必去记参数的顺序,用对象的属性名来传参
+</body>
+</html>

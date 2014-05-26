@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>常用工具类</title>
+<style type="text/css">
+<!--
+body{margin:0px;padding:0px;font-size:12px;background:#eee;line-height:20px;}
+.bodyer{width:760px;margin:20px auto auto;border:1px dotted #ccc;background:#fff;}	
+.t_rt{text-align:right;}
+.err{color:red;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;margin:0px;padding:0px;font-size:12px;}
+ul,li{margin:0px;padding:0px;}
+li{list-style-type:none;}
+h1{margin:10px;padding-right:10px;padding-bottom:5px;border-bottom:1px dotted #ccc;}
+.preview{margin:10px;padding:10px;overflow:hidden;background:#eee;}
+.cont{padding:10px;}
+.cls{clear:both;height:0px;overflow:hidden;}
+.hidden{display:none;}
+#sourse{border:1px dotted #ccc;width:600px;height:300px;margin:0px auto;}
+.sourse{border:1px dotted #ccc;width:60%;height:100px;}
+.textDiv{margin:10px 40px 10px;text-align:center;}
+.source{text-align:left;padding:10px;height:300px;overflow:auto;background:red;width:600px;background:#FFF;border:1px dotted #CCC;}
+h2{margin:0px 10px;background:#ccc;padding:5px;}
+.example{margin:10px;background:#FFF;border:1px dotted #ccc;padding:10px;}
+.authorInfo{width:760px; margin:10px auto 10px;text-align:center;}
+.c_666{color:#666;}
+.scrolldoorFrame{width:400px;margin:0px auto;overflow:hidden;}
+.bor{border:1px solid #ccc;}
+.h{display:none;}
+.menu{width:50px;background:#CCC;}
+#up,#down,#left,#right{overflow:hidden;}
+
+#sd_menu{width:100%;height:19px;border-bottom:1px solid #CCC;}
+#sd_menu li{background:#FFF;float:left;width:100px;height:18px;border:1px solid #CCC;border-bottom-width:0px;text-align:center;line-height:19px;margin-right:10px;cursor:pointer;}
+#sd_menu li.hover{background:#CCC !important;}
+#sd_menu li.hover2{background:#666 !important;}
+.sd_content{padding:10px;border:1px solid #CCC;border-top-width:0px;}
+.treeUl li{padding-left:20px;line-height:20px;}
+-->
+</style>
+<script type="text/javascript" src="../js/jquery-1.2.3.js"></script>
+
+</script>
+<script type="text/javascript">
+function CommonTool(){
+	this.value = 0;
+	this.$ = function(o){
+		if(typeof(o) == "string"){
+			if(document.getElementById(o)){
+				return document.getElementById(o);
+			}else{
+				alert("id : " + o + " have not found");
+				return false;
+			}
+		}else{
+			return o;
+		}
+	};
+	this.sd = function(menus,divs,openClass,closeClass){// two class
+		var _this = this;
+		if(divs != null){
+			if(menus.length != divs.length)
+			{
+				alert("菜单层数量和内容层数量不一样!");
+				return false;
+			}
+		}					
+		for(var i = 0 ; i < menus.length ; i++)
+		{	
+			_this.$(menus[i]).flag = ++this.value;
+			_this.$(menus[i]).value = i;
+			_this.$(menus[i]).onclick = function(){										
+				for(var j = 0 ; j < menus.length ; j++)
+				{						
+					_this.$(menus[j]).className = closeClass;
+					if(divs!=null){
+						_this.$(divs[j]).style.display = "none";	
+					}									
+				}				
+				_this.$(menus[this.value]).className = openClass;
+				if(divs!=null){	
+					_this.$(divs[this.value]).style.display = "block";	
+				}			
+			}
+		}
+	};
+	this.sd3class = function(menus,divs,openClass,closeClass,middleClass){ //three class
+		var _this = this;
+		for(var x = 0 ; x < menus.length ; x++)
+		{
+			_this.$(menus[x]).state = _this.$(menus[x]).className == openClass ?  "open" : "close";
+		}
+
+		if(menus.length != divs.length)
+		{
+			alert("菜单层数量和内容层数量不一样!");
+			return false;
+		}				
+		for(var i = 0 ; i < menus.length ; i++)
+		{	
+			_this.$(menus[i]).flag = ++this.value;
+			_this.$(menus[i]).value = i;
+
+			_this.$(menus[i]).onclick = function(){		
+				
+				for(var j = 0 ; j < menus.length ; j++)
+				{
+					_this.$(menus[j]).className = closeClass;
+					_this.$(divs[j]).style.display = "none";
+					_this.$(menus[j]).state = "close";
+				}
+				this.state = "open";
+				_this.$(menus[this.value]).className = openClass;
+				_this.$(divs[this.value]).style.display = "block";				
+			}
+
+			_this.$(menus[i]).onmouseover = function(){
+				//alert(this.state);
+				for(var j = 0 ; j < menus.length ; j++)
+				{					
+					
+					if(_this.$(menus[j]).state != "open")
+					{
+						_this.$(menus[j]).className = closeClass;						
+						_this.$(menus[j]).state = "close";
+					}					
+				}
+				if(this.state == "open")
+				{
+				}
+				else
+				{
+					this.className = middleClass;
+				}				
+			}
+
+			_this.$(menus[i]).onmouseout = function(){
+				if(this.state != "open")
+				{
+					this.className = closeClass;
+				}
+			}
+		}
+	};
+	this.getCurrentDateTime = function(o,format){
+		var d = new Date();
+		var yy = document.all ? d.getYear() : (d.getYear() + 1900);	
+		var mm = d.getMonth() + 1 ;	
+		mm = mm<10 ? ("0"+mm) : mm;	
+		var dd = d.getDate();	
+		dd = dd<10 ? ("0"+dd) : dd;	
+		var hh = d.getHours();	
+		hh = hh<10 ? ("0"+hh) : hh;	
+		var mi = d.getMinutes();	
+		mi = mi<10 ? ("0"+mi) : mi;	
+		var ss = d.getSeconds();	
+		ss = ss<10 ? ("0"+ss) : ss;	
+		var w = d.getDay();
+		var ww = 0 ;	
+		switch(w){		
+			case 1 : ww = "星期一" ; break;
+			case 2 : ww = "星期二" ; break;
+			case 3 : ww = "星期三" ; break;
+			case 4 : ww = "星期四" ; break;
+			case 5 : ww = "星期五" ; break;
+			case 6 : ww = "星期六" ; break;
+			case 0 : ww = "星期日" ; break;		
+		}
+		//var dateStr = yy + "-" + mm + "-" + dd + "  " + hh + ":" + mi + ":" + ss + " " + ww;
+		var dateStr = format.replace("yyyy",yy);
+		dateStr = dateStr.replace("mm",mm);
+		dateStr = dateStr.replace("dd",dd);
+		dateStr = dateStr.replace("hh",hh);
+		dateStr = dateStr.replace("mi",mi);
+		dateStr = dateStr.replace("ss",ss);
+		dateStr = dateStr.replace("ww",ww);
+		
+		if(this.$(o).type == "text"){
+			this.$(o).value = dateStr;
+		}else{
+			this.$(o).innerHTML = dateStr;
+		}		
+	};
+	this.addOpt = function(o1,o2){	//rule control
+		var s1 = this.$(o1);
+		var s2 = this.$(o2);
+		var opt = s1.getElementsByTagName("option");	
+		var optL = opt.length;	
+		var count = 0;
+		for( var i = 0 ; i < optL ; i++){
+			if(opt[count].selected == true){			
+				s2.appendChild(opt[count]);		
+				count--;
+			}
+			count++;
+		}	
+	}
+	this.openTree=function(id){ // control tree menu
+	/*
+		structure:
+	
+		ul(root)
+		|-li   
+		| |-ul
+		|   |-li
+		|	|-li
+		|-li
+		| |-ul
+		|   |-li
+		|	|-li
+		|-li (innerHTMl)	
+	*/	
+		var treeP = this.$(id);
+		//alert(treeP.id);
+		var alink = treeP.getElementsByTagName("a");			
+		var cUls = treeP.getElementsByTagName("ul");	
+		//alert(cUls.length);
+		for(var i = 0 ; i < cUls.length ; i++){		
+			cUls[i].style.display = "none";
+		}	
+		for(var j = 0 ; j < alink.length ; j++){	
+			alink[j].onclick = function(){							
+				this.parentNode.getElementsByTagName("ul")[0].style.display =  (this.parentNode.getElementsByTagName("ul")[0].style.display == "none") ? "block" : "none";
+				return false;
+			}
+		}	
+	}
+	this.addFile = {
+		maxFile : 5,
+		fileCounter : 0 ,
+		setMaxFile : function(maxFile){
+			this.maxFile = maxFile;
+		},
+		subFilePro : function(o){
+			
+			o.parentNode.removeChild(o);
+			//alert(this.fileCounter);
+			this.fileCounter--;	
+			//alert(this.fileCounter);
+		},
+		addFilePro : function(o){
+			var _this = this;			
+			if(this.fileCounter >= this.maxFile){
+				alert("only " + this.maxFile + " files");
+				return false;
+			}
+			var span  = document.createElement("span");
+			var delBton = document.createElement("input");
+			delBton.setAttribute("type","button");
+			delBton.value = "delete me";			
+			delBton.onclick = function(){				
+				_this.subFilePro(this.parentNode);
+			}
+			var brs = document.createElement("br");
+			var files = document.createElement("input");
+			files.setAttribute("type","file");
+			span.appendChild(brs);
+			span.appendChild(files);
+			span.appendChild(delBton);
+			document.getElementById(o).appendChild(span);	
+			this.fileCounter++;		
+		}
+	}
+	this.addEvent = function(type,o,fn){
+		var ieType = "on" + type;
+		if(window.attachEvent){
+			 o.attachEvent(ieType,fn);			
+		}else{
+			 o.addEventListener(type,fn,false);		
+		}
+	}
+	this.delEvent = function(type,o,fn){
+		var ieType = "on" + type;
+		if(window.attachEvent){
+			 o.detachEvent(ieType,fn);
+		}else{
+			 o.addEventListener(type,fn,false);
+			 o.removeEventListener (type,fn,false);
+		}
+	}
+	this.clearBubble = function(e){
+		if(e){			
+			e.stopPropagation();
+		}else{
+			window.event.cancelBubble = true;
+		}	
+	}
+}
+
+window.onload = function(){
+	var ctl = new CommonTool();
+	ctl.sd(["sd_menu01","sd_menu02","sd_menu03","sd_menu04","sd_menu05"],["sd_content01","sd_content02","sd_content03","sd_content04","sd_content05"],"hover","");
+	ctl.sd3class(["sd_menu011","sd_menu022","sd_menu033","sd_menu044","sd_menu055"],["sd_content011","sd_content022","sd_content033","sd_content044","sd_content055"],"hover","","hover2");
+	ctl.getCurrentDateTime("getCurrentDate","yyyy-mm-dd hh:mi:ss ww");
+	ctl.getCurrentDateTime("getCurrentDate2","hh:mi:ss yyyy/mm/dd (ww)");
+	ctl.$("addOptBton1").onclick = function(){ctl.addOpt("addOpt1","addOpt2")};
+	ctl.$("addOptBton2").onclick = function(){ctl.addOpt("addOpt2","addOpt1")};
+	ctl.openTree("openTrees");	
+	ctl.$("addFileBton").onclick = function(){ctl.addFile.addFilePro("fileP");}
+	//$("#authorInfo").load("../footer.txt"); 
+	//alert(1);
+	
+	function show01(){alert(1)};
+	
+	//ctl.addEvent("click",ctl.$("addEventBton"),show01);
+	ctl.$("addEventBton01").onclick = function(){ctl.addEvent("click",ctl.$("addEventBton"),show01);};
+	ctl.$("addEventBton02").onclick = function(){ctl.delEvent("click",ctl.$("addEventBton"),show01);};
+
+	//ctl.$("clearBubbleA").onclick = function(e){ctl.clearBubble(e);ctl.$("clearBubbleDiv").style.display = "block";return false;}	
+	ctl.addEvent("click",document,function(){ctl.$("clearBubbleDiv").style.display = "none"})
+	ctl.$("clearBubbleA").onclick = function(event){ctl.clearBubble(event);ctl.$("clearBubbleDiv").style.display = "block";return false;}	
+	//ctl.addEvent("click",ctl.$("clearBubbleA"),function(){})
+	
+	
+}
+</script>
+</head>
+
+<body>
+<div class="bodyer">
+	<h1 class="t_rt">
+		常用工具类
+	</h1>
+	<h2>
+		获取id
+	</h2>
+	<div class="preview">
+		sd(o)：获取对象函数 
+		<hr/>
+		功能：获取id为o的对象,如果o是对象则返回.<br/>
+		参数说明：o - 对象的id(string) <br/>
+		例子：<br/>
+		<div class="example">var obj = new CommonTool().$(&quot;id&quot;);</div>			
+  </div>
+	<h2>
+		sd(选项卡1) 
+	</h2>
+	
+    <div class="preview">
+		<ul id="sd_menu">
+			<li id="sd_menu01" class="hover">菜单一</li>
+			<li id="sd_menu02">菜单二</li>
+			<li id="sd_menu03">菜单三</li>
+			<li id="sd_menu04">菜单四</li>
+			<li id="sd_menu05">菜单五</li>
+		</ul>
+		<div class="cls"></div>
+		<div class="sd_content s" id="sd_content01">内容一</div>
+		<div class="sd_content h" id="sd_content02">内容二</div>
+		<div class="sd_content h" id="sd_content03">内容三</div>
+		<div class="sd_content h" id="sd_content04">内容四</div>
+		<div class="sd_content h" id="sd_content05">内容五</div>
+	</div>
+	<div class="preview">	
+		sd(menus,divs,openClass,closeClass)：选项卡  
+		(菜单2种状态)  
+		<hr/>
+		功能：获取id为o的对象,如果o是对象则返回.<br/>
+参数说明：menus - 菜单id数组(Array),divs - 现实内容层的id数组(Array) 
+		,openClass
+	- 鼠标经过时候菜单的class , closeClass - 鼠标移动出菜单时候菜单的class <br/>
+例子：
+<div class="example">new CommonTool().sd([&quot;sd_menu01&quot;,&quot;sd_menu02&quot;,&quot;sd_menu03&quot;,&quot;sd_menu04&quot;,&quot;sd_menu05&quot;] ,[&quot;sd_content01&quot;,&quot;sd_content02&quot;,&quot;sd_content03&quot;,&quot;sd_content04&quot;,&quot;sd_content05&quot;],&quot;hover&quot;,&quot;&quot;);</div>	
+  </div>
+	
+	
+	<h2>
+		sd(选项卡2)
+	</h2>
+	
+    <div class="preview">
+		<ul id="sd_menu">
+			<li id="sd_menu011" class="hover">菜单一</li>
+			<li id="sd_menu022">菜单二</li>
+			<li id="sd_menu033">菜单三</li>
+			<li id="sd_menu044">菜单四</li>
+			<li id="sd_menu055">菜单五</li>
+		</ul>
+		<div class="cls"></div>
+		<div class="sd_content s" id="sd_content011">内容一</div>
+		<div class="sd_content h" id="sd_content022">内容二</div>
+		<div class="sd_content h" id="sd_content033">内容三</div>
+		<div class="sd_content h" id="sd_content044">内容四</div>
+		<div class="sd_content h" id="sd_content055">内容五</div>
+	</div>	
+	<div class="preview">
+			sd3class(menus,divs,openClass,closeClass,middleClass)：选项卡(菜单3种状态)  
+			<hr/>
+			功能：获取id为o的对象,如果o是对象则返回.<br/>
+	参数说明：menus - 菜单id数组(Array),divs - 现实内容层的id数组(Array) 
+			,openClass
+		- 鼠标经过时候菜单的class , closeClass - 鼠标移动出菜单时候菜单的class  , middleClass - 鼠标经过菜单的时候菜单的class<br/>
+	例子：
+	<div class="example">new CommonTool().sd3class([&quot;sd_menu011&quot;,&quot;sd_menu022&quot;,&quot;sd_menu033&quot;,&quot;sd_menu044&quot;,&quot;sd_menu055&quot;], [&quot;sd_content011&quot;,&quot;sd_content022&quot;,&quot;sd_content033&quot;,&quot;sd_content044&quot;,&quot;sd_content055&quot;],&quot;hover&quot;,&quot;&quot;,&quot;hover2&quot;);</div>	
+			
+  </div>
+	
+	<h2>
+		getCurrentDateTime(获取时间) 
+	</h2>
+	<div class="preview">
+		<span id="getCurrentDate"></span>&nbsp;
+		<input type="text" id="getCurrentDate2" size="50"/>
+	</div>
+	<div class="preview">
+			getCurrentDateTime(o,format)：获取系统时间
+			<hr/>
+			功能：获取系统时间,按照格式format(String)输出,并设置在id为o(String)<br/>
+	参数说明：o - 对象的id(string) , format - 输出时间的格式(yyyy-mm-dd hh:mi:ss ww) yyyy:年 mm:月 dd:日 hh:小时 mi:分钟 ss:秒 ww:星期  <br/>
+	例子：
+	<div class="example">
+		new CommonTool().getCurrentDateTime(&quot;getCurrentDate&quot;,&quot;yyyy-mm-dd hh:mi:ss ww&quot;);<br/>
+		new CommonTool().getCurrentDateTime(&quot;getCurrentDate&quot;,&quot;hh:mi:ss yyyy/mm/dd (ww)&quot;);</div>	
+			
+  </div>
+	<h2>
+		addOpt(选择框交换选项) 
+	</h2>
+	<div class="preview">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="45%" align="right">
+			<select name="select2" size="8" multiple="multiple" id="addOpt1">
+              <option>opt1a</option>
+              <option>opt2a</option>
+              <option>opt3a</option>
+              <option>opt4a</option>
+            </select></td>
+            <td width="8%" align="center"><input name="button" type="button" id="addOptBton1" value="->" /><br/><br/>
+            <input name="button2" type="button"  id="addOptBton2" value="<-"/></td>
+            <td width="47%" align="left">
+			<select name="select" size="8" multiple="multiple" id="addOpt2">
+              <option>opt1b</option>
+              <option>opt2b</option>
+              <option>opt3b</option>
+              <option>opt4b</option>
+            </select></td>
+          </tr>
+      </table>
+	</div>
+	<div class="preview">
+			addOpt(o1,o2)：两个选择框选项互换  
+			<hr/>
+			功能：把一个下拉菜单(o1)中选中的选项添加到另一个下拉菜单(o2)中<br/>
+	参数说明：o1-原下拉菜单的id(String) o2-目标下拉菜单id(String)<br/>
+	例子：
+	<div class="example">
+		ctl.addOpt(&quot;addOpt2&quot;,&quot;addOpt1&quot;)</div>	
+			
+  </div>
+	
+	
+	<h2>
+		openTree(树结点) 
+	</h2>
+	<div class="preview">
+		<ul id="openTrees" class="treeUl">
+								<li><a href="#">根节点</a>
+									<ul>
+										<li><a href="#">节点 1</a>
+										<ul>
+											<li>节点 11</li>
+											<li>节点 12</li>
+											<li>节点 13</li>
+											<li>节点 14</li>
+										</ul>
+									</li>
+									<li><a href="#">节点 2</a>
+										<ul>
+											<li><a href="#">节点 21</a>
+												<ul>
+													<li>节点 211</li>
+													<li>节点 212</li>
+													<li>节点 213</li>
+													<li>节点 214</li>
+												</ul>
+											</li>
+											<li>节点 22</li>
+											<li>节点 23</li>
+											<li>节点 24</li>
+										</ul>
+									</li>
+									<li><a href="#">节点 3</a>
+										<ul>
+											<li>节点 31</li>
+											<li>节点 32</li>
+											<li>节点 33</li>
+											<li>节点 34</li>
+										</ul>
+									</li>
+									</ul>
+								</li>
+	  </ul>
+	</div>
+	<div class="preview">
+			openTree(o)：树结点  
+			<hr/>
+			功能：打开/关闭 树结点<br/>
+	参数说明：o1树结点的根元素<br/>
+	说明：<br />
+	结构：<br/>
+	ul(root)<br />
+|-li    (&lt;a href=&quot;#&quot;&gt;innerHTML&lt;/a&gt;)<br />
+| |-ul<br />
+|   |-li<br />
+|	|-li<br />
+|-li<br />
+| |-ul<br />
+|   |-li<br />
+|	|-li<br />
+|-li (innerHTMl)	<br/>
+提供一个根节点的css(使得树结点有所进)padding-left:20px;line-height:20px;
+	例子：
+	<div class="example">
+		ctl.openTree(&quot;tree01&quot;);</div>	
+			
+  </div>
+	<h2>
+		addFile.addFilePro(添加file) 
+	</h2>
+	<div class="preview">
+	  <p id="fileP">
+	  	<input type="file"/> <input type="button" value="增加附件" id="addFileBton"/>
+	  </p>
+	</div>
+	<div class="preview">
+			addFile.addFilePro(o)：添加附件  
+			<hr/>
+			功能：添加附件<br/>
+	参数说明：为在id为o(string)的元素中添加file<br/>
+	说明：<br />
+	
+	例子：
+	<div class="example">
+		ctl.$(&quot;addFileBton&quot;).onclick = function(){ctl.addFile.addFilePro(&quot;fileP&quot;);</div>	
+			
+  </div>
+	  
+	 <h2>
+		addEvent(添加事件),delEvent(删除事件)
+	</h2>
+	<div class="preview">
+	 	<input type="button" value="按钮1" id="addEventBton"/>
+	 	<input type="button" value="按钮2" id="addEventBton01"/>
+	 	<input type="button" value="按钮3" id="addEventBton02"/>
+		<br/><br/>
+		说明：<br/>
+		1.点击按钮1，没有效果，没有任何事件<br/>
+		2.点击按钮2，为按钮1添加事件，点击按钮1察看效果(弹出对话框)<br/>
+		3.点击按钮3，为按钮1删除事件，点击按钮1察看效果(没有任何效果)
+		
+	</div>
+	<div class="preview">
+			addEvent(type,o,fn)：添加事件<br/>
+			delEvent(type,o,fn)：删除事件
+			<hr/>
+			功能：为id为o的对象添加(addEvent)/删除(delEvent)事件<br/>
+			参数说明: type - 事件类型,o - 触发事件的对象,fn - 函数名(触发事件后执行的函数名)<br/>
+	例子：
+	<div class="example">
+		function fnName(){alert(1)};<br/>
+		ctl.addEvent(&quot;click&quot;,document.getElementById(&quot;id&quot;),fnName);<br/>
+		ctl.delEvent(&quot;click&quot;,document.getElementById(&quot;id&quot;),fnName);
+	</div>	
+			
+  </div>
+  
+  
+  	<h2>
+		clearBubble(清除冒泡模型)
+	</h2>
+	<div class="preview">
+	 	<a href="#" id="clearBubbleA"> 显示层 </a>
+		<div class="h" id="clearBubbleDiv">我是层,点击页面我会消失</div>
+		
+	</div>
+	<div class="preview">
+			clearBubble(e)：添加事件<br/>			
+			<hr/>
+			功能：为id为o的对象添加(addEvent)/删除(delEvent)事件<br/>
+			
+	例子：
+	<div class="example">
+		function fnName(){alert(1)};<br/>
+		ctl.addEvent(&quot;click&quot;,document.getElementById(&quot;id&quot;),fnName);
+		ctl.delEvent(&quot;click&quot;,document.getElementById(&quot;id&quot;),fnName);
+	</div>	
+			
+  </div>
+  
+  <h2>
+		源代码
+	</h2>
+	<div class="textDiv">
+		<pre class="source">
+function CommonTool(){
+	this.value = 0;
+	this.$ = function(o){
+		if(typeof(o) == &quot;string&quot;){
+			if(document.getElementById(o)){
+				return document.getElementById(o);
+			}else{
+				alert(&quot;id : &quot; + o + &quot; have not found&quot;);
+				return false;
+			}
+		}else{
+			return o;
+		}
+	};
+	this.sd = function(menus,divs,openClass,closeClass){// two class
+		var _this = this;
+		if(divs != null){
+			if(menus.length != divs.length)
+			{
+				alert(&quot;菜单层数量和内容层数量不一样!&quot;);
+				return false;
+			}
+		}					
+		for(var i = 0 ; i &lt; menus.length ; i++)
+		{	
+			_this.$(menus[i]).flag = ++this.value;
+			_this.$(menus[i]).value = i;
+			_this.$(menus[i]).onclick = function(){										
+				for(var j = 0 ; j &lt; menus.length ; j++)
+				{						
+					_this.$(menus[j]).className = closeClass;
+					if(divs!=null){
+						_this.$(divs[j]).style.display = &quot;none&quot;;	
+					}									
+				}				
+				_this.$(menus[this.value]).className = openClass;
+				if(divs!=null){	
+					_this.$(divs[this.value]).style.display = &quot;block&quot;;	
+				}			
+			}
+		}
+	};
+	this.sd3class = function(menus,divs,openClass,closeClass,middleClass){ //three class
+		var _this = this;
+		for(var x = 0 ; x &lt; menus.length ; x++)
+		{
+			_this.$(menus[x]).state = _this.$(menus[x]).className == openClass ?  &quot;open&quot; : 
+
+&quot;close&quot;;
+		}
+
+		if(menus.length != divs.length)
+		{
+			alert(&quot;菜单层数量和内容层数量不一样!&quot;);
+			return false;
+		}				
+		for(var i = 0 ; i &lt; menus.length ; i++)
+		{	
+			_this.$(menus[i]).flag = ++this.value;
+			_this.$(menus[i]).value = i;
+
+			_this.$(menus[i]).onclick = function(){		
+				
+				for(var j = 0 ; j &lt; menus.length ; j++)
+				{
+					_this.$(menus[j]).className = closeClass;
+					_this.$(divs[j]).style.display = &quot;none&quot;;
+					_this.$(menus[j]).state = &quot;close&quot;;
+				}
+				this.state = &quot;open&quot;;
+				_this.$(menus[this.value]).className = openClass;
+				_this.$(divs[this.value]).style.display = &quot;block&quot;;				
+			}
+
+			_this.$(menus[i]).onmouseover = function(){
+				//alert(this.state);
+				for(var j = 0 ; j &lt; menus.length ; j++)
+				{					
+					
+					if(_this.$(menus[j]).state != &quot;open&quot;)
+					{
+						_this.$(menus[j]).className = closeClass;						
+						_this.$(menus[j]).state = &quot;close&quot;;
+					}					
+				}
+				if(this.state == &quot;open&quot;)
+				{
+				}
+				else
+				{
+					this.className = middleClass;
+				}				
+			}
+
+			_this.$(menus[i]).onmouseout = function(){
+				if(this.state != &quot;open&quot;)
+				{
+					this.className = closeClass;
+				}
+			}
+		}
+	};
+	this.getCurrentDateTime = function(o,format){
+		var d = new Date();
+		var yy = document.all ? d.getYear() : (d.getYear() + 1900);	
+		var mm = d.getMonth() + 1 ;	
+		mm = mm&lt;10 ? (&quot;0&quot;+mm) : mm;	
+		var dd = d.getDate();	
+		dd = dd&lt;10 ? (&quot;0&quot;+dd) : dd;	
+		var hh = d.getHours();	
+		hh = hh&lt;10 ? (&quot;0&quot;+hh) : hh;	
+		var mi = d.getMinutes();	
+		mi = mi&lt;10 ? (&quot;0&quot;+mi) : mi;	
+		var ss = d.getSeconds();	
+		ss = ss&lt;10 ? (&quot;0&quot;+ss) : ss;	
+		var w = d.getDay();
+		var ww = 0 ;	
+		switch(w){		
+			case 1 : ww = &quot;星期一&quot; ; break;
+			case 2 : ww = &quot;星期二&quot; ; break;
+			case 3 : ww = &quot;星期三&quot; ; break;
+			case 4 : ww = &quot;星期四&quot; ; break;
+			case 5 : ww = &quot;星期五&quot; ; break;
+			case 6 : ww = &quot;星期六&quot; ; break;
+			case 0 : ww = &quot;星期日&quot; ; break;		
+		}
+		//var dateStr = yy + &quot;-&quot; + mm + &quot;-&quot; + dd + &quot;  &quot; + hh + &quot;:&quot; + mi + 
+
+&quot;:&quot; + ss + &quot; &quot; + ww;
+		var dateStr = format.replace(&quot;yyyy&quot;,yy);
+		dateStr = dateStr.replace(&quot;mm&quot;,mm);
+		dateStr = dateStr.replace(&quot;dd&quot;,dd);
+		dateStr = dateStr.replace(&quot;hh&quot;,hh);
+		dateStr = dateStr.replace(&quot;mi&quot;,mi);
+		dateStr = dateStr.replace(&quot;ss&quot;,ss);
+		dateStr = dateStr.replace(&quot;ww&quot;,ww);
+		
+		if(this.$(o).type == &quot;text&quot;){
+			this.$(o).value = dateStr;
+		}else{
+			this.$(o).innerHTML = dateStr;
+		}		
+	};
+	this.addOpt = function(o1,o2){	//rule control
+		var s1 = this.$(o1);
+		var s2 = this.$(o2);
+		var opt = s1.getElementsByTagName(&quot;option&quot;);	
+		var optL = opt.length;	
+		var count = 0;
+		for( var i = 0 ; i &lt; optL ; i++){
+			if(opt[count].selected == true){			
+				s2.appendChild(opt[count]);		
+				count--;
+			}
+			count++;
+		}	
+	}
+	this.openTree=function(id){ // control tree menu
+	/*
+		structure:
+	
+		ul(root)
+		|-li    (&lt;a href=&quot;#&quot;&gt;innerHTML&lt;/a&gt;)
+		| |-ul
+		|   |-li
+		|	|-li
+		|-li
+		| |-ul
+		|   |-li
+		|	|-li
+		|-li (innerHTMl)	
+	*/	
+		var treeP = this.$(id);
+		//alert(treeP.id);
+		var alink = treeP.getElementsByTagName(&quot;a&quot;);			
+		var cUls = treeP.getElementsByTagName(&quot;ul&quot;);	
+		//alert(cUls.length);
+		for(var i = 0 ; i &lt; cUls.length ; i++){		
+			cUls[i].style.display = &quot;none&quot;;
+		}	
+		for(var j = 0 ; j &lt; alink.length ; j++){	
+			alink[j].onclick = function(){							
+				this.parentNode.getElementsByTagName(&quot;ul&quot;)[0].style.display =  
+
+(this.parentNode.getElementsByTagName(&quot;ul&quot;)[0].style.display == &quot;none&quot;) ? &quot;block&quot; : 
+
+&quot;none&quot;;
+				return false;
+			}
+		}	
+	}
+}
+
+		</pre>
+		
+		
+	</div>
+  
+	  <h2>
+		使用方法
+	  </h2>
+	  <div class="preview">
+			把代码中的代码引入js中，引用到页面中，用 var ctl =  new CommonTool() 创建一个对象 ctl 之后利用以上的api就可以完成以上实现的各种效果 例如：
+			<div class="example">window.onload = function(){<br />
+var ctl = new CommonTool();//创建一个对象<br />
+ctl.sd([&quot;sd_menu01&quot;,&quot;sd_menu02&quot;,&quot;sd_menu03&quot;,&quot;sd_menu04&quot;,&quot;sd_menu05&quot;] , [&quot;sd_content01&quot;,&quot;sd_content02&quot;,&quot;sd_content03&quot;,&quot;sd_content04&quot;,&quot;sd_content05&quot;], &quot;hover&quot;,&quot;&quot;);//选项卡<br />
+ctl.sd3class([&quot;sd_menu011&quot;,&quot;sd_menu022&quot;,&quot;sd_menu033&quot;,&quot;sd_menu044&quot;,&quot;sd_menu055&quot;] , [&quot;sd_content011&quot;,&quot;sd_content022&quot;,&quot;sd_content033&quot;,&quot;sd_content044&quot;,&quot;sd_content055&quot;],&quot;hover&quot;,&quot;&quot;,&quot;hover2&quot;);//选项卡<br />
+ctl.getCurrentDateTime(&quot;getCurrentDate&quot;,&quot;yyyy-mm-dd hh:mi:ss ww&quot;);//获取系统时间<br />
+ctl.getCurrentDateTime(&quot;getCurrentDate2&quot;,&quot;hh:mi:ss yyyy/mm/dd (ww)&quot;);//获取系统时间<br />
+ctl.$(&quot;addOptBton1&quot;).onclick = function(){ctl.addOpt(&quot;addOpt1&quot;,&quot;addOpt2&quot;)};//下拉菜单选项互换<br />
+ctl.$(&quot;addOptBton2&quot;).onclick = function(){ctl.addOpt(&quot;addOpt2&quot;,&quot;addOpt1&quot;)};//下拉菜单选项互换<br />
+ctl.openTree(&quot;openTrees&quot;); //树结点<br />
+ctl.$(&quot;addFileBton&quot;).onclick = function(){ctl.addFile.addFilePro(&quot;fileP&quot;);}//添加附件<br />
+}</div>	
+	  </div>
+</div>
+<div class="authorInfo" id="authorInfo"></div>
+
+</body>
+</html>

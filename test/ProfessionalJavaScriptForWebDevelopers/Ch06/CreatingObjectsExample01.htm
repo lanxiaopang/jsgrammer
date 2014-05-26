@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Objects Example</title>
+    <script>
+        var person = new Object();
+        person.name = "Nio";
+        person.age = 27;
+        person.job = "Soft Engineer";
+        person.sayHi = function () {
+            alert("my name is " + this.name);
+        }
+
+        var newPerson = {
+            name: "noe",
+            age: "20",
+            job: "Soft Engineer",
+            sayHi: function () {
+                alert("my name is " + this.name);
+            }
+        }
+        person.sayHi();
+        newPerson.sayHi();
+    </script>
+</head>
+<body>
+    演示两种创建对象的方法!
+</body>
+</html>
