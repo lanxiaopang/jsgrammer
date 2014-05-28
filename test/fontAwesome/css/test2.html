@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="@my_coder">
+    <title></title>
+    <!--
+        方法一：引入字体、图标样式
+            优点：直接引入css,在html里直接写入对应的css样式名即可，不用查找css样式名对应的值
+            缺点：引入了没有用到的样式，代码冗余
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/font-awesome-ie7.min.css" />    兼容ie6、7
+    -->
+
+    <style type="text/css">
+        /*
+            方法二：自定义样式
+                优点：样式文件较小，只写自己需要的样式
+                缺点：需要查找每个样式对应的值，比较繁琐
+        */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('fonts/fontawesome-webfont.eot');
+            src: url('fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+            url('fonts/fontawesome-webfont.woff') format('woff'),
+            url('fonts/fontawesome-webfont.ttf') format('truetype'),
+            url('fonts/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'),
+            url('fonts/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .icon-home:before{
+            content: "\f015";    /*'\f015'代表‘家’的图标，每个图标有对应的值*/
+        }
+        .icon-home {    /*兼容ie6、7*/
+            *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf015;');
+        }
+
+        li{font-family: 'FontAwesome';font-size:30px;display:block;color:#aaa;line-height:40px;}
+        li:hover{color:#f60;}
+    </style>
+
+</head>
+<body>
+<ul>
+    <li>
+        <span class="icon-home"></span> 首页
+    </li>
+    <li>
+        <span class="icon-smile"></span> 微笑
+    </li>
+    <li>
+        <span class="icon-microphone"></span> 语音
+    </li>
+    <li>
+        <span class="icon-rotate-left"></span> 返回
+    </li>
+    <li>
+        <span class="icon-camera"></span> 相机
+    </li>
+    <li>
+        <span class="icon-globe"></span> 地球
+    </li>
+</ul>
+</body>
+</html>
