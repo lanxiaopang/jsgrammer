@@ -1,0 +1,92 @@
+<!-- 本文参照了该作者的思路：http://runjs.cn/code/ouvvjqka，jquery代码系另外编写 -->
+<!-- 本文出自：http://blog.csdn.net/liuyanzhi08 -->
+<!-- 实现思路：
+CSS:用一个绝对定位的div作为动画滑块,改变它的left属性来呈现动画效果
+javascript：hover()触发移动鼠标到导航nav的动作，和移出导航nav的动作（即返回到current导航）
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Nancle"/>
+    <title>jQuery弹性滑动导航菜单</title>
+    <style type="text/css">
+        body {
+            font-family: "Microsoft YaHei";
+        }
+
+        #nav_wrapper {
+            position: relative;
+            width: 835px;
+            margin: 80px auto;
+            border-bottom: 2px #ddd solid;
+        }
+
+        #nav_wrapper #nav_menu {
+            height: 50px;
+        }
+
+        #nav_wrapper #nav_menu a {
+            display: block;
+            float: left;
+            height: 50px;
+            padding: 0 40px;
+            line-height: 50px;
+            color: #666;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        #nav_wrapper #nav_animate_block {
+            position: absolute;
+            bottom: -2px;
+            height: 2px;
+            overflow: hidden;
+            background: #80b600;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $current_nav = $("#current_nav"); //current元素（当前所在导航项)
+            var current_nav_width = $current_nav.innerWidth();
+            var current_nav_left = $current_nav.position().left;
+            var $nav_animate_block = $("#nav_animate_block"); //动画滑块
+            $nav_animate_block.css({ width: current_nav_width, left: current_nav_left });
+            //初始状态下，动画滑块位置在current元素
+            // 鼠标进入a元素时触发动画事件
+            $("#nav_menu a").hover(function () {
+                var index = $(this).index();
+                var $a_cur = $("#nav_menu").find("a").eq(index);//鼠标移动到的a元素
+                //利用触发的a元素索引获取其left位置和它的宽度
+                var width = $a_cur.innerWidth();
+                var left = $a_cur.position().left;
+                //设置动画滑块位置
+                $nav_animate_block.stop().animate({
+                    width: width,
+                    left: left
+                }, 300)
+            }, function () {
+                //鼠标离开a元素时，动画滑块返回current元素位置
+                $nav_animate_block.stop().animate({
+                   // width: current_nav_width,
+                   // left: current_nav_left
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="nav_wrapper">
+    <div id="nav_menu">
+        <a href="#" id="current_nav">首页</a>
+        <a href="#">产品列表</a>
+        <a href="#">客户案例</a>
+        <a href="#">服务平台</a>
+        <a href="#">交流论坛</a>
+        <a href="#">关于我们</a>
+    </div>
+    <div id="nav_animate_block"></div>
+</div>
+</body>
+</html> 
