@@ -46,6 +46,7 @@ javascript：hover()触发移动鼠标到导航nav的动作，和移出导航nav
         }
     </style>
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery.easing.1.3.js"></script>
     <script type="text/javascript">
         $(function () {
             var $current_nav = $("#current_nav"); //current元素（当前所在导航项)
@@ -65,13 +66,9 @@ javascript：hover()触发移动鼠标到导航nav的动作，和移出导航nav
                 $nav_animate_block.stop().animate({
                     width: width,
                     left: left
-                }, 300)
-            }, function () {
-                //鼠标离开a元素时，动画滑块返回current元素位置
-                $nav_animate_block.stop().animate({
-                   // width: current_nav_width,
-                   // left: current_nav_left
-                })
+                },{duration: 500,
+                    easing:"easeInOutBack"//可省略
+                   })
             })
         });
     </script>
