@@ -1,0 +1,97 @@
+body{
+    cursor: hand;
+    background-image:url("http://10.su.bdimg.com/skin/19.jpg");
+}
+.wrapper{
+    width: 910px;
+    height:540px;
+    margin: 0 auto;
+}
+.top_wrapper{
+    width: 910px;
+    height:auto;
+    text-align: center;
+}
+.btn{
+    width: 105px;
+    height: 40px;
+    padding: 0px;
+    border: 0px none;
+    background-color: #DDD;
+    cursor: pointer;
+    font-size: 16px;
+    background-image: url('http://su.bdimg.com/static/superplus/img/skin_dark_ie_e65e0521.png');
+}
+.top_wrapper p{
+    margin:0;
+}
+#kw1{
+    padding: 10px 9px 10px 7px;
+    border: 0px none;
+    background-image: none;
+    height: 20px;
+    line-height: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+}
+.bot_wrapper{
+    width: 910px;
+    height:300px;
+    margin: 50px auto;
+}
+#nv{
+    text-align: center;
+}
+#nv a,b{
+    color: #fff;
+    font-size: 14px;
+    margin-left: 12px;
+    font-family: arial,'Hiragino Sans GB','Microsoft Yahei','微软雅黑','宋体','宋体',Tahoma,Arial,Helvetica,STHeiti;
+}
+
+.l_box{
+    width: 80px;
+    height:300px;
+    float: left;
+}
+.l_box a{
+    width: 80px;
+    height:34px;
+    line-height: 33px;
+    border:none;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    background: linear-gradient(rgba(0, 0, 0, 0.4) 0px, rgba(0, 0, 0, 0.4) 100%) repeat scroll 0% 0% transparent;
+    text-shadow: 0px 0px 5px #000;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+.l_box a:hover{
+    background: rgba(45, 145, 226, 0.8) 0px;
+    /*background: none transparent scroll repeat 0% 0%;*/
+    text-shadow: none;
+}
+.r_box{
+    width: 810px;
+    height:200px;
+    float: right;
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 0px, rgba(255, 255, 255, 0.7) 100%) repeat scroll 0% 0% transparent !important;
+}
+.current{
+    filter: none !important;
+    background: url('../img/menu_current.png') no-repeat scroll 0% 0% transparent !important;
+    border-right: medium none !important;
+    text-shadow: none !important;
+    width: 80px;
+}
+.r_content_1{
+    top:0px;
+    overflow: visible;
+    position: relative;
+}
+.r_content_2,.r_content_3,.r_content_4{
+    top:0px;
+    overflow:hidden;
+}
