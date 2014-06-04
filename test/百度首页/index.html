@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link type="text/css" href="css/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="top_wrapper">
+        <p><img src="http://su.bdimg.com/static/superplus/img/logo_white.png" height="129" width="270"></p>
+        <p id="nv">
+            <a href="http://news.baidu.com">新闻</a><b>网页</b><a href="http://tieba.baidu.com">贴吧</a>
+            <a href="http://zhidao.baidu.com">知道</a><a href="http://music.baidu.com">音乐</a>
+            <a href="http://image.baidu.com">图片</a><a href="http://v.baidu.com">视频</a>
+            <a href="http://map.baidu.com">地图</a><a href="http://baike.baidu.com">百科</a>
+            <a href="http://wenku.baidu.com">文库</a><a href="http://www.baidu.com/more/">更多&gt;&gt;</a>
+        </p>
+        <p>
+            <input name="wd" id="kw1" maxlength="100" style="width:484px;" autocomplete="off" type="text">
+            <input value="百度一下" id="su1" class="btn" onmousedown="this.className='btn btn_h'" onmouseout="this.className='btn'" type="submit">
+        </p>
+    </div>
+    <div class="tab">
+        <ul class="tabs">
+            <li><a href="#">导航</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">世界杯</a></li>
+            <li><a href="#">音乐</a></li>
+        </ul>
+
+        <div class="tab_content">
+            <div id="r_content_1" class="tabs_item" style="display: block"><img src="img/navigator.jpg" /></div>
+            <div id="r_content_2" class="tabs_item" style="display: none"><img src="img/news.jpg" /></div>
+            <div id="r_content_3" class="tabs_item" style="display: none"><img src="img/worldcup.jpg" /></div>
+            <div id="r_content_4" class="tabs_item" style="display: none"><img src="img/music.jpg" /></div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

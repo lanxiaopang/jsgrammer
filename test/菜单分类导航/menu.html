@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>仿马可波罗左侧商品列表导航菜单</title>
+
+    <script type="text/javascript" src="jquery"></script>
+    <script type="text/javascript" src="menu.js"></script>
+
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div style="width:860px;margin:0 auto;">
+
+<div class="sidebar">
+
+<div class="sidebar_top sidebar_top_tc">全部产品分类</div>
+
+<div class="sidebar_con">
+<dl class="sidebar_item">
+<dt><i class="sidebar_item_icon01"></i><span>机器设备</span></dt>
+<dd>
+    <h3><a href="#">通用机械设备</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis1" style="display:none;">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"> <strong><a href="#">泵与阀门</a></strong>
+                <p><span class="linesbg"><a href="#">真空泵</a></span><span class="linesbg"><a href="#">离心泵</a></span><span class="linesbg"><a href="#">计量泵</a></span><span class="linesbg"><a href="#">水泵</a></span><span class="linesbg"><a href="#">油泵</a></span><span class="linesbg"><a href="#">阀门</a></span><span class="linesbg"><a href="#">球阀</a></span><span class="linesbg"><a href="#">安全阀</a></span><span class="linesbg"><a href="#">电磁阀</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">机床</a></strong>
+                <p><span class="linesbg"><a href="#">数控机床</a></span><span class="linesbg"><a href="#">金属切削机床</a></span><span class="linesbg"><a href="#">车床</a></span><span class="linesbg"><a href="#">磨床</a></span><span class="linesbg"><a href="#">锻压机床</a></span><span class="linesbg"><a href="#">特种加工机床</a></span><span class="linesbg"><a href="#">机床附件</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">真空</a>、<a href="#">风机设备</a></strong>
+                <p><span class="linesbg"><a href="#">真空获取与应用设备</a></span><span class="linesbg"><a href="#">真空泵</a></span><span class="linesbg"><a href="#">真空镀膜机</a></span><span class="linesbg"><a href="#">风机设备</a></span><span class="linesbg"><a href="#">空气压缩机</a></span><span class="linesbg"><a href="#">风幕机</a></span><span class="linesbg"><a href="#">鼓风机</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">粉碎</a>、<a href="#">过滤筛分设备</a></strong>
+                <p><span class="linesbg"><a href="#">粉碎设备、粉碎机</a></span><span class="linesbg"><a href="#">破碎机</a></span><span class="linesbg"><a href="#">砂磨机</a></span><span class="linesbg"><a href="#">过滤筛分设备</a></span><span class="linesbg"><a href="#">过滤机</a></span><span class="linesbg"><a href="#">离心机</a></span><span class="linesbg"><a href="#">压滤机</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">加热、传热设备</a></strong>
+                <p><span class="linesbg"><a href="#">锅炉与原动机</a></span><span class="linesbg"><a href="#">锅炉</a></span><span class="linesbg"><a href="#">内燃机</a></span><span class="linesbg"><a href="#">汽轮机</a></span><span class="linesbg"><a href="#">传热设备</a></span><span class="linesbg"><a href="#">冷凝器</a></span><span class="linesbg"><a href="#">换热器</a></span><span class="linesbg"><a href="#">热处理设备</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">分离</a>、<a href="#">混合设备</a></strong>
+                <p><span class="linesbg"><a href="#">分离设备</a></span><span class="linesbg"><a href="#">浓缩机</a></span><span class="linesbg"><a href="#">分离器</a></span><span class="linesbg"><a href="#">蒸发器</a></span><span class="linesbg"><a href="#">混合设备</a></span><span class="linesbg"><a href="#">搅拌机</a></span><span class="linesbg"><a href="#">混合机</a></span><span class="linesbg"><a href="#">分散机</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">包装机械</a></strong>
+                <p><span class="linesbg"><a href="#">灌装机</a></span><span class="linesbg"><a href="#">封口机</a></span><span class="linesbg"><a href="#">贴标机</a></span><span class="linesbg"><a href="#">集装机</a></span><span class="linesbg"><a href="#">喷码机</a></span><span class="linesbg"><a href="#">打号机/线号机</a></span><span class="linesbg"><a href="#">植绒机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                <p><span class="linesbg"><a href="#">制冷设备</a></span><span class="linesbg"><a href="#">干燥设备</a></span><span class="linesbg"><a href="#">焊接与切割设备</a></span><span class="linesbg"><a href="#">储运设备</a></span><span class="linesbg"><a href="#">表面处理与涂装设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部通用机械设备</span></a></div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">行业专用设备</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis2" style="display:none;">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"> <strong><a href="#">工程机械</a></strong>
+                <p><span class="linesbg"><a href="#">起重机械</a></span><span class="linesbg"><a href="#">装修机械</a></span><span class="linesbg"><a href="#">混凝土机械</a></span><span class="linesbg"><a href="#">钢筋加工机械</a></span><span class="linesbg"><a href="#">建材机械配件</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">冶金、石油、矿业机械</a></strong>
+                <p><span class="linesbg"><a href="#">炼铁设备</a></span><span class="linesbg"><a href="#">采掘设备</a></span><span class="linesbg"><a href="#">粉碎设备</a></span><span class="linesbg"><a href="#">井架</a></span><span class="linesbg"><a href="#">钻井修井设备</a></span><span class="linesbg"><a href="#">地质勘查设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">塑料橡胶机械</a></strong>
+                <p><span class="linesbg"><a href="#">注塑机</a></span><span class="linesbg"><a href="#">压塑机</a></span><span class="linesbg"><a href="#">吹塑机</a></span><span class="linesbg"><a href="#">吸塑机</a></span><span class="linesbg"><a href="#">轮胎生产机械</a></span><span class="linesbg"><a href="#">切胶机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">汽保、维修专用设备</a></strong>
+                <p><span class="linesbg"><a href="#">充气机</a></span><span class="linesbg"><a href="#">补胎机</a></span><span class="linesbg"><a href="#">缓冲器</a></span><span class="linesbg"><a href="#">泡沫机</a></span><span class="linesbg"><a href="#">抛光打蜡机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">服装纺织设备</a></strong>
+                <p><span class="linesbg"><a href="#">缝纫机械</a></span><span class="linesbg"><a href="#">洗涤烘干机械</a></span><span class="linesbg"><a href="#">纺织机械</a></span><span class="linesbg"><a href="#">毛皮、制革机械</a></span><span class="linesbg"><a href="#">制鞋机械</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">食品生产机械</a></strong>
+                <p><span class="linesbg"><a href="#">小食品加工</a></span><span class="linesbg"><a href="#">厨房设备</a></span><span class="linesbg"><a href="#">饮料机械</a></span><span class="linesbg"><a href="#">糕点加工机械</a></span><span class="linesbg"><a href="#">清洗消毒设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">农业、林业、畜牧、渔业设备</a></strong>
+                <p><span class="linesbg"><a href="#">农业机械</a></span><span class="linesbg"><a href="#">林业机械</a></span><span class="linesbg"><a href="#">畜牧养殖机械</a></span><span class="linesbg"><a href="#">农产品初加工机械</a></span><span class="linesbg"><a href="#">渔业机械</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                <p><span class="linesbg"><a href="#">印刷机械</a></span><span class="linesbg"><a href="#">化工设备</a></span><span class="linesbg"><a href="#">小五金制造设备</a></span><span class="linesbg"><a href="#">制药机械</a></span><span class="linesbg"><a href="#">游乐游艺设施</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部行业专用设备</span></a></div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">建筑设备</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis3" style="display:none;">
+        <div class="sidebar_popup_box">
+            <div class="sidebar_popup_class clearfix">
+                <div class="sidebar_popup_item"> <strong><a href="#">采暖通风设备</a></strong>
+                    <p><span class="linesbg"><a href="#">暖气片</a></span><span class="linesbg"><a href="#">暖风机</a></span><span class="linesbg"><a href="#">壁炉</a></span><span class="linesbg"><a href="#">采暖部件</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">管道系统</a></strong>
+                    <p><span class="linesbg"><a href="#">上水系统</a></span><span class="linesbg"><a href="#">排水系统</a></span><span class="linesbg"><a href="#">冷热水系统</a></span><span class="linesbg"><a href="#">燃气系统</a></span><span class="linesbg"><a href="#">管道辅助材料</a></span><span class="linesbg"><a href="#">其他管道系统</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">给排水设备</a></strong>
+                    <p><span class="linesbg"><a href="#">冷却塔</a></span><span class="linesbg"><a href="#">水处理设备</a></span><span class="linesbg"><a href="#">加热贮热设备</a></span><span class="linesbg"><a href="#">检查井</a></span><span class="linesbg"><a href="#">加压调节贮存设备</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">空气调节、净化设备</a></strong>
+                    <p><span class="linesbg"><a href="#">组合式空调机组</a></span><span class="linesbg"><a href="#">加湿设备</a></span><span class="linesbg"><a href="#">除湿设备</a></span><span class="linesbg"><a href="#">空气过滤器</a></span><span class="linesbg"><a href="#">空气净化器</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">综合布线与光纤设备</a></strong>
+                    <p><span class="linesbg"><a href="#">布线工具</a></span><span class="linesbg"><a href="#">光纤线缆</a></span><span class="linesbg"><a href="#">光纤接头</a></span><span class="linesbg"><a href="#">网线</a></span><span class="linesbg"><a href="#">配线架</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">安防监控系统</a></strong>
+                    <p><span class="linesbg"><a href="#">智能卡</a></span><span class="linesbg"><a href="#">视频监控系统</a></span><span class="linesbg"><a href="#">门禁考勤系统</a></span><span class="linesbg"><a href="#">燃气报警器</a></span><span class="linesbg"><a href="#">防盗报警系统</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">停车场设备</a></strong>
+                    <p><span class="linesbg"><a href="#">智能停车场管理系统</a></span><span class="linesbg"><a href="#">机械式停车设备</a></span><span class="linesbg"><a href="#">读卡机</a></span><span class="linesbg"><a href="#">道闸/挡车器</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                    <p><span class="linesbg"><a href="#">消防设备</a></span><span class="linesbg"><a href="#">电梯和自动扶梯</a></span><span class="linesbg"><a href="#">智能家居产品</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+            </div>
+            <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部建筑设备</span></a></div>
+        </div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">电气与能源设备</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis4" style="display:none;">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"> <strong><a href="#">发电机</a>、<a href="#">电动机</a></strong>
+                <p><span class="linesbg"><a href="#">发电机及发电机组</a></span><span class="linesbg"><a href="#">移动电站</a></span><span class="linesbg"><a href="#">微电机</a></span><span class="linesbg"><a href="#">直流电动机</a></span><span><a href="#">异步电动机</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">输配电设备</a>、<a href="#">电气成套设备</a></strong>
+                <p><span class="linesbg"><a href="#">电力变压器</a></span><span class="linesbg"><a href="#">电压互感器</a></span><span class="linesbg"><a href="#">电流互感器</a></span><span class="linesbg"><a href="#">电源屏</a></span><span><a href="#">配电装置</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">电源装置</a></strong>
+                <p><span class="linesbg"><a href="#">开关电源</a></span><span class="linesbg"><a href="#">模块电源</a></span><span class="linesbg"><a href="#">应急电源/EPS</a></span><span class="linesbg"><a href="#">高压电源</a></span><span class="linesbg"><a href="#">变频电源</a></span><span class="linesbg"><a href="#">线性电源</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">高压电器</a>、<a href="#">低压电器</a></strong>
+                <p><span class="linesbg"><a href="#">高压断路器</a></span><span class="linesbg"><a href="#">高压熔断器</a></span><span class="linesbg"><a href="#">隔离开关</a></span><span class="linesbg"><a href="#">低压断路器</a></span><span class="linesbg"><a href="#">接触器</a></span><span><a href="#">控制设备</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">电工仪器仪表</a></strong>
+                <p><span class="linesbg"><a href="#">万用表</a></span><span class="linesbg"><a href="#">电能表</a></span><span class="linesbg"><a href="#">电阻测量仪表</a></span><span class="linesbg"><a href="#">电阻箱</a></span><span class="linesbg"><a href="#">电桥</a></span><span class="linesbg"><a href="#">电压测量仪表</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">节煤设备</a></strong>
+                <p><span class="linesbg"><a href="#">节煤设备</a></span><span class="linesbg"><a href="#">节水设备</a></span><span class="linesbg"><a href="#">节电设备</a></span><span class="linesbg"><a href="#">节油设备</a></span><span class="linesbg"><a href="#">其他节能设备</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">燃气设备</a></strong>
+                <p><span class="linesbg"><a href="#">气化器</a></span><span class="linesbg"><a href="#">工业燃气炉</a></span><span class="linesbg"><a href="#">工业燃气报警器</a></span><span class="linesbg"><a href="#">燃烧器</a></span><span class="linesbg"><a href="#">加气站设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                <p><span class="linesbg"><a href="#">电力电子器件</a></span><span class="linesbg"><a href="#">新能源设备</a></span><span class="linesbg"><a href="#">防雷设备</a></span><span class="linesbg"><a href="#">沼气设备</a></span></p>
+            </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部电气与能源设备</span></a></div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">仪器仪表</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis5" style="display: none; ">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"><strong><a href="#">量具量仪</a></strong>
+                <p><span class="linesbg"><a href="#">量尺</a></span><span class="linesbg"><a href="#">卡尺</a></span><span class="linesbg"><a href="#">角度尺</a></span><span class="linesbg"><a href="#">深度尺</a></span><span class="linesbg"><a href="#">千分尺</a></span><span class="linesbg"><a href="#">量规</a></span><span class="linesbg"><a href="#">高度计、高度尺</a></span><span class="linesbg"><a href="#">平板</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">光学仪器</a></strong>
+                <p><span class="linesbg"><a href="#">望远镜</a></span><span class="linesbg"><a href="#">放大镜</a></span><span class="linesbg"><a href="#">光学显微镜</a></span><span class="linesbg"><a href="#">电子显微镜</a></span><span class="linesbg"><a href="#">天文仪器</a></span><span class="linesbg"><a href="#">光学测量仪器</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">分析仪器</a></strong>
+                <p><span class="linesbg"><a href="#">元素分析仪器</a></span><span class="linesbg"><a href="#">水质分析仪/COD检测仪</a></span><span class="linesbg"><a href="#">气体分析仪器</a></span><span class="linesbg"><a href="#">光学分析仪器</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">衡器</a></strong>
+                <p><span class="linesbg"><a href="#">电子秤</a></span><span class="linesbg"><a href="#">定量秤</a></span><span class="linesbg"><a href="#">台秤</a></span><span class="linesbg"><a href="#">吊秤</a></span><span class="linesbg"><a href="#">配料秤</a></span><span class="linesbg"><a href="#">汽车衡</a></span><span class="linesbg"><a href="#">地磅/地上衡</a></span><span class="linesbg"><a href="#">轨道衡</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">试验机</a></strong>
+                <p><span class="linesbg"><a href="#">平衡机</a></span><span class="linesbg"><a href="#">硬度计</a></span><span class="linesbg"><a href="#">引伸机</a></span><span class="linesbg"><a href="#">拉力试验机</a></span><span class="linesbg"><a href="#">汽车试验设备</a></span><span class="linesbg"><a href="#">疲劳试验机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">计量仪表</a></strong>
+                <p><span class="linesbg"><a href="#">水表</a></span><span class="linesbg"><a href="#">电能表</a></span><span class="linesbg"><a href="#">燃气表</a></span><span class="linesbg"><a href="#">热能表</a></span><span class="linesbg"><a href="#">计数器</a></span><span class="linesbg"><a href="#">温湿度仪表</a></span><span class="linesbg"><a href="#">压力测量仪表</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">电工仪器仪表</a></strong>
+                <p><span class="linesbg"><a href="#">万用表</a></span><span class="linesbg"><a href="#">摇表</a></span><span class="linesbg"><a href="#">钳形表</a></span><span class="linesbg"><a href="#">电桥</a></span><span class="linesbg"><a href="#">电阻箱</a></span><span class="linesbg"><a href="#">电能表</a></span><span class="linesbg"><a href="#">电压测量仪表</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">电子测量仪器</a></strong>
+                <p><span class="linesbg"><a href="#">示波器</a></span><span class="linesbg"><a href="#">场强仪</a></span><span class="linesbg"><a href="#">LCR测量仪</a></span><span class="linesbg"><a href="#">参数测量仪</a></span><span class="linesbg"><a href="#">元件测试仪</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部仪器仪表</span></a></div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">网络安防/通信广电设备</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis6" style="display: none; ">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"> <strong><a href="#">网络设备</a></strong>
+                <p><span class="linesbg"><a href="#">网络交换机</a></span><span class="linesbg"><a href="#">磁盘阵列</a></span><span class="linesbg"><a href="#">网关</a></span><span class="linesbg"><a href="#">VPN设备</a></span><span class="linesbg"><a href="#">路由器</a></span><span class="linesbg"><a href="#">网卡</a></span><span class="linesbg"><a href="#">modem/调制解调器</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">通信设备</a></strong>
+                <p><span class="linesbg"><a href="#">无线电导航设备</a></span><span class="linesbg"><a href="#">传输设备</a></span><span class="linesbg"><a href="#">交换设备</a></span><span class="linesbg"><a href="#">终端设备</a></span><span class="linesbg"><a href="#">移动通信设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">无线网络设备</a></strong>
+                <p><span class="linesbg"><a href="#">无线路由器</a></span><span class="linesbg"><a href="#">无线AP</a></span><span class="linesbg"><a href="#">无线上网卡</a></span><span class="linesbg"><a href="#">无线网卡</a></span><span class="linesbg"><a href="#">其它无线网络设备</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">网络管理、安全设备</a></strong>
+                <p><span class="linesbg"><a href="#">物理安全隔离设备</a></span><span class="linesbg"><a href="#">负载均衡器</a></span><span class="linesbg"><a href="#">流量管理</a></span><span class="linesbg"><a href="#">入侵监测设备</a></span><span class="linesbg"><a href="#">无线安全保密设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">综合布线</a></strong>
+                <p><span class="linesbg"><a href="#">光纤线缆</a></span><span class="linesbg"><a href="#">双纹线</a></span><span class="linesbg"><a href="#">光纤跳线</a></span><span class="linesbg"><a href="#">水晶头</a></span><span class="linesbg"><a href="#">光纤耦合器</a></span><span class="linesbg"><a href="#">配线架</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">广播电视设备</a></strong>
+                <p><span class="linesbg"><a href="#">音频节目制作与播控设备</a></span><span class="linesbg"><a href="#">音响录音设备</a></span><span class="linesbg"><a href="#">视频节目制作和播控设备</a></span><span class="linesbg"><a href="#">显示设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">安防监控系统</a></strong>
+                <p><span class="linesbg"><a href="#">防盗报警系统/器材</a></span><span class="linesbg"><a href="#">视频监控系统</a></span><span class="linesbg"><a href="#">智能卡</a></span><span class="linesbg"><a href="#">电子巡更产品</a></span><span class="linesbg"><a href="#">安检防爆器材</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部网络安防/通信广电设备</span></a></div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">电脑/办公设备</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis7" style="display: none; ">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"> <strong><a href="#">办公耗材</a></strong>
+                <p><span class="linesbg"><a href="#">硒鼓、粉盒</a></span><span class="linesbg"><a href="#">碳粉</a></span><span class="linesbg"><a href="#">墨盒</a></span><span class="linesbg"><a href="#">墨水</a></span><span class="linesbg"><a href="#">鼓芯</a></span><span class="linesbg"><a href="#">考勤卡</a></span><span class="linesbg"><a href="#">过塑膜</a></span><span class="linesbg"><a href="#">装订夹条</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">办公家具</a></strong>
+                <p><span class="linesbg"><a href="#">办公桌/电脑桌</a></span><span class="linesbg"><a href="#">办公椅/电脑椅</a></span><span class="linesbg"><a href="#">保险柜</a></span><span class="linesbg"><a href="#">办公沙发</a></span><span class="linesbg"><a href="#">文件柜/档案柜/办公柜</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">复印、打印、扫描设备</a></strong>
+                <p><span class="linesbg"><a href="#">刻字机</a></span><span class="linesbg"><a href="#">扫描仪</a></span><span class="linesbg"><a href="#">复印机</a></span><span class="linesbg"><a href="#">喷绘机</a></span><span class="linesbg"><a href="#">传真机</a></span><span class="linesbg"><a href="#">高拍仪</a></span><span class="linesbg"><a href="#">胶印机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">整理、装订设备</a></strong>
+                <p><span class="linesbg"><a href="#">订书机/器</a></span><span class="linesbg"><a href="#">封装机</a></span><span class="linesbg"><a href="#">碎纸机</a></span><span class="linesbg"><a href="#">覆膜机</a></span><span class="linesbg"><a href="#">塑封机/过塑机</a></span><span class="linesbg"><a href="#">冷裱机</a></span><span class="linesbg"><a href="#">折纸机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">投影、显示设备</a></strong>
+                <p><span class="linesbg"><a href="#">投影机/投影仪</a></span><span class="linesbg"><a href="#">投影幕布</a></span><span class="linesbg"><a href="#">幻灯机</a></span><span class="linesbg"><a href="#">激光笔</a></span><span class="linesbg"><a href="#">液晶显示屏</a></span><span class="linesbg"><a href="#">电子白板</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">办公通讯设备</a></strong>
+                <p><span class="linesbg"><a href="#">电话会议</a></span><span class="linesbg"><a href="#">录音电话机</a></span><span class="linesbg"><a href="#">集团电话</a></span><span class="linesbg"><a href="#">网络电话</a></span><span class="linesbg"><a href="#">固定电话</a></span><span class="linesbg"><a href="#">短信系统</a></span><span class="linesbg"><a href="#">声讯系统</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">行政、财务设备</a></strong>
+                <p><span class="linesbg"><a href="#">点钞机</a></span><span class="linesbg"><a href="#">验钞机</a></span><span class="linesbg"><a href="#">考勤机</a></span><span class="linesbg"><a href="#">现金出纳机</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">电脑配件与外设</a></strong>
+                <p><span class="linesbg"><a href="#">液晶显示器</a></span><span class="linesbg"><a href="#">主板</a></span><span class="linesbg"><a href="#">机箱</a></span><span class="linesbg"><a href="#">硬盘</a></span><span class="linesbg"><a href="#">电源</a></span><span class="linesbg"><a href="#">内存</a></span><span class="linesbg"><a href="#">CPU</a></span><span class="linesbg"><a href="#">手写板</a></span><span class="linesbg"><a href="#">鼠标</a></span><span class="linesbg"><a href="#">键盘</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部电脑/办公设备</span></a></div>
+    </div>
+</dd>
+<dd>
+    <h3><a href="#">交通运输</a></h3>
+    <s></s>
+    <div class="sidebar_popup dis8">
+        <div class="sidebar_popup_class clearfix">
+            <div class="sidebar_popup_item"> <strong><a href="#">机动车</a></strong>
+                <p><span class="linesbg"><a href="#">货车</a></span> <span class="linesbg"><a href="#">客车</a></span> <span class="linesbg"><a href="#">电车</a></span> <span class="linesbg"><a href="#">摩托车</a></span> <span class="linesbg"><a href="#">牵引车</a></span> <span class="linesbg"><a href="#">拖拉机</a></span> <span class="linesbg"><a href="#">专用汽车</a></span> <span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">电动车</a></strong>
+                <p><span class="linesbg"><a href="#">电动汽车</a></span><span class="linesbg"><a href="#">电动自行车</a></span><span class="linesbg"><a href="#">电动三轮车</a></span><span class="linesbg"><a href="#">电瓶车</a></span><span class="linesbg"><a href="#">高尔夫球车</a></span><span class="linesbg"><a href="#">电动滑板车</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">非机动车</a></strong>
+                <p><span class="linesbg"><a href="#">自行车</a></span><span class="linesbg"><a href="#">三轮车</a></span><span class="linesbg"><a href="#">电动摩托车</a></span><span class="linesbg"><a href="#">电动三轮车</a></span><span class="linesbg"><a href="#">手推车</a></span><span class="linesbg"><a href="#">轮椅</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">非机动车配件</a></strong>
+                <p><span class="linesbg"><a href="#">车架</a></span><span class="linesbg"><a href="#">车轴</a></span><span class="linesbg"><a href="#">车闸</a></span><span class="linesbg"><a href="#">轮胎</a></span><span class="linesbg"><a href="#">轮毂</a></span><span class="linesbg"><a href="#">电动车电机</a></span><span class="linesbg"><a href="#">电动车控制器</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">加油站设备</a></strong>
+                <p><span class="linesbg"><a href="#">加油机</a></span><span class="linesbg"><a href="#">加油枪</a></span><span class="linesbg"><a href="#">油罐</a></span><span class="linesbg"><a href="#">油漏斗</a></span><span class="linesbg"><a href="#">加油管</a></span><span class="linesbg"><a href="#">加油车</a></span><span class="linesbg"><a href="#">流量计</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item"> <strong><a href="#">停车场设备</a></strong>
+                <p><span class="linesbg"><a href="#">智能停车场管理系统</a></span><span class="linesbg"><a href="#">机械式停车设备</a></span><span class="linesbg"><a href="#">读卡机</a></span><span class="linesbg"><a href="#">道闸/挡车器</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">道路交通管理设施</a></strong>
+                <p><span class="linesbg"><a href="#">路障</a></span><span class="linesbg"><a href="#">防护网</a></span><span class="linesbg"><a href="#">反光材料</a></span><span class="linesbg"><a href="#">防撞设施</a></span><span class="linesbg"><a href="#">道路减速设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+            <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                <p><span class="linesbg"><a href="#">港口装卸设备</a></span><span class="linesbg"><a href="#">轨道铁路线路机械</a></span><span class="linesbg"><a href="#">船舶及航道设备</a></span><span class="linesbg"><a href="#">机场专用设备</a></span><span class="more"><a href="#">更多</a></span></p>
+            </div>
+        </div>
+        <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部交通运输</span></a></div>
+    </div>
+</dd>
+</dl>
+
+<dl class="sidebar_item">
+    <dt><i class="sidebar_item_icon03"></i><span>商务服务</span></dt>
+    <dd>
+        <h3><a href="#">定制加工</a></h3>
+        <s></s>
+        <div class="sidebar_popup dis19">
+            <div class="sidebar_popup_class clearfix">
+                <div class="sidebar_popup_item"> <strong><a href="#">金属加工</a></strong>
+                    <p><span class="linesbg"><a href="#">压力加工</a></span><span class="linesbg"><a href="#">切削加工</a></span><span class="linesbg"><a href="#">钣金加工</a></span><span class="linesbg"><a href="#">电镀加工</a></span><span class="linesbg"><a href="#">线切割加工</a></span><span class="linesbg"><a href="#">铸造</a></span><span class="linesbg"><a href="#">热处理</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong></strong>
+                    <p><span class="linesbg"><a href="#">管类加工</a></span><span class="linesbg"><a href="#">轴类加工</a></span><span class="linesbg"><a href="#">壳体加工</a></span><span class="linesbg"><a href="#">齿轮加工</a></span><span class="linesbg"><a href="#">轴承加工</a></span><span class="linesbg"><a href="#">孔加工</a></span><span class="linesbg"><a href="#">非标零件加工</a></span><span class="more"></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">服装服饰加工</a></strong>
+                    <p><span class="linesbg"><a href="#">服装加工</a></span><span class="linesbg"><a href="#">饰品加工</a></span><span class="linesbg"><a href="#">体育运动产品加工</a></span><span class="linesbg"><a href="#">服饰加工</a></span><span class="linesbg"><a href="#">鞋材、鞋件加工</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">塑料加工</a></strong>
+                    <p><span class="linesbg"><a href="#">注塑加工</a></span><span class="linesbg"><a href="#">挤塑加工</a></span><span class="linesbg"><a href="#">吹塑加工</a></span><span class="linesbg"><a href="#">吸塑加工</a></span><span class="linesbg"><a href="#">压塑加工</a></span><span class="linesbg"><a href="#">铸塑加工</a></span><span class="linesbg"><a href="#">塑料表面处理</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">电子加工</a></strong>
+                    <p><span class="linesbg"><a href="#">贴片加工</a></span><span class="linesbg"><a href="#">插件加工</a></span><span class="linesbg"><a href="#">邦定加工</a></span><span class="linesbg"><a href="#">焊接加工</a></span><span class="linesbg"><a href="#">电子组装加工</a></span><span class="linesbg"><a href="#">其他电子加工</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">家电数码加工</a></strong>
+                    <p><span class="linesbg"><a href="#">电脑产品加工</a></span><span class="linesbg"><a href="#">家用电器加工</a></span><span class="linesbg"><a href="#">照明加工</a></span><span class="linesbg"><a href="#">通讯产品加工</a></span><span class="linesbg"><a href="#">音像制品加工</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">文教用品加工</a></strong>
+                    <p><span class="linesbg"><a href="#">玩具设计加工</a></span><span class="linesbg"><a href="#">办公文教用品加工</a></span><span class="linesbg"><a href="#">纸加工</a></span><span class="linesbg"><a href="#">纸品加工</a></span><span class="linesbg"><a href="#">娱乐休闲产品加工</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                    <p><span class="linesbg"><a href="#">汽摩配件加工</a></span><span class="linesbg"><a href="#">仪器仪表加工</a></span><span class="linesbg"><a href="#">建材加工</a></span><span class="linesbg"><a href="#">家居用品加工</a></span><span class="linesbg"><a href="#">工艺礼品加工</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+            </div>
+            <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部定制加工</span></a></div>
+        </div>
+    </dd>
+    <dd>
+        <h3><a href="#">商务与消费服务</a></h3>
+        <s></s>
+        <div class="sidebar_popup dis20">
+            <div class="sidebar_popup_class clearfix">
+                <div class="sidebar_popup_item"> <strong><a href="#">建筑业</a></strong>
+                    <p><span class="linesbg"><a href="#">土木工程建筑</a></span><span class="linesbg"><a href="#">建筑安装</a></span><span class="linesbg"><a href="#">建筑装饰</a></span><span class="linesbg"><a href="#">勘察设计</a></span><span class="linesbg"><a href="#">施工监理</a></span><span class="linesbg"><a href="#">工程承包</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">仓储物流业</a></strong>
+                    <p><span class="linesbg"><a href="#">铁路运输</a></span><span class="linesbg"><a href="#">公路运输</a></span><span class="linesbg"><a href="#">国内水运</a></span><span class="linesbg"><a href="#">国内空运</a></span><span class="linesbg"><a href="#">国际海运</a></span><span class="linesbg"><a href="#">国际空运</a></span><span class="linesbg"><a href="#">邮政快递业</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">房地产业</a></strong>
+                    <p><span class="linesbg"><a href="#">物业管理</a></span><span class="linesbg"><a href="#">地产中介</a></span><span class="linesbg"><a href="#">建筑清洁</a></span><span class="linesbg"><a href="#">专业保洁</a></span><span class="linesbg"><a href="#">房产咨询</a></span><span class="linesbg"><a href="#">不动产</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">教育培训</a></strong>
+                    <p><span class="linesbg"><a href="#">职业培训</a></span><span class="linesbg"><a href="#">拓展培训</a></span><span class="linesbg"><a href="#">管理培训</a></span><span class="linesbg"><a href="#">语言培训</a></span><span class="linesbg"><a href="#">资格考试培训</a></span><span class="linesbg"><a href="#">电脑IT培训</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">商务服务</a></strong>
+                    <p><span class="linesbg"><a href="#">法律服务</a></span><span class="linesbg"><a href="#">翻译服务</a></span><span class="linesbg"><a href="#">认证服务</a></span><span class="linesbg"><a href="#">财务会计</a></span><span class="linesbg"><a href="#">公关策划</a></span><span class="linesbg"><a href="#">知识产权</a></span><span class="linesbg"><a href="#">产权转让</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">创意设计服务</a></strong>
+                    <p><span class="linesbg"><a href="#">服装设计</a></span><span class="linesbg"><a href="#">平面审计</a></span><span class="linesbg"><a href="#">包装设计</a></span><span class="linesbg"><a href="#">工业设计服务</a></span><span class="linesbg"><a href="#">装潢设计</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">文化传媒娱乐业</a></strong>
+                    <p><span class="linesbg"><a href="#">演出票务</a></span><span class="linesbg"><a href="#">经纪服务</a></span><span class="linesbg"><a href="#">体育组织</a></span><span class="linesbg"><a href="#">演出服务</a></span><span class="linesbg"><a href="#">影视节目制作</a></span><span class="linesbg"><a href="#">拍卖服务</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">其它</a></strong>
+                    <p><span class="linesbg"><a href="#">管理咨询</a></span><span class="linesbg"><a href="#">住宿服务</a></span><span class="linesbg"><a href="#">贸易咨询</a></span><span class="linesbg"><a href="#">投资咨询</a></span><span class="linesbg"><a href="#">专业技术服务</a></span><span class="linesbg"><a href="#">搬家服务</a></span><span class="linesbg"><a href="#">心理咨询</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+            </div>
+            <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部商务与消费服务</span></a></div>
+        </div>
+    </dd>
+    <dd>
+        <h3><a href="#">库存与二手</a></h3>
+        <s></s>
+        <div class="sidebar_popup dis21">
+            <div class="sidebar_popup_class clearfix">
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">库存产品</a></strong>
+                    <p><span class="linesbg"><a href="#">库存电脑产品</a></span><span class="linesbg"><a href="#">库存玩具</a></span><span class="linesbg"><a href="#">库存家居用品</a></span><span class="linesbg"><a href="#">库存家用电器</a></span><span class="linesbg"><a href="#">库存电工电气产品</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">二手设备</a></strong>
+                    <p><span class="linesbg"><a href="#">二手机床</a></span><span class="linesbg"><a href="#">二手电子加工设备</a></span><span class="linesbg"><a href="#">二手电脑</a></span><span class="linesbg"><a href="#">二手建材加工设备</a></span><span class="linesbg"><a href="#">二手家用电器</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+            </div>
+            <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部库存与二手</span></a></div>
+        </div>
+    </dd>
+    <dd>
+        <h3><a href="#">代理加盟与项目合作</a></h3>
+        <s></s>
+        <div class="sidebar_popup dis22">
+            <div class="sidebar_popup_class clearfix">
+                <div class="sidebar_popup_item"> <strong><a href="#">代理加盟</a></strong>
+                    <p><span class="linesbg"><a href="#">医药代理</a></span><span class="linesbg"><a href="#">医疗器械代理</a></span><span class="linesbg"><a href="#">保健品代理</a></span><span class="linesbg"><a href="#">服装代理</a></span><span class="linesbg"><a href="#">农产品代理</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item"> <strong><a href="#">项目合作</a></strong>
+                    <p><span class="linesbg"><a href="#">电子项目</a></span><span class="linesbg"><a href="#">医药项目</a></span><span class="linesbg"><a href="#">保健项目</a></span><span class="linesbg"><a href="#">印刷项目</a></span><span class="linesbg"><a href="#">玩具项目</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+                <div class="sidebar_popup_item nobg"> <strong><a href="#">特许经营</a></strong>
+                    <p><span class="linesbg"><a href="#">中介服务</a></span><span class="linesbg"><a href="#">教育培训</a></span><span class="linesbg"><a href="#">美容健身</a></span><span class="linesbg"><a href="#">餐饮娱乐</a></span><span class="linesbg"><a href="#">零售百货超市</a></span><span class="more"><a href="#">更多</a></span></p>
+                </div>
+            </div>
+            <div class="sidebar_popup_all"><a href="#"><span class="linesbg">查看全部代理加盟与项目合作</span></a></div>
+        </div>
+    </dd>
+</dl>
+</div>
+
+<div class="sidebar_bottom"></div>
+
+</div><!--sidebar end-->
+
+
+</div>
+
+</body>
+</html>

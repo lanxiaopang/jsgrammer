@@ -1,0 +1,137 @@
+@charset "utf-8";
+body{
+    cursor: hand;
+    background-image:url("http://10.su.bdimg.com/skin/19.jpg");
+}
+.wrapper{
+    width: 910px;
+    height:540px;
+    margin: 0 auto;
+}
+.tab {
+    padding: 0px;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    /*background: #fff;*/
+    width: 910px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #888;
+}
+
+.tabs {
+    display: table;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    height:400px;
+    float:left;
+}
+.tab_content{
+    width: 810px;
+    height:400px;
+    float:right;
+}
+
+.tabs li {
+    line-height: 38px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.tabs a {
+    background-color: #eff0f2;
+    border-bottom: 1px solid #fff;
+    color: #888;
+    font-weight: 500;
+    display: block;
+    letter-spacing: 0;
+    outline: none;
+    padding: 0 10px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.tabs_item {
+    width: 800px;
+    padding: 30px 0;
+}
+
+.tabs_item h4 {
+    font-weight: bold;
+    color: #87d3b7;
+    font-size: 16px;
+}
+
+.tabs_item img {
+    width: 800px;
+    float: left;
+    margin-right: 30px;
+}
+
+.tabs_item:first-child {
+    display: block;
+}
+.current{
+    filter: none !important;
+    background: url('../img/menu_current.png') no-repeat scroll 0% 0% transparent !important;
+    border-right: medium none !important;
+    text-shadow: none !important;
+    width: 80px;
+}
+
+.current a {
+    color: #fff;
+    background: #87d3b7;
+}
+.top_wrapper{
+    width: 910px;
+    height:auto;
+    text-align: center;
+}
+.btn{
+    width: 105px;
+    height: 40px;
+    padding: 0px;
+    border: 0px none;
+    background-color: #DDD;
+    cursor: pointer;
+    font-size: 16px;
+    background-image: url('http://su.bdimg.com/static/superplus/img/skin_dark_ie_e65e0521.png');
+}
+.top_wrapper p{
+    margin:0;
+}
+#kw1{
+    padding: 10px 9px 10px 7px;
+    border: 0px none;
+    background-image: none;
+    height: 20px;
+    line-height: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+}
+.bot_wrapper{
+    width: 910px;
+    height:300px;
+    margin: 50px auto;
+}
+#nv{
+    text-align: center;
+}
+#nv a,b{
+    color: #fff;
+    font-size: 14px;
+    margin-left: 12px;
+    font-family: arial,'Hiragino Sans GB','Microsoft Yahei','微软雅黑','宋体','宋体',Tahoma,Arial,Helvetica,STHeiti;
+}
