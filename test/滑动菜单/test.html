@@ -13,13 +13,14 @@ javascript：hover()触发移动鼠标到导航nav的动作，和移出导航nav
     <style type="text/css">
         body {
             font-family: "Microsoft YaHei";
+            text-align: center;
         }
 
         #nav_wrapper {
             position: relative;
-            width: 835px;
+            width: 635px;
             margin: 80px auto;
-            border-bottom: 2px #ddd solid;
+
         }
 
         #nav_wrapper #nav_menu {
@@ -30,7 +31,7 @@ javascript：hover()触发移动鼠标到导航nav的动作，和移出导航nav
             display: block;
             float: left;
             height: 50px;
-            padding: 0 40px;
+            padding: 0 10px;
             line-height: 50px;
             color: #666;
             font-size: 16px;
@@ -74,16 +75,19 @@ javascript：hover()触发移动鼠标到导航nav的动作，和移出导航nav
     </script>
 </head>
 <body>
-<div id="nav_wrapper">
-    <div id="nav_menu">
-        <a href="#" id="current_nav">首页</a>
-        <a href="#">产品列表</a>
-        <a href="#">客户案例</a>
-        <a href="#">服务平台</a>
-        <a href="#">交流论坛</a>
-        <a href="#">关于我们</a>
+<div style="margin: 0 auto;width: 800px;text-align: center;border:1px solid red;">
+    <img id="logo" src="img/logo.gif">
+    <div id="nav_wrapper">
+        <div id="nav_menu">
+            <a href="#" id="current_nav">首页</a>
+            <a href="#">产品列表</a>
+            <a href="#">客户案例</a>
+            <a href="#">服务平台</a>
+            <a href="#">交流论坛</a>
+            <a href="#">关于我们</a>
+        </div>
+        <div id="nav_animate_block"></div>
     </div>
-    <div id="nav_animate_block"></div>
 </div>
 </body>
 </html> 

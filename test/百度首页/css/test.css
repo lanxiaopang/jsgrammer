@@ -78,11 +78,10 @@ body{
     height:200px;
     float: right;
     /*background: linear-gradient(rgba(255, 255, 255, 0.7) 0px, rgba(255, 255, 255, 0.7) 100%) repeat scroll 0% 0% transparent !important;*/
-}
-.current{
-    filter: none !important;
-    background: url('../img/menu_current.png') no-repeat scroll 0% 0% transparent !important;
-    border-right: medium none !important;
-    text-shadow: none !important;
-    width: 80px;
-}
+}.current{
+     filter: none !important;
+     background: url('../img/menu_current.png') no-repeat scroll 0% 0% transparent !important;
+     border-right: medium none !important;
+     text-shadow: none !important;
+     width: 80px;
+ }
