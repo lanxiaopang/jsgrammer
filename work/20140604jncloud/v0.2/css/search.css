@@ -21,6 +21,7 @@
     height:30px;
     background-color: #424242;
     text-align: right;
+    /*margin-bottom: 80px;*/
 }
 #wrapper_head p{
     color: #ffffff;
@@ -40,25 +41,32 @@
 /*中部开始*/
 #wrapper_mid {
     width: 100%;
-
+    margin-top:80px;
     /*中部定义最小高度*/
-    height:auto !important;
-    height:630px;
-    min-height:630px;
+    /*height:auto !important;
+    height:auto;
+    min-height:auto;*/
+    /*text-align: center;*/
+}
+#search_area {
+    width: 752px;
+    height: 92px;
+   /* margin-top:80px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    text-align: center;
-}
 #logo {
-    width: 260px;
-    height: 69px;
-    margin-top: 100px;
+    float:left;
+    margin-top: 26px;
 }
+
 
 #nav_wrapper {
     position: relative;
-    width: 790px;
-    margin: 40px auto;
-    text-align: left;
+    width: 554px;
+    margin-left:8px;
+    float: left;
 }
 
 
@@ -72,7 +80,7 @@
 #nav_wrapper #nav_menu a {
     display: block;
     float: left;
-    padding: 0 10px;
+    padding: 0 7px;
     font-family: "方正正准黑",Microsoft JhengHei,STHeiti;
     font-size: 18px;
     font-weight: 600;
@@ -92,72 +100,55 @@
 
 /*搜索框*/
 #search_con {
-    width:100%;
-    height:50px;
-
+    width:554px;
+    height:34px;
 }
 
+
 .con_btn {
-    width: 630px;
+    width: 476px;
     height:30px;
-    border: 1px solid #3d7cc2;
+    border: 2px solid #0089d1;
     background-color: #ffffff;
     float: left;
 }
 
+#search_btn {
+    float: left;
+    margin-left: 5px;
+}
+
+#search_status {
+    width:542px;
+    height:14px;
+    margin-top: 8px;
+}
+#sys_status{
+    display: block;
+    float:left;
+}
+.red{
+    color: #ff0000;
+}
+.adv_search {
+    float: right;
+}
+
 /*tab页*/
 .tab_con {
-    width: 790px;
+    width: 746px;
     height:300px;
-    margin: 50px auto;
+    margin-top:47px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
-
-
-
-/*底部开始*/
-#wrapper_bot {
-    width: 100%;
-    height: 85px;
-    background-color: #E8DECF;
-    text-align: center;
-    padding-top:15px;
-}
-#wrapper_bot p{
-    text-align: center;
-    height: 25px;
-    line-height:25px;
-}
-#bot_p_list{
-    color: #3e7ec4;
-}
-#bot_p_list a {
-    display: inline;
-    margin: 0 15px;
-}
-#copyright {
-    color: #6D6860;
-}
-
-.adv_search {
-    height:45px;
-    line-height: 45px;
-    font-size: 14px;
-    float: left;
-    margin-left:10px;
-}
-
-
-
-/*temp*/
 .l_box{
     width: 80px;
     height:260px;
     float: left;
-    background-color: #F4EADA;
+    background-color: #e9eaea;
 }
-.l_box a{
+.tab{
     width: 80px;
     height:34px;
     line-height: 33px;
@@ -168,6 +159,7 @@
     display: inline-block;
     position: relative;
     text-decoration: none;
+    letter-spacing:1px;
 }
 .l_box a:hover{
     background-image: url("../img/menu.gif");
@@ -175,10 +167,9 @@
     color:#ffffff;
 }
 .r_box{
-    width: 630px;
+    width: 650px;
     height:260px;
     float: right;
-    margin-right:65px;
     background-color: #f5f5f5;
 }
 .current_tab{
@@ -187,10 +178,12 @@
     border-right: medium none !important;
     text-shadow: none !important;
     width: 80px;
+    color:#ffffff;
+
 }
 
 .r_content_1 {
-    width: 630px;
+    width: 100%;
     height: 260px;
 }
 .pics{
@@ -200,6 +193,50 @@
     margin-top:3px;
     margin-left:3px;
 }
+
+
+
+
+
+/*底部开始*/
+#wrapper_bot {
+    width: 100%;
+    height: 32px;
+    background-color: #dedede;
+    position: absolute;
+    bottom:0px;
+}
+#wrapper_bot p{
+    text-align: left;
+    height: 32px;
+    line-height:32px;
+}
+#bot_p_list{
+    color: #3e7ec4;
+    float: left;
+}
+#bot_p_list a {
+    display: inline;
+    margin: 0 15px;
+}
+#copyright {
+    color: #6D6860;
+    float: right;
+}
+
+
+
+
+
+/*temp*/
+/*强制去掉垂直滚动条*/
+html{
+    overflow-y:auto;
+}
+
+
+
+
 
 
 

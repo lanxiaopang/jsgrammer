@@ -63,9 +63,9 @@ function switchTab(ProTag, ProBox) {
     for (i = 1; i < 4; i++) {
         /*选中的样式*/
         if ("tab" + i == ProTag) {
-            document.getElementById(ProTag).className = "current_tab";
+            document.getElementById(ProTag).className = "tab current_tab";
         } else {
-            document.getElementById("tab" + i).className = "";
+            document.getElementById("tab" + i).className = "tab";
         }
 
         /*选项页变化*/

@@ -18,27 +18,34 @@
 
 
     <div id="wrapper_mid">
-        <img id="logo" src="img/logo.gif">
-        <div id="nav_wrapper">
-            <div id="nav_menu">
-                <a href="#" id="current_nav" class="blue_color">信息资源</a>
-                <a href="#" class="blue_color">人像图片</a>
-                <a href="#" class="blue_color">视频信息</a>
-                <a href="#" class="blue_color">公安网页</a>
-                <a href="#" class="blue_color">公安文档</a>
-            </div>
-            <div id="nav_animate_block"></div>
-            <div id="search_con">
-                <input type="text" class="con_btn" />
-                <img src="img/search.gif" style="float: left">
-                <a href="#" class="blue_link adv_search">高级搜索</a>
+
+        <div id="search_area">
+            <img id="logo" src="img/logo2.gif">
+            <div id="nav_wrapper">
+                <div id="nav_menu">
+                    <a href="#" id="current_nav" class="blue_color">信息资源</a>
+                    <a href="#" class="blue_color">人像图片</a>
+                    <a href="#" class="blue_color">视频信息</a>
+                    <a href="#" class="blue_color">公安网页</a>
+                    <a href="#" class="blue_color">公安文档</a>
+                </div>
+                <div id="nav_animate_block"></div>
+                <div id="search_con">
+                    <input type="text" class="con_btn" />
+                    <img id="search_btn" src="img/search2.gif" >
+                </div>
+                <div id="search_status">
+                    <span id="sys_status">系统内共有数据<span class="red">1268888886</span>条</span>
+                    <a href="#" class="blue_link adv_search">高级搜索</a>
+                </div>
             </div>
         </div>
+
         <div class="tab_con">
             <div class="l_box">
-                <a href="#" id="tab1" class="current_tab" onclick="switchTab('tab1','r_content_1')">推荐应用</a>
-                <a href="#" id="tab2" onclick="switchTab('tab2','r_content_2')">警务指数</a>
-                <a href="#" id="tab3" onclick="switchTab('tab3','r_content_3')">资源种类</a>
+                <a href="#" id="tab1" class="tab current_tab" onclick="switchTab('tab1','r_content_1')">推荐应用</a>
+                <a href="#" id="tab2" class="tab" onclick="switchTab('tab2','r_content_2')">警务指数</a>
+                <a href="#" id="tab3" class="tab" onclick="switchTab('tab3','r_content_3')">资源种类</a>
             </div>
             <div class="r_box">
                 <div id="r_content_1" class="r_content_1">
@@ -71,18 +78,15 @@
                     <div id="pic3_2_3" class="pics"><img src="img/pic_1.gif"></div>
                     <div id="pic3_2_4" class="pics"><img src="img/pic_1.gif"></div>
                 </div>
-                <!--<div id="r_content_4" class="r_content_4" style="display: none"><img src="img/music.jpg" /></div>-->
+                <div id="r_content_4" class="r_content_4" style="display: none"><img src="img/music.jpg" /></div>
             </div>
         </div>
     </div>
 
 
     <div id="wrapper_bot">
-        <p>
-            <a href="#" class="blue_link">添加收藏</a>
-        </p>
         <p id="bot_p_list">
-            <a href="#" class="blue_link">平台简介</a>|<a href="#" class="blue_link">使用说明</a>|<a href="#" class="blue_link">关于平台</a>|<a href="#" class="blue_link">警综平台</a>|<a href="#" class="blue_link">市局首页</a>
+            <a href="#" class="blue_link">使用说明</a>|<a href="#" class="blue_link">警综平台</a>|<a href="#" class="blue_link">市局首页</a>
         </p>
         <p id="copyright">
             @2013 济南市公安局科技信息通信处技术支持 电话：80858，83349
