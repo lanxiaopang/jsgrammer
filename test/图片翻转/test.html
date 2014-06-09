@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <SCRIPT language="JavaScript" type="text/javascript">
+        var wdmax = 400;
+        var wdmin = 0;
+        var inc = 5;
+        var rate = 5;
+        var pause = 1000;
+        var ff = "flip";
+        function flipflop() {
+            if (ff == "flip") {
+                var wd = pic.width;
+                wd = wd - inc;
+                pic.width = wd;
+                if (wd == wdmin) {
+                    pic.src = "/image/3.jpg";
+                    inc = -inc;
+                }
+                if (wd == wdmax) {
+                    ff = "flop";
+                    inc = -inc;
+                    setTimeout("flipflop()", pause);
+                }
+                else {
+                    setTimeout("flipflop()", rate);
+                }
+            }
+            else {
+                var ht = pic.height;
+                ht = ht - inc;
+                pic.height = ht;
+                if (ht == wdmin) {
+                    pic.src = "/image/2.jpg";
+                    inc = -inc;
+                }
+                if (ht == wdmax) {
+                    ff = "flip";
+                    inc = -inc;
+                    setTimeout("flipflop()", pause);
+                }
+                else {
+                    setTimeout("flipflop()", rate);
+                }
+            }
+        }
+    </SCRIPT>
+</head>
+
+    <body onLoad="javascript:flipflop()">
+    <TABLE border="0">
+        <th width="160" height="160">
+            <img src="/image/1.jpg" width="400" height="300" ID="pic" style="cursor:pointer;"
+                  onclick="javascript:window.open(this.src);"
+                 style="cursor:pointer;"/>
+        </th>
+    </TABLE>
+</body>
+</html>

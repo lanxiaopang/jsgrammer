@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <title>测试下</title>
+    <style>
+        #search_btn {
+            width: 66px;
+            height: 34px;
+            float: left;
+            margin-left: 5px;
+            background-image: url("images/search2.gif");
+            position: absolute;
+        }
+        #search_con {
+            position: relative;
+        }
+        #search_con span{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="search_con">
+        <input type="text" class="con_btn" />
+        <a id="search_btn" href ="#"></a>
+        <span style="display:none;"><img src="images/search3.gif"></span>
+    </div>
+
+    <li>
+        <a href="#"> </a>
+        <img src="images/1.jpg" />
+        <span><img src="images/2.jpg"></span>
+    </li>
+
+
+<script>
+    $(function(){
+        var aLi = $('search_con');
+        var aImg =  $('search_btn');
+        var aSpan = $('#search_con span');
+        aLi.mouseover(function(){
+            aSpan.stop();
+            aImg.stop();
+            aImg.css({zIndex:1}).animate({
+                top:37,
+                height:0
+            },80,'',function(){
+                $(this).hide();
+                aSpan.show().css({zIndex:2}).animate({
+                    top:0,
+                    height:75
+                },80)
+            })
+        })
+        $(this).mouseout(function(){
+            aSpan.stop();
+            aImg.stop();
+            aSpan.css({zIndex:1}).animate({
+                top:37,
+                height:0
+            },80,'',function(){
+                $(this).hide();
+                aImg.show().css({zIndex:2}).animate({
+                    top:0,
+                    height:75
+                },80)
+            })
+        })
+    })
+</script>
+</body>
+</html>
