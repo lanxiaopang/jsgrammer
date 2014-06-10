@@ -1,5 +1,11 @@
 @charset "utf-8";
 /*全局样式*/
+
+
+/*强制去掉垂直滚动条*/
+html{
+    overflow-y:auto;
+}
 .wrapper {
     width: 100%;
     min-height: 100%;
@@ -154,11 +160,15 @@ a.cur_5:hover{
 
 
 .con_btn {
-    width: 476px;
+    width: 460px;
     height:30px;
     border: 2px solid #0089d1;
     background-color: #ffffff;
     float: left;
+    line-height: 30px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    padding: 0px 9px 0px 7px;;
 }
 
 
@@ -203,16 +213,12 @@ a.cur_5:hover{
     z-index:3;
 }
 
-
-
-/*
-#search_btn {
+.bd_box {
     width: 66px;
     height: 34px;
     float: left;
     margin-left: 5px;
-    background-image: url("../img/search2.gif");
-}*/
+}
 
 #search_status {
     width:542px;
@@ -263,9 +269,12 @@ a.cur_5:hover{
     color:#ffffff;
 }
 .r_box{
-    width: 650px;
+    width: 645px;
+    *width: 650px;
     height:260px;
     float: right;
+    padding-left:5px;
+    *padding-left: 0px;
     background-color: #f5f5f5;
 }
 .current_tab{
@@ -283,11 +292,36 @@ a.cur_5:hover{
     height: 260px;
 }
 .pics{
-    width: 151px;
-    height:126px;
+    width: 119px;
+    height:100px;
+    margin-top:18px;
+    margin-left:21px;
+    margin-right:19px;
+    margin-bottom:12px;
     float: left;
+}
+.pics img{
+    width: 119px;
+    height:38px;
+}
+.block {
+    width: 0px;
+    height:80px;
+    margin-top: 25px;
+    border-right:1px dashed #d5ccbe;
+    float: left;
+}
+
+.app_title {
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.app_describe{
+    width: 121px;
+    color: #9C9389;
     margin-top:3px;
-    margin-left:3px;
 }
 
 
@@ -319,21 +353,15 @@ a.cur_5:hover{
     color: #6D6860;
     float: right;
     margin-right: 13px;
+    display: inline;
 }
+
 
 
 /*temp*/
-/*强制去掉垂直滚动条*/
-html{
-    overflow-y:auto;
-}
 
-.bd_box {
-    width: 66px;
-    height: 34px;
-    float: left;
-    margin-left: 5px;
-}
+
+
 
 
 
