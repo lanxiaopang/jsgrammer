@@ -170,6 +170,11 @@ a.cur_5:hover{
     font-size: 16px;
     padding: 0px 9px 0px 7px;;
 }
+#tria{
+    position: absolute;
+    left:450px;
+    top:45px;
+}
 
 
 

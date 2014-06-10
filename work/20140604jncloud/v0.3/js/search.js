@@ -157,5 +157,15 @@ function switchTab(ProTag, ProBox) {
     }
 }
 
-
-/*图片翻转*/
+var ifShowHis = false;
+function showOrHide(obj){
+    if(ifShowHis){
+        //closeHisSearch();
+        ifShowHis=false;
+        $(obj).attr("src","img/arrow_2.gif")
+    }else{
+        //showHisSearch();
+        ifShowHis=true;
+        $(obj).attr("src","img/arrow_3.gif")
+    }
+}
