@@ -363,7 +363,11 @@ a.cur_5:hover{
 
 
 /*temp*/
-
+.test{
+    width: 66px;
+    height:34px;
+    display: block;
+}
 
 
 

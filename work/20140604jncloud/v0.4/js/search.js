@@ -97,7 +97,7 @@ $(function () {
 
 
     /*搜索按钮卡片翻转效果*/
-    var aLi = $('.in_box');
+    /*var aLi = $('.in_box');
     var aImg =  $('.in_box img');
     var aSpan = $('.in_box span');
     aLi.each(
@@ -130,28 +130,28 @@ $(function () {
                 },80)
             })
         })
+    })*/
+
+
+    /*搜索按钮卡片翻转效果二*/
+    var flag=true;
+    var foo = '';
+
+    $(".test").mousemove(function(){
+        if(flag){
+            foo = '<img src="img/search3.gif">';
+        }else{
+            foo = '<img src="img/search2.gif">';
+        }
+        var $this = $(this)
+        $(".test").flip({
+            direction: $this.attr("rel"),
+            color: $this.attr("rev"),
+            content: foo,
+            onEnd:function(){flag = !flag ;return false;}
+        })
+
     })
-
-
-//    /*搜索按钮卡片翻转效果二*/
-//    var flag=true;
-//    var foo = '';
-//
-//    $(".test").mousemove(function(){
-//        if(flag){
-//            foo = '<img src="search3.gif">';
-//        }else{
-//            foo = '<img src="search2.gif">';
-//        }
-//        var $this = $(this)
-//        $(".test").flip({
-//            direction: $this.attr("rel"),
-//            color: $this.attr("rev"),
-//            content: foo,
-//            onEnd:function(){flag = !flag ;return false;}
-//        })
-//
-//    })
 
 });
 
