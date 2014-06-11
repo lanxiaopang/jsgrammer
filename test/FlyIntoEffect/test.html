@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    //set style for NS4 to ''
+    if (document.layers)
+        var ns4def=''
+</script>
+
+<h2 id="flyin" style="position:relative;left:-400;font-style:italic" style=&{ns4def};><font face="Arial">欢迎光临阿里西西-www.k688.com</font></h2>
+
+
+<script language="JavaScript1.2">
+
+    if (document.getElementById||document.all)
+        var crossheader=document.getElementById? document.getElementById("flyin").style : document.all.flyin.style
+
+    function animatein(){
+        if (parseInt(crossheader.left)<0)
+            crossheader.left=parseInt(crossheader.left)+20
+        else{
+            crossheader.left=0
+            crossheader.fontStyle="normal"
+            clearInterval(start)
+        }
+    }
+
+    if (document.getElementById||document.all)
+        start=setInterval("animatein()",50)
+
+</script>
+
+</body>
+</html>
