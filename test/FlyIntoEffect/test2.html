@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>RunJS</title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{width:984px;}
+
+        li {
+            float: right;
+            width: 318px;
+            margin-right: 10px;
+            height: 343px;
+            position: relative;
+        }
+
+
+
+        .main {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .text {
+            width: 318px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+            position: absolute;
+            top: 45%;
+            left: -318px;
+            z-index: 9;
+            background-color: #000;
+            color: #fff;
+            font: '微软雅黑';
+        }
+
+        .opacity_layer {
+            background-color: #000;
+            opacity: 0.5;
+        }
+
+        .in_box{
+            width:66px;
+            height:34px;
+            /*overflow:hidden;*/
+            position:relative;
+        }
+        .test2{
+            width: 66px;
+            height:34px;
+        }
+
+        .test3{
+            position:absolute;
+            border:1px solid red;
+            left: -66px;
+            top:0px;
+            z-index: 9;
+            display: none;
+        }
+    </style>
+    <script id="jquery_183" type="text/javascript" class="library" src="jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<ul style="overflow:hidden;">
+    <li>
+        <img src="http://sandbox.runjs.cn/uploads/rs/198/kn8pai72/index_28.jpg">
+        <div class="text">
+            产品展示
+        </div>
+    </li>
+</ul>
+<div class="in_box" style="float:right;">
+    <a class="test2" href="#"><img src="img/search2.gif" /></a>
+    <a class="test3" href="#"><img src="img/search3.gif" /></a>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $("ul li").each(function(index, element) {
+            $(this).hover(function(){
+                //$(this).find(".main").addClass("opacity_layer");
+                $(this).find(".text").show().animate({"left":"0px"},300);
+            },function(){
+                //$(this).find(".main").removeClass("opacity_layer");
+                $(this).find(".text").css("left","-318px").hide();
+            })
+        });
+       $(".in_box").hover(
+           function(){
+               $(this).find(".test2").hide();
+               $(this).find(".test3").show().animate({"left":"0px"},1000);
+           },
+           function(){}
+       )
+
+    });
+</script>
+</body>
+</html>

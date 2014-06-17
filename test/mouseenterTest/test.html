@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{width: 66px;
+            height: 34px;
+        }
+        #s2{
+            position: relative;
+            top:0;
+            left:0;
+        }
+        #s3{
+            position: relative;
+            top:0;
+            left:0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<a id="s2" href="#"><img src="search2.gif"></a><a id="s3" href="#"><img src="search3.gif"></a>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+    $(function(){
+        //v0.1
+    /*$('#s2').on('mouseenter',function(event){
+        var direction = event.type=='mouseenter'?'-66px':'0px';
+        $('#s3').show().stop().animate({left:direction},1000);
+    });*/
+        //v0.2
+    $('#s2').mouseenter(function(){
+        //var direction = event.type=='mouseenter'?'-66px':'0px';
+        $('#s3').show().stop().animate({left:'-66px'},1000);
+    });
+    $('#s2').mouseleave(function(){
+        $('#s3').show().stop().animate({left:'0px'},1000);
+    });
+
+    })
+</script>
+</body>
+</html>

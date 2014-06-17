@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: verdana, arial; FONT-SIZE: 12px; PADDING-TOP: 0px
+        }
+        H3 {MARGIN: 10px; FONT-SIZE: 1.3em}
+        P {MARGIN: 10px}
+        A {TEXT-DECORATION: none; text-color: #007BEC}
+        A:hover {TEXT-DECORATION: underline}
+
+        A IMG {
+            BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px 10px 0px 0px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+        }
+        BODY {
+            PADDING-BOTTOM: 50px; PADDING-LEFT: 50px; PADDING-RIGHT: 50px; BACKGROUND: #fff; PADDING-TOP: 50px
+        }
+        .SplashFrame {
+            PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-LEFT: 36px; WIDTH: 497px; PADDING-RIGHT: 0px; BACKGROUND: url(slashframe.jpg) no-repeat 0px 0px; HEIGHT: 236px; PADDING-TOP: 27px
+        }
+        .SlashEff {
+            PADDING-BOTTOM: 0px; MARGIN: 20px auto 0px; PADDING-LEFT: 60px; WIDTH: 550px; PADDING-RIGHT: 0px; BACKGROUND: url(tryitnow.jpg) no-repeat 0px 0px; HEIGHT: 62px; PADDING-TOP: 5px
+        }
+        .SlashEff UL LI {
+            LIST-STYLE-TYPE: none; WIDTH: 100px; FLOAT: left; CURSOR: pointer; LIST-STYLE-IMAGE: none
+        }
+        .SlashEff UL LI:hover {
+            TEXT-DECORATION: underline
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="ImageSwitch.js"></script>
+</head>
+<body>
+
+
+
+<div>
+    <div class="SplashFrame"><img style="opacity: 1;" id="Slash" alt="Slash" src="images/slash3.jpg"> </div>
+    <div class="SlashEff">
+        <ul>
+            <li class="TryFadeIn" rel="FadeIn">Fade in</li>
+            <li class="TryFlyIn" rel="FlyIn">Fly in</li>
+            <li class="TryFlyOut" rel="FlyOut">Fly out</li>
+            <li class="TryFlipIn" rel="FlipIn">Flip in</li>
+            <li class="TryFlipOut" rel="FlipOut">Flip out</li>
+            <li class="TryScroll" rel="ScrollIn">Scroll in</li>
+            <li class="TryScroll" rel="ScrollOut">Scroll out</li>
+            <li class="TrySingleDoor" rel="SingleDoor">Single Door</li>
+            <li class="TryDoubleDoor" rel="DoubleDoor">Double Door</li>
+        </ul>
+        <br><br><br>
+        <div style="clear:both; margin-top:30px;">copyright © 2009 <a href="http://godpress.cn" target="_blank">godpress.cn</a></div>
+    </div>
+</div>
+<p id="Debug"></p>
+
+
+<script>
+    $(document).ready(function(){
+        var imgIndex = 1;
+
+        $('li').each(function(){
+            $(this).click(function(){
+                var imgType = $(this).attr("rel");
+                imgIndex++;
+                $("#Slash").ImageSwitch({
+                    Type:imgType,
+                    NewImage:"images/slash"+imgIndex+".jpg"
+
+                });
+                if(imgIndex>=5) imgIndex=1;
+            });
+        });
+
+        var controller=new Array("FadeIn", "FlyIn", "FlyOut", "FlipIn", "FlipOut", "ScrollIn", "ScrollOut", "SingleDoor", "DoubleDoor");
+        var conIndex = 0;
+        /*setInterval(function(){
+            imgIndex++;
+            $("#Slash").ImageSwitch({
+                Type:controller[conIndex],
+                NewImage:"images/slash"+imgIndex+".jpg"
+            });
+            if(imgIndex>=5) imgIndex=1;
+            conIndex++;
+            if(conIndex >= controller.length) conIndex=0;
+        }, 5000);*/
+    });
+</script>
+
+</body>
+</html>

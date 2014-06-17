@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="JS代码,自适应背景,背景图片,jQuery" />
+<meta name="description" content="jQuery实现随窗口大小变化自动适应的背景效果，更多自适应背景,背景图片,jQuery请访问脚本之家JS代码频道。" />
+<title>jQuery实现随窗口大小变化自动适应的背景效果_脚本之家</title>
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullbg.min.js"></script>
+<style type="text/css">
+.fullBg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+
+#maincontent {
+	position: absolute;
+	top: 300px;
+	left: 0;
+	z-index: 50;
+	width: 100%;
+	background: #fff;
+	opacity: 0.9; 
+	filter: alpha(opacity=90);
+	}
+
+#box {
+	width: 600px;
+	margin: auto;
+	padding: 0 10px;
+	}
+	
+h1 { 
+	margin-top: 12px;
+	font-size: 40px;
+	text-align: center;
+	line-height: 44px;
+	font-weight: normal;
+	font-family: Georgia,serif;
+	color: #222;
+	}
+	
+h2 { 
+	margin-top: 0;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: normal;
+	font-family: Georgia,serif;
+	color: #C52D08;
+	}
+
+a {
+	text-decoration: none;
+	outline: none;
+	color: #C52D08;
+	}
+	
+	a:hover {
+		text-decoration: underline;
+		}
+</style>
+</head>
+
+<body>
+<img src="images/background1.gif" alt="" id="background" />
+<div id="maincontent">
+    <div id="box">
+        <h1>Full Size Background Image jQuery Plugin</h1>
+        <h2>Demo</h2>
+        Just resize this window and you will see the plugin in action. Whenever the window size changes, the background image size changes. AND it always stays in the proper aspect ratio.
+	    <p><a href="http://bavotasan.com/?p=1748">&laquo; back to tutorial</a>  </div>
+</div>
+<script type="text/javascript">
+$(window).load(function() {
+	$("#background").fullBg();
+});
+</script>
+<div style="text-align:center;clear:both">
+<p>来源：<a href="http://www.jb51.net" target="_blank">bavotasan</a>　代码整理：<a href="http://www.jb51.net" target="_blank">脚本之家</a>　感谢：<a href="http://www.jb51.net" target="_blank">heixin</a></p>
+<p>转载请注明出处，此代码仅供学习交流，请勿用于商业用途。</p>
+</div>
+</body>
+</html>

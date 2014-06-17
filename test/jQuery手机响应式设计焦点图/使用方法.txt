@@ -1,0 +1,11 @@
+jQuery手机响应式设计焦点图，支持自动播放，根据屏幕大小动态放缩焦点图。兼容主流浏览器，懒人图库推荐下载！
+
+使用方法：
+1、head区域引用文件 jquery.min.js，lrtk.css
+2、在文件中加入<!-- 代码 开始 --><!-- 代码 结束 -->区域代码
+3、在页面底部引用slide.js, responsiveslides.min.js
+4、复制images文件夹里的图片到相应的路径
+5、注意焦点图是有命名空间的，在slide.js里修改namespace参数后，要修改对应的div的class和lrtk.css里的代码
+6、更多调整参数，请参考responsiveslides.com
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/
