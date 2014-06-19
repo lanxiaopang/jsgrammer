@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .codrops-demos{height:60px;text-align:center;}
+        .codrops-demos a{display:inline-block;margin:10px;color:#333;font-weight:700;line-height:30px;border-bottom:4px solid transparent;text-decoration:none;}
+        .codrops-demos a:hover{color:#883d59;border-color:#883d59;}
+        .codrops-demos a.current-demo,.codrops-demos a.current-demo:hover{color:#aaa;border-color:#aaa;}
+
+        ul{margin-bottom:3em;}
+        .roundabout-holder{width:5em;height:5em;overflow:hidden;margin:0;padding:0;position:relative;list-style:none;top:-5px;}
+        .roundabout-moveable-item{width:12em;height:1.5em;line-height:1.5;font-size:16px;text-align:center;cursor:pointer;color:#329;font-family:Chalkboard, Comic Sans, awful-awful-font;}
+        .roundabout-in-focus{cursor:auto;}
+        form{margin-top:5em;margin-bottom:28px;margin-left:224px }
+        form div{width:80%;margin:0 auto;}
+        .part{float:left;display:inline;width:auto;}
+        .button{margin-left:2em;}
+        .part.moving{margin-top:-1.70em;}
+        .clear{display:block;clear:both;}
+
+    </style>
+</head>
+<body>
+
+<form action="#" method="post">
+    <div>
+        <div class="part">The</div>
+        <div class="part moving adjective">
+            <ul class="roundabout-holder" style="padding: 0px; position: relative;">
+                <li style="position: absolute; left: -56px; top: 28px; width: 192px; height: 24px; opacity: 1; z-index: 280; font-size: 16px;" class="roundabout-moveable-item roundabout-in-focus">quick</li>
+                <li style="position: absolute; left: -36px; top: 52px; width: 152.198px; height: 19.0248px; opacity: 0.31; z-index: 218; font-size: 12.7px;" class="roundabout-moveable-item">happy</li>
+                <li style="position: absolute; left: -4px; top: 48px; width: 87.8016px; height: 10.9752px; opacity: -0.81; z-index: 117; font-size: 7.3px;" class="roundabout-moveable-item">apple</li>
+                <li style="position: absolute; left: -4px; top: 21px; width: 87.8016px; height: 10.9752px; opacity: -0.81; z-index: 117; font-size: 7.3px;" class="roundabout-moveable-item">confused</li>
+                <li style="position: absolute; left: -36px; top: 8px; width: 152.198px; height: 19.0248px; opacity: 0.31; z-index: 218; font-size: 12.7px;" class="roundabout-moveable-item">drunk</li>
+            </ul>
+        </div>
+        <div class="part">brown fox</div>
+        <div class="part moving verb">
+            <ul class="roundabout-holder" style="padding: 0px; position: relative;">
+                <li style="position: absolute; left: -56px; top: 28px; width: 192px; height: 24px; opacity: 1; z-index: 280; font-size: 16px;" class="roundabout-moveable-item roundabout-in-focus">jumps</li>
+                <li style="position: absolute; left: -36px; top: 52px; width: 152.198px; height: 19.0248px; opacity: 0.31; z-index: 218; font-size: 12.7px;" class="roundabout-moveable-item">stumbles</li>
+                <li style="position: absolute; left: -4px; top: 48px; width: 87.8016px; height: 10.9752px; opacity: -0.81; z-index: 117; font-size: 7.3px;" class="roundabout-moveable-item">backs</li>
+                <li style="position: absolute; left: -4px; top: 21px; width: 87.8016px; height: 10.9752px; opacity: -0.81; z-index: 117; font-size: 7.3px;" class="roundabout-moveable-item">vomits</li>
+                <li style="position: absolute; left: -36px; top: 8px; width: 152.198px; height: 19.0248px; opacity: 0.31; z-index: 218; font-size: 12.7px;" class="roundabout-moveable-item">backflips</li>
+            </ul>
+        </div>
+        <div class="part">over the</div>
+        <div class="part moving feeling">
+            <ul class="roundabout-holder" style="padding: 0px; position: relative;">
+                <li style="position: absolute; left: -56px; top: 28px; width: 192px; height: 24px; opacity: 1; z-index: 280; font-size: 16px;" class="roundabout-moveable-item roundabout-in-focus">lazy</li>
+                <li style="position: absolute; left: -36px; top: 52px; width: 152.198px; height: 19.0248px; opacity: 0.31; z-index: 218; font-size: 12.7px;" class="roundabout-moveable-item">white</li>
+                <li style="position: absolute; left: -4px; top: 48px; width: 87.8016px; height: 10.9752px; opacity: -0.81; z-index: 117; font-size: 7.3px;" class="roundabout-moveable-item">sturdy</li>
+                <li style="position: absolute; left: -4px; top: 21px; width: 87.8016px; height: 10.9752px; opacity: -0.81; z-index: 117; font-size: 7.3px;" class="roundabout-moveable-item">pickled</li>
+                <li style="position: absolute; left: -36px; top: 8px; width: 152.198px; height: 19.0248px; opacity: 0.31; z-index: 218; font-size: 12.7px;" class="roundabout-moveable-item">expired</li>
+            </ul>
+        </div>
+        <div class="part">dog.</div>
+        <div class="part button">
+            <input id="hidden-adjective" name="hidden-adjective" value="quick" type="hidden">
+            <input id="hidden-verb" name="hidden-verb" value="jumps" type="hidden">
+            <input id="hidden-feeling" name="hidden-feeling" value="lazy" type="hidden">
+            <input value="Post it!" name="post" id="post-it" type="submit">
+        </div>
+    </div>
+
+    <span class="clear"></span>
+</form>
+
+<script src="../ajs/jquery-1.4.2.min.js"></script>
+<script src="js/jquery.roundabout2.js"></script>
+<script src="js/jquery.roundabout-shapes2.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.verb ul li').focus(function() {
+            $('#hidden-verb').val($(this).text());
+        });
+
+        $('.feeling ul li').focus(function() {
+            $('#hidden-feeling').val($(this).text());
+        });
+
+        $('.adjective ul li').focus(function() {
+            $('#hidden-adjective').val($(this).text());
+        });
+
+        $('ul').roundabout({
+            shape: 'waterWheel',
+            minOpacity: -1.0,
+            duration: 300,
+            easing: 'easeOutCubic'
+        });
+
+        $('li').dblclick(function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        $('form').submit(function(e) {
+            e.preventDefault();
+            alert('You think that the ' + $('#hidden-adjective').val() + ' brown fox ' + $('#hidden-verb').val() + ' over the ' + $('#hidden-feeling').val() + ' dog.');
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

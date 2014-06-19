@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../ajs/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+    <style type="text/css">
+        *{margin:0;padding:0;list-style-type:none;}
+        #brandList{width:300px;font-size:12px;border:1px solid #999;margin:20px auto;}
+        #brandList a{text-decoration:none;}
+        #brandList ul li{width:100px;float:left;list-style-type:none;line-height:30px;line-height:30px;text-align:center;}
+        #brandList #showMore{clear:both;padding:15px;width:150px;margin:0 auto;}
+        #brandList #showMore span{display:block;height:30px;line-height:30px;border:1px solid #999;text-align:center;font-family:Verdana, Geneva, sans-serif;}
+        #brandList #showMore .hide{background:url(images/plus.png) no-repeat 10% 50%;}
+        .show{background:url(images/minus.png) no-repeat 10% 50%;}
+    </style>
+</head>
+<body>
+
+<div id="brandList">
+    <ul>
+        <li><a href="#">佳能</a></li>
+        <li><a href="#">索尼</a></li>
+        <li><a href="#">三星</a></li>
+        <li><a href="#">尼康</a></li>
+        <li><a href="#">松下</a></li>
+        <li><a href="#">卡西欧</a></li>
+        <li style="display: none;"><a href="#">富士</a></li>
+        <li style="display: none;"><a href="#">柯达</a></li>
+        <li style="display: none;"><a href="#">宾得</a></li>
+        <li style="display: none;"><a href="#">理光</a></li>
+        <li style="display: none;"><a href="#">奥林巴斯</a></li>
+        <li style="display: none;"><a href="#">明基</a></li>
+        <li style="display: none;"><a href="#">爱国者</a></li>
+        <li><a href="#">其他品牌相机</a></li>
+    </ul>
+    <div id="showMore">
+        <a href="#">
+            <span class="hide">显示更多品牌</span>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

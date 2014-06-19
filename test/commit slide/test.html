@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        a, img {
+            border: 0;
+        }
+
+        a, a:hover {
+            color: #5e5e5e;
+            text-decoration: none;
+        }
+
+        body {
+            font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+        }
+
+        .scrollbox {
+            width: 609px;
+            height: 390px;
+            overflow: hidden;
+            border: 3px #666666 solid;
+            margin: 40px auto;
+            padding: 10px;
+        }
+
+        .scroll_title {
+            width: 109px;
+            height: 30px;
+            margin: 0 0 20px 0;
+            background: url(bg_all.png) no-repeat;
+        }
+
+        .scroll_title a {
+            display: block;
+            height: 30px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .scroll_list li {
+            border-bottom: #e6e6e6 1px dashed;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .scroll_list li .pic {
+            border: #ccc 1px solid;
+            padding: 2px;
+            float: left;
+        }
+
+        .scroll_list li .text {
+            width: 515px;
+            height: 70px;
+            overflow: hidden;
+            padding: 0 10px 0 25px;
+            float: right;
+            line-height: 22px;
+            background: url(quote-grey.jpg) no-repeat 0px 0px;
+            color: #666;
+            font-size: 12px
+        }
+
+        .scroll_list li .from {
+            text-align: right;
+            padding: 5px 0px 10px 0px;
+            line-height: 24px;
+            width: 600px;
+            height: 20px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<div class="scrollbox">
+    <div class="scroll_title"><a href="http://www.17sucai.com/"></a></div>
+    <ul class="scroll_list">
+        <li>
+            <a href="http://www.17sucai.com/"><img alt="beata娟" class="pic" src="images/4920841.jpg" height="48"
+                                                   width="48"></a>
+            <span class="text">【写给我最美好的年华】这么戳人泪点的征文题目啊，这么伤感怀旧的BGM..."放心去飞，勇敢地去追……说好了这一次不掉眼泪"...不光是这个班要毕业了... <br><a
+                    href="http://www.17sucai.com/">阅读全文»</a></span>
+
+            <div class="from">
+                <span><a href="http://www.17sucai.com/">17素材网</a></span> 来自 <a
+                    href="http://www.17sucai.com/">外企面试英语2月班</a>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.17sucai.com/"><img alt="jane20110706" class="pic" src="images/9221006.jpg" height="48"
+                                                   width="48"></a>
+            <span class="text">不敢相信，查了两遍后，终于确信，我是过了四级了。不容易，考了几次，终于过了。不过，还真的得感谢：谢老师的精采讲课，水母老师和助教平常的督促哦... <br><a
+                    href="http://www.17sucai.com/">阅读全文»</a></span>
+
+            <div class="from">
+                <span><a href="http://www.17sucai.com/">17素材网</a></span> 来自 <a
+                    href="http://www.17sucai.com/">英语四级暑期班</a>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.17sucai.com/"><img alt="浅jessica" class="pic" src="images/3479036.jpg" height="48"
+                                                   width="48"></a>
+            <span class="text">终于在最后一天圆满完成了我的BEC初中级课程，作为这个班的班长，我觉得我在这个班级还是收获了很多，知识，朋友...看着147个课件后面的已学习，真的... <br><a
+                    href="http://www.17sucai.com/">阅读全文»</a></span>
+
+            <div class="from">
+                <span><a href="http://www.17sucai.com/">17素材网</a></span> 来自 <a
+                    href="http://www.17sucai.com/">BEC初中级6月班</a>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.17sucai.com/"><img alt="我才是玛奇朵" class="pic" src="images/10140568.jpg" height="48"
+                                                   width="48"></a>
+            <span class="text">这一次是第一次接触沪江，其实早就知道 但是从来没仔细看过~有一天我去帮同学拿快递，她报了沪江的六级班。当时袋子破掉了，我看到里面是六级的讲义。... <br><a
+                    href="http://www.17sucai.com/">阅读全文»</a></span>
+
+            <div class="from">
+                <span><a href="http://www.17sucai.com/">17素材网</a></span> 来自 <a
+                    href="http://www.17sucai.com/">英语四级冲关班</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="../ajs/jquery-1.4.2.min.js"> </script>
+<script type="text/javascript">
+    $(function () {
+        setInterval(function () {
+            $('.scrollbox ul li:last').hide().insertBefore($(".scrollbox ul li:first")).slideDown(1000);
+        }, 6000);
+    });
+</script>
+
+
+</body>
+</html>
