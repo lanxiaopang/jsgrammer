@@ -1,7 +1,18 @@
 @charset "utf-8";
+/**
+  *
+  *     本css为search.html搜索首页配套css
+  *     包括公共重置样式和首页样式两部分，首页样式又包括头，尾及中间共三部分
+  *     author：sun mail:szy1944@hotmail.com
+  *     version:0.6
+  *     date:20140621
+  */
+
+/*公共重置样式*/
+@import url("reset.css");
+
+
 /*全局样式*/
-
-
 /*强制去掉垂直滚动条*/
 html{
     overflow-y:auto;
@@ -27,7 +38,6 @@ html{
     height:30px;
     background-color: #424242;
     text-align: right;
-    /*margin-bottom: 80px;*/
 }
 #wrapper_head p{
     color: #ffffff;

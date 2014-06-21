@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> ImageRotation </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript">
+        function rotate(target, degree) {
+            var
+                    userAgent = navigator.userAgent,
+                    isIE = /msie/i.test(userAgent) && !window.opera,
+                    isWebKit = /webkit/i.test(userAgent),
+                    isFirefox = /firefox/i.test(userAgent);
+            if (isWebKit) {
+                target.style.webkitTransform = "rotate(" + degree + "deg)";
+            } else if (isFirefox) {
+                target.style.MozTransform = "rotate(" + degree + "deg)";
+            } else if (isIE) {
+                //chessDiv.style.filter = "progid:DXImageTransform.Microsoft.BasicImage(rotation=" + degree + ")";
+                degree = degree / 180 * Math.PI;
+                var sinDeg = Math.sin(degree);
+                var cosDeg = Math.cos(degree);
+
+                target.style.filter = "progid:DXImageTransform.Microsoft.Matrix(" +
+                        "M11=" + cosDeg + ",M12=" + (-sinDeg) + ",M21=" + sinDeg + ",M22=" + cosDeg + ",SizingMethod='auto expand')";
+            } else {
+                target.style.transform = "rotate(" + degree + "deg)";
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function changeimg(strname,dushu)
+        {
+            rotate(document.getElementById(strname), dushu);
+        }
+    </script>
+</head>
+<body>
+<img id="img1" src="056.jpg" />
+<input id="Button4" type="button" onclick="changeimg('img1',0);" value="原图" />
+<input id="Button1" type="button" onclick="changeimg('img1',45);" value="原图×90°" />
+<input id="Button2" type="button" onclick="changeimg('img1',180);" value="原图×180°" />
+<input id="Button3" type="button" onclick="changeimg('img1',270);" value="原图×270°" />
+</body>
+</html>

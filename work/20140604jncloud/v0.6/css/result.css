@@ -1,0 +1,33 @@
+@charset "utf-8";
+/**
+  *
+  *     本css为result.html等搜索结果页配套css
+  *     包括公共重置样式和搜索结果页样式两部分，搜索结果页样式又包括头，尾及中间共三部分
+  *     author：sun mail:szy1944@hotmail.com
+  *     version:0.1
+  *     date:20140621
+  */
+
+/*公共重置样式*/
+@import url("reset.css");
+
+
+
+/*搜索结果页样式*/
+/*全局样式*/
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+}
+
+/*头部开始*/
+@import url("result_head.css");
+/*头部结束*/
+
+
+/*尾部开始*/
+@import url("result_bottom.css");
+/*尾部结束*/
+
+
+/*中间部分*/
