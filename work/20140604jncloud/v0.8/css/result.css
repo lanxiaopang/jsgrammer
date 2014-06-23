@@ -1,0 +1,224 @@
+@charset "utf-8";
+/**
+  *
+  *     本css为result.html等搜索结果页配套css
+  *     包括公共重置样式和搜索结果页样式两部分，搜索结果页样式又包括头，尾及中间共三部分
+  *     author：sun mail:szy1944@hotmail.com
+  *     version:0.1
+  *     date:20140621
+  */
+/*公共重置样式*/
+@import url("reset.css");
+@import url("result_head.css");
+@import url("result_bottom.css");
+
+/*搜索结果页样式*/
+/*全局样式*/
+html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+}
+.border_grey{
+    border-top:1px solid #e0e0e0;
+    border-left:1px solid #e0e0e0;
+    border-right:1px solid #e0e0e0;
+    border-bottom:1px solid #e0e0e0;
+}
+
+/*中部开始*/
+#wrapper_mid {
+    width: 100%;
+}
+
+#search_bar {
+    width: 100%;
+    height: 90px;
+    background-color: #eeeeee;
+}
+
+.g_bd1 {
+    margin: 0;
+}
+
+.g_sd1 {
+    position: relative;
+    float: left;
+    width: 200px;
+    margin-right: -200px;
+}
+
+.g_sd1c {
+    width: 190px;
+    height: 90px;
+    line-height: 90px;
+    margin-left: 20px;
+}
+.g_sd1c img{
+    vertical-align:middle;
+}
+
+.g_mn1 {
+    float: right;
+    width: 100%;
+    height: 90px;
+    position: relative;
+}
+
+.g_mn1c {
+    width:900px;
+    height:90px;
+    margin-left: 222px;
+    position: absolute;
+    top:0px;
+
+}
+
+
+.con_btn {
+    width: 480px;
+    height:30px;
+    margin-top:36px;
+    padding: 0px 9px 0px 7px;
+    border: 2px solid #0089d1;
+    background-color: #ffffff;
+    float: left;
+    line-height: 30px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+}
+#tria{
+    width:85px;
+    height:30px;
+    position: absolute;
+    left:2px;
+    top:38px;
+    cursor:pointer;
+    border-right:1px solid #e0e0e0;
+    background-color: #f7f7f7;
+}
+
+
+
+.bd_box {
+    width: 66px;
+    height: 34px;
+    position: absolute;
+    left:505px;
+    top:36px;
+}
+#adv_search{
+    position: absolute;
+    top:54px;
+    left:580px;
+}
+
+.blue_link {
+    text-decoration: underline;
+    color: #3e7ec4;
+    font-size: 14px;
+}
+
+#search_result{
+    width:100%;
+    margin-top:12px;
+}
+
+
+.g_bd2 {
+    margin: 0;
+}
+
+.g_sd2 {
+    position: relative;
+    float: left;
+    width: 200px;
+    margin-right: -200px;
+}
+
+.g_sd2c {
+    width: 190px;
+    margin-left: 20px;
+}
+.g_sd2c img{
+    vertical-align:middle;
+}
+
+.g_mn2 {
+    float: right;
+    width: 100%;
+    position: relative;
+}
+
+.g_mn2c {
+    margin-left: 222px;
+    position: absolute;
+    top:0px;
+}
+
+.four_result_top{
+    width:190px;
+    height:3px;
+    background-color:#226ab2;
+}
+.four_result_mid{
+    width:188px;
+    height:35px;
+    line-height: 35px;
+    background-color: #f2f2f2;
+    border-top:none;
+}
+.four_result_mid span{
+    margin-left:10px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.four_result_bot{
+    height:197px;
+    border-top:none;
+}
+.four_result_bot ul li{
+    float:left;
+    margin-top:10px;
+    margin-left:9px;
+}
+.four_result_li{
+    width:78px;
+    height:82px;
+    text-align: center;
+}
+.four_result_li img{
+    margin-top: 14px;
+}
+.four_result_li p{
+    margin-top: 14px;
+    /**/
+}
+.result_num{
+    color: #ff8040;
+    float:right;
+    margin-right:5px;
+}
+.result_type{
+    font-weight:bold;
+    color: #9c9c9c;
+    float:left;
+    margin-left:5px;
+}
+
+
+/*手风琴菜单*/
+.menu_head{padding:5px 10px;cursor:pointer;position:relative;margin:1px;font-weight:bold;background:#eef4d3 url(images/left.png) center right no-repeat;}
+.menu_list .current{background:#eef4d3 url(images/down.png) center right no-repeat;}
+.menu_body{display:none;}
+.menu_body a{display:block;color:#006699;background-color:#EFEFEF;padding-left:10px;font-weight:bold;text-decoration:none;height:24px;line-height:24px;}
+.menu_body a:hover{color:#000000;text-decoration:underline;}
+
+
+/*中部结束*/
+
+
