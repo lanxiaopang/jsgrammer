@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jquery 下拉折叠收起效果</title>
+    <script src="../ajs/jquery-1.4.2.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        body {
+            margin: 10px auto;
+            font: 75%/120% Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .demo {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .demo h2 {
+            font-size: 14px;
+            height: 24px;
+            line-height: 24px;
+            margin: 30px 0 10px 0;
+            padding: 0 10px;
+        }
+        .border_grey{
+            border:1px solid #e0e0e0;
+        }
+        .menu_head {
+            width: 188px;
+            height:35px;
+            line-height: 35px;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            background: #F7F7F7 url(images/+.gif) 165px center no-repeat;
+
+        }
+        .menu_head span{
+            float:left;
+            margin-left:5px;
+        }
+
+        .menu_list .current {
+            background: #ffffff url(images/-.gif) 165px center no-repeat;
+            color:#3e7ec4;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .menu_body {
+            width: 188px;
+            display: none;
+            position: relative;
+        }
+
+        .menu_body a {
+            display: block;
+            color: #666666;
+            background-color: #fafafa;
+            padding-left: 10px;
+            text-decoration: none;
+            height: 32px;
+            line-height: 32px;
+        }
+
+        .menu_body a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+        .menu_body div{
+            width: 170px;margin-left:10px;
+        }
+        .no_border_top{
+            border-top:none;
+        }
+        .no_border_bot{
+            border-bottom:none;
+        }
+        .no_border_left{
+            border-left:none;
+        }
+        .no_border_right{
+            border-right:none;
+        }
+        .sj_1{
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 0px;
+            background-repeat: no-repeat;
+            background-image: url('images/sj_1.gif')
+        }
+        .sj_2{
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: -2px;
+            background-repeat: no-repeat;
+            background-image: url('images/sj_2.gif');
+        }
+    </style>
+</head>
+<body>
+<div class="demo">
+
+    <div id="firstpane" class="menu_list">
+        <p class="menu_head border_grey"><span>人员信息</span></p>
+        <div style="display: none;" class="menu_body">
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery图片切换</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery幻灯片</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery图片放大镜</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        //幻灯片元素与类“menu_body”段与类“menu_head”时点击
+//        $("#firstpane .menu_body:eq(0)").show();
+        /*$("#firstpane p.menu_head").click(function(){
+
+            if(!$(this).hasClass("current")){
+                $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            }else{
+                $(this).removeClass('current');
+                $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            }
+
+        });*/
+        $("#firstpane p.menu_head").toggle(
+            function(){
+                $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            },
+            function(){
+                $(this).removeClass('current');
+                $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            }
+        )
+
+
+
+    });
+</script>
+</body>
+</html>

@@ -14,8 +14,8 @@
 
 /*搜索结果页样式*/
 /*全局样式*/
-html {
-    overflow-y: hidden;
+html body{
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -29,6 +29,28 @@ html {
     border-right:1px solid #e0e0e0;
     border-bottom:1px solid #e0e0e0;
 }
+.border_right_grey{
+    border-right:1px solid #e0e0e0;
+}
+/*颜色区域*/
+.blue_color1{
+    background-color:#226ab2;
+}
+.grey_color1{
+    background-color: #eeeeee;
+}
+.grey_color2{
+    background-color: #f7f7f7;
+}
+.grey_color3{
+    background-color: #f2f2f2;
+}
+.orange_txt_color1{
+    color: #ff8041;
+}
+.orange_border_color1{
+    border:1px solid #ff8041;
+}
 
 /*中部开始*/
 #wrapper_mid {
@@ -38,7 +60,7 @@ html {
 #search_bar {
     width: 100%;
     height: 90px;
-    background-color: #eeeeee;
+
 }
 
 .g_bd1 {
@@ -48,8 +70,8 @@ html {
 .g_sd1 {
     position: relative;
     float: left;
-    width: 200px;
-    margin-right: -200px;
+    width: 210px;
+    margin-right: -210px;
 }
 
 .g_sd1c {
@@ -59,31 +81,34 @@ html {
     margin-left: 20px;
 }
 .g_sd1c img{
-    vertical-align:middle;
+	margin-top:21px;
 }
 
 .g_mn1 {
     float: right;
     width: 100%;
     height: 90px;
-    position: relative;
+	
 }
 
 .g_mn1c {
-    width:900px;
     height:90px;
     margin-left: 222px;
-    position: absolute;
-    top:0px;
-
 }
 
 
+    
+
+#search_right{
+	width:640px;
+	height:90px;
+	position:relative;
+}
 .con_btn {
-    width: 480px;
+    width: 395px;
     height:30px;
-    margin-top:36px;
-    padding: 0px 9px 0px 7px;
+    padding: 0px 9px 0px 92px;
+	margin-top:28px;
     border: 2px solid #0089d1;
     background-color: #ffffff;
     float: left;
@@ -94,50 +119,53 @@ html {
 #tria{
     width:85px;
     height:30px;
-    position: absolute;
-    left:2px;
-    top:38px;
+	position:relative;
+	top:30px;
+	left:-500px;
     cursor:pointer;
-    border-right:1px solid #e0e0e0;
-    background-color: #f7f7f7;
 }
-
-
-
 .bd_box {
     width: 66px;
     height: 34px;
-    position: absolute;
-    left:505px;
-    top:36px;
+    float: left;
+	margin-left:5px;
+	margin-top:-2px;
 }
 #adv_search{
-    position: absolute;
-    top:54px;
-    left:580px;
+	 float: left;
+     margin-top:17px;
+	 margin-left:7px;
+ }
+#adv_search a{
+    font-size: 14px;
 }
 
 .blue_link {
     text-decoration: underline;
     color: #3e7ec4;
-    font-size: 14px;
+
 }
 
 #search_result{
     width:100%;
+    height:1000px;
     margin-top:12px;
 }
 
 
 .g_bd2 {
-    margin: 0;
+    margin: 0px;
 }
+.f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}/*万能float闭合*/
+.f-cb,.f-cbli li{zoom:1;}
 
 .g_sd2 {
     position: relative;
     float: left;
-    width: 200px;
-    margin-right: -200px;
+    width: 210px;
+    margin-right: -210px;
+
+
 }
 
 .g_sd2c {
@@ -151,25 +179,21 @@ html {
 .g_mn2 {
     float: right;
     width: 100%;
-    position: relative;
 }
 
 .g_mn2c {
     margin-left: 222px;
-    position: absolute;
-    top:0px;
 }
 
 .four_result_top{
     width:190px;
     height:3px;
-    background-color:#226ab2;
 }
 .four_result_mid{
     width:188px;
     height:35px;
     line-height: 35px;
-    background-color: #f2f2f2;
+
     border-top:none;
 }
 .four_result_mid span{
@@ -185,6 +209,7 @@ html {
     float:left;
     margin-top:10px;
     margin-left:9px;
+	display:inline;
 }
 .four_result_li{
     width:78px;
@@ -195,29 +220,134 @@ html {
     margin-top: 14px;
 }
 .four_result_li p{
-    margin-top: 14px;
-    /**/
+    
 }
 .result_num{
     color: #ff8040;
     float:right;
     margin-right:5px;
+	margin-top: 14px;
 }
 .result_type{
     font-weight:bold;
     color: #9c9c9c;
     float:left;
     margin-left:5px;
+	margin-top: 14px;
 }
 
 
 /*手风琴菜单*/
-.menu_head{padding:5px 10px;cursor:pointer;position:relative;margin:1px;font-weight:bold;background:#eef4d3 url(images/left.png) center right no-repeat;}
-.menu_list .current{background:#eef4d3 url(images/down.png) center right no-repeat;}
-.menu_body{display:none;}
-.menu_body a{display:block;color:#006699;background-color:#EFEFEF;padding-left:10px;font-weight:bold;text-decoration:none;height:24px;line-height:24px;}
-.menu_body a:hover{color:#000000;text-decoration:underline;}
 
+.menu_head {
+    width: 188px;
+    height:35px;
+    line-height: 35px;
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    background: #F7F7F7 url(../img/result/+.gif) 165px center no-repeat;
+
+}
+.menu_head span{
+    float:left;
+    margin-left:5px;
+}
+
+#firstpane{
+    width:190px;
+}
+
+.menu_list .current {
+
+    background: #ffffff url(../img/result/-.gif) 165px center no-repeat;
+    color:#3e7ec4;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.menu_body {
+    width: 188px;
+    display: none;
+    position: relative;
+}
+
+.menu_body a {
+    display: block;
+    color: #666666;
+    background-color: #fafafa;
+    padding-left: 10px;
+    text-decoration: none;
+    height: 32px;
+    line-height: 32px;
+}
+
+.menu_body a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+.menu_body div{
+    width: 170px;margin-left:10px;
+}
+.no_border_top{
+    border-top:none;
+}
+.no_border_bot{
+    border-bottom:none;
+}
+.no_border_left{
+    border-left:none;
+}
+.no_border_right{
+    border-right:none;
+}
+.sj_1{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-image: url('../img/result/sj_1.gif')
+}
+.sj_2{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -2px;
+    background-repeat: no-repeat;
+    background-image: url('../img/result/sj_2.gif');
+}
+
+/*右边开始*/
+.condition_con{
+    margin-right:20px;
+
+}
+.condition_top{width:100%;
+    height:3px;
+}
+.condition_tab{
+    height:35px;
+    line-height: 35px;
+}
+#location{
+    margin-left:10px;
+    display: block;
+    float: left;
+}
+.tab_more_con{
+    width:100px;
+    height:35px;
+    line-height: 35px;
+    float: right;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.tab_more{
+    width: 46px;
+    height: 18px;
+    display: block;
+    vertical-align: middle;
+}
 
 /*中部结束*/
 

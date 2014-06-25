@@ -53,10 +53,9 @@
         }
 
         .menu_body {
-            width: 168px;
+            width: 188px;
             display: none;
-            margin-left:10px;
-
+            position: relative;
         }
 
         .menu_body a {
@@ -73,6 +72,9 @@
             color: #000000;
             text-decoration: underline;
         }
+        .menu_body div{
+            width: 170px;margin-left:10px;
+        }
         .no_border_top{
             border-top:none;
         }
@@ -85,41 +87,126 @@
         .no_border_right{
             border-right:none;
         }
+        .sj_1{
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 0px;
+            background-repeat: no-repeat;
+            background-image: url('images/sj_1.gif')
+        }
+        .sj_2{
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: -2px;
+            background-repeat: no-repeat;
+            background-image: url('images/sj_2.gif');
+        }
     </style>
 </head>
 <body>
 <div class="demo">
 
     <div id="firstpane" class="menu_list">
-        <p class="menu_head border_grey no_border_bot" id="li1"><span>人员信息</span></p>
+        <p class="menu_head border_grey no_border_bot"><span>人员信息</span></p>
         <div style="display: none;" class="menu_body">
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery图片切换</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery幻灯片</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">jquery图片放大镜</a>
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery图片切换</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery幻灯片</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">jquery图片放大镜</a>
+            </div>
         </div>
 
-        <p class="menu_head border_grey no_border_bot" id="li2"><span>案件信息</span></p>
+        <p class="menu_head border_grey no_border_bot"><span>案件信息</span></p>
         <div style="display: none;" class="menu_body">
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
-        </div>
-        <p class="menu_head border_grey no_border_bot" id="li3"><span>信息</span></p>
-        <div style="display: none;" class="menu_body">
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            </div>
         </div>
 
-        <p class="menu_head border_grey"  id="li4"><span>警情信息</span></p>
+        <p class="menu_head border_grey no_border_bot"><span>信息</span></p>
         <div style="display: none;" class="menu_body">
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery动画菜单</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery树形菜单</a>
-            <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery下拉菜单</a>
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            </div>
+        </div>
+
+        <p class="menu_head border_grey no_border_bot"><span>信息</span></p>
+        <div style="display: none;" class="menu_body">
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            </div>
+        </div>
+
+        <p class="menu_head border_grey no_border_bot"><span>信息</span></p>
+        <div style="display: none;" class="menu_body">
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            </div>
+        </div>
+
+        <p class="menu_head border_grey no_border_bot"><span>信息</span></p>
+        <div style="display: none;" class="menu_body">
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            </div>
+        </div>
+
+        <p class="menu_head border_grey no_border_bot"><span>信息</span></p>
+        <div style="display: none;" class="menu_body">
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">案事件基本信息</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案嫌疑人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">报案/受害/当事/其人</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">涉案物品</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top no_border_bot">涉案关系人</a>
+            </div>
+        </div>
+
+        <p class="menu_head border_grey"><span>警情信息</span></p>
+        <div style="display: none;" class="menu_body">
+            <i class="sj_1"></i>
+            <i class="sj_2"></i>
+            <div>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery动画菜单</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery树形菜单</a>
+                <a href="#" target="_blank" title="" class="border_grey no_border_top">jquery下拉菜单</a>
+            </div>
         </div>
     </div><!--firstpane end-->
 

@@ -1,3 +1,42 @@
+$(function(){
+
+    /*获取焦点*/
+    $('#input_box').focus();
+
+    /*手风琴效果*/
+    $("#firstpane p.menu_head").click(function(){
+        var idx= $("#firstpane p.menu_head").index(this);
+        var last = $("#firstpane p.menu_head").children().length-1;
+        if(!$(this).hasClass("current")){
+            $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            $(this).siblings().removeClass("current");
+        }else{
+            $(this).removeClass('current');
+            $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            if(idx!=last){
+                $(this).addClass('no_border_bot');
+            }
+        }
+
+    });
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*$(function(){
         *//*根据不同分辨率加载样式文件*//*
         if($(document).width()>=1024){//宽屏版本
