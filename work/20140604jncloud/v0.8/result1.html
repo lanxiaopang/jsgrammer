@@ -30,8 +30,20 @@
             <div class="g_mn1">
                 <div class="g_mn1c">
 					<div id="search_right">
-						<label for="input_box"><input id="input_box" type="text" class="con_btn"/></label>
-						<div id="tria" class="grey_color2 border_right_grey"></div>
+
+                        <div id="tria">
+                            <ul>
+                                <li id="tria1" class="grey_color2">
+                                    <a href="#" class="grey_txt_color2">信息资源</a>
+                                    <span class="info_icon_down"></span>
+                                </li>
+                                <li id="tria2" class="grey_color2">
+                                    <a href="#" class="grey_txt_color2">信息资源2</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <label for="input_box"><input id="input_box" type="text" class="con_btn"/></label>
 						<div class="bd_box">
 							<a href="#"><img id="slash" src="img/search2.gif"/></a>
 						</div>
@@ -48,7 +60,7 @@
         <div class="g_bd2 f_cb">
             <div class="g_sd2">
                 <div class="g_sd2c">
-                    <p class="four_result_top blue_color1"></p>
+                    <div class="four_result_top blue_color1"></div>
                     <p class="border_grey grey_color3 four_result_mid no_border_top">
                         <span>搜索结果</span>
                     </p>
@@ -58,21 +70,21 @@
                                 <div class="border_grey four_result_li">
                                     <img src="img/result/renyuan.gif"/>
 
-                                    <p><span class="result_type">人员</span> <span class="result_num">253万+</span></p>
+                                    <p><span class="result_type grey_txt_color1">人员</span> <span class="result_num">253万+</span></p>
                                 </div>
                             </li>
                             <li>
                                 <div class="border_grey four_result_li">
                                     <img src="img/result/anjian.gif"/>
 
-                                    <p><span class="result_type">案件</span> <span class="result_num">5931</span></p>
+                                    <p><span class="result_type grey_txt_color1">案件</span> <span class="result_num">5931</span></p>
                                 </div>
                             </li>
                             <li>
                                 <div class="border_grey four_result_li">
                                     <img src="img/result/cheliang.gif"/>
 
-                                    <p><span class="result_type">车辆</span> <span class="result_num">39万+</span></p>
+                                    <p><span class="result_type grey_txt_color1">车辆</span> <span class="result_num">39万+</span></p>
 
                                     <p><span></span> <span></span></p>
                                 </div>
@@ -81,7 +93,7 @@
                                 <div class="border_grey four_result_li">
                                     <img src="img/result/danwei.gif"/>
 
-                                    <p><span class="result_type">单位</span> <span class="result_num">167</span></p>
+                                    <p><span class="result_type grey_txt_color1">单位</span> <span class="result_num">167</span></p>
                                 </div>
                             </li>
                         </ul>
@@ -213,13 +225,375 @@
                 <div class="g_mn2c">
                     <div class="condition_con">
                         <p class="condition_top blue_color1"></p>
-                        <p class="border_grey grey_color3 condition_tab no_border_top">
+                        <p id="condition_tab_p" class="border_grey grey_color3 condition_tab no_border_top">
                             <span id="location">搜索结果 > 案件信息 > <span class="orange_txt_color1">案事件基本信息</span></span>
                             <span class="tab_more_con">
-                                <span class="tab_more orange_border_color1"></span>
+                                <span class="tab_more"></span>
                             </span>
                         </p>
+                        <div id="condition_body" class="condition_body_hide border_grey no_border_top">
+                            <ul>
+                                <li id="selected_condition">
+                                    <span id="has_choose" class="selected_title">您已经选择：</span>
+                                    <span class="selected_txt">
+										<span class="select_tag orange_border_color1">
+                                            性别：<span class="orange_txt_color1">男</span>
+											<a href="#"><img src="img/result/tag_close.jpg"></a>
+										</span>
+                                        <span class="select_tag orange_border_color1">民族：<span class="orange_txt_color1">汉</span>
+											<a href="#"><img src="img/result/tag_close.jpg"></a>
+                                        </span>
+                                    </span>
+                                </li>
+                                <li class="border_top_dot">
+                                    <span class="selected_title">职业：</span>
+                                    <span class="selected_txt">
+                                        <span><a href="#" onclick="showFqDetailInfo('zy','个体','职业')">个体（2）</a></span>
+                                        <span><a href="#">会计（1）</a></span>
+                                        <span><a href="#">内勤（1）</a></span>
+                                        <span><a href="#">农民（2）</a></span>
+                                        <span><a href="#">医生（1）</a></span>
+                                        <span><a href="#">工人（1）</a></span>
+                                        <span><a href="#">干部（2）</a></span>
+                                        <span><a href="#">工程师（1）</a></span>
+                                        <span><a href="#">幼师（1）</a></span>
+                                        <span><a href="#">待业（2）</a></span>
+                                        <span><a href="#">职员（1）</a></span>
+                                    </span>
+                                </li>
+                                <li class="border_top_dot">
+                                    <span class="selected_title">出生年代：</span>
+                                    <span class="selected_txt">
+                                        <span><a href="#">1950（2）</a></span>
+                                        <span><a href="#">1960（1）</a></span>
+                                        <span><a href="#">1970（1）</a></span>
+                                        <span><a href="#">1980（2）</a></span>
+                                        <span><a href="#">1990（1）</a></span>
+                                        <span><a href="#">2000（1）</a></span>
+                                        <span><a href="#">2010（2）</a></span>
+                                        <span style="position: relative;">
+                                            <img onclick="showHideTabBirth()" class="self_def orange_border_color1" src="img/result/zidingyi.jpg">
+                                            <span id="self_def_body" class="self_def_body orange_border_color1">
+                                                <div>
+                                                    <input id="sta_num" type="text" class="sta_ipt">-<input type="text" class="sta_ipt">岁
+                                                    <button type="button">搜索</button>
+                                                </div>
+                                            </span>
+                                        </span>
+
+                                    </span>
+                                </li>
+                                <li class="border_top_dot">
+                                    <span class="selected_title">状态：</span>
+                                    <span class="selected_txt">
+                                        <span><a href="#">删除（2）</a></span>
+                                        <span><a href="#">正常（1）</a></span>
+                                        <span><a href="#">死亡（1）</a></span>
+                                        <span><a href="#">迁出（1）</a></span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="result_sum border_grey grey_color3">
+                            <span id="sum_txt" class="grey_txt_color2">
+                                约有342项<span class="orange_txt_color1">济南常住人员</span>符合搜索 “张三” 的查询结果，耗时7毫秒，以下是1-10条。
+                            </span>
+                            <span id="display_mode3" class="display_mode12 grey_color3">
+                                <img src="img/result/icon3_2.gif">
+                            </span>
+                            <span class="separator grey_color4"></span>
+                            <span id="display_mode2" class="display_mode12 grey_color3">
+                                <img src="img/result/icon2_2.gif">
+                            </span>
+                            <span class="separator grey_color4"></span>
+                            <span id="display_mode1" class="display_mode12 white_bg_color">
+                                <img src="img/result/icon1_1.gif">
+                            </span>
+                            <span class="separator grey_color4"></span>
+                            <span id="display_mode" class="grey_txt_color2">
+                                显示模式
+                            </span>
+
+                        </div>
+
+                        <div id="result_list">
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_list_li border_bot_dot">
+                                <div class="li_title">
+                                    <span class="tit_left">
+                                        <a>
+                                            <span class="tit_1 underline">张三</span><span  class="tit_2 underline">（370124198803086511）的常住人口信息</span></a>
+                                    </span>
+                                    <span class="tit_right">
+                                        <a><span class="underline">查看人员档案</span></a>
+                                    </span>
+                                </div>
+                                <div class="li_body">
+                                    <div class="li_img"><img src="img/result/touxiang.jpg"></div>
+                                    <div class="li_detail">
+                                        <span class="li_detail_item">姓名：张三</span>
+                                        <span class="li_detail_item">曾用名：-</span>
+                                        <span class="li_detail_item">性别：男</span>
+                                        <span class="li_detail_item">身份证号：370124198803086511</span>
+                                        <span class="li_detail_item">民族：汉</span>
+                                        <span class="li_detail_item">职业：学生</span>
+                                        <span class="li_detail_item">户籍地址：桑园路60号</span>
+                                        <span class="li_detail_item">服务处所：山东省工会干部管理学院</span>
+                                        <span class="li_detail_item">人员状态：迁出</span>
+                                        <span class="li_detail_item green_color1">所属派出所：山东省济南市公安局历城区分局全福派出所</span>
+                                        <span class="li_detail_item green_color1">所属辖区：桑园路警务区</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
+
+
                 </div>
             </div>
         </div>

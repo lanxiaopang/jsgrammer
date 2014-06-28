@@ -128,28 +128,17 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        //幻灯片元素与类“menu_body”段与类“menu_head”时点击
-//        $("#firstpane .menu_body:eq(0)").show();
-        /*$("#firstpane p.menu_head").click(function(){
 
-            if(!$(this).hasClass("current")){
-                $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
-            }else{
-                $(this).removeClass('current');
-                $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
-            }
-
-        });*/
         $("#firstpane p.menu_head").toggle(
             function(){
-                $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+                $("div.menu_body").slideToggle(300);
             },
             function(){
-                $(this).removeClass('current');
-                $(this).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+                /*$(this).removeClass('current');*/
+                $("div.menu_body").slideToggle(300);
             }
         )
-
+        alert(1);
 
 
     });

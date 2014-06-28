@@ -1,9 +1,15 @@
 $(function(){
 
+
+    /*初始化测试展开*/
+    $('#condition_body').show();
+
+    $('#self_def_body').hide();
+
     /*获取焦点*/
     $('#input_box').focus();
 
-    /*手风琴效果*/
+    /*左侧菜单手风琴效果*/
     $("#firstpane p.menu_head").click(function(){
         var idx= $("#firstpane p.menu_head").index(this);
         var last = $("#firstpane p.menu_head").children().length-1;
@@ -17,99 +23,86 @@ $(function(){
                 $(this).addClass('no_border_bot');
             }
         }
-
     });
+
+    /*点击more效果*/
+    /*$('span.tab_more').toggle(*/
+    $('#condition_tab_p').toggle(
+        function(){
+            $('span.tab_more').addClass("tab_less");
+            $("#condition_body").slideToggle(300);
+        },
+        function(){
+            $('span.tab_more').removeClass('tab_less');
+            $("#condition_body").slideToggle(300);
+        });
+
+
+    var flag=3;//当前位置
+    $('.display_mode12').click(function(){
+            var idx=$('.display_mode12').index($(this))+1;//321
+            var a,b;
+            if(flag==idx){
+                return;
+            }else{
+
+                $('.display_mode12').each(function(index,ele){
+                    b=3-index;
+                    $(this).find('img').attr('src','img/result/icon'+b+'_2.gif');
+                    if($(this).hasClass('white_bg_color')){
+                        $(this).removeClass('white_bg_color').addClass('grey_color3');
+                    }
+                })
+
+                a=4-idx;
+                $(this).find('img').first().attr('src','img/result/icon'+a+'_1.gif');
+                $(this).removeClass('grey_color3').addClass('white_bg_color');
+                flag=idx;
+            }
+
+        });
+    $('#tria').hover(function(){
+        $('#tria1').find('span').removeClass('info_icon_down').addClass('info_icon_up');
+        $('#tria2').slideToggle();
+    },
+    function(){
+        $('#tria1').find('span').removeClass('info_icon_up').addClass('info_icon_down');
+        $('#tria2').slideToggle();
+    });
+
+
+    $('#tria2').hover(function(){
+        $(this).css('background-color','#f7f7f7');
+        $('#tria1').css('background-color','#ffffff');
+    },function(){
+        $(this).css('background-color','#ffffff');
+        $('#tria1').css('background-color','#f7f7f7');
+    });
+    $('#tria2').click(
+        function(){
+            //$('#tria2').stop().slideUp();
+            var a=$('#tria2 a')[0].innerHTML;
+            $('#tria2 a')[0].innerHTML=$('#tria1 a')[0].innerHTML;
+            $('#tria1 a')[0].innerHTML=a;
+        }
+    )
+
+
+
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*$(function(){
-        *//*根据不同分辨率加载样式文件*//*
-        if($(document).width()>=1024){//宽屏版本
-            document.getElementById('style_link').disabled=true;
-            document.getElementById('style_link_ft').disabled=false;
-        }else{//窄屏版本
-            document.getElementById('style_link_ft').disabled=true;
-            document.getElementById('style_link').disabled=false;
-        }
-
-    }
-)*/
-/*屏幕分辨率变化时根据不同分辨率做不同处理*/
-/*
-$(window).resize(function(){
-    //更换样式文件
-   */
-/* var link_flag = true;
-    if($(document).width()>=1024){//宽屏版本
-        $('#style_link').remove();
-        if(link_flag){
-            $('<link id="style_link_ft" href="css/result_ft.css" rel="stylesheet" />').insertAfter('title');
-            link_flag=false;
-        }
-        }else{//窄屏版本
-        $('#style_link_ft').remove();
-        if(link_flag){
-            $('<link id="style_link_ft" href="css/result.css" rel="stylesheet" />').insertAfter('title');
-            link_flag=false;
-        }
-    }*//*
-
-   */
-/* var a=document.getElementsByTagName('link');
-    if($(document).width()>=1024){//宽屏版本
-
-        a.disabled = true;
-
+function showHideTabBirth(){
+    $('#self_def_body').toggle();
+    if($('.self_def').hasClass('no_border_bot')){
+        $('.self_def').removeClass('no_border_bot');
+        $('.self_def').css('z-index','999');
     }else{
-
+        $('.self_def').addClass('no_border_bot');
+        $('.self_def').css('z-index','1001');
     }
+}
 
-    function setActiveStyleSheet(title) {
-        var i, a, main;
-        if (title) {
-            for (i = 0; (a = document.getElementsByTagName('link')[i]); i++) {
-                if (a.getAttribute('rel').indexOf('style') != -1
-                    && a.getAttribute('title')) {
-                    a.disabled = true;
-                    if (a.getAttribute('title') == title) a.disabled = false;
-                }
-            }
-        }
-    }
 
-    function getActiveStyleSheet() {
-        var i, a;
-        for (i = 0; (a = document.getElementsByTagName('link')[i]); i++) {
-            if (a.getAttribute('rel').indexOf('style') != -1
-                && a.getAttribute('title')
-                && !a.disabled)
-                return a.getAttribute('title');
-        }
-        return null;
-    }*//*
 
-    if($(document).width()>=1024){//宽屏版本
-        document.getElementById('style_link').disabled=true;
-        document.getElementById('style_link_ft').disabled=false;
-    }else{//窄屏版本
-        alert(document.getElementById('style_link_ft').disabled);
-        document.getElementById('style_link_ft').disabled=true;
-        document.getElementById('style_link').disabled=false;
-    }
 
-})*/
+

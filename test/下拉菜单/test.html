@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link href="test.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../ajs/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div id="top_bg">
+    <div class="top">
+        <a class="logo_l" href="/" title="返回首页"></a>
+        <!--导航开始-->
+        <div class="nav_z">
+            <ul id="navul" class="cl">
+                <li>
+                    <a href="#">新闻</a>
+                    <ul>
+                        <li><a href="#">企业文化</a></li>
+                        <li><a href="#">企业资质</a></li>
+                        <li><a href="#">服务团队</a></li>
+                    </ul>
+                </li>
+
+                <!--可在此处直接添加导航-->
+            </ul>
+            123123123asdfasdfasdfadsf
+        </div><!--导航结束-->
+        <script type="text/javascript">
+            $(".navbg").capacityFixed();
+        </script>
+
+    </div>
+</div>
+
+<script>
+    /*
+     *author:Null
+     *DATE:2013.5.24
+     */
+
+    $(function(){
+        //澶撮〉鐧诲綍
+        $("#navul > li").not(".navhome").hover(function(){
+            $(this).addClass("navmoon")
+        },function(){
+            $(this).removeClass("navmoon")
+        });
+
+    });
+
+
+
+</script>
+
+
+</body></html>
