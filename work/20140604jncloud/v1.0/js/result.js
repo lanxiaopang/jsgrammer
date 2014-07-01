@@ -1,4 +1,11 @@
-
+var Sys = {};
+var ua = navigator.userAgent.toLowerCase();
+var s;
+(s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+(s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+(s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+(s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+(s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
 $(function(){
 
 
@@ -30,15 +37,27 @@ $(function(){
     $('#condition_tab_p').toggle(
         function(){
             $('span.tab_toggle1').addClass("tab_toggle2");
-            //$("#condition_body").slideToggle(300);
-            $("#condition_body").css('display','block');
-			$('.g-mn5').css('display','inline-block');
+			if(Sys.ie =='6.0'){
+				$("#condition_body").css('display','block');
+				$('.g-mn5').css('display','inline-block');
+			}else{
+				$("#condition_body").slideToggle();
+			}
+
+            
 			
         },
         function(){
             $('span.tab_toggle1').removeClass('tab_toggle2');
-            $("#condition_body").css('display','none');
-			$('.g-mn5').css('display','inline-block');
+			if(Sys.ie =='6.0'){
+				$("#condition_body").css('display','none');
+				$('.g-mn5').css('display','inline-block');
+			}else{
+				$("#condition_body").slideToggle();
+			}
+			
+			
+            
 			
         });
 
