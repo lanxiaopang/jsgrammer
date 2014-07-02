@@ -146,7 +146,16 @@ $(function(){
             $(this).find('img').attr('src',foo);
             $(this).find('span').removeClass('orange_txt_color1');
         }
-    )
+    );
+
+    /*table隔行变色*/
+    $('tr:even').addClass('eventr');
+    /*table悬浮变色*/
+    $('tbody tr').hover(function(){
+        $(this).addClass('hovertr');
+    },function(){
+        $(this).removeClass('hovertr');
+    })
 })
 
 function showHideTabBirth(){
