@@ -67,23 +67,23 @@
                     <a style="float:right;margin-right:5px;height:14px;line-height: 29px;" href="<cms:link type='Catalog' name='出入境要闻'/>" target="_blank">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
                 </div>
                 <div id="crjyw_2">
-                    <!--<table cellspacing="0" cellpadding="0" border="0" style="width:342px;overflow:hidden;font-size: 14px;">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width:340px;overflow:hidden;font-size: 14px;">
                         <tbody>
                         <tr><td colspan="5" height="6px;"></td></tr>
                         <tr style="border-bottom: #ccc 1px dashed;">
                             <td width="6"></td>
                             <td style="border-bottom: #ccc 1px dashed; padding-left: 5px;" align="left" height="29" valign="middle">
-                                ·<a href="${Article.Link}" target="_blank" title="${Article.Title}">${Article.Title|CharWidth=33}</a>
+                                ·<a href="${Article.Link}" target="_blank" title="${Article.Title}"><!--${Article.Title|CharWidth=33}--></a>
                             </td>
                             <td width="28" style="border-bottom:1px dashed #ccc;width:28px;height:29px;" align="left" >
                                 <img src="../img/new.gif">
                             </td>
-                            <td style="border-bottom: #ccc 1px dashed;width:33px;" align="left" width="33">${Article.ModifyTime|Format=MM-dd}</td>
+                            <td style="border-bottom: #ccc 1px dashed;width:33px;" align="left" width="33"><!--${Article.ModifyTime|Format=MM-dd}--></td>
                             <td width="9"></td>
                         </tr>
 
 
-                        <cms:list item="Article" name="出入境要闻" count="10">
+                        <!--<cms:list item="Article" name="出入境要闻" count="10">
                             <tr style="border-bottom: #ccc 1px dashed;">
                                 <td width="6"></td>
                                 <td style="border-bottom: #ccc 1px dashed; padding-left: 5px;" align="left" height="29" valign="middle">
@@ -104,16 +104,50 @@
                                 <td style="border-bottom: #ccc 1px dashed;width:33px;" align="left" width="33">${Article.ModifyTime|Format=MM-dd}</td>
                                 <td width="9"></td>
                             </tr>
-                        </cms:list>
+                        </cms:list>-->
                         </tbody>
-                    </table>-->
+                    </table>
                 </div>
             </div>
             <div id="gddt" class="fl">
                 <div id="gddt_1">
-                    <a style="float:right;margin-right:5px;height:14px;line-height: 29px;" href="<cms:link type='Catalog' name='出入境要闻'/>" target="_blank">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+                    <a style="float:right;margin-right:5px;height:14px;line-height: 29px;" href="<cms:link type='Catalog' name='各地动态'/>" target="_blank">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
                 </div>
-                <div id="gddt_2"></div>
+                <div id="gddt_2">
+                    <table id="gddt_11" style="display: block;font-size:12px;over-flow:hidden;" border="0" cellpadding="0" cellspacing="0" width="275">
+                        <tbody>
+                        <tr><td colspan="5" height="1"></td></tr>
+                        <!--<cms:list item="Article" name="各地动态" count="8">
+                            <tr>
+                                <td width="6"></td>
+                                <td style="border-bottom: #ccc 1px dashed; padding-left: 5px;" align="left" height="26" valign="middle">
+                                    ·<a href="${Article.Link}" style="color:#000000"
+                                        target="_blank" title="${Article.Title}">${Article.Title|CharWidth=26}</a>
+                                    <%
+                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                    String publishDate=Article.getString("PublishDate");
+                                    String publishDateFormat= TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                    String bol1 = TemplateData.checkIfNew("2",date,publishDateFormat);
+                                    String bol2 = TemplateData.checkIfNew("5",date,publishDateFormat);
+                                    %>
+                                    <%if(bol1.equals("true")&&bol2.equals("true")){%>
+                                    <img src="../../images/crj/new.gif">
+                                    <%}%>
+                                </td>
+                                <td style="border-bottom: #ccc 1px dashed; color: #666;" align="left" width="75">
+                                    <%if(article.getString("prop2")!=""){%>
+                                    [<%=article.getString("prop2").substring(0,2)%>]
+                                    <%}else{%>
+                                    [<%=article.getString("prop2")%>]
+                                    <%}%>
+                                </td>
+                                <td style="border-bottom: #ccc 1px dashed; color: #666;" align="left" width="38">${Article.PublishDate|Format=MM-dd}</td>
+                                <td width="9"></td>
+                            </tr>
+                        </cms:list>-->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div id="mid_2">
@@ -131,768 +165,739 @@
             </div>
         </div>
         <div id="tpzs"></div>
-
         <!--begin-->
         <div class="g-column3">
-        <div class="g-column3-l">
-        <div class="gzjl">
-            <div id="gzjl_title">
-                <div class="navlist gzjl_bg">
-                    <div id="gzjl0"><a href="#"><span></span></a></div>
-                    <div id="_gzjl1" class="gzjl1" onmousemove="Show_Tabs('gzjl',1,1)"><a
-                            href="<cms:link type='Catalog' name='理论调研'/>" target="_blank"><span></span></a></div>
-                    <div id="_gzjl2" class="gzjl1" onmousemove="Show_Tabs('gzjl',1,2)"><a
-                            href="<cms:link type='Catalog' name='他山之石'/>" target="_blank"><span></span></a></div>
-                    <div id="_gzjl3" class="gzjl1" onmouseover="Show_Tabs('gzjl',1,3)"><a
-                            href="<cms:link type='Catalog' name='工作简报'/>" target="_blank"><span></span></a></div>
+            <div class="g-column3-l">
+                <div class="gzjl">
+                    <div id="gzjl_title">
+                        <div class="navlist gzjl_bg">
+                            <div id="gzjl0"><a href="#"><span></span></a></div>
+                            <div id="_gzjl1" class="gzjl1" onmousemove="Show_Tabs('gzjl',1,1)"><a
+                                    href="<cms:link type='Catalog' name='理论调研'/>" target="_blank"><span></span></a></div>
+                            <div id="_gzjl2" class="gzjl1" onmousemove="Show_Tabs('gzjl',1,2)"><a
+                                    href="<cms:link type='Catalog' name='他山之石'/>" target="_blank"><span></span></a></div>
+                            <div id="_gzjl3" class="gzjl1" onmouseover="Show_Tabs('gzjl',1,3)"><a
+                                    href="<cms:link type='Catalog' name='工作简报'/>" target="_blank"><span></span></a></div>
+                        </div>
+                    </div>
+                    <div class="gzjlcontainer">
+                        <table width="754">
+                            <tbody>
+								<tr>
+									<td height="10" width="754"></td>
+								</tr>
+								<tr>
+									<td align="left" height="172" valign="top">
+										<table id="gzjl_10" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+											<tbody>
+											<tr>
+												<td align="left" valign="top">
+													<ul class="two_column_list">
+														<!--<cms:list item="Article" name="工作交流" level="child" count="16">-->
+															<li class="two_column_li">
+																<table border="0" cellpadding="0" cellspacing="0"
+																	   style="width:100%;height:100%;">
+																	<tr>
+																		<td class="tabli_sub">[${article.childName}]</td>
+																		<td class="tabli_title"><a class="font12"
+																								   title="${Article.Title}"
+																								   href="${Article.Link}"
+																								   target="_blank">10${Article.Title|CharWidth=20}</a>
+																		</td>
+																		<!--<%
+																		String date = TemplateData.getSysDate("yyyyMMdd");
+																		String publishDate=Article.getString("PublishDate");
+																		String publishDateFormat=
+																		TemplateData.getFormatDate("yyyyMMdd",publishDate);
+																		String bol1 =
+																		TemplateData.checkIfNew("2",date,publishDateFormat);
+																		String bol2 =
+																		TemplateData.checkIfNew("5",date,publishDateFormat);
+																		if(bol1.equals("true")&&bol2.equals("true")){
+																		%>
+																		<td class="tabli_img">
+																			<img src="../../images/crj/new.gif">
+																		</td>
+																		<%}%>
+																		<td class="tabli_date font12">
+																			${Article.ModifyTime|Format=MM-dd}
+																		</td>-->
+																	</tr>
+																</table>
+															</li>
+														<!--</cms:list>-->
+													</ul>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+										<table id="gzjl_11" style="display: block;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+											<tbody>
+											<tr>
+												<td align="left" valign="top">
+													<ul class="two_column_list">
+														<!--<cms:list item="Article" name="理论调研" count="16">-->
+															<li class="two_column_li">
+																<table border="0" cellpadding="0" cellspacing="0"
+																	   style="width:100%;height:100%;">
+																	<tr>
+																		<td class="tabli_title"><a class="font12"
+																								   title="${Article.Title}"
+																								   href="${Article.Link}"
+																								   target="_blank">11${Article.Title|CharWidth=24}</a>
+																		</td>
+																		<!--<%
+																		String date = TemplateData.getSysDate("yyyyMMdd");
+																		String publishDate=Article.getString("PublishDate");
+																		String publishDateFormat=
+																		TemplateData.getFormatDate("yyyyMMdd",publishDate);
+																		String bol1 =
+																		TemplateData.checkIfNew("2",date,publishDateFormat);
+																		String bol2 =
+																		TemplateData.checkIfNew("5",date,publishDateFormat);
+																		if(bol1.equals("true")&&bol2.equals("true")){
+																		%>
+																		<td class="tabli_img">
+																			<img src="../../images/crj/new.gif">
+																		</td>
+																		<%}%>
+																		<td class="tabli_date font12">
+																			${Article.ModifyTime|Format=MM-dd}
+																		</td>-->
+																	</tr>
+																</table>
+															</li>
+			
+														<!--</cms:list>-->
+													</ul>
+			
+												</td>
+											</tr>
+											</tbody>
+										</table>
+										<table id="gzjl_12" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+											<tbody>
+											<tr>
+												<td align="left" valign="top">
+													<ul class="two_column_list">
+														<!--<cms:list item="Article" name="他山之石" count="16">-->
+															<li class="two_column_li">
+																<table border="0" cellpadding="0" cellspacing="0"
+																	   style="width:100%;height:100%;">
+																	<tr>
+																		<td class="tabli_title"><a class="font12"
+																								   title="${Article.Title}"
+																								   href="${Article.Link}"
+																								   target="_blank">12${Article.Title|CharWidth=24}</a>
+																		</td>
+																		<!--<%
+																		String date = TemplateData.getSysDate("yyyyMMdd");
+																		String publishDate=Article.getString("PublishDate");
+																		String publishDateFormat=
+																		TemplateData.getFormatDate("yyyyMMdd",publishDate);
+																		String bol1 =
+																		TemplateData.checkIfNew("2",date,publishDateFormat);
+																		String bol2 =
+																		TemplateData.checkIfNew("5",date,publishDateFormat);
+																		if(bol1.equals("true")&&bol2.equals("true")){
+																		%>
+																		<td class="tabli_img">
+																			<img src="../../images/crj/new.gif">
+																		</td>
+																		<%}%>
+																		<td class="tabli_date font12">
+																			${Article.ModifyTime|Format=MM-dd}
+																		</td>-->
+																	</tr>
+																</table>
+															</li>
+														<!--</cms:list>-->
+													</ul>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+										<table id="gzjl_13" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+											<tbody>
+											<tr>
+												<td align="left" valign="top">
+													<ul class="two_column_list">
+														<!--<cms:list item="Article" name="工作简报" count="16">-->
+															<li class="two_column_li">
+																<table border="0" cellpadding="0" cellspacing="0"
+																	   style="width:100%;height:100%;">
+																	<tr>
+																		<td class="tabli_title"><a class="font12"
+																								   title="${Article.Title}"
+																								   href="${Article.Link}"
+																								   target="_blank">13${Article.Title|CharWidth=24}</a>
+																		</td>
+																		<!--<%
+																		String date = TemplateData.getSysDate("yyyyMMdd");
+																		String publishDate=Article.getString("PublishDate");
+																		String publishDateFormat=
+																		TemplateData.getFormatDate("yyyyMMdd",publishDate);
+																		String bol1 =
+																		TemplateData.checkIfNew("2",date,publishDateFormat);
+																		String bol2 =
+																		TemplateData.checkIfNew("5",date,publishDateFormat);
+																		if(bol1.equals("true")&&bol2.equals("true")){
+																		%>
+																		<td class="tabli_img">
+																			<img src="../../images/crj/new.gif">
+																		</td>
+																		<%}%>
+																		<td class="tabli_date font12">
+																			${Article.ModifyTime|Format=MM-dd}
+																		</td>-->
+																	</tr>
+																</table>
+															</li>
+														<!--</cms:list>-->
+													</ul>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="10"></td>
+								</tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="gzzs">
+                    <div class="gzzs_title">
+                        <div class="navlist gzzs_bg">
+                            <div id="gzzs0" onmouseover="Show_Tabs('gzzs',1,0)"><a id="current" href="#"><span></span></a></div>
+                            <div id="_gzzs1" class="gzjl1" onmouseover="Show_Tabs('gzzs',1,1)"><a
+                                    href="<cms:link type='Catalog' name='常用资料'/>" target="_blank"><span></span></a></div>
+                            <div id="_gzzs2" class="gzjl1" onmouseover="Show_Tabs('gzzs',1,2)"><a
+                                    href="<cms:link type='Catalog' name='法律法规'/>" target="_blank"><span></span></a></div>
+                            <div id="_gzzs3" class="gzjl1" onmouseover="Show_Tabs('gzzs',1,3)"><a
+                                    href="<cms:link type='Catalog' name='办事指南'/>" target="_blank"><span></span></a></div>
+                        </div>
+                    </div>
+                    <div class="gzjlcontainer">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td height="10" width="754"></td>
+                            </tr>
+                            <tr>
+                                <td align="left" height="172" valign="top">
+                                    <table id="gzzs_10" style="display: block;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="工作助手" level="child" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_sub">[${article.childName}]</td>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=20}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="gzzs_11" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="常用资料" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=24}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="gzzs_12" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                   <!-- <cms:list item="Article" name="法律法规" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=24}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="gzzs_13" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="办事指南" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=24}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+							<tr>
+                                <td height="10"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="jctj">
+                    <div class="jctj_title">
+                        <div class="navlist jctj_bg">
+                            <div id="jctj0" onmouseover="Show_Tabs('jctj',1,0)"><a href="#"><span></span></a></div>
+                            <div id="_jctj1" class="gzjl1" onmouseover="Show_Tabs('jctj',1,1)"><a
+                                    href="<cms:link type='Catalog' name='警务咨讯'/>" target="_blank"><span></span></a></div>
+                            <div id="_jctj2" class="gzjl1" onmouseover="Show_Tabs('jctj',1,2)"><a
+                                    href="<cms:link type='Catalog' name='文化长廊'/>" target="_blank"><span></span></a></div>
+                            <div id="_jctj3" class="gzjl1" onmouseover="Show_Tabs('jctj',1,3)"><a
+                                    href="<cms:link type='Catalog' name='生活百科'/>" target="_blank"><span></span></a></div>
+                        </div>
+                    </div>
+                    <div class="gzjlcontainer">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td height="10" width="764"></td>
+                            </tr>
+                            <tr>
+                                <td align="left" height="172" valign="top">
+                                    <table id="jctj_10" style="display: block;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="精彩推荐" level="child" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_sub">[${article.childName}]</td>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=20}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="jctj_11" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="警务资讯" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=24}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="jctj_12" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="文化长廊" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=24}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table id="jctj_13" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="754">
+                                        <tbody>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <ul class="two_column_list">
+                                                    <!--<cms:list item="Article" name="生活百科" count="16">-->
+                                                        <li class="two_column_li">
+                                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                                   style="width:100%;height:100%;">
+                                                                <tr>
+                                                                    <td class="tabli_title"><a class="font12"
+                                                                                               title="${Article.Title}"
+                                                                                               href="${Article.Link}"
+                                                                                               target="_blank">${Article.Title|CharWidth=24}</a>
+                                                                    </td>
+                                                                    <!--<%
+                                                                    String date = TemplateData.getSysDate("yyyyMMdd");
+                                                                    String publishDate=Article.getString("PublishDate");
+                                                                    String publishDateFormat=
+                                                                    TemplateData.getFormatDate("yyyyMMdd",publishDate);
+                                                                    String bol1 =
+                                                                    TemplateData.checkIfNew("2",date,publishDateFormat);
+                                                                    String bol2 =
+                                                                    TemplateData.checkIfNew("5",date,publishDateFormat);
+                                                                    if(bol1.equals("true")&&bol2.equals("true")){
+                                                                    %>
+                                                                    <td class="tabli_img">
+                                                                        <img src="../../images/crj/new.gif">
+                                                                    </td>
+                                                                    <%}%>
+                                                                    <td class="tabli_date font12">
+                                                                        ${Article.ModifyTime|Format=MM-dd}
+                                                                    </td>-->
+                                                                </tr>
+                                                            </table>
+                                                        </li>
+                                                    <!--</cms:list>-->
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+							<tr>
+                                <td height="10"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="gzjlcontainer">
-                <table width="754">
-                    <tbody>
-                    <tr>
-                        <td height="10" width="754"></td>
-                    </tr>
-                    <tr>
-                        <td align="left" height="172" valign="top">
-                            <table id="gzjl_10" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0" width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="工作交流" level="child" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_sub">[${article.childName}]</td>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">10${Article.Title|CharWidth=20}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="gzjl_11" style="display: block;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="理论调研" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">11${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="gzjl_12" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="他山之石" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">12${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="gzjl_13" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="工作简报" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">13${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    <tr>
-                        <td height="10"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="gzzs">
-            <div class="gzzs_title">
-                <div class="navlist gzzs_bg">
-                    <div id="gzzs0" onmouseover="Show_Tabs('gzzs',1,0)"><a id="current" href="#"><span></span></a></div>
-                    <div id="_gzzs1" class="gzjl1" onmouseover="Show_Tabs('gzzs',1,1)"><a
-                            href="<cms:link type='Catalog' name='常用资料'/>" target="_blank"><span></span></a></div>
-                    <div id="_gzzs2" class="gzjl1" onmouseover="Show_Tabs('gzzs',1,2)"><a
-                            href="<cms:link type='Catalog' name='法律法规'/>" target="_blank"><span></span></a></div>
-                    <div id="_gzzs3" class="gzjl1" onmouseover="Show_Tabs('gzzs',1,3)"><a
-                            href="<cms:link type='Catalog' name='办事指南'/>" target="_blank"><span></span></a></div>
+            <div class="g-column3-r">
+                <div class="rcbg">
+                    <div class="rcbg_title"></div>
+                    <div class="rcbgcontainer">
+                        <ul class="button">
+                            <li class="button_li" style="margin-top:6px;">
+                                <a href="http://10.48.1.55:9080/sdga/login/outerLogin.do" target="_blank">
+                                    <img src="img/rcbg_bt1.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://mcdb.zx.ga/SendAction_allBrowse.action" target="_blank">
+                                    <img src="img/rcbg_bt2.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://10.48.1.206/" target="_blank">
+                                    <img src="img/rcbg_bt3.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://mail.gat.sd/" target="_blank">
+                                    <img src="img/rcbg_bt3.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://ssyq.zx.ga/keySearch.trs" target="_blank">
+                                    <img src="img/rcbg_bt4.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ywzl">
+                    <div class="ywzl_title"></div>
+                    <div class="ywzlcontainer">
+                        <ul class="button">
+                            <li class="button_li"  style="margin-top:6px;">
+                                <a href="http://10.48.1.166:9080/sdcrj/jsp/login.jsp" target="_blank">
+                                    <img src="img/ywzl_bt1.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://www.cr.ga/Crjxx/UserLogin.aspx" target="_blank">
+                                    <img src="img/ywzl_bt2.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://10.6.120.18/" target="_blank">
+                                    <img src="img/ywzl_bt3.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://10.6.1.35:8001/20100302/month.asp" target="_blank">
+                                    <img src="img/ywzl_bt4.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                            <li class="button_li">
+                                <a href="http://10.48.17.9/gat/services/xxcx.jsp" target="_blank">
+                                    <img src="img/ywzl_bt5.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+    
+                            <li class="button_li">
+                                <a href="http://10.48.17.9/gat/services/qbbs.jsp" target="_blank">
+                                    <img src="img/ywzl_bt6.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+    
+                            <li class="button_li">
+                                <a href="http://10.48.17.9/Services/NewRank.jsp?SiteID=223" target="_blank">
+                                    <img src="img/ywzl_bt7.jpg" style="border:0;display: block"/>
+                                </a>
+                            </li>
+                        </ul>
+    
+    
+                    </div>
+                </div>
+                <div class="wzdh">
+                    <div class="wzdh_title"></div>
+                    <div class="wzdhcontainer">
+                        <ul class="navi">
+                            <li><select id="select11" style="WIDTH: 180px"
+                                        onchange="javascript:window.open(this.options[this.selectedIndex].value)" size="1"
+                                        name="select">
+                                <option selected>=== 全国出入境 ===</option>
+                                <!--<cms:list item="FriendLink" name="全国出入境" count="100" begin="0">
+                                    <option value="${FriendLink.URL}">${FriendLink.Name}</option>
+                                </cms:list>-->
+                            </select></li>
+                            <li><select id="select12" style="WIDTH: 180px"
+                                        onchange="javascript:window.open(this.options[this.selectedIndex].value)" size="1"
+                                        name="select">
+                                <option selected>=== 全省出入境 ===</option>
+                                <!--<cms:list item="FriendLink" name="全省出入境" count="100" begin="0">
+                                    <option value="${FriendLink.URL}">${FriendLink.Name}</option>
+                                </cms:list>-->
+                            </select></li>
+                            <li><select id="select13" style="WIDTH: 180px"
+                                        onchange="javascript:window.open(this.options[this.selectedIndex].value)" size="1"
+                                        name="select">
+                                <option selected>=== 厅直部门 ===</option>
+                                <!--<cms:list item="FriendLink" name="厅直部门" count="100" begin="0">
+                                    <option value="${FriendLink.URL}">${FriendLink.Name}</option>
+                                </cms:list>-->
+                            </select></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="divbuttoninner">
+                    <table cellspacing="0" cellpadding="0" width="220">
+                        <tr>
+                            <td colspan="3"><a href="<cms:link type='Catalog' name='光荣榜'/>" target="_blank"><img
+                                    style="border:0;display: block" src="img/grb.jpg"></a></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 6px;"></td>
+                        </tr>
+                        <tr>
+                            <td><a href="<cms:link type='Catalog' name='视频在线'/>" target="_blank"><img
+                                    style="border:0;display: block" src="img/spzx.jpg"></a></td>
+                            <td style="width: 6px"></td>
+                            <td><a href="<cms:link type='Catalog' name='警钟长鸣'/>" target="_blank"><img
+                                    style="border:0;display: block" src="img/jzcm.jpg"></a></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div class="gzjlcontainer">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td height="10" width="754"></td>
-                    </tr>
-                    <tr>
-                        <td align="left" height="172" valign="top">
-                            <table id="gzzs_10" style="display: block;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="100%">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-
-
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="工作助手" level="child" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_sub">[${article.childName}]</td>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=20}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-
-
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="gzzs_11" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="常用资料" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="gzzs_12" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                           <!-- <cms:list item="Article" name="法律法规" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="gzzs_13" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="办事指南" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    <tr>
-                        <td height="10"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="jctj">
-            <div class="jctj_title">
-                <div class="navlist jctj_bg">
-                    <div id="jctj0" onmouseover="Show_Tabs('jctj',1,0)"><a href="#"><span></span></a></div>
-                    <div id="_jctj1" class="gzjl1" onmouseover="Show_Tabs('jctj',1,1)"><a
-                            href="<cms:link type='Catalog' name='警务咨讯'/>" target="_blank"><span></span></a></div>
-                    <div id="_jctj2" class="gzjl1" onmouseover="Show_Tabs('jctj',1,2)"><a
-                            href="<cms:link type='Catalog' name='文化长廊'/>" target="_blank"><span></span></a></div>
-                    <div id="_jctj3" class="gzjl1" onmouseover="Show_Tabs('jctj',1,3)"><a
-                            href="<cms:link type='Catalog' name='生活百科'/>" target="_blank"><span></span></a></div>
-                </div>
-            </div>
-            <div class="gzjlcontainer">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td height="10" width="764"></td>
-                    </tr>
-                    <tr>
-                        <td align="left" height="172" valign="top">
-                            <table id="jctj_10" style="display: block;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-
-
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="精彩推荐" level="child" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_sub">[${article.childName}]</td>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=20}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="jctj_11" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="警务资讯" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="jctj_12" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="文化长廊" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table id="jctj_13" style="display: none;" align="center" border="0" cellpadding="0"
-                                   cellspacing="0"
-                                   width="754">
-                                <tbody>
-                                <tr>
-                                    <td align="left" valign="top">
-                                        <ul class="two_column_list">
-                                            <!--<cms:list item="Article" name="生活百科" count="16">-->
-                                                <li class="two_column_li">
-                                                    <table border="0" cellpadding="0" cellspacing="0"
-                                                           style="width:100%;height:100%;">
-                                                        <tr>
-                                                            <td class="tabli_title"><a class="font12"
-                                                                                       title="${Article.Title}"
-                                                                                       href="${Article.Link}"
-                                                                                       target="_blank">${Article.Title|CharWidth=24}</a>
-                                                            </td>
-                                                            <!--<%
-                                                            String date = TemplateData.getSysDate("yyyyMMdd");
-                                                            String publishDate=Article.getString("PublishDate");
-                                                            String publishDateFormat=
-                                                            TemplateData.getFormatDate("yyyyMMdd",publishDate);
-                                                            String bol1 =
-                                                            TemplateData.checkIfNew("2",date,publishDateFormat);
-                                                            String bol2 =
-                                                            TemplateData.checkIfNew("5",date,publishDateFormat);
-                                                            if(bol1.equals("true")&&bol2.equals("true")){
-                                                            %>
-                                                            <td class="tabli_img">
-                                                                <img src="../../images/crj/new.gif">
-                                                            </td>
-                                                            <%}%>
-                                                            <td class="tabli_date font12">
-                                                                ${Article.ModifyTime|Format=MM-dd}
-                                                            </td>-->
-                                                        </tr>
-                                                    </table>
-                                                </li>
-                                            </cms:list>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    <tr>
-                        <td height="10"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </div>
-        <div class="g-column3-r">
-            <div class="rcbg">
-                <div class="rcbg_title"></div>
-                <div class="rcbgcontainer">
-                    <ul class="button">
-                        <li class="button_li">
-                            <a href="http://10.48.1.55:9080/sdga/login/outerLogin.do" target="_blank">
-                                <img src="img/rcbg_bt1.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                        <li class="button_li">
-                            <a href="http://mcdb.zx.ga/SendAction_allBrowse.action" target="_blank">
-                                <img src="img/rcbg_bt2.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                        <li class="button_li">
-                            <a href="http://10.48.1.206/" target="_blank">
-                                <img src="img/rcbg_bt3.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-
-                        <li class="button_li">
-                            <a href="http://mail.gat.sd/" target="_blank">
-                                <img src="img/rcbg_bt3.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-
-                        <li class="button_li">
-                            <a href="http://ssyq.zx.ga/keySearch.trs" target="_blank">
-                                <img src="img/rcbg_bt4.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="ywzl">
-                <div class="ywzl_title"></div>
-                <div class="ywzlcontainer">
-                    <ul class="button">
-                        <li class="button_li">
-                            <a href="http://10.48.1.166:9080/sdcrj/jsp/login.jsp" target="_blank">
-                                <img src="img/ywzl_bt1.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                        <li class="button_li">
-                            <a href="http://www.cr.ga/Crjxx/UserLogin.aspx" target="_blank">
-                                <img src="img/ywzl_bt2.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                        <li class="button_li">
-                            <a href="http://10.6.120.18/" target="_blank">
-                                <img src="img/ywzl_bt3.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                        <li class="button_li">
-                            <a href="http://10.6.1.35:8001/20100302/month.asp" target="_blank">
-                                <img src="img/ywzl_bt4.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                        <li class="button_li">
-                            <a href="http://10.48.17.9/gat/services/xxcx.jsp" target="_blank">
-                                <img src="img/ywzl_bt5.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-
-                        <li class="button_li">
-                            <a href="http://10.48.17.9/gat/services/qbbs.jsp" target="_blank">
-                                <img src="img/ywzl_bt6.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-
-                        <li class="button_li">
-                            <a href="http://10.48.17.9/Services/NewRank.jsp?SiteID=223" target="_blank">
-                                <img src="img/ywzl_bt7.jpg" style="border:0;display: block"/>
-                            </a>
-                        </li>
-                    </ul>
-
-
-                </div>
-            </div>
-            <div class="wzdh">
-                <div class="wzdh_title"></div>
-                <div class="wzdhcontainer">
-                    <ul class="navi">
-                        <li><select id="select11" style="WIDTH: 180px"
-                                    onchange="javascript:window.open(this.options[this.selectedIndex].value)" size="1"
-                                    name="select">
-                            <option selected>=== 全国出入境 ===</option>
-                            <!--<cms:list item="FriendLink" name="全国出入境" count="100" begin="0">
-                                <option value="${FriendLink.URL}">${FriendLink.Name}</option>
-                            </cms:list>-->
-                        </select></li>
-                        <li><select id="select12" style="WIDTH: 180px"
-                                    onchange="javascript:window.open(this.options[this.selectedIndex].value)" size="1"
-                                    name="select">
-                            <option selected>=== 全省出入境 ===</option>
-                            <!--<cms:list item="FriendLink" name="全省出入境" count="100" begin="0">
-                                <option value="${FriendLink.URL}">${FriendLink.Name}</option>
-                            </cms:list>-->
-                        </select></li>
-                        <li><select id="select13" style="WIDTH: 180px"
-                                    onchange="javascript:window.open(this.options[this.selectedIndex].value)" size="1"
-                                    name="select">
-                            <option selected>=== 厅直部门 ===</option>
-                            <!--<cms:list item="FriendLink" name="厅直部门" count="100" begin="0">
-                                <option value="${FriendLink.URL}">${FriendLink.Name}</option>
-                            </cms:list>-->
-                        </select></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="divbuttoninner">
-                <table cellspacing="0" cellpadding="0" width="220">
-                    <tr>
-                        <td colspan="3"><a href="<cms:link type='Catalog' name='光荣榜'/>" target="_blank"><img
-                                style="border:0;display: block" src="img/grb.jpg"></a></td>
-                    </tr>
-                    <tr>
-                        <td style="height: 6px;"></td>
-                    </tr>
-                    <tr>
-                        <td><a href="<cms:link type='Catalog' name='视频在线'/>" target="_blank"><img
-                                style="border:0;display: block" src="img/spzx.jpg"></a></td>
-                        <td style="width: 6px"></td>
-                        <td><a href="<cms:link type='Catalog' name='警钟长鸣'/>" target="_blank"><img
-                                style="border:0;display: block" src="img/jzcm.jpg"></a></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
         </div>
         <!--end-->
 
-
-
+           
         <div class="photoold">
             <table width="990px" border="0" align="center" cellpadding="0" cellspacing="0" >
                 <tr>
@@ -945,12 +950,9 @@
                 }
             </script>
         </div>
-
-
-
     </div>
     <div id="g_bot">
-        <table width="990px" height="80px" border="0" align="center" cellpadding="0" cellspacing="0" >
+		<table width="990px" height="80px" border="0" align="center" cellpadding="0" cellspacing="0" >
             <TR>
                 <TD vAlign=center width=990 align=middle height=80 background="img/footer.jpg" style="margin:0 auto;">
                     <TABLE cellSpacing=0 cellPadding=0 border=0 vAlign=center align=middle style="font-size:12px;text-align: center">
@@ -975,10 +977,7 @@
                 </TD>
             </TR>
         </table>
-    </div>
-
-
+	</div>
 </div>
-
 </body>
 </html>

@@ -15,11 +15,13 @@
 /*全局样式*/
 /*强制去掉垂直滚动条*/
 html{
-    overflow-y:auto;
+    overflow-y:scroll;
+	overflow-x:hidden;
 }
 body{
     background-image: url("../img/bkg_light.jpg");
     background-repeat: repeat;
+	margin:0 auto;
 }
 #wrapper {
     width: 1000px;
@@ -42,9 +44,9 @@ body{
     background-repeat: repeat-x;
 }
 #g_menu_l{
-    width:690px;
+    width:685px;
     height:35px;
-    padding-left: 4px;
+    padding-left: 5px;
     float: left;
 }
 #g_menu_r{
@@ -52,7 +54,7 @@ body{
     height:35px;
     float:right;
     text-align: right;
-    margin-right:15px;
+    padding-right:15px;
 }
 .menu_list{
     width: 92px;
@@ -100,8 +102,7 @@ body{
 #g_mid{
     width: 990px;
     height:auto;
-    margin-left: 5px;
-    margin-top: 5px;
+    margin:5px auto;
 }
 #mid_1{
     width: 990px;
@@ -484,10 +485,23 @@ ul.button {
     PADDING-LEFT: 0px;
     PADDING-BOTTOM: 0px;
     MARGIN-LEFT: 0px;
-
     BORDER-LEFT: 0px;
-    PADDING-TOP: 6px;
     BORDER-BOTTOM: 0px;
+}
+
+ul.button li {
+    BORDER-RIGHT: 0px;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    BORDER-LEFT: 0px;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: 0px;
+	height:46px;
+    width:206px;_height:40px;
+float:left;
 }
 
 
@@ -565,7 +579,7 @@ ul.navi li {
 
 .photoold{
     width:990px;
-    height:145px;
+    height:150px;
     margin-top:10px;
     background-image:url("../img/pic.jpg");
     overflow:hidden;
