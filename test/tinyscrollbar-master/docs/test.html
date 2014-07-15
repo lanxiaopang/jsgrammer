@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/test.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery.tinyscrollbar.js"></script>
+</head>
+<body>
+<div id="scrollbar2">
+
+    <div class="viewport">
+        <div class="overview">
+            <img src="images/picture7.jpg" alt="image 2" />
+            <img src="images/picture5.jpg" alt="image 2" />
+            <img src="images/picture6.jpg" alt="image 2" />
+            <img src="images/picture4.jpg" alt="image 2" />
+            <img src="images/picture3.jpg" alt="image 2" />
+            <img src="images/picture2.jpg" alt="image 2" />
+        </div>
+    </div>
+    <div class="scrollbar">
+        <div class="track">
+            <div class="thumb">
+                <div class="end"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#scrollbar2").tinyscrollbar({ axis: 'x' });
+        });
+    </script>
+</div>
+</body>
+</html>

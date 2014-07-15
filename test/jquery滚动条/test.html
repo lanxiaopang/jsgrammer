@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        *{margin:0;padding:0;list-style-type:none;}
+        a,img{border:0;}
+        body{font:12px/180% Arial, Helvetica, sans-serif,"宋体";}
+        a{color:#333;text-decoration:none;}
+        a:hover{color:#3366cc;text-decoration:underline;}
+        /* book slider */
+        #bookslide,#bscrollbar,#bscrollbar-handel{background:url(bookslide-bg.png) no-repeat;}
+        #bookslide{width:980px;height:165px;margin:18px 0 10px;position:relative;padding:15px 0 0;background-position:0 0;}
+        #bookslide-main{height:138px;overflow:hidden;margin:0 auto 2px;width:960px;}
+        #bookslide-main,#bookslide-main a{color:#ccc;}
+        #bookslide-main li{float:left;width:86px;text-align:center;padding:0 25px;}
+        #bookslide-main img{width:86px;}
+        #bookslide-main p{height:40px;line-height:20px;overflow:hidden;}
+        #bscrollbar{height:19px;font-size:0;overflow:hidden;width:933px;margin:0 auto;background-position:0 -180px;}
+        #bscrollbar-pre,#bscrollbar-next{float:left;cursor:pointer;width:39px;height:19px;background:url(bscrollbar-bg.png) no-repeat;}
+        #bscrollbar-next{float:right;width:30px;background-position:right top;}
+        #bscrollbar-m{float:left;cursor:pointer;height:15px;padding:2px;width:865px;display:inline;margin:0 -6px 0 -2px;}
+        #bscrollbar-handel{width:83px;height:15px;background-position:0 -211px;}
+    </style>
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="Dragslide.js"></script>
+    <script type="text/javascript">
+        //设置滚动条
+        function homeslide(x,y){
+            var sld = new Slider("bscrollbar-m", "bscrollbar-handel", {
+                MaxValue: $("bookslide-main").scrollWidth - $("bookslide-main").clientWidth,
+                onMin: function(){ $("bscrollbar-pre").style.backgroundPosition = "bottom left"; },
+                onMax: function(){ $("bscrollbar-next").style.backgroundPosition = "bottom right"; },
+                onMid: function(){ $("bscrollbar-pre").style.backgroundPosition = "top left"; $("bscrollbar-next").style.backgroundPosition = "top right"; },
+                onMove: function(){ $("bookslide-main").scrollLeft = this.GetValue(); }
+            });
+            sld.SetPercent(0);
+            sld.Ease = true;
+            $("bscrollbar-pre").onmouseover = function(){ sld.Run(false); }
+            $("bscrollbar-pre").onmouseout = function(){ sld.Stop(); }
+            $("bscrollbar-next").onmouseover = function(){ sld.Run(true); }
+            $("bscrollbar-next").onmouseout = function(){ sld.Stop(); }
+        }
+        //模拟滚动条设置ul长度
+        function homdeslidelen() {
+            var len = jQuery('#bookslide-main li').length;
+            jQuery('#bookslide-main ul').css('width', len * 136)
+        }
+        //运行
+        jQuery(function(){
+            homdeslidelen();
+            homeslide();
+        })
+    </script>
+</head>
+<body>
+
+<div id="bookslide">
+    <div id="bookslide-main">
+        <ul>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 信息提示框 鼠标滑过导航文本内容显示提示详细信息文本"><img  alt="jquery 信息提示框 鼠标滑过导航文本内容显示提示详细信息文本" src="images/small939eec7e10f99c541febcef39202b308.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 信息提示框 鼠标滑过导航文本内容显示提示详细信息文本">jquery 信息提示框 鼠标滑过导航文本内容显示提示详细信息文本</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 图片特效 鼠标滑过图片显示文字与标题内容特效"><img  alt="jquery 图片特效 鼠标滑过图片显示文字与标题内容特效" src="images/small3a1184db401138d6443a1b5f42cb289b.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 图片特效 鼠标滑过图片显示文字与标题内容特效">jquery 图片特效 鼠标滑过图片显示文字与标题内容特效</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 幻灯片插件 canvas 3D旋转木马 图片立体展示 图片有大到小一次顺序排列"><img  alt="jquery 幻灯片插件 canvas 3D旋转木马 图片立体展示 图片有大到小一次顺序排列" src="images/small18129a189a8f547aba10fb10f91e6282.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 幻灯片插件 canvas 3D旋转木马 图片立体展示 图片有大到小一次顺序排列">jquery 幻灯片插件 canvas 3D旋转木马 图片立体展示 图片有大到小一次顺序排列</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 导航 鼠标滑过类似气泡放大缩小显示二级菜单"><img  alt="jquery 导航 鼠标滑过类似气泡放大缩小显示二级菜单" src="images/smalldea4b17bf6f50d0481801c41cc6eae4b.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 导航 鼠标滑过类似气泡放大缩小显示二级菜单">jquery 导航 鼠标滑过类似气泡放大缩小显示二级菜单</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery JScrollPane 插件设置浏览器默认垂直滚动条和内置滚动条"><img  alt="jquery JScrollPane 插件设置浏览器默认垂直滚动条和内置滚动条" src="images/small9d03c58136f0f413d4f619536213bddb.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery JScrollPane 插件设置浏览器默认垂直滚动条和内置滚动条">jquery JScrollPane 插件设置浏览器默认垂直滚动条和内置滚动条</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作"><img  alt="jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作" src="images/small60e10976234830bb2f715dc2b6438479.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作">jquery 滚动 kxbdSuperMarquee插件支持图片与文字无缝滚动 图片翻滚 焦点图左右切换 banner广告制作</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动"><img  alt="jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动" src="images/small99c04eb3c2092522c82fda8a5e9245b5.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动">jquery 文字滚动大全 scroll 支持文字或图片 单行滚动 多行滚动 带按钮控制滚动</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery 图片切换 switchable 带左右按钮控制分页索引图片切换"><img  alt="jquery 图片切换 switchable 带左右按钮控制分页索引图片切换" src="images/small2c73b60f596df9f398871518dcc496f3.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery 图片切换 switchable 带左右按钮控制分页索引图片切换">jquery 图片切换 switchable 带左右按钮控制分页索引图片切换</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox"><img  alt="用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox" src="images/smallee9241175b1e38b5df271a9f2f67034d.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox">用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="用div+css制作一个CSS3的简约图标导航菜单"><img  alt="用div+css制作一个CSS3的简约图标导航菜单" src="images/smallc5d3ea1b5b05a76711a797134d65dbfd.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="用div+css制作一个CSS3的简约图标导航菜单">用div+css制作一个CSS3的简约图标导航菜单</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/" title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果"><img  alt="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果" src="images/small8937f779ac932d157fe04fe463b083d4.jpg" /></a>
+                <p><a href="http://www.17sucai.com/" title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果">jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果</a></p>
+            </li>
+        </ul>
+    </div>
+    <div id="bscrollbar">
+        <div id="bscrollbar-pre"></div>
+        <div id="bscrollbar-m"><div id="bscrollbar-handel"></div></div>
+        <div id="bscrollbar-next"></div>
+    </div>
+</div>
+
+</body>
+</html>
