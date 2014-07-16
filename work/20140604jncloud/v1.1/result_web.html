@@ -56,17 +56,31 @@
     </div>
 
     <div id="result_doc_con">
-        <p class="border_grey grey_color2 condition_tab">
-            <span id="sum_txt" class="grey_txt_color2">
-                找到相关结果约有<span class="orange_txt_color1">342</span>项,耗时7毫秒，以下是1-10条。
-            </span>
-            <span id="display_mode" class="grey_txt_color2">
-                排序：相关度&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                检索：全文&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                标题&nbsp;&nbsp;&nbsp;
-            </span>
-        </p>
+    <div class="border_grey grey_color2 condition_tab_doc">
+        <div id="sum_txt_doc" class="grey_txt_color2">
+            找到相关结果约有<span class="orange_txt_color1">342</span>项,耗时7毫秒，以下是1-10条。
+        </div>
+        <div id="display_mode2" class="grey_txt_color2">
+            <p class="display_mode2_p">排序：</p>
+            <p class="display_mode2_p" style="margin-right: 20px;color: #000000">
+                <a href="#" id="order_relate" onclick="return false;">
+                    <img src="img/doc/xgd.gif" style="margin-top: 9px;">
+                </a>
+            </p>
+            <p class="display_mode2_p" style="margin-right: 20px;">
+                <a href="#" id="order_time" onclick="javascript:changeShowOrder('order',2);return false;">时间</a>
+            </p>
+            <p class="display_mode2_p">检索：</p>
+            <p class="display_mode2_p" style="margin-right: 20px;">
+                <a href="#" id="search_article" onclick="return false;">
+                    <img src="img/doc/qw.gif" style="margin-top: 9px;">
+                </a>
+            </p>
+            <p class="display_mode2_p" style="margin-right: 10px;">
+                <a href="#" id="search_title" onclick="javascript:changeShowOrder('search',2);return false;">标题</a>
+            </p>
+        </div>
+    </div>
         <div class="result_doc_li border_bot_dot">
             <p class="result_doc_li1">
                 <span class="ft18">
@@ -352,6 +366,6 @@
 </div>
 </div>
 <script src="js/pub_include.js"></script>
-<script src="js/result.js"></script>
+<script src="js/result_doc.js"></script>
 </body>
 </html>

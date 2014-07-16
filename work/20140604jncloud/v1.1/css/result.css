@@ -442,8 +442,11 @@ html body{
     _height:3px;
 }
 .condition_tab{
+     height:35px;
+     line-height: 35px;
+ }
+.condition_tab_doc{
     height:35px;
-    line-height: 35px;
 }
 #location{
     margin-left:10px;
@@ -494,9 +497,34 @@ html body{
     display: block;
     float: left;
 }
+#sum_txt_doc{
+    margin-left:10px;
+    display: block;
+    float: left;
+    line-height: 35px;
+}
 #display_mode{
     float:right;
     margin-right:10px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+}
+#display_mode2{
+    float:right;
+    margin-right:10px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+}
+.display_mode2_p{
+    float:left;
+    line-height:36px;
+}
+.display_mode2_p a{
+    color: #000000;
 }
 .display_mode12{
     width: 38px;
