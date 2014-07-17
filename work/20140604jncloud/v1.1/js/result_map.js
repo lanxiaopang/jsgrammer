@@ -157,7 +157,36 @@ $(function(){
         $(this).addClass('hovertr');
     },function(){
         $(this).removeClass('hovertr');
-    })
+    });
+
+
+    /*头像悬停效果*/
+    $('.pic_con').hover(
+        function(){
+            var foo = $(this).find('.pic_top_l').find('img').attr('src');
+            foo=foo.replace("_b","_r");
+            $(this).find('.pic_top_l').find('img').attr('src',foo);
+            $(this).find('.pic_bot_l').find('img').attr('src','img/map/home_2.gif');
+            $(this).addClass('orange_txt_color1');
+        },
+    function(){
+        var foo = $(this).find('.pic_top_l').find('img').attr('src');
+        foo=foo.replace("_r","_b");
+        $(this).find('.pic_top_l').find('img').attr('src',foo);
+        $(this).find('.pic_bot_l').find('img').attr('src','img/map/home_1.gif');
+        $(this).removeClass('orange_txt_color1');
+        }
+    );
+    $('.pic_top1').hover(
+        function(){
+            $(this).next().animate({top:"74px"});
+        },
+        function(){
+            $(this).next().animate({top:"92px"});
+
+        }
+    )
+
 })
 
 function showHideTabBirth(){

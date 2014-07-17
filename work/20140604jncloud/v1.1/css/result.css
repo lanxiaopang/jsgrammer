@@ -513,10 +513,9 @@ html body{
 }
 #display_mode2{
     float:right;
-    margin-right:10px;
     display: block;
-    height: 35px;
-    line-height: 35px;
+    height: 33px;
+    line-height: 33px;
     vertical-align: middle;
 }
 .display_mode2_p{
@@ -837,14 +836,76 @@ tbody td{
     height:150px;
     overflow: hidden;
 }
-#scrollbar22_inside img{
-    margin:0 5px;
-}
-#scrollbar22_inside div{
+
+.pic_con{
     width: 99px;
     height: 136px;
     margin:0 5px;
     float: left;
+}
+.pic_top{
+    width: 99px;
+    height:92px;
+    position: relative;
+    overflow: hidden;
+}
+.pic_top1{
+    width: 99px;
+    height:92px;
+}
+.pic_top_l{
+    width: 16px;
+    height:92px;
+	margin:5px 4px 0px;
+    display:inline;
+    float: left;
+}
+.pic_top_r{
+    width: 72px;
+    height:92px;
+	padding:0px;
+    float: left;
+}
+.pic_name{
+    display: block;
+    width: 12px;
+    font-size:12px;
+    margin-left: 2px;
+	display:inline-block;
+}
+.pic_mid_top{
+    width: 99px;
+    height:18px;
+    background-color: red;
+}
+.pic_mid{
+    width: 99px;
+    height: 18px;
+    background-color: orangered;
+    filter:alpha(opacity=70);/*IE*/
+    -moz-opacity:0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+    position: absolute;
+    top:92px;
+}
+.pic_mid img{
+    margin-left: 11px;
+}
+.pic_bot{
+    margin-top: 5px;
+}
+.pic_bot_l{
+    width: 16px;
+	margin-left:4px;
+	display:inline;
+    float: left;
+}
+.pic_bot_r{
+    width: 74px;
+    line-height: 17px;
+    font-size: 11px;
+    float: right;
 }
 /*result_map页结束*/
 
