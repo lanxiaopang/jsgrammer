@@ -177,12 +177,12 @@ $(function(){
         $(this).removeClass('orange_txt_color1');
         }
     );
-    $('.pic_top1').hover(
+    $('.pic_con').hover(
         function(){
-            $(this).next().animate({top:"74px"});
+            $(this).find('.pic_mid').stop().animate({top:"74px"});
         },
         function(){
-            $(this).next().animate({top:"92px"});
+            $(this).find('.pic_mid').stop().animate({top:"92px"});
 
         }
     )
