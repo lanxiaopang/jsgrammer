@@ -1173,4 +1173,13 @@ tbody td{
     background: none repeat scroll 0px 0px #000;
     width: 100%;
 }
+.relate_result_video{
+    margin:20px 20px 0px;
+}
+#wrapper_mid_video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
 /*result_video页结束*/
