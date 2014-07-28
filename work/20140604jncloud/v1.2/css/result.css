@@ -55,6 +55,9 @@ html body{
 .blue_color1{
     background-color:#226ab2;
 }
+.blue_txt_color{
+    color: #0064DC;
+}
 .grey_color1{
     background-color: #eeeeee;
 }
@@ -70,6 +73,9 @@ html body{
 }
 .grey_color5{
     background-color: #f6f6f6;
+}
+.grey_color6{
+    background-color: #f3f3f3;
 }
 .grey_txt_color1{
     color:#9c9c9c;
@@ -977,3 +983,194 @@ tbody td{
 
 
 
+/*result_video页开始*/
+
+#topInfoBar {
+    height: 23px;
+    margin: 8px 0 15px 73px;
+    position: relative;
+    z-index: 80;
+    word-wrap: break-word;
+    padding-right: 10px;
+    width: 90%;
+}
+
+#top-filter-hoder {
+    float: right;
+}
+
+#filter-container {
+    position: relative;
+    text-align: right;
+}
+
+.filter {
+    display: inline-block;
+    margin-right: 9px;
+    position: relative;
+    text-align: left;
+    width: 200px;
+    z-index: 99;
+}
+
+#typeFilter, #styleFilter {
+    display: "";
+}
+
+#colorFilter, #colorFilter {
+    display: none;
+}
+
+.subFilter {
+    float: right;
+    position: relative;
+    top:7px;
+    right:20px;
+}
+
+.menu-con-arrow {
+    background: url('../img/pic/newFilterBg.png') no-repeat scroll -25px -82px transparent;
+    display: none;
+    font-size: 0;
+    height: 7px;
+    left: 40px;
+    position: absolute;
+    top: 20px;
+    width: 11px;
+    z-index: 200;
+}
+
+.subFilter ul {
+    color: #084CB3;
+    font-size: 12px;
+    list-style: none outside none;
+}
+
+.filter-item-con {
+    background-color: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: -6px;
+    position: absolute;
+    top: 25px;
+    width: 125px;
+    z-index: 100;
+}
+
+.subFilter ul .selected {
+    background: url("../img/pic/newFilterBg.png") no-repeat scroll 105px -116px #FFFFFF;
+    border-color: #FFFFFF;
+    color: #464646;
+    cursor: default;
+}
+
+.subFilter ul .list-first-item {
+    border-color: #FFFFFF;
+}
+
+.subFilter ul li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #FFFFFF;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 0;
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+    position: relative;
+}
+
+.filter-menu-item {
+    background: url("../img/pic/newFilterBg.png") no-repeat scroll right 6px transparent;
+    color: #0064DC;
+    cursor: pointer;
+    font-size: 12px;
+    height: 19px;
+    line-height: 19px;
+    margin-left: 19px;
+    padding-right: 11px;
+    position: relative;
+    text-align: left;
+    float: left;
+
+}
+
+#filterBtn {
+    display: inline-block;
+    font-size: 12px;
+    position: relative;
+    z-index: 99;
+    margin-left: 5px;
+
+}
+.totop {
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+}
+#resultVideo{
+    width:990px;
+    height: 990px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.v_bg{
+    width: 161px;
+    height:154px;
+    float:left;
+    margin:5px 18px;
+    overflow: hidden;
+}
+.v_s_pic{
+    width: 145px;
+    height:80px;
+    margin: 8px auto;
+    position: relative;
+}
+.v_describe {
+    width: 145px;
+    height:30px;
+    margin: 5px auto;
+}
+.v_date{
+    width: 145px;
+    height:15px;
+    margin: 5px auto;
+}
+.icon{
+    background: url('../img/video/play-icon.png') no-repeat scroll 0px 0px transparent;
+    height: 42px;
+    width: 42px;
+    left: 33.5%;
+    top: 28.1%;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0px;
+}
+.v_bg a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.v_bg a:hover{
+    background-color: #f3f3f3;
+}
+.mask{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    cursor: pointer;
+    display: block;
+    visibility: visible;
+    opacity: 0.5;
+    height: 100%;
+    display: none;
+    background: none repeat scroll 0px 0px #000;
+    width: 100%;
+}
+/*result_video页结束*/

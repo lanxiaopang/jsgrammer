@@ -704,7 +704,7 @@ img {
 .totop {
     position: fixed;
     right: 10px;
-    bottom: 10px;
+    bottom: 30px;
 }
 
 * html .totop {
@@ -951,10 +951,6 @@ em {
     vertical-align: middle;
 }
 
-.outlineimg {
-    background-image: url("../images/loading-big.gif");
-    background-repeat: no-repeat;
-}
 
 .imageorder {
 }
