@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#sideCatalog {
+    width: 290px;
+    height: 355px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: '宋体';
+    line-height: 19px;
+    position: relative;
+    left: 10px;
+}

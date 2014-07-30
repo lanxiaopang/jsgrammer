@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="b.css">
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="jquery.scrollTo.js"></script>
+</head>
+<body>
+<div id="anchor1" style="height:400px;background-color: #fefefe">111</div>
+<div id="anchor2" style="height:400px;background-color: #fefefe">211</div>
+<div id="anchor3" style="height:400px;background-color: #fefefe">311</div>
+<div id="anchor4" style="height:400px;background-color: #fefefe">411</div>
+<div id="anchor5" style="height:400px;background-color: #fefefe">511</div>
+<div id="sideToolbar" style="position: fixed;top: 90px;left: 857px;display: block;">
+    <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+        <div id="sideCatalog-sidebar">
+            <div class="sideCatalog-sidebar-top"></div>
+            <div class="sideCatalog-sidebar-bottom"></div>
+        </div>
+        <div id="sideCatalog-updown" style="visibility: hidden;">
+            <div id="sideCatalog-up" class="sideCatalog-up-disable" title="向上翻页"></div>
+            <div id="sideCatalog-down" class="sideCatalog-down-enable" title="向下翻页"></div>
+        </div>
+        <div id="sideCatalog-catalog">
+            <dl style="width:175px;zoom:1">
+                <dd class="sideCatalog-item1" id="sideToolbar-item--1"><span class="sideCatalog-index1">1</span><a
+                        href="#1" class="nslog:1026" title="概述" onclick="return false;">概述</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--2"><span class="sideCatalog-index1">2</span><a
+                        href="#2" class="nslog:1026" title="基本简介" onclick="return false;">基本简介</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--3"><span class="sideCatalog-index1">3</span><a
+                        href="#3" class="nslog:1026" title="发售日期" onclick="return false;">发售日期</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--4"><span class="sideCatalog-index1">4</span><a
+                        href="#4" class="nslog:1026" title="自由撤消" onclick="return false;">自由撤消</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--5"><span class="sideCatalog-index1">5</span><a
+                        href="#5" class="nslog:1026" title="参考资料库" onclick="return false;">参考资料库</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--6"><span class="sideCatalog-index1">6</span><a
+                        href="#6" class="nslog:1026" title="编译器" onclick="return false;">编译器</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--7"><span class="sideCatalog-index1">7</span><a
+                        href="#7" class="nslog:1026" title="Xcode快捷键" onclick="return false;">Xcode快捷键</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item2" id="sideToolbar-item--7_1"><span class="sideCatalog-index2">7.1</span><a
+                        href="#7_1" class="nslog:1026" title="文件" onclick="return false;">文件</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item2" id="sideToolbar-item--7_2"><span class="sideCatalog-index2">7.2</span><a
+                        href="#7_2" class="nslog:1026" title="编辑" onclick="return false;">编辑</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item2" id="sideToolbar-item--7_3"><span class="sideCatalog-index2">7.3</span><a
+                        href="#7_3" class="nslog:1026" title="调试" onclick="return false;">调试</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--8"><span class="sideCatalog-index1">8</span><a
+                        href="#8" class="nslog:1026" title="海量内存" onclick="return false;">海量内存</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--9"><span class="sideCatalog-index1">9</span><a
+                        href="#9" class="nslog:1026" title="构建" onclick="return false;">构建</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--10"><span class="sideCatalog-index1">10</span><a
+                        href="#10" class="nslog:1026" title="Java" onclick="return false;">Java</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--11"><span class="sideCatalog-index1">11</span><a
+                        href="#11" class="nslog:1026" title="输入" onclick="return false;">输入</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--12"><span class="sideCatalog-index1">12</span><a
+                        href="#12" class="nslog:1026" title="远程调试" onclick="return false;">远程调试</a><span
+                        class="sideCatalog-dot"></span></dd>
+                <dd class="sideCatalog-item1" id="sideToolbar-item--13"><span class="sideCatalog-index1">13</span><a
+                        href="#13" class="nslog:1026" title="开发" onclick="return false;">开发</a><span
+                        class="sideCatalog-dot"></span></dd>
+            </dl>
+        </div>
+    </div>
+    <a class="" id="sideCatalogBtn" href="javascript:void(0);" style="visibility: visible;"></a><a id="sideToolbar-up"
+                                                                                                   href="javascript:void(0)"
+                                                                                                   style="visibility: visible;"></a>
+</div>
+<script>
+    $(function(){
+        $("#sideToolbar-item--1").click(function(){
+            $.scrollTo('#anchor1',500);
+        });
+        $("#sideToolbar-item--2").click(function(){
+            $.scrollTo('#anchor2',800);
+        });
+        $("#sideToolbar-item--3").click(function(){
+            $.scrollTo('#anchor3',1000);
+        })
+        $("#sideToolbar-item--4").click(function(){
+            $.scrollTo('#anchor4',1200);
+        });
+        $("#sideToolbar-item--5").click(function(){
+            $.scrollTo('#anchor5',1500);
+        });
+    });
+</script>
+</body>
+</html>
