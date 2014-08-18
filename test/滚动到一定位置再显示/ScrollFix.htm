@@ -12,7 +12,7 @@
 滚动内容区域<br />
 滚动内容区域<br />
 </div>
-<div id="div1" style="border:solid 1px gray; width:90px; padding:10px; background-color:#eff;">
+<div id="div1" style="display:none;border:solid 1px gray; width:90px; padding:10px; background-color:#eff;">
 fix内容区域<br />
 fix内容区域<br />
 fix内容区域<br />
@@ -90,12 +90,17 @@ function htmlScroll()
 	var top = document.body.scrollTop ||  document.documentElement.scrollTop;
 	if(elFix.data_top < top)
 	{
-		elFix.style.position = 'fixed';
-		elFix.style.top = 0;
-		elFix.style.left = elFix.data_left;
+        if(top>500){
+            elFix.style.display="";
+            elFix.style.position = 'fixed';
+            elFix.style.top = 300;
+            elFix.style.left = 200;
+        }
+
 	}
 	else
 	{
+        elFix.style.display="none";
 		elFix.style.position = 'static';
 	}
 }
@@ -129,6 +134,7 @@ window.onresize = function(){
 window.onscroll = htmlScroll;
 
 var elFix = document.getElementById('div1');
+
 htmlPosition(elFix);
 
 </script>
