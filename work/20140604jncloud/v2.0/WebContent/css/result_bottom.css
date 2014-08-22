@@ -1,0 +1,51 @@
+@charset "utf-8";
+/**
+  *
+  *     本css为result.html等搜索结果页配套  尾部  css
+  *
+  *     author：sun mail:szy1944@hotmail.com
+  *     version:0.1
+  *     date:20140621
+  */
+
+
+@import "reset.css";
+/*底部开始*/
+
+
+#wrapper_bot {
+    width: 100%;
+    height: 32px;
+    background-color: #dedede;
+    position: absolute;
+    bottom:0px;
+}
+#wrapper_bot_result {
+    width: 100%;
+    height: 32px;
+    background-color: #dedede;
+}
+#wrapper_bot_result p{
+    text-align: left;
+    height: 32px;
+    line-height:32px;
+}
+#wrapper_bot p{
+    text-align: left;
+    height: 32px;
+    line-height:32px;
+}
+#bot_p_list{
+    color: #3e7ec4;
+    float: left;
+}
+#bot_p_list a {
+    display: inline;
+    margin: 0 15px;
+}
+#copyright {
+    color: #6D6860;
+    float: right;
+    margin-right: 13px;
+    display: inline;
+}

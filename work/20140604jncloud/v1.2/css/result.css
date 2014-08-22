@@ -305,6 +305,14 @@ html body{
     height:3px;
     font-size: 0;
 }
+.loading{
+    width: 20px;
+    height:100%;
+    display: block;
+    float: left;
+    background-image: url("../img/logo2.gif");
+    background-repeat: no-repeat;
+}
 .four_result_mid{
     width:188px;
     height:35px;

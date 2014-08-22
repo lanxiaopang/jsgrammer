@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)http://10.49.10.9/UserControl/elogin.aspx -->
+<HTML><HEAD><TITLE>elogin</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.2900.6357" name=GENERATOR>
+<META content=C# name=CODE_LANGUAGE>
+<META content=JavaScript name=vs_defaultClientScript>
+<META content=http://schemas.microsoft.com/intellisense/ie5 
+name=vs_targetSchema><LINK href="elogin.files/index.css" rel=stylesheet>
+<SCRIPT language=JavaScript>
+				   function checkdata()
+{
+if (document.aa.F_email.value=="")
+	{
+	  alert("对不起，请输入您的用户名！")
+	  document.aa.F_email.focus()
+	  return false
+	 }
+else if (document.aa.F_password.value=="")
+	{
+	  alert("对不起，请输入您的密码！")
+	  document.aa.F_password.focus()
+	  return false
+	 }
+}
+</SCRIPT>
+</HEAD>
+<BODY bottomMargin=0 leftMargin=0 topMargin=0 rightMargin=0>
+<FORM name=aa onsubmit="return checkdata()" action=http://10.49.10.202/index.php 
+method=post target=_blank>
+<TABLE id=Table1 height=61 cellSpacing=0 cellPadding=0 width=242 align=center 
+background=elogin.files/email2.gif border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG src="elogin.files/email1.gif"></TD></TR>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=3 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD height=22><FONT color=#2e7bae>用户名：</FONT></TD>
+          <TD><INPUT class=smallInput style="WIDTH: 67px" maxLength=20 
+            name=F_email></TD>
+          <TD><SELECT style="Z-INDEX: -1; WIDTH: 112px; COLOR: #086fab" 
+            name=F_domain> <OPTION value=gaj.jns.sd 
+              selected>@gaj.jns.sd<OPTION value=cq.jns.sd>@cq.jns.sd<OPTION 
+              value=hy.jns.sd>@hy.jns.sd<OPTION 
+              value=jt.jns.sd>@jt.jns.sd<OPTION 
+              value=jy.jns.sd>@jy.jns.sd<OPTION 
+              value=lc.jns.sd>@lc.jns.sd<OPTION 
+              value=lx.jns.sd>@lx.jns.sd<OPTION 
+              value=py.jns.sd>@py.jns.sd<OPTION 
+              value=sh.jns.sd>@sh.jns.sd<OPTION 
+              value=sz.jns.sd>@sz.jns.sd<OPTION 
+              value=tq.jns.sd>@tq.jns.sd<OPTION 
+              value=xz.jns.sd>@xz.jns.sd<OPTION 
+              value=zq.jns.sd>@zq.jns.sd</OPTION></SELECT> </TD></TR>
+        <TR>
+          <TD height=22><FONT color=#2e7bae>密&nbsp;&nbsp;码：</FONT></TD>
+          <TD><INPUT class=smallInput style="WIDTH: 67px" type=password 
+            name=F_password></TD>
+          <TD vAlign=bottom><INPUT id=action type=image 
+            src="elogin.files/button1.gif" name=action> <A 
+            href="https://10.49.10.202/login.php?F_ca_login=1" 
+            target=_blank><IMG src="elogin.files/button2.gif" 
+        border=0></A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD><IMG 
+src="elogin.files/email3.gif"></TD></TR></TBODY></TABLE></FORM></BODY></HTML>
