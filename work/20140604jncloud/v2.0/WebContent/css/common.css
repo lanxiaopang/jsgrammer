@@ -115,3 +115,29 @@ html body{
 .white_color{
     color: #ffffff;
 }
+.no_border_top{
+    border-top:none;
+}
+.no_border_bot{
+    border-bottom:none;
+}
+.no_border_left{
+    border-left:none;
+}
+.no_border_right{
+    border-right:none;
+}
+.clear{display: block;clear: both;}
+
+.text-alignr{
+    text-align: right;
+}
+.text-alignl{
+    text-align: left;
+}
+.padding_bot8{
+    padding-bottom: 8px;
+}
+.margin_r15{
+    margin-right: 15px;
+}
