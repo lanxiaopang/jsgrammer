@@ -480,6 +480,27 @@
     background-image: url("../images/personDoc/jbxx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
+}
+.arrow_1{
+    width: 16px;
+    height: 9px;
+    position: absolute;
+    right:10px;
+    top:14px;
+    background-image: url("../images/personDoc/arrow_1.gif");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.arrow_2{
+    width: 16px;
+    height: 9px;
+    position: absolute;
+    right:10px;
+    top:14px;
+    background-image: url("../images/personDoc/arrow_2.gif");
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 .item_basic_con{
     width: 100%;
@@ -618,6 +639,7 @@
     background-image: url("../images/personDoc/lxfs.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 .item_contact_con{
     width: 100%;
@@ -666,6 +688,7 @@
     background-image: url("../images/personDoc/dzxx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 #item_basic_table1{
     border-collapse: collapse;
@@ -702,6 +725,7 @@
     background-image: url("../images/personDoc/zdxx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 
 
@@ -768,6 +792,7 @@
     background-image: url("../images/personDoc/asjxx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 #item_asj_table{
     border-collapse: collapse;
@@ -794,6 +819,7 @@
     background-image: url("../images/personDoc/wpxx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 #item_car_table{
     border-collapse: collapse;
@@ -862,6 +888,7 @@
     background-image: url("../images/personDoc/qsgx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 #item_together_table{
     border-collapse: collapse;
@@ -913,6 +940,7 @@
     background-image: url("../images/personDoc/shgx.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 #item_hotel_table{
     border-collapse: collapse;
@@ -934,6 +962,7 @@
     background-image: url("../images/personDoc/hdgj.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
+    position: relative;
 }
 
 #item_live_table{
@@ -951,6 +980,14 @@
 }
 #item_live_table tbody td{
     text-align: center;
+}
+.lit_icon{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    top: 3px;
+    position: relative;
+    margin-right: 10px;
 }
 
 
@@ -1007,15 +1044,17 @@
 
 /*侧边导航开始*/
 #sideToolbar{
-    position: relative;
-    bottom: 0px;
+    position: fixed;
+    bottom: 40px;
     right: 0px;
     display: block;
     margin-top: 100px;
+    width: 190px;
+
 }
 #sideCatalog{
     width:190px;
-    height:455px;
+    height:335px;
     overflow:hidden;
     margin-bottom:10px;
     font-size:14px;
@@ -1055,7 +1094,7 @@
 #sideCatalog #sideCatalog-sidebar{
     top:0;
     width:0;
-    height:453px;
+    height:333px;
     background-color:#eaeaea;
     border:1px solid #eaeaea;
     border-top:0;
@@ -1143,7 +1182,7 @@
 }
 
 #sideCatalog-catalog{
-    height:425px;
+    height:305px;
     padding-left:23px;
     overflow:hidden;
     margin-top:18px;
