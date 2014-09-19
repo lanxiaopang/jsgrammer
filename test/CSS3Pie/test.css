@@ -1,0 +1,13 @@
+#div1{
+    behavior: url('PIE.htc');
+    position:relative;
+    z-index:10;
+    border: 1px solid #669966; padding: 60px 0pt; text-align: center; width: 200px; font-size:18px; font-family:"sans-serif";
+    border-radius: 8px;
+    box-shadow: #666 0px 2px 3px;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#EEFF99), to(#66EE33));
+    background: -webkit-linear-gradient(#EEFF99, #66EE33);
+    background: -moz-linear-gradient(#EEFF99, #66EE33);
+    -pie-background: linear-gradient(#EEFF99, #66EE33);
+
+}
