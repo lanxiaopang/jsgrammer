@@ -1,0 +1,206 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0053)http://10.49.7.209/mypage/index.php?name=indexpic2013 -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>济南公安信息网</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="index.files/main_new.css" type=text/css rel=stylesheet>
+<SCRIPT type=text/javascript>
+        function loadChangePicsFlash() {
+        var flashUrl = "focus.swf";
+
+        var focus_width = 300;
+        var focus_height = 218;
+        var text_height = 0;
+        var swf_height = focus_height + text_height;
+
+        var pics = "";
+        var links = "";
+        var texts = "";
+
+        pics = document.getElementById("hid_pics").value;
+        links = document.getElementById("hid_links").value;
+        texts = document.getElementById("hid_texts").value;
+
+        pics = pics.substr(1);
+        links = links.substr(1);
+        texts = texts.substr(1);
+
+        document.write('<object id="flashPicChange" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">');
+        document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="' + flashUrl + '"><param name="quality" value="high"><param name="bgcolor" value="#F0F0F0">');
+        document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+        document.write('<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">');
+        document.write('<embed src="' + flashUrl + '" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#F0F0F0" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">');
+        document.write('</object>');
+    }
+    function attachFlash() {
+        var flashObj = document.getElementById("flashPicChange");
+        var picIndex = 0;
+        try {
+            picIndex = flashObj.GetVariable("_root.current_pic");
+            if (picIndex == -1) {
+                picIndex = 0;
+            }
+        }
+        catch (e) {
+        }
+
+        var links = new Array();
+        var titles = new Array();
+        var summarys = new Array();
+
+        var link = "";
+        var jj = "";
+        var title = "";
+
+        link = document.getElementById("hid_links").value;
+        jj = document.getElementById("hid_jj").value;
+        title = document.getElementById("hid_texts").value;
+
+        link = link.substr(1);
+        jj = jj.substr(1);
+        title = title.substr(1);
+
+        var arr_link = new Array();
+        var arr_jj = new Array();
+        var arr_title = new Array();
+
+        arr_link = link.split("|");
+        arr_jj = jj.split("|");
+        arr_title = title.split("|");
+
+        summarys[0] = arr_jj[0];
+        titles[0] = arr_title[0];
+        links[0] = arr_link[0];
+
+        summarys[1] = arr_jj[1];
+        titles[1] = arr_title[1];
+        links[1] = arr_link[1];
+
+        summarys[2] = arr_jj[2];
+        titles[2] = arr_title[2];
+        links[2] = arr_link[2];
+
+        summarys[3] = arr_jj[3];
+        titles[3] = arr_title[3];
+        links[3] = arr_link[3];
+
+        summarys[4] = arr_jj[4];
+        titles[4] = arr_title[4];
+        links[4] = arr_link[4];
+
+        summarys[5] = arr_jj[5];
+        titles[5] = arr_title[5];
+        links[5] = arr_link[5];
+
+        summarys[6] = arr_jj[6];
+        titles[6] = arr_title[6];
+        links[6] = arr_link[6];
+        var titleContainer = document.getElementById("fTitle");
+        var summaryContainer = document.getElementById("fSummary");
+
+        titleContainer.firstChild.href = links[picIndex];
+        titleContainer.firstChild.firstChild.innerHTML = titles[picIndex];
+        summaryContainer.firstChild.href = links[picIndex];
+        summaryContainer.firstChild.innerHTML = summarys[picIndex];
+    }
+    var curXxgfIndex = 0;
+    function xxgfMenu(cellIndex) {
+        var table = document.getElementById("table_xxgf");
+        var subXxggs = document.getElementById("sbu_xxgf").getElementsByTagName("div");
+        table.cells[curXxgfIndex].className = "";
+        table.cells[cellIndex].className = "curXxgfItem";
+
+        subXxggs[curXxgfIndex].style.display = "none";
+        subXxggs[cellIndex].style.display = "block";
+
+        curXxgfIndex = cellIndex;
+    }
+</SCRIPT>
+<LINK href="index.files/default.css" type=text/css rel=stylesheet><LINK 
+href="index.files/menu.css" type=text/css rel=stylesheet><LINK 
+href="index.files/ProgressBar.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.6357" name=GENERATOR></HEAD>
+<BODY oncontextmenu=window.event.returnValue=false 
+onselectstart=event.returnValue=false 
+ondragstart=window.event.returnValue=false>
+<DIV></DIV>
+<DIV>
+<SCRIPT type=text/javascript>
+var linkurlvalue="";
+var picurlvalue="";
+var textvalue="";
+var jjvalue="";
+
+linkurlvalue=linkurlvalue+"|"+"/sjzy/sjyw/201408/art_41439.html";
+picurlvalue=picurlvalue+"|"+"/uploadfile/201408/20140815112322669.jpg";
+textvalue=textvalue+"|"+"市局迅速贯彻孟建柱徐珠宝讲话精神周密部署...";
+jjvalue=jjvalue+"|"+"8月14日下午，青奥会部省市安保联合指挥中心、省公安厅相继召开视频会议，全面动员部署南京 ...";
+
+linkurlvalue=linkurlvalue+"|"+"/sjzy/sjyw/201408/art_41375.html";
+picurlvalue=picurlvalue+"|"+"/uploadfile/201408/20140810094501623.jpg";
+textvalue=textvalue+"|"+"市局召开大数据云计算中心升级建设方案专家...";
+jjvalue=jjvalue+"|"+"８月９日下午，市局召开大数据云计算中心升级建设方案专家论证会。市局局长刘新云、副政委 ...";
+
+linkurlvalue=linkurlvalue+"|"+"/sjzy/2014/0808/article_41376.html";
+picurlvalue=picurlvalue+"|"+"/uploadfile/201408/20140810110606605.jpg";
+textvalue=textvalue+"|"+"王敏王新文等领导同志到交警支队调研指导交...";
+jjvalue=jjvalue+"|"+"8月8日下午，省委常委、市委书记王敏，副市长王新文在市局副局长、交警支队长王宗岩的陪同 ...";
+
+linkurlvalue=linkurlvalue+"|"+"/sjzy/2014/0730/article_41261.html";
+picurlvalue=picurlvalue+"|"+"/uploadfile/201407/20140731115107221.jpg";
+textvalue=textvalue+"|"+"邓向阳副省长到我市调研高层建筑消防安全管...";
+jjvalue=jjvalue+"|"+"7月30日下午，在“八一”建军节来临之际，省政府副省长邓向阳带领省政府办公厅副巡视员周 ...";
+
+linkurlvalue=linkurlvalue+"|"+"/sjzy/2014/0731/article_41260.html";
+picurlvalue=picurlvalue+"|"+"/uploadfile/201407/20140731112740365.jpg";
+textvalue=textvalue+"|"+"济南合唱节开幕式暨市局“中国梦•警察梦”...";
+jjvalue=jjvalue+"|"+"7月30日下午， 2014首届济南合唱节开幕式暨济南市公安局“中国梦•警察梦”主题合唱比赛 ...";
+
+linkurlvalue=linkurlvalue+"|"+"/sjzy/sjyw/201407/art_41159.html";
+picurlvalue=picurlvalue+"|"+"/uploadfile/201407/20140721115800159.jpg";
+textvalue=textvalue+"|"+"公安部副部长傅政华来我局调研视察工作...";
+jjvalue=jjvalue+"|"+"7月20日下午，公安部副部长、北京市委常委、市公安局局长傅政华在省委常委、政法委书记才 ...";
+
+
+document.write( "<input type='hidden' name='hid_pics' id='hid_pics' value= '"+picurlvalue+"'/>");
+document.write( "<input type='hidden' name='hid_links' id='hid_links' value= '"+linkurlvalue+"'/>");
+document.write( "<input type='hidden' name='hid_texts' id='hid_texts' value= '"+textvalue+"'/>");
+document.write( "<input type='hidden' name='hid_jj' id='hid_jj' value= '"+jjvalue+"'/>");
+</SCRIPT>
+</DIV>
+<DIV id=wrapper style="WIDTH: 316px">
+<TABLE style="MARGIN-TOP: -28px" cellSpacing=0 cellPadding=0 width="100%" 
+border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top>
+      <DIV id=content style="WIDTH: 316px">
+      <TABLE cellSpacing=0 cellPadding=0 width=306 align=center border=0>
+        <TBODY>
+        <TR>
+          <TD style="PADDING-TOP: 5px" align=middle height=27>
+            <DIV id=centerimg><A href="javascript:goUrl()" target=_blank>
+            <SCRIPT type=text/javascript>                                                                              loadChangePicsFlash();</SCRIPT>
+            </A></DIV></TD></TR>
+        <TR>
+          <TD 
+          style="FONT-SIZE: 9pt; BACKGROUND: url(images/bg_tpxw_new.gif) no-repeat center 50%" 
+          align=middle height=27>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle height=35>
+                  <DIV id=fTitle><A 
+                  href="http://10.49.7.209/mypage/index.php?name=indexpic2013#" 
+                  target=_blank><SPAN class=font_blue></SPAN></A>&nbsp;</DIV></TD>
+                <TD width=45><A style="COLOR: #045dbb; TEXT-DECORATION: none" 
+                  href="http://10.49.10.9/sjzy/sjyw/index.html" 
+                  target=_blank>更多&gt;&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD style="PADDING-LEFT: 10px; FONT-SIZE: 9pt; PADDING-TOP: 0px" 
+          align=middle height=27>
+            <DIV class=summary id=fSummary><A style="COLOR: #045dbb" 
+            href="http://10.49.7.209/mypage/index.php?name=indexpic2013#" 
+            target=_blank></A>
+            <SCRIPT language=JavaScript>                                                                                              window.setInterval(attachFlash, 1000);</SCRIPT>
+             
+</DIV></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+        /*浏览器及版本判断*/
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+                (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+                        (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                                (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                                        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+
+        var clientWidth = document.documentElement.clientWidth;
+        if(clientWidth>1024) //获取屏幕的的宽度
+        {
+            document.write("<link type=\"text/css\"  href=\"../css/car_1440.css\" rel=\"stylesheet\"/>");
+        }
+        else{
+            document.write("<link type=\"text/css\"  href=\"../css/car_1024.css\" rel=\"stylesheet\"/>");
+        }
+
+        if(Sys.ie =='6.0'){
+			document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
+        } else if(Sys.ie =='7.0'){
+			document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
+        } else if(Sys.ie =='8.0'){
+            document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
+        } else if(Sys.ie =='9.0'){
+        } else{
+        }
+    </script>
+
+</head>
+<body>
+<div class="wrapper">
+
+
+    <!--head-->
+    <div id="wrapper_head">
+        <p>
+            山东省济南市公安局科技信息通讯处有线通讯科 &nbsp;&nbsp;周建平 &nbsp;&nbsp;<a id="adv_user">高级用户</a>
+        </p>
+    </div>
+
+
+    <!--middle-->
+    <div id="wrapper_mid">
+        <div id="search_bar" class="grey_color1">
+            <div class="g_bd1 f-cb">
+                <div class="g_sd1">
+                    <div class="g_sd1c">
+                        <a href="search.html" target="_blank">
+                            <img src="../images/result/list_logo.gif">
+                        </a>
+                    </div>
+                </div>
+                <div class="g_mn1">
+                    <div class="g_mn1c">
+                        <div id="search_right">
+                            <div id="tria">
+                                <ul>
+                                    <li id="tria1" class="grey_color2">
+                                        <a href="#" class="grey_txt_color2">信息资源</a>
+                                        <span class="info_icon_down"></span>
+                                    </li>
+                                    <li id="tria2" class="grey_color2">
+                                        <a href="#" class="grey_txt_color2">信息资源2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <label for="input_box"><input id="input_box" type="text" class="con_btn"/></label>
+                            <div class="bd_box">
+                                <a href="#"><img id="slash" src="../images/search2.gif"/></a>
+                            </div>
+                            <p id="adv_search"><a href="#" class="blue_link">高级搜索</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="search_result">
+            <div id="car_sum_l"></div>
+            <div id="car_sum_c1">
+                <img src="../images/car/car1.jpg">
+            </div>
+            <div id="car_sum_c2">
+                <div id="car_sum_head">
+                    <div id="car_num" class="fl">
+                        <label style="display:inline-block; vertical-align:middle;">鲁AWJ888</label>
+                    </div>
+                    <div id="sum_l1" class="fl sum_label">
+                        <div class="sum_l1_num">123</div>
+                    </div>
+                    <div id="sum_l2" class="fl sum_label">
+                        <div class="sum_l2_tit">非营运</div>
+                    </div>
+                    <div id="sum_l3" class="fl sum_label">
+                        <div class="sum_l2_tit">正常</div>
+                    </div>
+                    <div id="sum_l4" class="fl sum_label">
+                        <div class="sum_l2_tit">3年</div>
+                    </div>
+                </div>
+                <div id="car_sum_body">
+                    <table>
+                        <tr>
+                            <td>品牌</td>
+                            <td>起亚K3</td>
+                            <td>最近定检日期</td>
+                            <td>20140315</td>
+                        </tr>
+                        <tr>
+                            <td>品牌种类</td>
+                            <td>小型汽车</td>
+                            <td>发动机号</td>
+                            <td>123123</td>
+                        </tr>
+                        <tr>
+                            <td>车辆类型</td>
+                            <td>小型汽车</td>
+                            <td>发动机号</td>
+                            <td>383746</td>
+                        </tr>
+                        <tr>
+                            <td>车辆类型</td>
+                            <td>轿车</td>
+                            <td>排量</td>
+                            <td>1600</td>
+                        </tr>
+                        <tr>
+                            <td>车架号</td>
+                            <td>LDJ213898132</td>
+                            <td>出厂日期</td>
+                            <td>20110217</td>
+                        </tr>
+                        <tr>
+                            <td>车身颜色</td>
+                            <td>白色</td>
+                            <td>知道厂商</td>
+                            <td>东风悦达起亚汽车有限公司</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="car_sum_r"></div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!--bottom-->
+    <div id="wrapper_bot_result">
+        <p id="bot_p_list">
+            <a href="#" class="blue_link">使用说明</a>|<a href="#" class="blue_link">警综平台</a>|<a href="#" class="blue_link">市局首页</a>
+        </p>
+        <p id="copyright">
+            @2013 济南市公安局科技信息通信处技术支持 电话：80858，83349
+        </p>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/car.js"></script>
+</body>
+</html>

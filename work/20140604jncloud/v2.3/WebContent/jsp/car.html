@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+        /*浏览器及版本判断*/
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+                (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+                        (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                                (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                                        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+
+
+
+        if(Sys.ie =='6.0'){
+            var clientWidth = document.documentElement.clientWidth;
+            if(clientWidth>1024) //获取屏幕的的宽度
+            {
+                document.write("<link type=\"text/css\"  href=\"../css/car_1440.css\" rel=\"stylesheet\"/>");
+            }
+            else{
+                document.write("<link type=\"text/css\"  href=\"../css/car_1024.css\" rel=\"stylesheet\"/>");
+            }
+        } else if(Sys.ie =='7.0'){
+            var clientWidth = document.documentElement.clientWidth;
+            if(clientWidth>1024) //获取屏幕的的宽度
+            {
+                document.write("<link type=\"text/css\"  href=\"../css/car_1440.css\" rel=\"stylesheet\"/>");
+            }
+            else{
+                document.write("<link type=\"text/css\"  href=\"../css/car_1024.css\" rel=\"stylesheet\"/>");
+            }
+        } else if(Sys.ie =='8.0'){
+            document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
+        } else if(Sys.ie =='9.0'){
+            document.write("<link id=\"sc\" type=\"text/css\"  href=\"../css/car_1440.css\" rel=\"stylesheet\"/>");
+        } else{
+            document.write("<link id=\"sc\" type=\"text/css\"  href=\"../css/car_1440.css\" rel=\"stylesheet\"/>");
+        }
+    </script>
+
+</head>
+<body>
+<div class="wrapper">
+
+
+    <!--head-->
+    <div id="wrapper_head">
+        <p>
+            山东省济南市公安局科技信息通讯处有线通讯科 &nbsp;&nbsp;周建平 &nbsp;&nbsp;<a id="adv_user">高级用户</a>
+        </p>
+    </div>
+
+
+    <!--middle-->
+    <div id="wrapper_mid">
+        <div id="search_bar" class="grey_color1">
+            <div class="g_bd1 f-cb">
+                <div class="g_sd1">
+                    <div class="g_sd1c">
+                        <a href="search.html" target="_blank">
+                            <img src="../images/result/list_logo.gif">
+                        </a>
+                    </div>
+                </div>
+                <div class="g_mn1">
+                    <div class="g_mn1c">
+                        <div id="search_right">
+                            <div id="tria">
+                                <ul>
+                                    <li id="tria1" class="grey_color2">
+                                        <a href="#" class="grey_txt_color2">信息资源</a>
+                                        <span class="info_icon_down"></span>
+                                    </li>
+                                    <li id="tria2" class="grey_color2">
+                                        <a href="#" class="grey_txt_color2">信息资源2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <label for="input_box"><input id="input_box" type="text" class="con_btn"/></label>
+                            <div class="bd_box">
+                                <a href="#"><img id="slash" src="../images/search2.gif"/></a>
+                            </div>
+                            <p id="adv_search"><a href="#" class="blue_link">高级搜索</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="search_result">
+            <div id="car_sum">
+				<div class="g-sd1 f-cb">
+				    <img id="car_img" src="../images/car/car1.jpg" />
+				</div>
+				<div class="g-mn1">
+					234
+				</div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--bottom-->
+    <div id="wrapper_bot_result">
+        <p id="bot_p_list">
+            <a href="#" class="blue_link">使用说明</a>|<a href="#" class="blue_link">警综平台</a>|<a href="#" class="blue_link">市局首页</a>
+        </p>
+        <p id="copyright">
+            @2013 济南市公安局科技信息通信处技术支持 电话：80858，83349
+        </p>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/car.js"></script>
+</body>
+</html>

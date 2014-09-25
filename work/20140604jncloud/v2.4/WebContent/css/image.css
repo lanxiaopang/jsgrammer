@@ -1,0 +1,308 @@
+.fixcondition{
+	text-align: center;
+	width:80px;
+	position: fixed;
+	top: 250px;
+}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+* html .fixcondition{position:absolute;top:expression(eval(document.documentElement.scrollTop+250))}
+
+
+
+.condition_title{
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	line-height: 50px;
+    padding-right: 65px
+}
+
+
+
+
+.detailResult{
+    padding-top: 60px;
+    width: 70%;
+    float: left;
+    position: relative;
+}
+
+.imageShow{
+	height:100%;
+	min-height:400px;
+	vertical-align: middle;
+	margin: 0 auto;
+	overflow: hidden;
+	max-height: 600px;
+}
+
+.imageList{
+	width:100%;
+	height:110px;
+	background-color: white;
+	bottom: 0px;
+	float: left;
+    margin-left: 8px;
+    z-index: 15;
+}
+
+.imageListUL{
+	width:80%;
+	height:110px;
+	position:relative;
+	overflow: hidden;
+	margin-left: auto;
+	float: left;
+}
+
+.height_hidden_310{
+	height:110px;
+	overflow: hidden;
+	margin-top: 4px;
+}
+
+.biankuang{
+	width: 100px;
+	height:100px;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	float:left;
+    overflow: hidden;
+    text-align: center;
+}
+
+.biankuang img{
+	cursor: pointer;
+	display: inline;
+}
+
+.xuanzhong{
+	width: 100px;
+	height:100px;
+	text-align: center;;
+	vertical-align: middle;
+	border-width: 2px;
+	border-color: #fbb329;
+	border-style: solid;
+	float:left;
+	overflow: hidden;
+    text-align: center;
+}
+.xuanzhong  img{
+display: inline;
+}
+.blank_30{
+	 /*background-color: #DDDDDD;*/
+    border-left: 1px solid #CCCCCC;
+    float: right;
+    height: 500px;
+    width: 235px;
+    background: none repeat scroll 0 0 #F5F5F5;
+    box-shadow: 2px 0 2px #DDDDDD inset;
+    font-family: Tahoma;
+    line-height: 20px;
+    margin: 0 auto;
+    
+    
+}
+.blank_30 .biaoti
+{
+    text-align: left;
+    color: #333333;
+    font-family: '΢���ź�','����';
+    font-size: 16px;
+    padding-bottom: 7px;
+    padding: 8px 15px;
+}
+.blank_30 .biaoti2 {
+    color: #666666;
+    font-size: 12px;
+    text-align: left;
+    padding: 8px 15px;
+}
+
+.blank_30 .lianjie {
+    color: #666666;
+    font-size: 12px;
+    text-align: left;
+    padding: 8px 15px;
+}
+
+
+.blank_30 .zl {
+    color: #666666;
+    font-size: 12px;
+    text-align: left;
+    padding: 8px 15px;
+}
+
+.blank_30 .zl span{
+    color: #666666;
+    font-size: 12px;
+    padding-right: 5px;
+}
+.top_5{
+	top:5px;
+	position: relative;
+	cursor: pointer;
+}
+.splitblank {
+    background: none repeat scroll 0 0 #E2E2E2;
+    border-bottom: 1px solid #FCFCFC;
+    height: 1px;
+    margin: 12px 15px 8px;
+  overflow: hidden  ; 
+}
+
+.pageNum{
+	color: #4f4f4f;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+
+.pull-rs-title {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.pull-rs {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+
+#pageMore {
+    background: url("../images/pic/img-christ.gif") no-repeat scroll 0 0 transparent;
+        color: #71799B;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 42px;
+    line-height: 42px;
+    margin: 30px auto 40px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 461px;
+    z-index: 5;
+}
+#pageMore:hover {
+    background-position: 0 -60px;
+    color: #576085;
+}
+.imgLink {
+    display: block;
+    margin: 8px auto 5px;
+    overflow: hidden;
+    position: relative;
+}
+#resultInfo {
+    color: #999999;
+    margin: -71px auto 0;
+    padding-left: 682px;
+    width: 180px;
+}
+.imghotword li{
+	margin: 0; 
+	float: left;
+	position: relative;
+	width: 192px;
+	height: 120px;
+}
+.es-nav-prev{
+	width:31px;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	top: 5px;
+	cursor: pointer;
+	height:100px;
+	background: url("../images/left.png") no-repeat scroll center transparent;
+	z-index: 999;
+	display: block;
+    left: 0;
+    top: 10px;
+}
+
+.es-nav-prev img{
+	position: relative;
+	top: 35px;
+}
+
+.es-nav-next{
+	width:31px;
+	float: left;
+	position: relative;
+	top: 5px;
+	margin-right: 10px;
+	cursor: pointer;
+	height:100px;
+	background: url("../images/right.png") no-repeat scroll center transparent;
+	
+}
+
+.es-nav-next img{
+	position: relative;
+	top: 35px;
+}
+
+.imgbprev{
+	float: left;
+	width: 50px;
+	cursor: pointer;
+	height:400px;
+	cursor: pointer;
+    z-index: 3;
+}
+
+.imgbprev img{
+	position: relative;
+	top: 135px;
+}
+
+.imgbnext{
+	float: left;
+	width: 50px;
+	cursor: pointer;
+	height:400px;
+	cursor: pointer;
+    z-index: 3;
+}
+
+.imgbnext img{
+	position: relative;
+	top: 135px;
+}
+.imgbcontent{
+	float: left;
+	width:85%;
+}
+
+#listdiv
+{
+	float: left;
+    position: relative;
+}
+.ct {
+    position: relative;
+    width: 100%;
+    z-index: 9;
+}
+
+#bottom {
+    bottom: 0px;
+    clear: both;
+    padding-top: 4px;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    height: 10px;
+}
+
