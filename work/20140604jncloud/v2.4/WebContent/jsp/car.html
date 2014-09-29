@@ -6,7 +6,7 @@
     <script>
 
         /*浏览器及版本判断*/
-        var Sys = {};
+        /*var Sys = {};
         var ua = navigator.userAgent.toLowerCase();
         var s;
         (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
@@ -14,7 +14,7 @@
                         (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
                                 (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
                                         (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
-
+*/
         var clientWidth = document.documentElement.clientWidth;
         if(clientWidth>1024) //获取屏幕的的宽度
         {
@@ -24,7 +24,7 @@
             document.write("<link type=\"text/css\"  href=\"../css/car_1024.css\" rel=\"stylesheet\"/>");
         }
 
-        if(Sys.ie =='6.0'){
+        /*if(Sys.ie =='6.0'){
 			document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
         } else if(Sys.ie =='7.0'){
 			document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
@@ -32,7 +32,7 @@
             document.write("<script type=\"text/javascript\" src=\"PIE_IE678.js\"><\/script>");
         } else if(Sys.ie =='9.0'){
         } else{
-        }
+        }*/
     </script>
 
 </head>
@@ -106,44 +106,42 @@
                     <div id="sum_l4" class="fl sum_label">
                         <div class="sum_l2_tit">3年</div>
                     </div>
+                    <div id="sum_l5" class="fl">
+                        活跃度
+                    </div>
+                    <img style="margin-top: 1px;" src="../images/car/low.gif">
                 </div>
                 <div id="car_sum_body">
-                    <table>
+                    <table id="car_sum_body_table">
                         <tr>
-                            <td>品牌</td>
-                            <td>起亚K3</td>
-                            <td>最近定检日期</td>
-                            <td>20140315</td>
+                            <td class="car_sum_body_tit1">品牌</td>
+                            <td class="car_sum_body_tit2">起亚K3</td>
+                            <td class="car_sum_body_tit1">最近定检日期</td>
+                            <td class="car_sum_body_tit2" style="border-right:none;">20140315</td>
                         </tr>
                         <tr>
-                            <td>品牌种类</td>
-                            <td>小型汽车</td>
-                            <td>发动机号</td>
-                            <td>123123</td>
+                            <td class="car_sum_body_tit1">品牌种类</td>
+                            <td class="car_sum_body_tit2">小型汽车</td>
+                            <td class="car_sum_body_tit1">发动机号</td>
+                            <td class="car_sum_body_tit2" style="border-right:none;">123123</td>
                         </tr>
                         <tr>
-                            <td>车辆类型</td>
-                            <td>小型汽车</td>
-                            <td>发动机号</td>
-                            <td>383746</td>
+                            <td class="car_sum_body_tit1">车辆类型</td>
+                            <td class="car_sum_body_tit2">轿车</td>
+                            <td class="car_sum_body_tit1">排量</td>
+                            <td class="car_sum_body_tit2" style="border-right:none;">1600</td>
                         </tr>
                         <tr>
-                            <td>车辆类型</td>
-                            <td>轿车</td>
-                            <td>排量</td>
-                            <td>1600</td>
+                            <td class="car_sum_body_tit1">车架号</td>
+                            <td class="car_sum_body_tit2">LDJ213898132</td>
+                            <td class="car_sum_body_tit1">出厂日期</td>
+                            <td class="car_sum_body_tit2" style="border-right:none;">20110217</td>
                         </tr>
                         <tr>
-                            <td>车架号</td>
-                            <td>LDJ213898132</td>
-                            <td>出厂日期</td>
-                            <td>20110217</td>
-                        </tr>
-                        <tr>
-                            <td>车身颜色</td>
-                            <td>白色</td>
-                            <td>知道厂商</td>
-                            <td>东风悦达起亚汽车有限公司</td>
+                            <td class="car_sum_body_tit1">车身颜色</td>
+                            <td class="car_sum_body_tit2">白色</td>
+                            <td class="car_sum_body_tit1">知道厂商</td>
+                            <td class="car_sum_body_tit2" style="border-right:none;">东风悦达起亚汽车有限公司</td>
                         </tr>
                     </table>
                 </div>

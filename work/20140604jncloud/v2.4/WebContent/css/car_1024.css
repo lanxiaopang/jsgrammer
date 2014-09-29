@@ -1,7 +1,7 @@
 @charset "utf-8";
 /**
   *
-  *     本css为车辆档案页配套css
+  *     本css为车辆档案页1024分辨率下配套css
   *     包括公共重置样式和搜索结果页样式两部分，搜索结果页样式又包括头，尾及中间共三部分
   *     author：sun mail:szy1944@hotmail.com
   *     version:0.1
@@ -166,7 +166,7 @@
     color: #3e7ec4;
 
 }
-
+/*========================中部真正开始=================================*/
 #search_result{
     width:960px;
     height:auto;
@@ -197,6 +197,115 @@
     background: url('../images/car/table_C.gif') repeat-x;
     float: left;
 }
+#car_sum_head {
+    height: 55px;
+    line-height: 55px;
+    overflow: hidden;
+}
+#car_num {
+    font-size: 22px;
+    float: left;
+    color: #1679bc;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+#sum_l1 {
+    width: 60px;
+    height: 55px;
+    line-height: 55px;
+    margin-left: 10px;
+    background: url("../images/car/wei.gif") no-repeat center;
+}
+
+.sum_l1_num {
+    line-height: 25px;
+    height: 25px;
+    margin-top: 15px;
+    float: right;
+    width: 30px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#sum_l2 {
+    width: 60px;
+    height: 23px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #3ec978;
+    border-bottom: 2px solid #467c58;
+}
+
+.sum_l2_tit {
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+#sum_l3 {
+    width: 60px;
+    height: 23px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #3a94de;
+    border-bottom: 2px solid #467996;
+}
+
+#sum_l4 {
+    width: 60px;
+    height: 23px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #fe9800;
+    border-bottom: 2px solid #467996;
+}
+
+#sum_l5 {
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    color: #1679bc;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+#car_sum_body {
+    width: 672px;
+    height: 165px;
+}
+
+
+#car_sum_body_table {
+    width: 100%;
+}
+
+.car_sum_body_tit1 {
+    width: 15%;
+    height: 33px;
+    line-height: 32px;
+    padding-right: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-right: 1px solid #e1d2d5;
+}
+
+.car_sum_body_tit2 {
+    width: 30%;
+    height: 33px;
+    line-height: 32px;
+    padding-left: 15px;
+    text-align: left;
+    border-right: 1px solid #e1d2d5;
+}
+
+
 #car_sum_r{
     width: 10px;
     height: 220px;
