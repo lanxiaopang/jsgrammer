@@ -169,7 +169,7 @@
 /*========================中部真正开始=================================*/
 #search_result{
     width:960px;
-    height:auto;
+    height:220px;
     margin:12px auto;
 }
 #car_sum_l{
@@ -338,8 +338,8 @@
 
 
 .info_items{
-    width: 100%;
-    margin-top: 10px;
+    width: 960px;
+    margin: 10px auto;
     border: 1px solid #ffffff;
 }
 .item_basic{
