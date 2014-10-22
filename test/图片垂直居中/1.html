@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        div {
+            display:table-cell;
+            height:300px;
+            width:500px;
+            text-align:center;
+            border:1px solid #000;
+            vertical-align:middle
+        }
+
+        .psdthumb { height: 1%; overflow: hidden; display:table; border-spacing:10px; }
+        .psdthumb li {border:1px solid #aaa; width:240px; height:160px; text-align:center; vertical-align:middle; position:relative; margin: 10px; *float:left; display: table-cell; }
+        .psdthumb .qq { *position:absolute; top:50%; }
+        .psdthumb .qq img { *position:relative; top:-50%; left:-50%; }
+        .box {
+            /*非IE的主流浏览器识别的垂直居中的方法*/
+            display: table-cell;
+            vertical-align:middle;
+
+            /*设置水平居中*/
+            text-align:center;
+
+            /* 针对IE的Hack */
+            *display: block;
+            *font-size:262px;/*约为高度的0.873，300*0.873 约为262*/
+            *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+
+            width:400px;
+            height:300px;
+            border:1px solid #eee;
+        }
+        .box img {
+            /*设置图片垂直居中*/
+            vertical-align:middle;
+        }
+
+    </style>
+    <!--[if IE]>
+    <style type="text/css">
+        i {
+            display:inline-block;
+            height:100%;
+            vertical-align:middle
+        }
+        img {
+            vertical-align:middle
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+<div>
+    <i>123</i>
+    <img src="http://www.baidu.com/img/logo.gif" alt=""/>
+</div>
+
+
+
+
+<div class="psdthumb">
+    <li><div class="qq"><img src="wmlogo.gif" ></div></li>
+    <li><div class="qq"><img src="logo_w.gif" ></div></li>
+</div>
+
+
+
+<div class="box">
+    123123<img src="http://www.baidu.com/img/logo.gif"/>
+</div>
+</body>
+</html>

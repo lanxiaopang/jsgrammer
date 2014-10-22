@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SuperSlide - 图片滚动特效-左</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script>
+<script type="text/javascript" src="../../jquery.SuperSlide.2.1.1.js"></script>
+</head>
+
+<body>
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px '宋体';  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+
+		/* 本例子css */
+		.picScroll-left{ overflow:hidden; position:relative;  }
+		.picScroll-left .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
+		.picScroll-left .bd .prev,.picScroll-left .bd .next{ display:block;  width:18px; height:32px; float:left; margin-top:10px;  overflow:hidden;
+			 cursor:pointer; background:url("../images/arrow_l2.gif") 0 0 no-repeat;filter:alpha(opacity=50);opacity:0.5;}
+        .picScroll-left .bd .next{ background:url("../images/arrow_r2.gif") 0 0 no-repeat;float:right;}
+        .picScroll-left .bd .prev:hover,.picScroll-left .bd .next:hover{filter:alpha(opacity=100);opacity:1;}
+		.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+		.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+		.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+		.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../images/icoCircle.gif") 0 -9px no-repeat; }
+		.picScroll-left .hd ul li.on{ background-position:0 0; }
+		.picScroll-left .bd{width: 1000px;}
+        .bd .tempWrap{float: left;}
+		.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+		.picScroll-left .bd ul li{ margin:0px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+		.picScroll-left .bd ul li .pic{ text-align:center; }
+        .pic1{ width:140px;background-image: url("../images/line.gif");background-repeat: repeat-x;}
+		.picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:0px; border:none; }
+		.picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+		.picScroll-left .bd ul li .title{ line-height:24px;   }
+
+		</style>
+
+		<div class="picScroll-left">
+			<div class="bd">
+                <div style="position:relative;top:10px;width:28px;height:32px;float:left;"><a class="prev"></a></div>
+				<ul class="picList">
+					<li>
+						<div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon1_1.gif" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+					</li>
+					<li>
+						<div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon2_1.gif" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+					</li>
+					<li>
+						<div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon3_2.gif" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+					</li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon4_1.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图4</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon5_1.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图5</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon6_2.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图6</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon1_1.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图21</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon2_1.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图22</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon3_2.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图23</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon4_1.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图24</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon5_1.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图25</a></div>
+                    </li>
+                    <li>
+                        <div class="pic1"><a href="http://www.SuperSlide2.com" target="_blank"><img src="../images/icon6_2.gif" /></a></div>
+                        <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                    </li>
+				</ul>
+                <div style="position:relative;top:10px;width:28px;height:32px;float:left;"><a class="next"></a></div>
+			</div>
+		</div>
+
+		<script id="jsID" type="text/javascript">
+		 var ary = location.href.split("&");
+		jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:ary[1],autoPlay:ary[2],scroll:ary[3],vis:ary[4],easing:ary[5],delayTime:ary[6],pnLoop:ary[7],trigger:ary[8],mouseOverStop:ary[9] });
+		</script>
+
+</body>
+</html>
+
