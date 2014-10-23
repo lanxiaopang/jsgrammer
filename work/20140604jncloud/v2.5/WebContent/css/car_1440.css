@@ -766,6 +766,22 @@
     font-size: 14px;
     font-weight: bold;
 }
+.car_color{
+    width: 15px;
+    height:15px;
+    border:1px solid #d00000;
+    float: left;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+.car_logo{
+    width: 36px;
+    height: 31px;
+    margin-right: 10px;
+    background: url("../images/car/qiya.gif") no-repeat;
+    float: left;
+    overflow: hidden;
+}
 
 /*todo=====待用*/
 
