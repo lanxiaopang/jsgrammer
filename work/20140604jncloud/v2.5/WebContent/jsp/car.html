@@ -15,9 +15,7 @@
         }
 
     </script>
-	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
-    <script type="text/javascript" src="js/car.js"></script>
+
 
 </head>
 <body>
@@ -418,10 +416,7 @@
                                             </div>
                                         </div>
 
-                                        <script id="jsID" type="text/javascript">
-                                         var ary = location.href.split("&");
-                                        jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:5,vis:5,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
-                                        </script>
+
                                     </div>
 
                                 </div>
@@ -498,6 +493,11 @@
 
 
 </div>
-
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="js/car.js"></script>
+<script id="jsID" type="text/javascript">
+    jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:5,vis:5,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+</script>
 </body>
 </html>
