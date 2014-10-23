@@ -702,8 +702,9 @@
 }
 /*时间抽S=========================*/
 .demoBox{  padding:0 0px 0px 0px;  background:#ffffff;   }
-.demoBox .bd{ width: 1000px;padding:5px; overflow:hidden; zoom:1;  }
+.demoBox .bd{ width: 1240px;padding:5px; overflow:hidden; zoom:1;  }
 .demoBox .iframeWrap iframe{ width:452px; height:232px;  background:url(../images/car/loading.gif) center center no-repeat; }
+.iframeWrap{width: 1240px;}
 #picScroll-left iframe{  height:104px;  }
 .picScroll-left{ overflow:hidden; position:relative;  }
 .picScroll-left .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
@@ -716,12 +717,12 @@
 .picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
 .picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; }
 .picScroll-left .hd ul li.on{ background-position:0 0; }
-.picScroll-left .bd{width: 1000px;}
+.picScroll-left .bd{width: 1240px;}
 .bd .tempWrap{float: left;}
 .picScroll-left .bd ul{ overflow:hidden; zoom:1; }
 .picScroll-left .bd ul li{ margin:0px; float:left; _display:inline; overflow:hidden; text-align:center;  }
 .picScroll-left .bd ul li .pic{ text-align:center; }
-.pic1{ width:176px;background-image: url("../images/car/line.gif");background-repeat: repeat-x;}
+.pic1{ width:166px;background-image: url("../images/car/line.gif");background-repeat: repeat-x;}
 .picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:0px; border:none; }
 .picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
 .picScroll-left .bd ul li .title{ line-height:24px;   }

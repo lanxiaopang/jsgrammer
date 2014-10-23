@@ -358,7 +358,7 @@
                             
                             <div id="picScroll-left" class="demoBox demoBoxEven">
                                 <div class="bd">
-                                    <div class="iframeWrap" style="width: 1000px;">
+                                    <div class="iframeWrap">
                                         <div class="picScroll-left">
                                             <div class="bd">
                                                 <div style="position:relative;top:10px;width:28px;height:32px;float:left;"><a class="prev"></a></div>
@@ -563,7 +563,14 @@
 <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 <script type="text/javascript" src="js/car.js"></script>
 <script id="jsID" type="text/javascript">
-    jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:5,vis:5,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+    if(clientWidth>1024) //获取屏幕的的宽度
+    {
+        jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:7,vis:7,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+    }
+    else{
+        jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:5,vis:5,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+    }
+
 </script>
 </body>
 </html>
