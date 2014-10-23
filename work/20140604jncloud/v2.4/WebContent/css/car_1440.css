@@ -747,6 +747,9 @@
 .demoBox .bd{ width: 800px;padding:20px; overflow:hidden; zoom:1;  }
 .demoBox .iframeWrap iframe{ width:452px; height:232px;  background:url(../images/car/loading.gif) center center no-repeat; }
 #picScroll-left iframe{  height:104px;  }
+.vio_title{
+    width:140px;
+}
 /*时间抽E=========================*/
 
 

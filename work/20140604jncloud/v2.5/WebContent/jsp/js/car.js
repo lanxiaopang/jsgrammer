@@ -37,15 +37,24 @@ $(function(){
         }
     );
 
+    $('#item_basic_table tbody tr:even').addClass('eventr1');
+    $('#item_reg_table tbody tr:even').addClass('eventr1');
+    $('#item_insurance_table tbody tr:odd').addClass('eventr1');
 
-    /*窗口resize的时候根据不同分辨率加载不同样式*/
-   /* $(window).resize(function(){               //改变大小的时候
-        if($(window).width()<1024){            //判定宽度
-            sc.setAttribute("href","../css/car_1024.css");
-        }else if($(window).width()>1024 && $(window).width()<1200){
-            sc.setAttribute("href","../css/car_1024.css");
-        }else if($(window).width()>=1200 && $(window).width()<1440){
-            sc.setAttribute("href","../css/car_1440.css");
-        }
-    });*/
+
+    $(".item_add").find("div:first-child").toggle(
+        function(){
+            if($(this).hasClass("arrow_1")){
+                $(this).removeClass("arrow_1").addClass('arrow_2');
+                $(this).parent().next().slideToggle();
+
+            }
+        },
+        function(){
+            if($(this).hasClass("arrow_2")){
+                $(this).removeClass("arrow_2").addClass('arrow_1');
+                $(this).parent().next().slideToggle();
+            }
+
+        });
 })

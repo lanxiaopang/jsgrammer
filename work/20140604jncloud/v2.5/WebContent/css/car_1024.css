@@ -347,15 +347,16 @@
     margin-bottom: 3px;
     position: relative;
 }
-.item_basic_top{
+.item_owner_top{
     width: 100%;
     height: 36px;
     margin-bottom: 3px;
-    background-image: url("../images/personDoc/jbxx.gif");
+    background-image: url("../images/car/title_1.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
     position: relative;
 }
+
 .arrow_1{
     width: 16px;
     height: 9px;
@@ -391,56 +392,30 @@
 
 .basic_table_pic{
     width: 178px;
-    height:209px;
+    height: 164px;
     border-right:none;
     float: left;
     position: relative;
 }
 .basic_table_pic_span{
-     width: 127px;
-     height:153px;
-     margin-top:18px;
-     margin-left:22px;
-     display: block;
-     float:left;
+    width: 127px;
+    height: 143px;
+    margin-top: 8px;
+    margin-left: 22px;
+    display: block;
+    float: left;
+    overflow: hidden;
  }
 .basic_table_pic_span img{
     width: 127px;
     height:153px;
     display: block;
 }
-#r_icon_span{
-    width: 26px;
-    height:30px;
-    display: block;
-    float: left;
-    margin-top:80px;
-}
-#r_icon{
-    width: 26px;
-    height:30px;
-}
-.zpxxwj{
-    width: 85px;
-    height: 18px;
-    display: block;
-    position: absolute;
-    bottom: 9px;
-    left:45px;
-}
-.zpxxwj a{
-    width: 85px;
-    height: 18px;
-    display: block;
-}
-.zpxxwj a img{
-    width: 85px;
-    height: 18px;
-    display: block;
-}
-
 .eventr{
     background-color: #fafafa;
+}
+.eventr1 {
+    background-color: #fcfcfc;
 }
 .hovertr{
     background-color: #d3f5ff;
@@ -456,32 +431,31 @@
     width: 100%;
     float: left;
     overflow: hidden;
-    height: 209px;
 }
 #item_basic_table td{
     border-width: 1px;
     border-style: solid;
     border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
+    height: 32px;
+    line-height: 32px;
     overflow: hidden;
 }
 .basic_table_c2{
-    width: 20%;
+    width: 15%;
     text-align: right;
     padding-right: 20px;
 }
 .basic_table_c3{
-    width: 20%;
+    width: 25%;
     padding-left: 20px;
 }
 .basic_table_c4{
-    width: 20%;
+    width: 15%;
     text-align: right;
     padding-right: 20px;
 }
 .basic_table_c5{
-    width: 20%;
+    width: 25%;
     padding-left: 20px;
 }
 .sideCatalog-dot1{
@@ -495,25 +469,6 @@
     top: 18px;
     cursor:pointer;
     overflow:hidden
-}
-
-
-
-.item_contact{
-    width: 100%;
-    height: auto;
-    margin-bottom: 3px;
-    position: relative;
-
-}
-.item_contact_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/lxfs.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
 }
 .item_contact_con{
     width: 100%;
@@ -555,125 +510,207 @@
     margin-bottom: 3px;
     position: relative;
 }
-.item_add_top{
+.item_reg_top {
     width: 100%;
     height: 36px;
     margin-bottom: 3px;
-    background-image: url("../images/personDoc/dzxx.gif");
+    background-image: url("../images/car/title_2.gif");
     background-repeat: no-repeat;
     background-color: #d6f1ff;
     position: relative;
 }
-#item_basic_table1{
+#item_reg_table {
     border-collapse: collapse;
     width: 100%;
     overflow: hidden;
 }
-#item_basic_table1 td{
+#item_reg_table td {
     border-width: 1px;
     border-style: solid;
     border-color: #e0e0e0;
     height: 34px;
     line-height: 34px;
     overflow: hidden;
-    text-align: center;
+}
+.reg_table_c2 {
+    width: 15%;
+    text-align: right;
+    padding-right: 20px;
+}
+.reg_table_c3 {
+    width: 35%;
+    text-align: left;
+    padding-left: 20px;
+}
 
+.item_track_top {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 3px;
+    background-image: url("../images/car/title_3.gif");
+    background-repeat: no-repeat;
+    background-color: #d6f1ff;
+    position: relative;
 }
-.add_table_c2{
-    width: 10%;
+#item_track_table {
+    border-collapse: collapse;
+    overflow: hidden;
 }
-.add_table_c3{
-    width: 10%;
+
+#item_track_table td {
+    border:none;
+    overflow: hidden;
 }
-.add_table_c4{
+.track_table_c2 {
+    width: 80px;
+    text-align: right;
+}
+.track_table_c3 {
+    width: 150px;
+    text-align: left;
+}
+.input_time{
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #cdcdcd;
+    color: #cdcdcd;
+    padding:0px 10px;
+}
+.item_driver_top {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 3px;
+    background-image: url("../images/car/title_4.gif");
+    background-repeat: no-repeat;
+    background-color: #d6f1ff;
+    position: relative;
+}
+#item_driver_table {
+    width: 80%;
+    border-collapse: collapse;
+    overflow: hidden;
+    margin:30px 0px;
+}
+
+#item_driver_table td {
+    border:none;
+    overflow: hidden;
+}
+.driver_table_c2 {
+    width: 15%;
+    text-align: right;
+    padding-right: 20px;
+}
+.driver_table_c3 {
+    width: 35%;
+    text-align: left;
+    padding-left: 20px;
+}
+.sideCatalog-dot2 {
+    position: absolute;
+    height: 14px;
+    width: 10px;
+    font-size: 12px;
+    line-height: 12px;
+    background: transparent url(../images/personDoc/icon_dot.gif);
+    left: -8px;
+    top: 38px;
+    cursor: pointer;
+    overflow: hidden
+}
+.driver_info_table td{
+    height:30px;
+}
+.item_violation_top {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 3px;
+    background-image: url("../images/car/title_5.gif");
+    background-repeat: no-repeat;
+    background-color: #d6f1ff;
+    position: relative;
+}
+.item_case_top{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 3px;
+    background-image: url("../images/car/title_6.gif");
+    background-repeat: no-repeat;
+    background-color: #d6f1ff;
+    position: relative;
+}
+.item_accident_top{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 3px;
+    background-image: url("../images/car/title_7.gif");
+    background-repeat: no-repeat;
+    background-color: #d6f1ff;
+    position: relative;
+}
+.item_insurance_top{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 3px;
+    background-image: url("../images/car/title_8.gif");
+    background-repeat: no-repeat;
+    background-color: #d6f1ff;
+    position: relative;
+}
+/*时间抽S=========================*/
+.demoBox{  padding:0px 0px 0px 0px;  background:#ffffff;   }
+.demoBox .bd{ width: 1000px;padding:5px; overflow:hidden; zoom:1;  }
+.demoBox .iframeWrap iframe{ width:452px; height:232px;  background:url(../images/car/loading.gif) center center no-repeat; }
+#picScroll-left iframe{  height:104px;  }
+.picScroll-left{ overflow:hidden; position:relative;  }
+.picScroll-left .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
+.picScroll-left .bd .prev,.picScroll-left .bd .next{ display:block;  width:18px; height:32px; float:left; margin-top:10px;  overflow:hidden;
+    cursor:pointer; background:url("../images/car/arrow_l2.gif") 0 0 no-repeat;filter:alpha(opacity=50);opacity:0.5;}
+.picScroll-left .bd .next{ background:url("../images/car/arrow_r2.gif") 0 0 no-repeat;float:right;}
+.picScroll-left .bd .prev:hover,.picScroll-left .bd .next:hover{filter:alpha(opacity=100);opacity:1;}
+.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; }
+.picScroll-left .hd ul li.on{ background-position:0 0; }
+.picScroll-left .bd{width: 1000px;}
+.bd .tempWrap{float: left;}
+.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+.picScroll-left .bd ul li{ margin:0px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+.picScroll-left .bd ul li .pic{ text-align:center; }
+.pic1{ width:166px;background-image: url("../images/car/line.gif");background-repeat: repeat-x;}
+.picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:0px; border:none; }
+.picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+.picScroll-left .bd ul li .title{ line-height:24px;   }
+.vio_title{width: 140px;height:50px;margin: 0 auto;overflow: hidden;}
+.vio_time{line-height: 1.8em;}
+.vio_add{float:left;text-align: left;line-height: 1.2em;}
+/*时间抽E=========================*/
+
+
+
+.add_table_c2 {
     width: 20%;
 }
-.add_table_c5{
-    width: 60%;
+
+.add_table_c3 {
+    width: 20%;
 }
 
-.item_point_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/zdxx.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
+.add_table_c4 {
+    width: 30%;
 }
 
-
-#item_point_table{
+.add_table_c5 {
+    width: 30%;
+}
+#item_insurance_table {
     border-collapse: collapse;
     width: 100%;
     overflow: hidden;
 }
-#item_point_table td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    overflow: hidden;
-}
-.point_table_c2{
-    width: 15%;
-    text-align: center;
 
-}
-.point_table_c2 span{
-    width: 65px;
-    height: 22px;
-    display: block;
-}
-.point_table_c3{
-    width: 85%;
-    padding-left: 20px;
-    text-align: left;
-}
-.point_orange{
-    background-image: url("../images/personDoc/label_14.gif");
-    height: 22px;
-    line-height: 22px;
-    margin:0 auto;
-    color: #ffffff;
-
-}
-.point_green{
-    background-image: url("../images/personDoc/label_12.gif");
-    height: 22px;
-    line-height: 22px;
-    margin:0 auto;
-    color: #ffffff;
-}
-.point_blue{
-    background-image: url("../images/personDoc/label_13.gif");
-    height: 22px;
-    line-height: 22px;
-    margin:0 auto;
-    color: #ffffff;
-}
-.point_red{
-    background-image: url("../images/personDoc/label_15.gif");
-    height: 22px;
-    line-height: 22px;
-    margin:0 auto;
-    color: #ffffff;
-}
-.item_asj_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/asjxx.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
-}
-#item_asj_table{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_asj_table td{
+#item_insurance_table td {
     border-width: 1px;
     border-style: solid;
     border-color: #e0e0e0;
@@ -681,476 +718,12 @@
     line-height: 34px;
     overflow: hidden;
     text-align: center;
-}
-.asj_table_c2{
-    width: 15%;
-}
 
-.item_wp_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/wpxx.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
 }
-#item_car_table{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_car_table td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-}
-.car_table_pic_span{
-    width: 85px;
-    height:85px;
-    margin:0px auto 10px;
-    display: block;
-}
-.car_table_pic_span img{
-    width: 85px;
-    height:85px;
-    display: block;
-}
-.car_table_c2{
-    text-align: center;
-}
-.check_car,.check_car img{
-    width: 85px;
-    height:18px;
-    margin:0px auto;
-    display: block;
-}
-.pad_l15{
-    padding-left: 15px;
-    text-align: left;
-}
-#item_card_table{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_card_table thead td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-}
-#item_card_table tbody td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.item_qs_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/qsgx.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
-}
-#item_together_table{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_together_table thead td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-}
-.together_table_c2{
-    width: 15%;
-    height:130px;
-}
-.together_table_c2 img{
-    width: 75px;
-    height:93px;
-    display: block;
-    margin:0 auto;
-}
-.together_table_c3{
-    width: 35%;
-}
-.together_relation{
-    height: 93px;
-    line-height: 2.5em;
-}
-#item_together_table2{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_together_table2 thead td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-}
-.item_sh_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/shgx.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
-}
-#item_hotel_table{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_hotel_table thead td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-}
-.item_hd_top{
-    width: 100%;
-    height: 36px;
-    margin-bottom: 3px;
-    background-image: url("../images/personDoc/hdgj.gif");
-    background-repeat: no-repeat;
-    background-color: #d6f1ff;
-    position: relative;
-}
-
-#item_live_table{
-    border-collapse: collapse;
-    width: 100%;
-    overflow: hidden;
-}
-#item_live_table td{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    height: 34px;
-    line-height: 34px;
-    overflow: hidden;
-}
-#item_live_table tbody td{
-    text-align: center;
-}
-.lit_icon{
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    top: 3px;
-    position: relative;
-    margin-right: 10px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*right*/
-.doc_set_top{
-    width:190px;
-    height:3px;
-    font-size: 0;
-}
-.doc_set_mid{
-    width:188px;
-    height:35px;
-    line-height: 35px;
-    border-top:none;
-}
-.doc_set_mid span{
-    margin-left:10px;
+#item_insurance_table thead td{
     font-size: 14px;
-    font-weight: bolder;
+    font-weight: bold;
 }
-.doc_set_bot{
-    width: 158px;
-    border-top:none;
-    padding:15px;
-    margin-bottom: 12px;
-}
-.query_log_1{
-    width: 168px;
-    border-top:none;
-    padding:5px 10px;
-}
-.query_log_1 span{
-    line-height: 1.5em
-}
-
-/*侧边导航开始*/
-#sideToolbar{
-    position: fixed;
-    bottom: 40px;
-    right: 0px;
-    display: block;
-    margin-top: 100px;
-    width: 190px;
-
-}
-#sideCatalog{
-    width:190px;
-    height:335px;
-    overflow:hidden;
-    margin-bottom:10px;
-    font-size:14px;
-    font-family:'宋体';
-    line-height:19px;
-    position:relative;
-    zoom:1;
-    left:10px
-}
-
-#sideCatalog a{
-    color:#333;
-    text-decoration:none;
-    font-weight:500
-}
-
-#sideCatalog a:hover{
-    color:#36c;
-    text-decoration:underline
-}
-
-#sideCatalog span.sideCatalog-index1{
-    color:#999;
-    font-weight:bold;
-    font-family:Arial;
-    font-size:14px;
-    padding-right:5px
-}
-
-#sideCatalog span.sideCatalog-index2{
-    color:#999;
-    font-family:Arail;
-    font-size:14px;
-    padding-right:5px
-}
-
-#sideCatalog #sideCatalog-sidebar{
-    top:0;
-    width:0;
-    height:333px;
-    background-color:#eaeaea;
-    border:1px solid #eaeaea;
-    border-top:0;
-    border-bottom:0;
-    position:absolute;
-    left:5px
-}
-
-#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-top,#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-bottom{
-    position:absolute;
-    left:-5px;
-    width:10px;
-    height:10px;
-    background:transparent url(../images/personDoc/sideToolbar.gif) 0 -199px no-repeat;
-    zoom:1;
-    overflow:hidden
-}
-
-#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-top{
-    top:0;
-    cursor:pointer
-}
-
-#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-top:hover{
-    background-position:0 -185px
-}
-
-#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-bottom{
-    bottom:0
-}
-
-.sideCatalog-item1,.sideCatalog-item2{
-    position:relative;
-    padding:0 7px;
-    zoom:1;
-    margin:0 0 6px 0
-}
-
-.sideCatalog-item1:hover,.sideCatalog-item2:hover{
-    background:#f5f5f5;
-    border-radius:2px;
-    box-shadow:0 1px 0 #eaeaea
-}
-
-.sideCatalog-item2{
-    padding-left:21px
-}
-
-#sideCatalog .sideCatalog-item1 a,#sideCatalog .sideCatalog-item2 a{
-    text-decoration:none
-}
-
-#sideCatalog .sideCatalog-item1 a:hover,#sideCatalog .sideCatalog-item2 a:hover{
-    color:#36c
-}
-
-#sideCatalog .sideCatalog-item1 a{
-    color:#555;
-    font-weight:bold
-}
-
-#sideCatalog .sideCatalog-item2 a{
-    color:#666
-}
-
-.sideCatalog-dot{
-    position:absolute;
-    height:10px;
-    width:6px;
-    font-size:12px;
-    line-height:12px;
-    background:transparent url(../images/personDoc/sideToolbar.gif) 0 -222px;
-    left:-20px;
-    top:4px;
-    cursor:pointer;
-    overflow:hidden
-}
-
-.sideCatalog-dot:hover{
-    background-position:0 -245px
-}
-
-.sideCatalog-item2 .sideCatalog-dot{
-    background:0
-}
-
-#sideCatalog-catalog{
-    height:305px;
-    padding-left:23px;
-    overflow:hidden;
-    margin-top:18px;
-    position:relative;
-    *top:18px
-}
-
-#sideCatalog-catalog dl{
-    position:relative
-}
-
-#sideCatalog .highlight span.sideCatalog-dot{
-    height:13px;
-    width:18px;
-    background:transparent url(../images/personDoc/sideToolbar.gif) -271px -38px no-repeat;
-    left:-23px;
-    top:3px
-}
-
-#sideCatalog .sideCatalog-item2 span.sideCatalog-dot{
-    _left:-54px!important
-}
-
-#sideCatalog-updown{
-    position:absolute;
-    width:22px;
-    height:50px;
-    right:60px;
-    bottom:160px;
-    z-index:100
-}
-
-#sideCatalog-up{
-    width:25px;
-    height:25px;
-    cursor:pointer
-}
-
-#sideCatalog-down{
-    width:25px;
-    height:25px;
-    cursor:pointer
-}
-
-.sideCatalog-up-enable{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -245px -83px no-repeat
-}
-
-.sideCatalog-up-disable{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -272px -83px no-repeat
-}
-
-.sideCatalog-down-enable{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -245px -108px no-repeat
-}
-
-.sideCatalog-down-disable{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -272px -108px no-repeat
-}
-#sideCatalogBtn{
-    width:45px;
-    height:45px;
-    display:block;
-    background:transparent url(../images/personDoc/sideToolbar.gif) 0 0 no-repeat;
-    cursor:pointer;
-    margin-bottom:5px;
-    position:relative;
-    margin-left:10px;
-    display:block
-}
-
-.sideCatalogBtnDisable{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -104px 0 no-repeat!important
-}
-
-a.sideCatalogBtnDisable:hover{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -154px 0 no-repeat!important
-}
-#sideToolbar-up{
-    display:block;
-    width:45px;
-    height:45px;
-    margin-left:10px;
-    border-radius:2px;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
-    background:transparent url(../images/personDoc/sideToolbar.gif) -1px -62px no-repeat
-}
-
-#sideToolbar-up:hover{
-    background:transparent url(../images/personDoc/sideToolbar.gif) -74px -62px no-repeat
-}
-/*侧边导航结束*/
-/*人员档案页结束*/
 
 
 
