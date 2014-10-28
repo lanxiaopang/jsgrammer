@@ -3,7 +3,7 @@
 /* 场景一css */
 .first-horn {position: absolute; top: 30px; left: -422px;}
 .first-txt {position: absolute; top: 60px; display: none;}
-.first-txt .txt1 {width: 65px; height: 78px; overflow: hidden;}
+.first-txt .txt1 {border:1px solid red;width: 65px; height: 78px; overflow: hidden;}
 .first-txt .txt2 {width: 0; height: 78px; overflow: hidden;}
 /* 场景二 */
 .second-people {position: absolute; left: -286px;}

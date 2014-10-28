@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Awesome Slide Out Button</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+
+</head>
+
+
+<body>
+
+<div class="button_wrap">
+    <a style="width: 70px;" class="button_aLeft" id="button_aLeft">
+        <span style="display: none;">使用你的Twitter ID</span>
+    </a>
+    <a class="button_bLeft slidebttn" id="button_bLeft">Sign <span>in</span></a>
+</div>
+
+<div class="button_wrap">
+    <a style="width: 70px;" class="button_aRight" id="button_aRight"><span style="display: none;">使用你的Twitter ID</span></a>
+    <a class="button_bRight slidebttn" id="button_bRight">Sign <span>in</span></a>
+</div>
+
+
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.slidebttn').hover(
+                function () {
+                    var $this 		= $(this);
+                    var $slidelem 	= $this.prev();
+                    $slidelem.animate({'width':'225px'},300);
+                    $slidelem.find('span').stop(true,true).fadeIn();
+                    //$this.addClass('button_c');
+                },
+                function () {
+                    var $this 		= $(this);
+                    var $slidelem 	= $this.prev();
+                    $slidelem.stop().animate({'width':'70px'},200);
+                    $slidelem.find('span').stop(true,true).fadeOut();
+                    //$this.removeClass('button_c');
+                }
+        );
+    });
+</script>
+
+
+</body></html>

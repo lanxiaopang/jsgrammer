@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .box {
+            position: relative;
+            width: 960px;
+            height: 810px;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .first-horn {
+            position: absolute;
+            top: 30px;
+            left: -422px;
+        }
+        .first-txt {
+            position: absolute;
+            top: 60px;
+            display: none;
+        }
+        .first-txt .txt1 {
+            width: 65px;
+            height: 78px;
+            overflow: hidden;
+        }
+        .content_tree{width: 950px;height:590px;margin:0 auto;border:1px solid black;overflow: hidden;}
+        .tree{position: relative;width: 281px;height:477px;margin:0 auto;background:url("images/case_info.jpg") no-repeat;}
+        .content1{
+            width: 50px;height: 35px;
+            position: absolute;right:0px;top:0px;
+            border:1px solid red;text-align: center;vertical-align: middle;
+        }
+        .content12{
+            width: 52px;height: 37px;
+            position: absolute;right:0px;top:0px;
+            border:none;text-align: center;vertical-align: middle;
+        }
+        .content2{
+            width: 248px;height: 53px;
+            position: absolute;left:985px;top:135px;
+            border:1px solid red;text-align: center;vertical-align: middle;
+        }
+        .content3{
+            width: 248px;height: 53px;
+            position: absolute;left:-248px;top:164px;
+            border:1px solid red;text-align: center;vertical-align: middle;
+        }
+        .content4{
+            width: 248px;height: 53px;
+            position: absolute;left:985px;top:264px;
+            border:1px solid red;text-align: center;vertical-align: middle;
+        }
+        .content5{
+            width: 248px;height: 53px;
+            position: absolute;left:-248px;top:374px;
+            border:1px solid red;text-align: center;vertical-align: middle;
+        }
+        .content6{
+            width: 248px;height: 53px;
+            position: absolute;left:985px;top:420px;
+            border:1px solid red;text-align: center;vertical-align: middle;
+        }
+        .con1{width: 400px;height: 35px;border:none;position: relative;top:10px;left:50px;}
+        .button_wrap {
+            position: relative;
+            width: 225px;
+            height: 36px;
+           /* overflow: hidden;*/
+            font-weight: bold;
+            font-size: 11px;
+            margin: 10px auto;
+        }
+        .button_aLeft {
+            width: 70px;
+            height: 36px;
+            border:1px solid red;
+            color: #000000;
+            top: 0px;
+            right: 233px;
+            position: absolute;
+            line-height: 36px;
+            text-align: left;
+        }
+        .button_aLeft span {
+            display: none;
+            padding-left: 20px;
+        }
+        .button_bLeft {
+            width: 64px;
+            height: 60px;
+            /*background-color: #FFF;
+            border:1px solid red;*/
+            color: #000;
+            position: absolute;
+            top: 3px;
+            right: 133px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .button_bLeft span {
+            color: #008DDD;
+        }
+    </style>
+</head>
+<body>
+<div class="content_tree">
+    <div class="tree">
+        <div class="button_wrap">
+            <a style="display: none; overflow: hidden;" class="button_aLeft" id="button_aLeft">
+                <span style="display: none;">2014-03-13  09:25:08</span>
+            </a>
+            <a class="button_bLeft slidebttn" id="button_bLeft"></a>
+        </div>
+    </div>
+
+
+
+    <!--<div class="con1">
+        <span class="content1">123123
+                <span style="display:none;">2014-03-13  09:25:08</span>
+        </span>
+        <span class="content12 slide">777777</span>
+    </div>
+    <div class="content2">
+        <p>章丘市双山街道办事处</p>
+        <p>山东旅游职业学院3号楼113</p>
+    </div>
+    <div class="content3">
+        <p>3</p>
+        <p>山东旅游职业学院3号楼113</p>
+    </div>
+    <div class="content4">
+        <p>4</p>
+        <p>山东旅游职业学院3号楼113</p>
+    </div>
+    <div class="content5">
+        <p>5</p>
+        <p>山东旅游职业学院3号楼113</p>
+    </div>
+    <div class="content6">
+        <p>6</p>
+        <p>山东旅游职业学院3号楼113</p>
+    </div>-->
+</div>
+</body>
+<script src="../ajs/jquery-1.4.2.min.js"></script>
+<script>
+    $(function(){
+        $('.slidebttn').hover(
+                function () {
+                    var $this 		= $(this);
+                    var $slidelem 	= $this.prev();
+                    $slidelem.animate({'width':'225px'},300);
+                    $slidelem.find('span').stop(true,true).fadeIn();
+                    $slidelem.find('word_border').stop(true,true).fadeIn();
+                },
+                function () {
+//                    var $this 		= $(this);
+//                    var $slidelem 	= $this.prev();
+//                    $slidelem.stop().animate({'width':'0px'},200);
+//                    $slidelem.find('span').stop(true,true).fadeOut();
+//                    $slidelem.find('word_border').stop(true,true).fadeOut();
+//                    alert(1);
+//                    $('.button_aLeft').hide();
+//                    //alert(2);
+//                    //$this.removeClass('button_c');
+                }
+        );
+    });
+</script>
+</html>

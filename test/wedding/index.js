@@ -34,12 +34,12 @@ $(function(){
         $sevenBox = $(".seven-box");
 
     /* 场景一 */
-    $firstHorn.animate({left: 0},1000);
+    //$firstHorn.animate({left: 0},1000);
     $firstTxt.animate({left: "435px"},function(){
         $firstTxt.fadeIn(1000);
         showTxt($firstTxt.find("div:eq(0)")); /* 显示第一行文字 */
-        setTimeout(function(){showTxt($firstTxt.find("div:eq(1)"));},3000); /* 显示第二行文字 */
-        setTimeout(scene2,7000); /* 进入场景二 */
+     //   setTimeout(function(){showTxt($firstTxt.find("div:eq(1)"));},3000); /* 显示第二行文字 */
+        //setTimeout(scene2,7000); /* 进入场景二 */
     });
 
     /* 显示文字 */
