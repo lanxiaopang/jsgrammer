@@ -453,10 +453,8 @@
 }
 
 #item_basic_table {
-    border-collapse: collapse;
     width: 100%;
-    float: left;
-    overflow: hidden;
+
 }
 
 #item_basic_table td {
@@ -465,7 +463,19 @@
     border-color: #e0e0e0;
     height: 32px;
     line-height: 32px;
-    overflow: hidden;
+}
+#item_basic_table2 {
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+}
+
+#item_basic_table2 td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e0e0;
+    height: 32px;
+    line-height: 32px;
 }
 
 .basic_table_c2 {
@@ -564,7 +574,6 @@
 #item_reg_table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden;
 }
 
 #item_reg_table td {
@@ -753,7 +762,6 @@
 #item_insurance_table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden;
 }
 
 #item_insurance_table td {

@@ -290,8 +290,8 @@
     width: 15%;
 	height: 33px;
     line-height: 32px;
-    _height: 31px;
-    _line-height: 31px;
+    _height: 33px;
+    _line-height: 32px;
     padding-right: 15px;
     font-weight: bold;
     text-align: right;
@@ -433,8 +433,6 @@
 #item_basic_table{
     border-collapse: collapse;
     width: 100%;
-    float: left;
-    overflow: hidden;
 }
 #item_basic_table td{
     border-width: 1px;
@@ -526,7 +524,6 @@
 #item_reg_table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden;
 }
 #item_reg_table td {
     border-width: 1px;
@@ -711,7 +708,6 @@
 #item_insurance_table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden;
 }
 
 #item_insurance_table td {
@@ -731,9 +727,10 @@
 .car_color{
     width: 15px;
     height:15px;
+	line-height:15px;
     border:1px solid #d00000;
     float: left;
-    margin-top: 8px;
+	margin-top:8px;
     margin-right: 10px;
 }
 .car_logo{
