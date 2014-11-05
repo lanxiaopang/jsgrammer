@@ -1,0 +1,953 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta property="wb:webmaster" content="125d4c886033b1d0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="Keywords" content="SuperSlide,jQuery万能特效,jQuery幻灯片,jQuery焦点图,jQuery Tab切换,jQuery图片滚动,jQuery无缝滚动">
+    <meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+    <title>SuperSlide - 基础效果</title>
+    <script type="text/javascript" src="jquery1.42.min.js"></script>
+    <script type="text/javascript" src="jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="jquery.poshytip.min.js"></script>
+    <link href="default2.css" rel="stylesheet" type="text/css">
+    <link href="tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<style type="text/css">
+    #content{  padding:32px 0 30px 0;    }
+    /* 本例子css */
+    .picScroll-left{ overflow:hidden; position:relative;  border:1px solid #ccc;padding:0;}
+    .picScroll-left .hd{ overflow:hidden;  height:60px; padding:0;position: relative;width:1131px;margin:0 auto;}
+    .picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:48px; height:36px; float:left;
+        margin-top:3px;margin-right:3px; margin-top:15px;  overflow:hidden;
+        cursor:pointer; background:url("selfImg/train_L.gif") 0 0 no-repeat;}
+    .picScroll-left .hd .next{ background:url("selfImg/train_R.gif") 0 0 no-repeat;}
+    .picScroll-left .hd .next1{ background:url("selfImg/train_R1.gif") 0 0 no-repeat;}
+    .picScroll-left .hd .prev1{ background:url("selfImg/train_L1.gif") 0 0 no-repeat;}
+    .picScroll-left .hd .prevStop{  }
+    .picScroll-left .hd .nextStop{  }
+    .picScroll-left .hd ul{ float:left; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+    .picScroll-left .hd ul li{ float:left;  width:48px; height:36px; overflow:hidden; margin-right:5px;
+        margin-top:5px;text-indent:-999px; cursor:pointer; background:url("selfImg/train_C.gif") 0 no-repeat; }
+    .picScroll-left .hd ul li.on{ width:64px;height:48px;background:url("selfImg/train_S.gif") 0 no-repeat;margin-top:0px; }
+    .picScroll-left .bd{margin-left: 10px;width: 1231px;height:335px;}
+    .picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+    .picScroll-left .bd ul li{ margin:0px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+    .picScroll-left .bd ul li .pic{ text-align:center; }
+    .picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
+    .picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+    .picScroll-left .bd ul li .title{ line-height:24px;   }
+    .g_train_num{position: absolute;top: 11px;margin-left: 48px;text-align: center;}
+    .train_num1{width: 46px;height:15px;margin-left:4px;margin-top: 20px;display: inline-block;color: #ffffff}
+    .num_on{width: 62px;height: 18px;line-height: 18px;font-size:18px;margin-left: 4px;margin-top: 20px;
+        display: inline-block;color: #FFF;}
+    .g_seat_con{width: 1231px;height:330px;}
+    .g_seat_l,.g_seat_r{width: 18px;height:330px;float:left;background: url('selfImg/seat_arrow_l.gif')}
+    .g_seat_r{background: url("selfImg/seat_arrow_r.gif")}
+    .g_seat_m{width: 1185px;height: 326px;padding-left:10px;float: left;border-top: 2px solid #298cce;border-bottom: 2px solid #298cce}
+    .g_seat_m_c{width: 46px;float:left;margin-top:8px;}
+    .g_seat_item{margin:0px 5px;}
+
+    .seat_nobody{width: 36px;height:36px;background: url("selfImg/seat_3.gif") 0 no-repeat;}
+    .seat_self{width: 36px;height:36px;background: url("selfImg/seat_1.gif") 0 no-repeat;cursor: pointer;}
+    .seat_one{width: 36px;height:36px;background: url("selfImg/seat_2.gif") 0 no-repeat;cursor: pointer;}
+    .seat_two{width: 36px;height:36px;background: url("selfImg/seat_m2.gif") 0 no-repeat;cursor: pointer;}
+    .seat_three{width: 36px;height:36px;background: url("selfImg/seat_m3.gif") 0 no-repeat;cursor: pointer;}
+    .seat_four{width: 36px;height:36px;background: url("selfImg/seat_m4.gif") 0 no-repeat;cursor: pointer;}
+    .seat_five{width: 36px;height:36px;background: url("selfImg/seat_m5.gif") 0 no-repeat;cursor: pointer;}
+    .g_seat_mid{width: 46px;height: 25px;margin-bottom:7px;
+        border-top: 2px dashed #999999;border-bottom:2px dashed #999999;}
+    .border_sep{border-right: 1px solid #298ccf;}
+    .g_empty_c{width: 81px;height: 326px;float:left;}
+    .g_empty_road{width:81px;height: 25px;margin-top:120px;
+        border-top: 2px dashed #999999;border-bottom:2px dashed #999999;}
+    .seat_stand{width: 24px;height:24px;float:right;margin-right:30px;
+        background: url("selfImg/no_seat.gif") 0 no-repeat;}
+    .g_seat_detailn{width: 250px;height: 126px;overflow: hidden}
+    .g_seat_detail1{width: 250px;height: 96px;overflow: hidden}
+    .g_seat_det_top{width:100%;height: 105px;}
+    .g_seat_det_bot{width:100%;height: 30px;text-align: center;}
+    .g_seat_det_tx{width: 80px;text-align: center;float:left;}
+    .g_seat_det_tx img{margin-top:8px;}
+    .g_seat_det_inf{width: 170px;height: 105px;float:left;color: #333333;}
+    .g_seat_det_inf_name{height:16px;line-height:16px;margin-top: 8px;font-size: 16px;}
+    .g_seat_det_inf_id{color: #0089D1;height:16px;line-height:16px;margin-top: 7px;}
+    .g_seat_det_inf_se{position: relative;height: 16px;margin-top: 7px;}
+    .train_s1{width: 16px;height: 16px;position: absolute;top: 0px;
+        background: url('selfImg/sum.png') 0px -228px no-repeat;}
+    .train_word_s1{top:0px;left:25px;position: absolute;}
+    .train_word_e1{top:0px;left:110px;position: absolute;}
+    .train_e1{width: 16px;height: 16px;position: absolute;top: 0px;left:85px;
+        background: url('selfImg/sum.png') 0px -650px no-repeat;}
+    .g_seat_det_inf_seat{position: relative;height:16px;margin-top: 8px;}
+    .train_seat1{width: 16px;height: 16px;position: absolute;top: 0px;left:0px;
+        background: url('selfImg/sum.png') 0px -339px no-repeat;}
+    .g_seat_det_bot span a{margin-left: 10px;}
+    .u_seat_det_bot_page a{color: #0062db}
+    .u_seat_det_bot_page a[class=page_on]{color: #ff813f;}
+</style>
+<!-- content S -->
+<div id="content" name="content">
+<!-- 3 picScroll-left S -->
+<div id="picScroll-left" class="demoBox ">
+    <div class="bd">
+        <div class="iframeWrap">
+            <div class="picScroll-left">
+                <div class="hd">
+                    <a class="prev"></a>
+                    <ul class="carriage_pic"></ul>
+                    <a class="next next1"></a>
+                    <div class="g_train_num">
+                        <a href="#"><span id="t1" class="num_on">01</span></a>
+                        <a href="#"><span id="t2" class="train_num1">02</span></a>
+                        <a href="#"><span id="t3" class="train_num1">03</span></a>
+                        <a href="#"><span id="t4" class="train_num1">04</span></a>
+                        <a href="#"><span id="t5" class="train_num1">05</span></a>
+                        <a href="#"><span id="t6" class="train_num1">06</span></a>
+                        <a href="#"><span id="t7" class="train_num1">07</span></a>
+                        <a href="#"><span id="t8" class="train_num1">08</span></a>
+                        <a href="#"><span id="t9" class="train_num1">09</span></a>
+                        <a href="#"><span id="t10" class="train_num1">10</span></a>
+                        <a href="#"><span id="t11" class="train_num1">11</span></a>
+                        <a href="#"><span id="t12" class="train_num1">12</span></a>
+                        <a href="#"><span id="t13" class="train_num1">13</span></a>
+                        <a href="#"><span id="t14" class="train_num1">14</span></a>
+                        <a href="#"><span id="t15" class="train_num1">15</span></a>
+                        <a href="#"><span id="t16" class="train_num1">16</span></a>
+                        <a href="#"><span id="t17" class="train_num1">17</span></a>
+                        <a href="#"><span id="t18" class="train_num1">18</span></a>
+                        <a href="#"><span id="t19" class="train_num1">19</span></a>
+                    </div>
+                </div>
+
+                <div class="bd">
+                    <ul class="picList">
+                        <li>
+                            <div class="g_seat_con">
+                                <a class="prev" href=""><div class="g_seat_l"></div></a>
+                                <div class="g_seat_m">
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>001</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_three"></div>
+                                            <p>002</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>003</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>004</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>005</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>006</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_two"></div>
+                                            <p>007</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>008</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>009</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>010</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_self"></div>
+                                            <p>011</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>012</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>013</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>014</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>015</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>016</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>017</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_five"></div>
+                                            <p>018</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_four"></div>
+                                            <p>019</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>020</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>021</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>022</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>023</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>024</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>025</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>026</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>027</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>028</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>029</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>030</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>031</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>032</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>033</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>034</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>035</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>036</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>037</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>038</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>039</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>040</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>041</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>042</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>043</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>044</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>045</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>046</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>047</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>048</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>049</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>050</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>051</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>052</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>053</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>054</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>055</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>056</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>057</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>058</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>059</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>060</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>061</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>062</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>063</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>064</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>065</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>066</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>067</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>068</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>069</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>070</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>071</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>072</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>073</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>074</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>075</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>076</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>077</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>078</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>079</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>080</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>081</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>082</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>083</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>084</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>085</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>086</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>087</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>088</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>089</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one border_sep"></div>
+                                            <p>090</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>091</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>092</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>093</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>094</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>095</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>096</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>097</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>098</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>099</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>100</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>101</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_nobody"></div>
+                                            <p>102</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>103</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>104</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>105</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>106</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>107</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>108</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>109</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>110</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>111</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>112</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>113</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>114</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>115</p>
+                                        </div>
+                                    </div>
+                                    <div class="g_seat_m_c">
+                                        <div class="g_seat_item">
+                                            <div class="seat_one" title="Hey, there! This is a tooltip.22222222222222222222222222222222222"></div>
+                                            <p>116</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>117</p>
+                                        </div>
+                                        <div class="g_seat_mid"></div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>118</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>119</p>
+                                        </div>
+                                        <div class="g_seat_item">
+                                            <div class="seat_one"></div>
+                                            <p>120</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="g_empty_c">
+                                        <div class="g_empty_road">
+                                            <div class="seat_stand"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="next" href=""><div class="g_seat_r"></div></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic2.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic3.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic4.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图4</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic5.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图5</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图6</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic1.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图21</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic2.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图22</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic3.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图23</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic4.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图24</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic5.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图25</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                        <li>
+                            <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                            <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- bd E -->
+</div>
+<!-- 3 picScroll-left E -->
+<!--tip1 S===========================================-->
+<div class="g_seat_detailn">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx">
+            <img src="selfImg/touxiang.jpg">
+        </div>
+        <div class="g_seat_det_inf">
+            <p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">南京</span>
+                <span class="train_e1"></span>
+                <span class="train_word_e1">呼和浩特</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">07车 23号</span>
+            </p>
+        </div>
+    </div>
+    <div class="g_seat_det_bot">
+        <span class="u_seat_det_bot_page">
+            <a href="#">上一页</a>
+            <a href="#">1</a>
+            <a href="#" class="page_on">2</a>
+            <a href="#">3</a>
+            <a href="#">下一页</a>
+        </span>
+    </div>
+</div>
+<div class="g_seat_detail1">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx">
+            <img src="selfImg/touxiang.jpg">
+        </div>
+        <div class="g_seat_det_inf">
+            <p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">南京</span>
+                <span class="train_e1"></span>
+                <span class="train_word_e1">呼和浩特</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">07车 23号</span>
+            </p>
+        </div>
+    </div>
+</div>
+<!--tip1 E===========================================-->
+<!--tip2 S===========================================-->
+<!--tip2 E===========================================-->
+<script type="text/javascript">
+$(function(){
+/*滑动效果==============================================*/
+    jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:1,vis:1,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+
+/*列车鼠标悬浮效果========================================*/
+    $('.g_train_num span').hover(function(){
+        $(".g_train_num span").each(function(){
+            if($(this).hasClass('num_on')){
+                $(this).removeClass('num_on');
+                $(this).addClass('train_num1');
+                return;
+            }
+        });
+        var train_num = $(this).attr("id").replace('t','');
+        var train_sum = $('.g_train_num').find("span").length;//总数
+        if(train_num==1){
+            $('.prev').removeClass('prev1');
+        }
+        if(train_num>1 && train_num<train_sum){
+            $('.prev').addClass('prev1');
+            $('.next').addClass('next1');
+        }
+        if(train_num==train_sum){//最后一个换样式
+            $('.next').removeClass('next1');
+        }
+        $(this).removeClass('train_num1');
+        $(this).addClass('num_on');
+        $('.carriage_pic li').eq(train_num-1).mouseover();
+    },function(){
+
+    });
+
+/*下一个按钮=================================================*/
+    $('.next').click(function(){
+        var train_num;
+        var train_sum = $('.g_train_num').find("span").length;//总数
+        $('.g_train_num span').each(function(){
+            if($(this).hasClass('num_on')){
+                $(this).removeClass('num_on').addClass('train_num1');
+                train_num = $(this).attr("id").replace('t','');
+            }
+        })
+        if(train_num<train_sum){
+            $('.g_train_num').find("span").eq(train_num).removeClass('train_num1').addClass('num_on');
+            $('.prev').addClass('prev1');
+            if(train_num==train_sum-1){
+                $('.next').removeClass('next1');
+            }
+        }else if(train_num==train_sum){
+            $('.g_train_num').find("span").eq(train_num-1).removeClass('train_num1').addClass('num_on');
+
+        }
+    });
+
+/*上一个按钮====================================================*/
+    $('.prev').click(function(){
+        var train_num;
+        $('.g_train_num span').each(function(){
+            if($(this).hasClass('num_on')){
+                $(this).removeClass('num_on').addClass('train_num1');
+                train_num = $(this).attr("id").replace('t','');
+            }
+        })
+        if(train_num>1){
+            $('.g_train_num').find("span").eq(train_num-2).removeClass('train_num1').addClass('num_on');
+            $('.next').addClass('next1');
+            if(train_num==2){
+                $('.prev').removeClass('prev1');
+            }
+        }else if(train_num==1){
+            $('.g_train_num').find("span").eq(0).removeClass('train_num1').addClass('num_on');
+
+        }
+    })
+
+/*提示==================================================*/
+    var tip_content1='<div class="g_seat_detail1"><div class="g_seat_det_top"><div class="g_seat_det_tx">'+
+            '<img src="selfImg/touxiang.jpg"></div><div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>'+
+            '<p class="g_seat_det_inf_id">3701011984032211326</p><p class="g_seat_det_inf_se"><span class="train_s1">'+
+            '</span><span class="train_word_s1">南京</span><span class="train_e1"></span>'+
+            '<span class="train_word_e1">呼和浩特</span></p><p class="g_seat_det_inf_seat"><span class="train_seat1">'+
+            '</span><span class="train_word_s1">07车 23号</span></p></div></div></div>';
+
+    var tip_contentn='<div class="g_seat_detail"><div class="g_seat_det_top"><div class="g_seat_det_tx">'+
+            '<img src="selfImg/touxiang.jpg"></div><div class="g_seat_det_inf">'+
+            '<p class="g_seat_det_inf_name">孙玉香</p><p class="g_seat_det_inf_id">3701011984032211326</p>'+
+            '<p class="g_seat_det_inf_se"><span class="train_s1"></span><span class="train_word_s1">南京</span>'+
+            '<span class="train_e1"></span><span class="train_word_e1">呼和浩特</span></p><p class="g_seat_det_inf_seat">'+
+            '<span class="train_seat1"></span><span class="train_word_s1">07车 23号</span></p></div></div>'+
+            '<div class="g_seat_det_bot"><span class="u_seat_det_bot_page"><a href="#">上一页</a><a href="#">1</a>'+
+            '<a href="#" class="page_on">2</a><a href="#">3</a><a href="#">下一页</a></span></div></div>';
+    $('.seat_one').poshytip({
+        className: 'tip-yellowsimple',
+        /*offsetX: -25,*/
+        alignTo: 'target',
+        alignX: 'center',
+        offsetY: 5,
+        content: tip_content1
+    });
+    $('.seat_three,.seat_five,.seat_four,.seat_two').poshytip({
+        className: 'tip-yellowsimple',
+        alignTo: 'target',
+        alignX: 'center',
+        offsetY: 5,
+        content: tip_contentn
+    });
+    $('.seat_stand').poshytip({
+        className: 'tip-yellowsimple',
+        alignTo: 'target',
+        alignX: 'left',
+        alignY: 'center',
+        offsetX: 15,
+        content: tip_contentn
+    })
+
+})
+</script>
+</div>
+<!-- content E -->
+</body>
+</html>

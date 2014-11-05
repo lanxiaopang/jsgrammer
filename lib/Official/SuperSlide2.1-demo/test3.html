@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta property="wb:webmaster" content="125d4c886033b1d0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="Keywords" content="SuperSlide,jQuery万能特效,jQuery幻灯片,jQuery焦点图,jQuery Tab切换,jQuery图片滚动,jQuery无缝滚动">
+    <meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+    <title>SuperSlide - 基础效果</title>
+    <script type="text/javascript" src="jquery1.42.min.js"></script>
+    <script type="text/javascript" src="jquery.SuperSlide.2.1.1.source.js"></script>
+    <link href="default2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<style type="text/css">
+    #content{  padding:32px 0 30px 0;    }
+    /* 本例子css */
+    .picScroll-left{ overflow:hidden; position:relative;  border:1px solid #ccc;padding:0 10px;}
+    .picScroll-left .hd{ overflow:hidden;  height:60px; background:#f4f4f4; padding:0;position: relative;  }
+    .picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:48px; height:36px; float:left;
+        margin-top:3px;margin-right:3px; margin-top:15px;  overflow:hidden;
+        cursor:pointer; background:url("selfImg/train_L.gif") 0 0 no-repeat;}
+    .picScroll-left .hd .next{ background:url("selfImg/train_R.gif") 0 0 no-repeat;}
+    .picScroll-left .hd .prevStop{  }
+    .picScroll-left .hd .nextStop{  }
+    .picScroll-left .hd ul{ float:left; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+    .picScroll-left .hd ul li{ float:left;  width:48px; height:36px; overflow:hidden; margin-right:5px;
+        margin-top:5px;text-indent:-999px; cursor:pointer; background:url("selfImg/train_C.gif") 0 no-repeat; }
+    .picScroll-left .hd ul li.on{ width:64px;height:48px;background:url("selfImg/train_S.gif") 0 no-repeat;margin-top:0px; }
+    .picScroll-left .bd{ padding:10px;   }
+    .picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+    .picScroll-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+    .picScroll-left .bd ul li .pic{ text-align:center; }
+    .picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
+    .picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+    .picScroll-left .bd ul li .title{ line-height:24px;   }
+    .pageState{display: none;}
+    .train_num{position: absolute;top: 30px;}
+    .g_train_num{position: absolute;top: 31px;padding-left: 75px;}
+    .train_num1{width: 48px;height:15px;display: inline-block;}
+    .carriage_num{}
+</style>
+<!-- content S -->
+<div id="content" name="content">
+    <!-- 3 picScroll-left S -->
+    <div id="picScroll-left" class="demoBox ">
+        <div class="bd">
+            <div class="iframeWrap">
+                <div class="picScroll-left">
+                    <div class="hd">
+                        <a class="prev"></a>
+                        <ul class="carriage_pic"></ul>
+                        <a class="next"></a>
+                        <div class="g_train_num">
+                            <span class="train_num1 t1">01</span>
+                            <span class="train_num1 t2">02</span>
+                            <span class="train_num1 t3">03</span>
+                            <span class="train_num1 t4">04</span>
+                            <span class="train_num1 t5">05</span>
+                            <span class="train_num1 t6">06</span>
+                            <span class="train_num1 t7">07</span>
+                            <span class="train_num1 t8">08</span>
+                            <span class="train_num1 t9">09</span>
+                        </div>
+                        <!--<span class="pageState"></span>-->
+                        <!--<span class="train_num t1">1</span>
+                        <span class="train_num t2">2</span>
+                        <span class="train_num t3">3</span>
+                        <span class="train_num t4">4</span>
+                        <span class="train_num t5">5</span>
+                        <span class="train_num t6">6</span>
+                        <span class="train_num t7">7</span>
+                        <span class="train_num t8">8</span>
+                        <span class="train_num t9">9</span>
+                        <span class="train_num t10">10</span>
+                        <span class="train_num t11">11</span>
+                        <span class="train_num t12">12</span>
+                        <span class="train_num t13">13</span>
+                        <span class="train_num t14">14</span>
+                        <span class="train_num t15">15</span>
+                        <span class="train_num t16">16</span>
+                        <span class="train_num t17">17</span>
+                        <span class="train_num t18">18</span>
+                        <span class="train_num t19">19</span>
+                        <span class="train_num t20">20</span>
+                        <span class="train_num t21">21</span>
+                        <span class="train_num t22">22</span>
+                        <span class="train_num t23">23</span>
+                        <span class="train_num t24">24</span>-->
+                    </div>
+                    <div class="bd">
+                        <ul class="picList">
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic1.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic2.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic3.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic4.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图4</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic5.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图5</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图6</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic1.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图21</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic2.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图22</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic3.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图23</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic4.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图24</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic5.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图25</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="demo/images/pic6.jpg" /></a></div>
+                                <div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图26</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- bd E -->
+    </div>
+    <!-- 3 picScroll-left E -->
+    <script type="text/javascript">
+        jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:1,vis:1,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+    </script>
+</div>
+<!-- content E -->
+</body>
+</html>
