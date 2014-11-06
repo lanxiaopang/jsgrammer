@@ -1,5 +1,26 @@
 @charset "utf-8";
 
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td,img { padding: 0; margin: 0; }
+fieldset,img { border: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,i { font-weight: normal; font-style: normal; }
+ol,ul,li { list-style: none; }
+caption,th { text-align: left; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size: 100%; }
+q:before,q:after { content:''; }
+abbr,acronym { border: 0; }
+
+/*-- All --*/
+html{ min-width:1000px; }
+body{ color:#333;font:12px/20px Arial,"Microsoft YaHei","宋体",sans-serif; text-align:center; background:#fff;  }
+a{ color:#333; text-decoration:none; outline:none;}
+a:hover {color:#f00; text-decoration:underline; }
+table { border-collapse: collapse; border-spacing: 0; empty-cells:show; }
+table td,table th{ border:#ddd solid 1px; padding: 5px 0; }
+table th{ background:#39A4DC; color:#fff;  }
+table .new td{ color:#f60; font-weight:bold;  }
+
 
 /* css三角形 */
 .arrow,.arrow s { position:relative;  display:block; font-size: 0; line-height: 0; width: 0; height: 0; border-color:transparent; border-style:dashed; border-width:5px; }
@@ -89,11 +110,11 @@
 
 /* 案例 - demo.html ---------------------------------------------- */
 
-	.demoBox{ width:1251px; margin:0 auto;padding:0px; }
+	.demoBox{  padding:0 20px 60px 20px;  background:#f2f2f2; border-bottom:3px dotted #ccc;   }
 	.demoBox .hd{ padding:40px 10px 0 10px;  }
 	.demoBox .hd h3{ font-size:30px; font-weight:bold; color:#39A4DC; line-height:60px; }
 	.demoBox .hd h3 span{ color:#ccc; font-style:italic; font-size:60px;  }
-	.demoBox .bd{  overflow:hidden; zoom:1;  }
+	.demoBox .bd{ padding:20px; overflow:hidden; zoom:1;  }
 	.demoBox .bd .iframeWrap{ overflow:hidden; float:left;  }
 	.demoBox iframe{ width:100%; height:100%;  vertical-align:middle; }
 	.demoBox .botTit{ height:22px; line-height:22px; overflow:hidden; background:#eee; text-align:right; padding:5px 0; overflow:hidden; display:none; 
@@ -118,7 +139,7 @@
 	.rightNav a:hover em{ background:#00b700}
 	.rightNav a em{ display:block; float:left; width:30px; background:#39A4DC; color:#fff; font-size:16px; text-align:center; margin-right:10px;}
 	.rightNav a.new em{ background:#f60;  }
-	.demoBox .iframeWrap{ width:1251px;  }
+	.demoBox .iframeWrap{ width:452px;  }
 	.demoBox .iframeWrap iframe{ width:452px; height:232px;  background:url(images/loading.gif) center center no-repeat; }
 
 	#picScroll-left iframe{  height:174px;  }

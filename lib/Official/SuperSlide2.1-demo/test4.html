@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta property="wb:webmaster" content="125d4c886033b1d0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery万能特效,jQuery幻灯片,jQuery焦点图,jQuery Tab切换,jQuery图片滚动,jQuery无缝滚动">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - 基础效果</title>
+<script type="text/javascript" src="jquery1.42.min.js"></script>
+<link href="default5.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<style type="text/css">
+#content{  padding:32px 0 30px 0;    }
+</style>
+<!-- content S -->
+<div id="content" name="content">
+
+	<!-- 1 switchTab S -->
+	<div id="switchTab" class="demoBox">
+		<div class="bd">
+            <div class="iframeWrap">
+                <iframe allowTransparency="true" scrolling="no" _src="demo/iframe/1.1-switchTab-iframe.html?" frameborder="0"></iframe>
+                <p class="botTit"><em>1.0-标签切换</em></p>
+            </div>
+
+            <div class="params">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr class="tit"> <td colspan="4">常用参数(切换看看)</td> </tr>
+                        <tr>
+                            <td class="n">效果<i>[effect]</i>:</td>
+                            <td>
+                                <select rel="string" name="effect">
+                                    <option value="fade">fade</option>
+                                    <option value="fold">fold</option>
+                                    <option value="left">left</option>
+                                    <option value="top">top</option>
+                                    <option value="leftLoop">leftLoop</option>
+                                    <option value="topLoop">topLoop</option>
+                                </select>
+                            </td>
+                            <td class="n">自动运行<i>[autoPlay]</i>:</td>
+                            <td>
+                                <select name="autoPlay">
+                                    <option value="false">false</option>
+                                    <option value="true">true</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="n">触发方式<i>[trigger]</i>:</td>
+                            <td>
+                                <select rel="string" name="trigger">
+                                    <option value="mouseover">mouseover</option>
+                                    <option value="click">click</option>
+                                </select>
+                            </td>
+                            <td class="n">缓动效果<i>[easing]</i>:</td>
+                            <td>
+                                <select rel="string" name="easing">
+
+                                    <option value="swing">swing</option>
+                                    <option value="easeOutCirc">easeOutCirc</option>
+                                    <option value="easeInQuint">easeInQuint</option>
+                                    <option value="easeInBack">easeInBack</option>
+                                    <option value="easeOutBounce">easeOutBounce</option>
+                                    <option value="easeOutElastic">easeOutElastic</option>
+                                    <option value="easing-more">更多</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="n">效果速度<i>[delayTime]</i>:</td>
+                            <td>
+                                <select name="delayTime">
+                                    <option value="500">500</option>
+                                    <option value="700">700</option>
+                                    <option value="1000">1000</option>
+                                    <option value="0">0</option>
+                                </select>
+                            </td>
+                            <td class="n" title="前/后按钮是否继续循环，若为false则当翻动到最前/后页时，前/后按钮点击无效">前后按钮循环<i>[pnLoop]</i>:</td>
+                            <td>
+                                <select name="pnLoop">
+                                    <option value="true">true</option>
+                                    <option value="false">false</option>
+                                </select>
+                            </td>
+                        </tr>
+                </table>
+                <p class="jsCode">当前调用代码：<span class="curJsCode">jQuery(".slideTxtBox").slide({<i></i>});</span></p>
+                <p class="notice">注意：缓动效果对于fade影响不大;不同缓动效果设置适当“效果速度”，会有最佳效果。<br/></p>
+            </div>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 1 switchTab E -->
+
+
+	<script type="text/javascript">
+		//隔行添加demoBoxEven
+		$(".demoBox").each(function(i){ if (i%2==0)$(this).addClass("demoBoxEven"); });
+		//当前调用代码初始化
+		$(".params").each(function(ind){
+			$(this).find(".curJsCode").eq(ind).html(getJsCode(ind));
+		});
+
+		//切换参数调用切换不同效果
+		$(".params select").change(function(){
+
+			 if($(this).val()=="easing-more"){ window.open("otherDemo/T2.1/easing.html"); return; }
+
+			 var srcStr="";
+			 var ind=$(".params").index( $(this).closest(".params") );
+
+			 var iframe = $(this).closest(".demoBox").find("iframe");
+			 var selects = $(this).closest(".params").find("select");
+
+			 selects.each(function(){
+				srcStr += "&"+$(this).val();
+			 });
+			 iframe.attr("src",iframe.attr("src").split('&')[0]+srcStr);
+
+			$(".curJsCode").eq(ind).html(getJsCode(ind));
+		});
+
+		//当前调用代码
+		function getJsCode( ind ){
+			var curJsCode="";
+			var $cur = $(".curJsCode").eq(ind);
+
+			$(".params").eq(ind).find("select").each(function(){
+				if( $("option",this).index( $("option:selected",this) ) !=0 || $("option",this).attr("class")=="show")
+				{
+					var tempVal = $(this).attr("rel")=="string"?('"'+$(this).val()+'"'):$(this).val();
+					curJsCode+= "," + $(this).attr("name")+":"+tempVal;
+				}
+			});
+			if(ind==0) curJsCode = curJsCode.substring(1);
+			$cur.find("i").html(curJsCode);
+			curJsCode = $cur.html();
+			return curJsCode;
+		}
+
+
+	</script>
+
+
+</div>
+<!-- content E -->
+
+	<!-- 隐藏代码盒子 S -->
+	<script type="text/javascript">
+
+			$(".demoList li").hover(function(){ $(this).addClass("on") },function(){ $(this).removeClass("on") });
+			$(".demoList li").each(function(i){
+				$(this).attr("title", $("img",this).attr("src").split("/")[1] +"-"+ $("h3",this).text() )
+			});
+
+			$(".demoList li:not('.o')").click(function(){
+				$("#displayBox h3").text(  $("h3",this).text() );
+				$("#displayBox iframe").attr("src",$("img",this).attr("src").replace(".jpg",".html"));
+				$("#displayBox").show();
+			});
+
+			//当前效果代码
+			$("#displayBox .hd a").click(function(){ $("#displayBox").hide() }); //关闭隐藏盒子
+			$("#displayBox").blur( function(){ $(this).hide } );
+
+			var isIE6 = !!window.ActiveXObject&&!window.XMLHttpRequest;
+			if( isIE6 ){ $(window).scroll(function(){ $("#displayBox").css("top", $(document).scrollTop()+10) }); }
+	</script>
+
+
+<script type="text/javascript">
+	//右侧导航
+	var btb=$(".rightNav");
+	var tempS;
+	$(".rightNav").hover(function(){
+			var thisObj = $(this);
+			tempS = setTimeout(function(){
+			thisObj.find("a").each(function(i){
+				var tA=$(this);
+				setTimeout(function(){ tA.animate({right:"0"},200);},50*i);
+			});
+		},200);
+
+	},function(){
+		if(tempS){ clearTimeout(tempS); }
+		$(this).find("a").each(function(i){
+			var tA=$(this);
+			setTimeout(function(){ tA.animate({right:"-110"},200,function(){
+			});},50*i);
+		});
+
+	});
+	var isIE6 = !!window.ActiveXObject&&!window.XMLHttpRequest;
+
+	//滚动加载
+	var scrollLoad =function(){
+		$("#content iframe[_src]").each(function(){
+				var t = $(this);
+				if( t.offset().top<= $(document).scrollTop() + $(window).height()  )
+				{
+					t.attr( "src",t.attr("_src") ).removeAttr("_src");
+				}
+		});//each E
+	}
+
+	scrollLoad();
+	$(window).scroll(function(){
+		if(isIE6){ btb.css("top", $(document).scrollTop()+30) }
+		scrollLoad();
+	});
+</script>
+
+
+
+
+</body>
+</html>
+
