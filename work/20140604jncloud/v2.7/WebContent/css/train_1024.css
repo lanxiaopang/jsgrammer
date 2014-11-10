@@ -1,0 +1,190 @@
+@charset "utf-8";
+/**
+  *
+  *     本css为火车同行页1024分辨率配套css
+  *     包括公共重置样式和搜索结果页样式两部分，搜索结果页样式又包括头，尾及中间共三部分
+  *     author：sun mail:szy1944@hotmail.com
+  *     version:0.1
+  *     date:20141031
+  */
+/*公共重置样式*/
+@import url("reset.css");
+/*头部样式*/
+@import url("sec_head.css");
+/*尾部样式*/
+@import url("result_bottom.css");
+/*公共样式*/
+@import url("common.css");
+
+/*====================================================*/
+
+.f-cb:after, .f-cbli li:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+}
+/*万能float闭合*/
+.f-cb, .f-cbli li {
+    zoom: 1;
+}
+#wrapper_mid {width: 100%;height: auto;margin-bottom: 20px;overflow: hidden;}
+/*mid S==========================================*/
+#search_result {
+    width: 1288px;
+    height: 220px;
+    margin: 12px auto;
+}
+
+#car_sum_l {
+    width: 10px;
+    height: 220px;
+    background: url('../images/car/table_L.gif') no-repeat;
+    float: left;
+}
+
+#car_sum_c1 {
+    width: 267px;
+    height: 218px;
+    background-color: #e5e1d6;
+    float: left;
+    border-top: 1px solid #ccc8bc;
+    border-right: 1px solid #ccc8bc;
+    border-bottom: 1px solid #ccc8bc;
+}
+
+#car_sum_c1 img {
+    margin-left: 7px;
+    margin-top: 16px;
+}
+
+#car_sum_c2 {
+    width: 1000px;
+    height: 220px;
+    background: url('../images/car/table_C.gif') repeat-x;
+    float: left;
+}
+
+#car_sum_head {
+    height: 55px;
+    line-height: 55px;
+    overflow: hidden;
+}
+
+#car_num {
+    font-size: 22px;
+    float: left;
+    color: #1679bc;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+#sum_l1 {
+    width: 60px;
+    height: 55px;
+    line-height: 55px;
+    margin-left: 10px;
+    background: url("../images/car/wei.gif") no-repeat center;
+}
+
+.sum_l1_num {
+    line-height: 25px;
+    height: 25px;
+    margin-top: 15px;
+    float: right;
+    width: 30px;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#sum_l2 {
+    width: 60px;
+    height: 23px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #3ec978;
+    border-bottom: 2px solid #467c58;
+}
+
+.sum_l2_tit {
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+#sum_l3 {
+    width: 60px;
+    height: 23px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #3a94de;
+    border-bottom: 2px solid #467996;
+}
+
+#sum_l4 {
+    width: 60px;
+    height: 23px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #fe9800;
+    border-bottom: 2px solid #467996;
+}
+
+#sum_l5 {
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    color: #1679bc;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+
+
+#car_sum_body {
+    width: 1000px;
+    height: 165px;
+}
+
+#car_sum_body_table {
+    width: 100%;
+}
+
+.car_sum_body_tit1 {
+    width: 15%;
+    height: 33px;
+    line-height: 32px;
+    _height: 31px;
+    _line-height: 31px;
+    padding-right: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-right: 1px solid #e1d2d5;
+}
+
+.car_sum_body_tit2 {
+    width: 30%;
+    height: 33px;
+    line-height: 32px;
+    _height: 31px;
+    _line-height: 31px;
+    padding-left: 15px;
+    text-align: left;
+    border-right: 1px solid #e1d2d5;
+}
+
+#car_sum_r {
+    width: 10px;
+    height: 220px;
+    background: url('../images/car/table_R.gif') no-repeat;
+    float: left;
+}
+/*mid E==========================================*/

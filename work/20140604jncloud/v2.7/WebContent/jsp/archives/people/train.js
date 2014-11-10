@@ -81,7 +81,7 @@ $('.g_train_num span').hover(function(){
             '<span class="train_word_e1">呼和浩特</span></p><p class="g_seat_det_inf_seat"><span class="train_seat1">'+
             '</span><span class="train_word_s1">07车 23号</span></p></div></div></div>';
 
-    var tip_contentn='<div class="g_seat_detail"><div class="g_seat_det_top"><div class="g_seat_det_tx">'+
+    var tip_contentn='<div class="g_seat_detailn"><div class="g_seat_det_top"><div class="g_seat_det_tx">'+
         '<img src="../../../images/personDoc/train/touxiang.jpg"></div><div class="g_seat_det_inf">'+
             '<p class="g_seat_det_inf_name">孙玉香</p><p class="g_seat_det_inf_id">3701011984032211326</p>'+
             '<p class="g_seat_det_inf_se"><span class="train_s1"></span><span class="train_word_s1">南京</span>'+
