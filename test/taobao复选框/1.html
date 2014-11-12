@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../ajs/jquery-1.4.2.min.js"></script>
+    <style>
+        .a1 span{width: 11px;height: 11px;vertical-align: middle;display: inline-block;background: url('1.jpg') no-repeat}
+        span:hover{background: url('2.jpg') no-repeat;}
+        .a3 span{width: 11px;height: 11px;vertical-align: middle;display: inline-block;background: url('2.jpg') no-repeat}
+    </style>
+</head>
+<body>
+<div>
+    <a class="aa a1" href="#" target="_self">
+        <span id="a2" class="a2"></span>相片位
+    </a>
+</div>
+<script>
+    $('.aa').click(function(){
+        if($(this).hasClass('a1')){
+            $('.aa').removeClass('a1').addClass('a3');
+        }else{
+            $('.aa').removeClass('a3').addClass('a1');
+        }
+    });
+</script>
+</body>
+</html>
