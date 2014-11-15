@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<title>资源监控</title>
+	<link href="../../../../skins/css/base.css" type="text/css" rel="stylesheet">
+	<link href="../../../../skins/css/header.css" type="text/css" rel="stylesheet">
+	<link href="../../../../skins/css/detect/detect.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="../../../../skins/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../../../../skins/js/echarts-2.1.8/build/dist/echarts.js"></script>
+    <script type="text/javascript" src="../../../../skins/js/detect/detect.js"></script>
+</head>
+
+<body>
+	<!---公共头部---->
+	<!--<div id="header-wrap">
+		<div id="header-wrap-welcome">
+			欢迎使用信息资源服务平台！
+		</div>
+	</div>
+	<div id="header">
+		<div id="header-content">
+			<div id="header-logo"></div>
+			<div id="nav-top-items" class="nav-items clearfix">
+				<a class="nav-item on" href="#" index="0">数据监控</a>
+				<a class="nav-item" href="#" index="1">服务目录</a>
+                <a class="nav-item" href="#" index="2">资源目录</a>
+                <a class="nav-item" href="#" index="3">数据标准</a>
+                <a class="nav-item" href="#" index="4">首&nbsp;页</a>
+				<div class="nav-animater" style="display: block; right: 15px;"></div>
+			</div>
+		</div>
+	</div>-->
+	<!---公共头部---->
+	
+	<!---中间部分---->
+	<div class="g_pic" >
+		<div class="g_pic_con"></div>
+	</div>
+
+    <!--数据资源监控 S-->
+    <div class="g_item1">
+        <div class="g_item_tit">
+            <div class="g_item_tit_img u_resource_img"></div>
+            <div class="u_item_tit">数据资源监控</div>
+        </div>
+        <div class="g_item_con">
+            <div class="g_chart_con u_chart_con1">
+                <div class="g_chart_tit">
+                    <span>容量</span>
+                </div>
+                <div class="g_chart_top">
+                    <div class="u_chart1_l"></div>
+                    <div id="u_chart1_r" class="u_chart1_r"></div>
+                    <div class="u_chart1_r_word">
+                        <p class="p1">外部数据<br>50.7TB</p>
+                        <p class="p2">内部数据<br>101.4TB</p>
+                        <p class="p3">互联网数据<br>16.9TB</p>
+                    </div>
+                </div>
+                <div id="u_chart1_bot" class="u_chart1_bot"></div>
+            </div>
+            <div class="g_chart_con u_chart_con2">
+                <div class="g_chart_tit">
+                    <span>数据量</span>
+                </div>
+                <div id="g_data_sum" class="g_chart_top">
+                    <div id="u_chart2_top"></div>
+                    <div class="u_data_sum">
+                        <div class="u_data_sum_pic"></div>
+                        <div class="u_data_sum_num">300亿条</div>
+                    </div>
+                </div>
+                <div id="u_chart2_bot" class="u_chart2_bot"></div>
+            </div>
+            <div class="g_chart_con u_chart_con3">
+                <div class="g_chart_tit">
+                    <span>资源种类</span>
+                </div>
+                <div class="g_chart_top">
+                    <div id="u_chart3_top"></div>
+                </div>
+                <div id="u_chart3_bot" class="u_chart3_bot"></div>
+            </div>
+        </div>
+    </div>
+    <!--数据资源监控 E-->
+
+    <!--数据整合监控 S-->
+    <div class="g_item2">
+        <div class="g_item_tit">
+            <div class="g_item_tit_img u_integration_img"></div>
+            <div class="u_item_tit">数据整合监控</div>
+        </div>
+        <div class="g_item_con">
+            <div class="g_integration_tit">
+                <div class="u_integration_tit">整合动态</div>
+                <a href="#"><div class="u_integration_more">MORE+</div></a>
+            </div>
+            <div class="g_integrate_row1">
+                <div class="g_integrate_row1l">
+                    <div class="u_source">
+                        <div class="u_source1">源 库</div>
+                        <div class="u_source2">总数据源：</div>
+                        <div class="u_source3"><span class="red">103</span>个</div>
+                        <div class="u_source4">问题数：</div>
+                        <div class="u_source3"><span class="red">0</span>个</div>
+                        <div class="u_source4">资源种类：</div>
+                        <div class="u_source3"><span class="red">9234</span>种</div>
+                    </div>
+                    <div class="u_source_connect">
+                        <div class="u_source_connect1"></div>
+                        <div class="u_source_connect2"></div>
+                        <div class="u_source_connect3"></div>
+                    </div>
+                    <div class="u_source_bucket">
+                        <div class="u_source_bucket1"></div>
+                        <div class="u_source_bucket2"></div>
+                        <div class="u_source_bucket3"></div>
+                    </div>
+                    <div class="u_source_flow1">
+                        <div class="u_source_flow11"></div>
+                        <div class="u_source_flow12"></div>
+                        <div class="u_source_flow13"></div>
+                    </div>
+                </div>
+                <div class="g_integrate_row1r">
+                    <ul class="u_dynamic_ul">
+                        <li>
+                            [2014-11-13 12:30] 抽取常口数据22条
+                        </li>
+                        <li>
+                            [2014-11-13 12:30] 抽取常口数据22条
+                        </li>
+                        <li>
+                            [2014-11-13 12:30] 抽取常口数据22条
+                        </li>
+                        <li>
+                            [2014-11-13 12:30] 抽取常口数据22条
+                        </li>
+                        <li>
+                            [2014-11-13 12:30] 抽取常口数据22条
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="g_integration_tit">
+                <div class="u_exception_tit">整合异常记录</div>
+                <a href="#"><div class="u_integration_more">MORE+</div></a>
+            </div>
+            <div class="g_integrate_row2">
+                <div class="g_integrate_row2l">
+                    <ul class="u_int_warning_ul">
+                        <li>
+                            <span class="u_warning"></span>
+                            <span class="u_warn_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_warning"></span>
+                            <span class="u_warn_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_warning"></span>
+                            <span class="u_warn_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_warning"></span>
+                            <span class="u_warn_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_warning"></span>
+                            <span class="u_warn_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g_integrate_row2r">
+                    <ul class="u_int_error_ul">
+                        <li>
+                            <span class="u_error"></span>
+                            <span class="u_error_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_error"></span>
+                            <span class="u_error_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_error"></span>
+                            <span class="u_error_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_error"></span>
+                            <span class="u_error_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                        <li>
+                            <span class="u_error"></span>
+                            <span class="u_error_word">2014年11月13日 15点39分 抽取刑侦案件表失败，原因：数据源连通失败</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--数据整合监控 E-->
+
+    <!--数据加工监控 S-->
+    <div class="g_item3">
+        <div class="g_item_tit">
+            <div class="g_item_tit_img u_process_img"></div>
+            <div class="u_item_tit">数据加工监控</div>
+        </div>
+        <div class="g_item_con">
+            <div class="g_integration_tit">
+                <div class="u_integration_tit">整合动态</div>
+            </div>
+            <div class="g_process_row1"></div>
+            <div class="g_process_tit">
+                <div class="u_exception_tit">总线异常记录</div>
+                <a href="#"><div class="u_integration_more">MORE+</div></a>
+            </div>
+            <div class="g_process_row2">
+                <ul class="u_process_ul">
+                    <li>
+                        <span class="u_process_word">
+                            2014年10月29日 15点39分 某条数据D推送失败，原因：XXXXXX,是否重新进行推送？
+                            <a href="#">是</a>
+                            <a href="#" class="u_negative">否</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="u_process_word">
+                            2014年10月29日 15点39分 某条数据D推送失败，原因：XXXXXX,是否重新进行推送？
+                            <a href="#">是</a>
+                            <a href="#" class="u_negative">否</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="u_process_word">
+                            2014年10月29日 15点39分 某条数据D推送失败，原因：XXXXXX,是否重新进行推送？
+                            <a href="#">是</a>
+                            <a href="#" class="u_negative">否</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="u_process_word">
+                            2014年10月29日 15点39分 某条数据D推送失败，原因：XXXXXX,是否重新进行推送？
+                            <a href="#">是</a>
+                            <a href="#" class="u_negative">否</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="u_process_word">
+                            2014年10月29日 15点39分 某条数据D推送失败，原因：XXXXXX,是否重新进行推送？
+                            <a href="#">是</a>
+                            <a href="#" class="u_negative">否</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--数据加工监控 E-->
+
+    <!---中间部分---->
+</body>
+</html>

@@ -96,6 +96,9 @@ $(function(){
     $("#sideToolbar-item--8").click(function(){
         $.scrollTo('.item_hd_top',1500);
     });
+    $("#sideToolbar-up").click(function(){
+        $.scrollTo('.wrapper',1500);
+    })
 
     $('#sideCatalogBtn').click(function(){
         $('#sideCatalog').toggle();
@@ -111,13 +114,14 @@ $(function(){
 function htmlScroll()
 {
     var top = document.body.scrollTop ||  document.documentElement.scrollTop;
-    if(elFix.data_top < top)
-    {
+    //alert("top:"+top);
+    //alert("elFix.data_top"+elFix.data_top);
+    //if(elFix.data_top < top)
+    //{
         if(top>700){
             elFix.style.display="";
             elFix.style.position = 'fixed';
-            elFix.style.top = 300;
-            elFix.style.left = 200;
+
         }
         else
         {
@@ -125,12 +129,12 @@ function htmlScroll()
             elFix.style.position = 'static';
         }
 
-    }
+    /*}
     else
     {
         elFix.style.display="none";
         elFix.style.position = 'static';
-    }
+    }*/
 }
 
 function htmlPosition(obj)

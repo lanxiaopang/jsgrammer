@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<div id="CanvasWrap" style=" background:#fff; width: 600px; height: 600px; border: 1px solid black;"></div>
+
+<script type="text/javascript">// <![CDATA[
+var canvas,
+        context;
+var div = document.getElementById("CanvasWrap");
+div.innerHTML = "";
+canvas = document.createElement("canvas");
+canvas.style.width = "600px"
+canvas.style.height = "600px"
+canvas.width = 600;
+canvas.height = 600;
+context = canvas.getContext("2d");
+div.appendChild(canvas);
+
+
+//-----------用参数方程绘制椭圆---------------------
+//函数的参数x,y为椭圆中心；a,b分别为椭圆横半轴、
+//纵半轴长度，不可同时为0
+//该方法的缺点是，当lineWidth较宽，椭圆较扁时
+//椭圆内部长轴端较为尖锐，不平滑，效率较低
+function ParamEllipse(context, x, y, a, b)
+{
+    //max是等于1除以长轴值a和b中的较大者
+    //i每次循环增加1/max，表示度数的增加
+    //这样可以使得每次循环所绘制的路径（弧线）接近1像素
+    var step = (a > b) ? 1 / a : 1 / b;
+    context.beginPath();
+    context.moveTo(x + a, y); //从椭圆的左端点开始绘制
+    for (var i = 0; i < 2 * Math.PI; i += step)
+    {
+        //参数方程为x = a * cos(i), y = b * sin(i)，
+        //参数为i，表示度数（弧度）
+        context.lineTo(x + a * Math.cos(i), y + b * Math.sin(i));
+    }
+    context.closePath();
+    context.stroke();
+};
+
+
+
+
+//------------均匀压缩法绘制椭圆--------------------
+//其方法是用arc方法绘制圆，结合scale进行
+//横轴或纵轴方向缩放（均匀压缩）
+//这种方法绘制的椭圆的边离长轴端越近越粗，长轴端点的线宽是正常值
+//边离短轴越近、椭圆越扁越细，甚至产生间断，这是scale导致的结果
+//这种缺点某些时候是优点，比如在表现环的立体效果（行星光环）时
+//对于参数a或b为0的情况，这种方法不适用
+function EvenCompEllipse(context, x, y, a, b)
+{
+    context.save();
+    //选择a、b中的较大者作为arc方法的半径参数
+    var r = (a > b) ? a : b;
+    var ratioX = a / r; //横轴缩放比率
+    var ratioY = b / r; //纵轴缩放比率
+    context.scale(ratioX, ratioY); //进行缩放（均匀压缩）
+    context.beginPath();
+    //从椭圆的左端点开始逆时针绘制
+    context.moveTo((x + a) / ratioX, y / ratioY);
+    context.arc(x / ratioX, y / ratioY, r, 0, 2 * Math.PI);
+    context.closePath();
+    context.stroke();
+    context.restore();
+};
+
+function BezierEllipse1(context, x, y, a, b)
+{
+    //关键是bezierCurveTo中两个控制点的设置
+    //0.5和0.6是两个关键系数（在本函数中为试验而得）
+    var ox = 0.5 * a,
+            oy = 0.6 * b;
+
+    context.save();
+    context.translate(x, y);
+    context.beginPath();
+    //从椭圆纵轴下端开始逆时针方向绘制
+    context.moveTo(0, b);
+    context.bezierCurveTo(ox, b, a, oy, a, 0);
+    context.bezierCurveTo(a, -oy, ox, -b, 0, -b);
+    context.bezierCurveTo(-ox, -b, -a, -oy, -a, 0);
+    context.bezierCurveTo(-a, oy, -ox, b, 0, b);
+    context.closePath();
+    context.stroke();
+    context.restore();
+
+};
+
+function BezierEllipse2(ctx, x, y, a, b)
+{
+    var k = .5522848,
+            ox = a * k, // 水平控制点偏移量
+            oy = b * k; // 垂直控制点偏移量
+
+    ctx.beginPath();
+    //从椭圆的左端点开始顺时针绘制四条三次贝塞尔曲线
+    ctx.moveTo(x - a, y);
+    ctx.bezierCurveTo(x - a, y - oy, x - ox, y - b, x, y - b);
+    ctx.bezierCurveTo(x + ox, y - b, x + a, y - oy, x + a, y);
+    ctx.bezierCurveTo(x + a, y + oy, x + ox, y + b, x, y + b);
+    ctx.bezierCurveTo(x - ox, y + b, x - a, y + oy, x - a, y);
+    ctx.closePath();
+    ctx.stroke();
+};
+
+function execDraw()
+{
+    //解决Chrome下的线宽小于等于1的问题
+    context.lineWidth = 1.1;
+    context.strokeStyle="black"
+    ParamEllipse(context, 130, 80, 50, 50);         //圆
+    ParamEllipse(context, 130, 80, 100, 20);        //椭圆
+    EvenCompEllipse(context, 130, 200, 50, 50);     //圆
+    EvenCompEllipse(context, 130, 200, 100, 20);    //椭圆
+    BezierEllipse1(context, 470, 80, 50, 50);       //圆
+    BezierEllipse1(context, 470, 80, 100, 20);      //椭圆
+    BezierEllipse2(context, 470, 200, 50, 50);      //圆
+    BezierEllipse2(context, 470, 200, 100, 20);     //椭圆
+    //检测相似性(重合的程度)
+    ParamEllipse(context, 300, 450, 250, 50);
+    context.strokeStyle = "yellow";
+    BezierEllipse1(context, 300, 450, 250, 50);
+    context.strokeStyle = "blue";
+    BezierEllipse2(context, 300, 450, 250, 50);
+};
+
+function clearCavnas()
+{
+    context.clearRect(0, 0, 600, 600);
+};
+// ]]></script>
+
+<p>
+    <br />
+    <button onclick="execDraw();" type="button">执行</button>
+    <button onclick="clearCanvas();" type="button">清理</button>
+</p>
+</body>
+</html>
