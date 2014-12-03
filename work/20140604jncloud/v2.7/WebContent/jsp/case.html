@@ -202,14 +202,94 @@
 
                                 <div id="button_wrap5" class="button_wrap">
                                     <div id="button_aLeft5" class="button_aLeft">
-                                        <div id="button_aLeft_info5" class="button_aLeft_info fl">
+
+                                        <div id="picScroll-left1" class="demoBox button_aLeft_info fl">
+                                            <div class="bd">
+                                                <div class="iframeWrap">
+                                                    <div class="picScroll-left1">
+                                                        <div class="hd1">
+                                                            <span class="hd2">嫌疑犯共5人</span>
+                                                        </div>
+                                                        <div class="bd">
+                                                            <ul class="picList">
+                                                                <li>
+                                                                    <div class="person">
+                                                                        <div class="g_touxiang"></div>
+                                                                        <div class="g_person_inf">
+                                                                            <p class="g_person_inf_p1">张鑫</p>
+                                                                            <p class="g_person_inf_p2">370602199203054608</p>
+                                                                            <p class="g_person_inf_p3">男</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="person">
+                                                                        <div class="g_touxiang"></div>
+                                                                        <div class="g_person_inf">
+                                                                            <p class="g_person_inf_p1">张鑫</p>
+                                                                            <p class="g_person_inf_p2">370602199203054608</p>
+                                                                            <p class="g_person_inf_p3">男</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="person">
+                                                                        <div class="g_touxiang"></div>
+                                                                        <div class="g_person_inf">
+                                                                            <p class="g_person_inf_p1">张鑫</p>
+                                                                            <p class="g_person_inf_p2">370602199203054608</p>
+                                                                            <p class="g_person_inf_p3">男</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="person">
+                                                                        <div class="g_touxiang"></div>
+                                                                        <div class="g_person_inf">
+                                                                            <p class="g_person_inf_p1">张鑫</p>
+                                                                            <p class="g_person_inf_p2">370602199203054608</p>
+                                                                            <p class="g_person_inf_p3">男</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="person">
+                                                                        <div class="g_touxiang"></div>
+                                                                        <div class="g_person_inf">
+                                                                            <p class="g_person_inf_p1">张鑫</p>
+                                                                            <p class="g_person_inf_p2">370602199203054608</p>
+                                                                            <p class="g_person_inf_p3">男</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="hd">
+                                                            <div class="hd_con">
+                                                                <a class="next"></a>
+                                                                <a class="next next1">下一页</a>
+                                                                <ul></ul>
+                                                                <a class="prev prev1">上一页</a>
+                                                                <a class="prev"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- bd E -->
+                                        </div>
+
+                                        <!--<div id="button_aLeft_info5" class="button_aLeft_info fl">
                                             <div class="touxiang2"></div>
                                             <div class="touxiang2_info">
                                                 <p style="color: #e30003;">王伟</p>
                                                 <p class="darkBlue_txt_color">370102197203013686</p>
                                                 <p>男</p>
                                             </div>
-                                        </div>
+                                        </div>-->
+
+
+
                                         <div class="line_l fl"></div>
                                     </div>
                                     <span id="button_b5" class="button_b"></span>
@@ -395,6 +475,24 @@
     if(clientWidth>1024) //获取屏幕的的宽度
     {
         jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:4,vis:4,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });
+        jQuery(".picScroll-left1").slide({ titCell: ".hd ul", mainCell: ".bd ul",
+            autoPage: true, effect: 'left', autoPlay: false, scroll: 1,
+            vis: 1, easing: 'swing', delayTime: 500, pnLoop: false, trigger: 'click',
+            mouseOverStop: true });
+        $(function(){
+            removePrevNext();
+            $('.hd_con ul li,.next1,.prev1,.next,.prev').click(function(){
+                removePrevNext();
+            });
+            function removePrevNext(){
+                if($('.prev1').hasClass('prevStop')){
+                    $('.prev1').removeClass('prevStop');
+                }
+                if($('.next1').hasClass('nextStop')){
+                    $('.next1').removeClass('nextStop');
+                }
+            }
+        })
     }
     else{
         jQuery(".picScroll-left").slide( { titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:'left',autoPlay:false,scroll:3,vis:3,easing:'easeInBack',delayTime:500,pnLoop:false,trigger:'mouseover',mouseOverStop:true });

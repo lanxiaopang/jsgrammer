@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        body{
+            background-image:url(about:blank); background-attachment:fixed;/*必要，防抖动*/
+        }
+        .head,.foot{
+            position:fixed;
+            *position:absolute;
+            *left:0;
+            z-index:21;
+            background:#999;
+            height:30px;
+            width:500px;
+        }
+        .foot{
+            *bottom:0;
+        }
+        .main{
+            height:2000px;
+        }
+    </style>
+    <!--[if lt IE 8]>
+    <style type="text/css">
+        /*ie6和ie7 fix顶端元素*/
+        .head{
+            top:expression(eval(document.documentElement.scrollTop));
+        }
+        /*ie6和ie7 fix底端元素*/
+        .foot{
+            top: expression(eval((document.compatMode&&document.compatMode=="CSS1Compat")?documentElement.scrollTop+documentElement.clientHeight-this.clientHeight-1:document.body.scrollTop+document.body.clientHeight-this.clientHeight-1));
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+<div class="head">head</div>
+<div class="main">main</div>
+<div class="foot">foot</div>
+</body>
+</html>

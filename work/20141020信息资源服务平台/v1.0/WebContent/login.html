@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        html,body,.g_bd{margin:0;padding:0;}
+        .g_bd{width:100%;height:774px;}
+        .g_bd1,.g_bd21,.g_bd22.g_bd3{width: 100%;height: 93px;}
+        .g_bd21{height: 487px;background-color: #0e4c71;}
+        .g_bd22{height: 144px;background-color: #0e4c71;}
+        .g_bd3{height:50px;background-color: #f0f0f0;color: #999999;}
+        .u_bd1,.u_bd2,.u_bd3{width: 980px;height: 100%;margin: 0 auto;}
+        .u_icon1{width: 325px;height: 93px;background: url("login.gif")  0 -156px no-repeat;}
+        .g_icon2{width: 642px; height: 487px;float:left;
+            background: url("login.gif") 0 -250px no-repeat;}
+        .g_icon3{width: 338px; height: 487px;float:left;position: relative;
+            background:url("login.gif") 0 -738px no-repeat;}
+        .u_icon4{width: 210px; height: 50px; float:left;
+            background:url("login.gif") 0 -1226px no-repeat;}
+        .u_copyright{width: 315px;height: 50px;line-height: 50px;margin:0 auto;font-size: 12px;}
+        /*form S*/
+        .tbtn{height: 38px;position: absolute;top: 315px;
+            right: 60px;}
+        .container{position: absolute;top: 145px;right:45px;}
+        .container td{}
+        .container td input{height: 30px;line-height: 30px;font-size: 18px;}
+        .divinfo{width:300px;height:20px;position:absolute;top: 370px;right: 30px;
+            font-size:12px;color:#FF9900;font-weight:bold;text-align:center;}
+        #loginBtn,#resetButton{width: 101px;height: 38px;float: left;cursor: pointer;
+            background: url("login.gif") 0 -78px no-repeat;}
+        #resetButton{background-position: 0 0;float: right;}
+        #resetButton:hover{background-position:  0 -39px; }
+        #loginBtn:hover{background-position: 0 -117px;}
+        /*form E*/
+    </style>
+</head>
+<body>
+<div class="g_bd">
+    <div class="g_bd1">
+        <div class="u_bd1">
+            <div class="u_icon1"></div>
+        </div>
+    </div>
+    <div class="g_bd21">
+        <div class="u_bd2">
+            <div class="g_icon2"></div>
+            <div class="g_icon3">
+
+
+                <form action="" >
+                    <table class="container" >
+                        <tr>
+                            <td><input type="text" style="width:200px;border: 0px" id="j_username" name="j_username" placeholder="用户名" value="superadmin"  size="20"/></td>
+                        </tr>
+                        <tr>
+                            <td style="height:110px"><input type="password" style="width:200px;border: 0px;"  id="j_password" name="j_password" placeholder="密码" value="superadmin"/>
+                                <input type="hidden" name="rdmCode" id="rdmCode" />
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="tbtn">
+                        <div onclick="doLogin();" id="loginBtn"></div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div id="resetButton"></div>
+                    </div>
+                    <div class="divinfo"><%=msg %></div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="g_bd22"></div>
+    <div class="g_bd3">
+        <div class="u_bd3">
+            <div class="u_copyright">
+                <span>浪潮集团技术支持</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>建议使用IE6.0及其以上版本浏览器</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<script type="text/javascript">
+    document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/16/000/0000/60424062/CA160000000604240620002.js' type='text/javascript'%3E%3C/script%3E"));</script>
+-->
+</body>
+</html>

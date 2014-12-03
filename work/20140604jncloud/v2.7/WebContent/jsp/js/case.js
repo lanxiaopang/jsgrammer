@@ -75,7 +75,7 @@ $(function(){
 
     var button_b5 = $('#button_b5');
     var $slidelem5 = button_b5.prev();
-    $slidelem5.animate({'width':'298px'},1000);
+    $slidelem5.animate({'width':'363px'},1000);
     $slidelem5.find('span').stop(true,true).fadeIn();
 
     var button_b6 = $('#button_b6');
