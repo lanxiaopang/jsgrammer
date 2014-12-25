@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--<link href="../../../css/default2.css" rel="stylesheet" type="text/css">-->
+
+    <script>
+        var clientWidth = document.documentElement.clientWidth;
+        if(clientWidth>=1366) //获取屏幕的的宽度
+        {
+            document.write("<link type=\"text/css\"  href=\"../../../css/plane_1440.css\" rel=\"stylesheet\"/>");
+        }
+        else{
+            document.write("<link type=\"text/css\"  href=\"../../../css/plane_1024.css\" rel=\"stylesheet\"/>");
+        }
+    </script>
+    <link href="../../../css/tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<!--sec_head S二级菜单头部=======================================-->
+<div id="sec_wrapper_head">
+    <div id="sec_head_con">
+        <p>
+            山东省济南市公安局科技信息通讯处有线通讯科 &nbsp;&nbsp;周建平
+        </p>
+        <img src="../../../images/personDoc/sec_search_logo.jpg">
+    </div>
+</div>
+<!--sec_head E=======================================-->
+
+
+<!--mid S=======================================-->
+<div class="g_wrapper_mid">
+<div class="g_sum">
+    <div class="g_sum_l"></div>
+    <div class="g_sum_bd">
+        <div class="g_sum_r1">
+            <span class="u_sum_r1 yahei">飞机同行分析</span>
+        </div>
+        <div class="g_sum_r2">
+            <div class="g_sum_train_type">
+                <div class="m_sum_train_type">
+                    <div class="u_sum_train_K"></div><!--此处更换其他图标时换class即可，样式中已写好-->
+                    <p class="ft14 yahei"></p>
+                </div>
+            </div>
+            <div class="g_sum_train_info">
+                <div class="g_sum_train_info_tit">
+                    <p class="ft20 yahei darkBlue_txt_color">K1294次</p>
+                </div>
+                <div class="g_sum_train_info_bd">
+                    <table id="t_train_info" class="ft14 yahei">
+                        <tbody>
+                        <tr>
+                            <td class="t_train_c1 t_train_r1">
+                                <span class="train_s"></span>
+                                <span class="train_word">济南遥墙</span>
+                            </td>
+                            <td class="t_train_c1 t_train_r1">
+                                <span class="train_seat"></span>
+                                <span class="train_word">Y舱</span>
+                            </td>
+                            <td class="t_train_c2 t_train_r1">
+                                <span id="train_date"></span>
+                                <span class="train_word">2014-10-17</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_train_c1 t_train_r2">
+                                <span id="train_e"></span>
+                                <span class="train_word">乌鲁木齐地窝堡</span>
+                            </td>
+                            <td class="t_train_c2 t_train_r2">
+                                <span id="train_people"></span>
+                                <span class="train_word">共178人乘坐</span>
+                            </td>
+                            <td class="t_train_c3 t_train_r2">
+                                <div class="u_ago">距今两周</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="g_sum_passenger_pic">
+                <img src="../../../images/personDoc/train/touxiang.jpg">
+            </div>
+            <div class="g_sum_passenger_info">
+                <div class="g_sum_train_info_tit">
+                    <div class="u_passenger_name ft14 yahei fl">王芳芳</div>
+                    <div class="u_passenger_id ft12 yahei fl darkBlue_txt_color">371425198607088660</div>
+                </div>
+                <div class="g_sum_train_info_bd">
+                    <table id="t_passenger_info" class="ft14 yahei">
+                        <tbody>
+                        <tr>
+                            <td class="t_train_c3 t_train_r1">
+                                <span class="passenger_word">仅同乘机  37人</span>
+                            </td>
+                            <td class="t_train_c3 t_train_r1">
+                                <span class="passenger_word">同乘机同下机 150人</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="t_train_c3 t_train_r2">
+                                <span class="passenger_word">仅同下机 22人</span>
+                            </td>
+                            <td class="t_train_c2 t_train_r2">
+                                <span class="passenger_word">&nbsp;</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="g_sum_r"></div>
+</div>
+
+<!--info_items S===================================-->
+<div class="info_items">
+
+<!--同车厢信息 S====================================-->
+<div class="item_add">
+<div class="item_carriage_top">
+    <div class="arrow_1"></div>
+</div>
+<div class="item_contact_con">
+<div class="item_contact_1">
+<div class="item_contact_1con">
+
+
+<div class="bd">
+<ul class="picList">
+<li>
+<div class="g_seat_con">
+<div class="g_seat_m">
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_letter">F</div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_letter">E</div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_letter">D</div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_letter">C</div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_letter">B</div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_letter">A</div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_self"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid">过</div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid">道</div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid">过</div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid">道</div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+<div class="g_seat_m_c">
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_mid"></div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+    <div class="g_seat_item">
+        <div class="seat_one"></div>
+    </div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<!-- 3 picScroll-left E -->
+</div>
+</div>
+<div class="sideCatalog-dot1"></div>
+</div>
+</div>
+<!--同车厢信息 E====================================-->
+<!--同行分析 S====================================-->
+<div class="item_add">
+<div class="item_together_top">
+    <div class="arrow_1"></div>
+</div>
+<div class="item_contact_con">
+<div class="item_contact_1">
+<div class="item_contact_1con">
+
+
+<div id="switchTab" class="demoBox">
+<div class="bd">
+<div class="iframeWrap">
+<div class="slideTxtBox">
+<div class="hd">
+    <ul>
+        <li class="yahei">同乘机同下机人信息 <span style="color: #ff4400;">50</span></li>
+        <li class="yahei">仅同乘机人信息 <span style="color: #ff4400;">50</span></li>
+        <li class="yahei">仅同下机人信息 <span style="color: #ff4400;">137</span></li>
+    </ul>
+</div>
+<div class="bd">
+<div>
+
+
+<div class="g_tab_tit">
+
+                                                    <span class="sum_txt grey_txt_color2">
+                                                        <img src="../../../images/personDoc/train/i.gif">
+                                                        <span>同乘机同下机人信息是指</span>
+                                                    </span>
+    <a href="result_table.html" target="_self">
+                                                        <span id="tabimg_1_1" class="display_mode12 white_bg_color">
+                                                            <img src="../../../images/result/icon2_1.gif">
+                                                        </span>
+    </a>
+    <span class="separator grey_color4"></span>
+    <a href="result.html" target="_self">
+                                                        <span id="tabimg_1_2" class="display_mode12 grey_color3">
+                                                            <img src="../../../images/personDoc/train/icon3_2.gif">
+                                                        </span>
+    </a>
+    <span class="separator grey_color4"></span>
+                                                    <span class="display_mode1 grey_txt_color2">
+                                                        <input type="checkbox">显示外地人照片&nbsp;&nbsp;&nbsp;显示模式
+                                                    </span>
+</div>
+<div>
+    <div id="tab1_1" class="g_tab1_con yahei">
+        <div class="g_tab1_tit">
+            <div class="g_tab1_titc1">姓名</div>
+            <div class="g_tab1_titc2">身份证号</div>
+            <div class="g_tab1_titc3">始发地</div>
+            <div class="g_tab1_titc3">目的地</div>
+            <div class="g_tab1_titc4">舱位</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+
+
+
+    </div>
+    <div id="g_tab11_bot" class="g_tab1_bot">
+        <div class="pagination_con">
+            <a><div class="page_num border_grey current_page">1</div></a>
+            <a><div class="page_num border_grey">2</div></a>
+            <a><div class="page_num border_grey">3</div></a>
+            <a><div class="page_num border_grey">4</div></a>
+            <a><div class="page_num border_grey">5</div></a>
+            <div class="page_num">...</div>
+            <a><div class="page_num border_grey">35</div></a>
+            <div class="page_next border_grey">下一页</div>
+            <div class="page_sum">共35页</div>
+            <div class="page_general">第</div>
+            <div class="page_general"><input type="text" class="page_input border_grey"/></div>
+            <div class="page_general">页</div>
+            <div class="page_general"><img src="../../../images/result/tiaozhuan.gif"></div>
+        </div>
+    </div>
+</div>
+<div>
+<div id="tab1_2" class="g_tab1_con yahei">
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+        <div class="g_seat_det_top">
+            <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+            <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+                <p class="g_seat_det_inf_id">3701011984032211326</p>
+                <p class="g_seat_det_inf_se">
+                    <span class="train_s1"></span>
+                    <span class="train_word_s1">济南遥墙</span>
+                </p>
+                <p class="g_seat_det_inf_se">
+                    <span class="train_e1"></span>
+                    <span class="train_word_s1">乌鲁木齐地窝堡</span>
+                </p>
+                <p class="g_seat_det_inf_seat">
+                    <span class="train_seat1"></span>
+                    <span class="train_word_s1">Y舱</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+<div id="g_tab12_bot" class="g_tab1_bot">
+    <div class="pagination_con">
+        <a><div class="page_num border_grey current_page">1</div></a>
+        <a><div class="page_num border_grey">2</div></a>
+        <a><div class="page_num border_grey">3</div></a>
+        <a><div class="page_num border_grey">4</div></a>
+        <a><div class="page_num border_grey">5</div></a>
+        <div class="page_num">...</div>
+        <a><div class="page_num border_grey">35</div></a>
+        <div class="page_next border_grey">下一页</div>
+        <div class="page_sum">共35页</div>
+        <div class="page_general">第</div>
+        <div class="page_general"><input type="text" class="page_input border_grey"/></div>
+        <div class="page_general">页</div>
+        <div class="page_general"><img src="../../../images/result/tiaozhuan.gif"></div>
+    </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<div>
+
+
+<div class="g_tab_tit">
+
+                                                    <span class="sum_txt grey_txt_color2">
+                                                        <img src="../../../images/personDoc/train/i.gif">
+                                                        <span>仅同乘机人是指从同一机场起飞且未同机场下机的乘客</span>
+                                                    </span>
+    <a href="result_table.html" target="_self">
+                                                        <span id="tabimg_2_1" class="display_mode12 white_bg_color">
+                                                            <img src="../../../images/result/icon2_1.gif">
+                                                        </span>
+    </a>
+    <span class="separator grey_color4"></span>
+    <a href="result.html" target="_self">
+                                                        <span id="tabimg_2_2" class="display_mode12 grey_color3">
+                                                            <img src="../../../images/personDoc/train/icon3_2.gif">
+                                                        </span>
+    </a>
+    <span class="separator grey_color4"></span>
+                                                    <span class="display_mode1 grey_txt_color2">
+                                                        <input type="checkbox">显示外地人照片&nbsp;&nbsp;&nbsp;显示模式
+                                                    </span>
+</div>
+<div>
+    <div id="tab2_1" class="g_tab1_con yahei">
+        <div class="g_tab1_tit">
+            <div class="g_tab1_titc1">姓名</div>
+            <div class="g_tab1_titc2">身份证号</div>
+            <div class="g_tab1_titc3">始发地</div>
+            <div class="g_tab1_titc3">目的地</div>
+            <div class="g_tab1_titc4">舱位</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+
+
+    </div>
+    <div id="g_tab21_bot" class="g_tab1_bot">
+        <div class="pagination_con">
+            <a><div class="page_num border_grey current_page">1</div></a>
+            <a><div class="page_num border_grey">2</div></a>
+            <a><div class="page_num border_grey">3</div></a>
+            <a><div class="page_num border_grey">4</div></a>
+            <a><div class="page_num border_grey">5</div></a>
+            <div class="page_num">...</div>
+            <a><div class="page_num border_grey">35</div></a>
+            <div class="page_next border_grey">下一页</div>
+            <div class="page_sum">共35页</div>
+            <div class="page_general">第</div>
+            <div class="page_general"><input type="text" class="page_input border_grey"/></div>
+            <div class="page_general">页</div>
+            <div class="page_general"><img src="../../../images/result/tiaozhuan.gif"></div>
+        </div>
+    </div>
+</div>
+<div>
+<div id="tab2_2" style="display:none;"  class="g_tab1_con yahei">
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div id="g_tab22_bot" class="g_tab1_bot">
+    <div class="pagination_con">
+        <a><div class="page_num border_grey current_page">1</div></a>
+        <a><div class="page_num border_grey">2</div></a>
+        <a><div class="page_num border_grey">3</div></a>
+        <a><div class="page_num border_grey">4</div></a>
+        <a><div class="page_num border_grey">5</div></a>
+        <div class="page_num">...</div>
+        <a><div class="page_num border_grey">35</div></a>
+        <div class="page_next border_grey">下一页</div>
+        <div class="page_sum">共35页</div>
+        <div class="page_general">第</div>
+        <div class="page_general"><input type="text" class="page_input border_grey"/></div>
+        <div class="page_general">页</div>
+        <div class="page_general"><img src="../../../images/result/tiaozhuan.gif"></div>
+    </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<div>
+
+
+<div class="g_tab_tit">
+
+                                                    <span class="sum_txt grey_txt_color2">
+                                                        <img src="../../../images/personDoc/train/i.gif">
+                                                        <span>仅同下机人是指</span>
+                                                    </span>
+    <a href="result_table.html" target="_self">
+                                                        <span id="tabimg_3_1" class="display_mode12 white_bg_color">
+                                                            <img src="../../../images/result/icon2_1.gif">
+                                                        </span>
+    </a>
+    <span class="separator grey_color4"></span>
+    <a href="result.html" target="_self">
+                                                        <span id="tabimg_3_2" class="display_mode12 grey_color3">
+                                                            <img src="../../../images/personDoc/train/icon3_2.gif">
+                                                        </span>
+    </a>
+    <span class="separator grey_color4"></span>
+                                                    <span class="display_mode1 grey_txt_color2">
+                                                        <input type="checkbox">显示外地人照片&nbsp;&nbsp;&nbsp;显示模式
+                                                    </span>
+</div>
+<div>
+    <div id="tab3_1" class="g_tab1_con yahei">
+        <div class="g_tab1_tit">
+            <div class="g_tab1_titc1">姓名</div>
+            <div class="g_tab1_titc2">身份证号</div>
+            <div class="g_tab1_titc3">始发地</div>
+            <div class="g_tab1_titc3">目的地</div>
+            <div class="g_tab1_titc4">舱位</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l1">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+        <div class="g_tab1_l2">
+            <div class="g_tab1_titc1">孙丰香</div>
+            <div class="g_tab1_titc2">370113199102093896</div>
+            <div class="g_tab1_titc3">济南</div>
+            <div class="g_tab1_titc3">银川</div>
+            <div class="g_tab1_titc4">Y舱</div>
+        </div>
+
+
+    </div>
+    <div id="g_tab31_bot" class="g_tab1_bot">
+        <div class="pagination_con">
+            <a><div class="page_num border_grey current_page">1</div></a>
+            <a><div class="page_num border_grey">2</div></a>
+            <a><div class="page_num border_grey">3</div></a>
+            <a><div class="page_num border_grey">4</div></a>
+            <a><div class="page_num border_grey">5</div></a>
+            <div class="page_num">...</div>
+            <a><div class="page_num border_grey">35</div></a>
+            <div class="page_next border_grey">下一页</div>
+            <div class="page_sum">共35页</div>
+            <div class="page_general">第</div>
+            <div class="page_general"><input type="text" class="page_input border_grey"/></div>
+            <div class="page_general">页</div>
+            <div class="page_general"><img src="../../../images/result/tiaozhuan.gif"></div>
+        </div>
+    </div>
+</div>
+<div>
+<div id="tab3_2" class="g_tab1_con yahei">
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="g_tab_seat_detail">
+    <div class="g_seat_det_top">
+        <div class="g_seat_det_tx"><img src="../../../images/personDoc/train/touxiang.jpg"></div>
+        <div class="g_seat_det_inf"><p class="g_seat_det_inf_name">孙玉香</p>
+            <p class="g_seat_det_inf_id">3701011984032211326</p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_s1"></span>
+                <span class="train_word_s1">济南遥墙</span>
+            </p>
+            <p class="g_seat_det_inf_se">
+                <span class="train_e1"></span>
+                <span class="train_word_s1">乌鲁木齐地窝堡</span>
+            </p>
+            <p class="g_seat_det_inf_seat">
+                <span class="train_seat1"></span>
+                <span class="train_word_s1">Y舱</span>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+<div id="g_tab32_bot" class="g_tab1_bot">
+    <div class="pagination_con">
+        <a><div class="page_num border_grey current_page">1</div></a>
+        <a><div class="page_num border_grey">2</div></a>
+        <a><div class="page_num border_grey">3</div></a>
+        <a><div class="page_num border_grey">4</div></a>
+        <a><div class="page_num border_grey">5</div></a>
+        <div class="page_num">...</div>
+        <a><div class="page_num border_grey">35</div></a>
+        <div class="page_next border_grey">下一页</div>
+        <div class="page_sum">共35页</div>
+        <div class="page_general">第</div>
+        <div class="page_general"><input type="text" class="page_input border_grey"/></div>
+        <div class="page_general">页</div>
+        <div class="page_general"><img src="../../../images/result/tiaozhuan.gif"></div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</div>
+
+</div>
+<div id="sideCatalog-dot2"></div>
+</div>
+</div>
+<!--同行分析 E====================================-->
+
+
+</div>
+<!--info_items E===================================-->
+
+</div>
+
+<!--mid E=======================================-->
+</div>
+
+
+<!--bottom-->
+<div id="wrapper_bot_result">
+    <p id="bot_p_list">
+        <a href="#" class="blue_link">使用说明</a>|<a href="#" class="blue_link">警综平台</a>|<a href="#" class="blue_link">市局首页</a>
+    </p>
+    <p id="copyright">
+        @2013 济南市公安局科技信息通信处技术支持 电话：80858，83349
+    </p>
+</div>
+</div>
+<script type="text/javascript" src="../../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="../../js/jquery.poshytip.min.js"></script>
+<script type="text/javascript" src="plane.js"></script>
+</body>
+</html>
