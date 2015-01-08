@@ -1,0 +1,1182 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<meta name="vs_showGrid" content="False">
+		<title>
+			济南公安信息网
+		</title>
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="C#" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<LINK href="images/index.css" rel="stylesheet">
+		
+	
+		<script src="images/menu.js" type="text/javascript"></script>
+		<style type="text/css">A {
+	FONT-SIZE: 12px
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: none
+}
+		</style>
+		<script type="text/javascript">
+	<!--
+//公共脚本文件 main.js
+function addEvent(obj,evtType,func,cap){
+    cap=cap||false;
+	if(obj.addEventListener){
+	    obj.addEventListener(evtType,func,cap);
+		return true;
+	}else if(obj.attachEvent){
+        if(cap){
+	        obj.setCapture();
+	        return true;
+	    }else{
+		    return obj.attachEvent("on" + evtType,func);
+		}
+	}else{
+		return false;
+    }
+}
+function getPageScroll(){
+    var xScroll,yScroll;
+	if (self.pageXOffset) {
+		xScroll = self.pageXOffset;
+	} else if (document.documentElement && document.documentElement.scrollLeft){
+		xScroll = document.documentElement.scrollLeft;
+	} else if (document.body) {
+		xScroll = document.body.scrollLeft;
+	}
+	if (self.pageYOffset) {
+		yScroll = self.pageYOffset;
+	} else if (document.documentElement && document.documentElement.scrollTop){
+		yScroll = document.documentElement.scrollTop;
+	} else if (document.body) {
+		yScroll = document.body.scrollTop;
+	}
+	arrayPageScroll = new Array(xScroll,yScroll);
+	return arrayPageScroll;
+}
+function GetPageSize(){
+    var xScroll, yScroll;
+    if (window.innerHeight && window.scrollMaxY) {	
+        xScroll = document.body.scrollWidth;
+        yScroll = window.innerHeight + window.scrollMaxY;
+    } else if (document.body.scrollHeight > document.body.offsetHeight){
+        xScroll = document.body.scrollWidth;
+        yScroll = document.body.scrollHeight;
+    } else {
+        xScroll = document.body.offsetWidth;
+        yScroll = document.body.offsetHeight;
+    }
+    var windowWidth, windowHeight;
+    if (self.innerHeight) {
+        windowWidth = self.innerWidth;
+        windowHeight = self.innerHeight;
+    } else if (document.documentElement && document.documentElement.clientHeight) {
+        windowWidth = document.documentElement.clientWidth;
+        windowHeight = document.documentElement.clientHeight;
+    } else if (document.body) {
+        windowWidth = document.body.clientWidth;
+        windowHeight = document.body.clientHeight;
+    }	
+    if(yScroll < windowHeight){
+        pageHeight = windowHeight;
+    } else { 
+        pageHeight = yScroll;
+    }
+    if(xScroll < windowWidth){	
+        pageWidth = windowWidth;
+    } else {
+        pageWidth = xScroll;
+    }
+    arrayPageSize = new Array(pageWidth,pageHeight,windowWidth,windowHeight) 
+    return arrayPageSize;
+}
+//广告脚本文件 AdMove.js
+/*
+例子
+<div id="Div2">
+    ***** content ******
+</div>
+var ad=new AdMove("Div2");
+ad.Run();
+*/
+////////////////////////////////////////////////////////
+var AdMoveConfig=new Object();
+AdMoveConfig.IsInitialized=false;
+AdMoveConfig.ScrollX=0;
+AdMoveConfig.ScrollY=0;
+AdMoveConfig.MoveWidth=0;
+AdMoveConfig.MoveHeight=0;
+AdMoveConfig.Resize=function(){
+    var winsize=GetPageSize();
+    AdMoveConfig.MoveWidth=winsize[2];
+    AdMoveConfig.MoveHeight=winsize[3];
+    AdMoveConfig.Scroll();
+}
+AdMoveConfig.Scroll=function(){
+    var winscroll=getPageScroll();
+    AdMoveConfig.ScrollX=winscroll[0];
+    AdMoveConfig.ScrollY=winscroll[1];
+}
+addEvent(window,"resize",AdMoveConfig.Resize);
+addEvent(window,"scroll",AdMoveConfig.Scroll);
+function AdMove(id){
+    if(!AdMoveConfig.IsInitialized){
+        AdMoveConfig.Resize();
+        AdMoveConfig.IsInitialized=true;
+    }
+    var obj=document.getElementById(id);
+    obj.style.position="absolute";
+    var W=AdMoveConfig.MoveWidth-obj.offsetWidth;
+    var H=AdMoveConfig.MoveHeight-obj.offsetHeight;
+    var x = W*Math.random(),y = H*Math.random();
+    var rad=(Math.random()+1)*Math.PI/6;
+    var kx=Math.sin(rad),ky=Math.cos(rad);
+    var dirx = (Math.random()<0.5?1:-1), diry = (Math.random()<0.5?1:-1);
+    var step = 1;
+    var interval;
+    this.SetLocation=function(vx,vy){x=vx;y=vy;}
+    this.SetDirection=function(vx,vy){dirx=vx;diry=vy;}
+    obj.CustomMethod=function(){
+        obj.style.left = (x + AdMoveConfig.ScrollX) + "px";
+        obj.style.top = (y + AdMoveConfig.ScrollY) + "px";
+        rad=(Math.random()+1)*Math.PI/6;
+        W=AdMoveConfig.MoveWidth-obj.offsetWidth;
+        H=AdMoveConfig.MoveHeight-obj.offsetHeight;
+        x = x + step*kx*dirx;
+        if (x < 0){dirx = 1;x = 0;kx=Math.sin(rad);ky=Math.cos(rad);} 
+        if (x > W){dirx = -1;x = W;kx=Math.sin(rad);ky=Math.cos(rad);}
+        y = y + step*ky*diry;
+        if (y < 0){diry = 1;y = 0;kx=Math.sin(rad);ky=Math.cos(rad);} 
+        if (y > H){diry = -1;y = H;kx=Math.sin(rad);ky=Math.cos(rad);}
+    }
+    this.Run=function(){
+        var delay = 10;
+        interval=setInterval(obj.CustomMethod,delay);
+        obj.onmouseover=function(){clearInterval(interval);}
+        obj.onmouseout=function(){interval=setInterval(obj.CustomMethod, delay);}
+    }
+}
+	//-->
+		</script>
+	</HEAD>
+	<body bottomMargin="0" bgColor="#ffffff" leftMargin="0" topMargin="0" rightMargin="0">
+		<form name="Form1" method="post" action="default.aspx" id="Form1" onkeypress="if(event.keyCode==13)event.returnValue=false;">
+<input type="hidden" name="__VIEWSTATE" value="dDwxMDIwNDQzOTI7dDw7bDxpPDA+Oz47bDx0PDtsPGk8NT47aTw3PjtpPDk+O2k8MTU+O2k8MTc+O2k8MTk+O2k8MjE+O2k8MjM+O2k8MjU+O2k8Mjc+O2k8Mjk+O2k8MzE+O2k8MzM+O2k8MzU+Oz47bDx0PDtsPGk8MT47aTwzPjs+O2w8dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPHA8bDxUYXJnZXQ7TmF2aWdhdGVVcmw7PjtsPF9ibGFuazsvaW5mb2xpc3QvdGVjaGxpc3QuYXNweD9zaWQ9NjYwMTs+Pjs+Ozs+Oz4+Oz4+Oz4+O3Q8QDA8cDxwPGw8XyFJdGVtQ291bnQ7RGF0YUtleXM7PjtsPGk8MTE+O2w8Pjs+Pjs+Ozs7Ozs7Ozs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxAMDxwPHA8bDxfIUl0ZW1Db3VudDtEYXRhS2V5czs+O2w8aTw2PjtsPD47Pj47Pjs7Ozs7Ozs7Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8QDA8cDxwPGw8XyFJdGVtQ291bnQ7RGF0YUtleXM7PjtsPGk8MTI+O2w8Pjs+Pjs+Ozs7Ozs7Ozs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDx0PHA8cDxsPERhdGFUZXh0RmllbGQ7RGF0YVZhbHVlRmllbGQ7PjtsPHNvcnQ7aWQ7Pj47Pjt0PGk8MTE0PjtAPFxlO+itpuaDheWIhuaekDvljbPml7bpmLLmjqc7MTEw5o6l5aSE6K2mO+azleWItjExMDvnp5HmioDlvLroraY75YWs5a6J5aSn5LqL6K6wO+S4uuitpuS5i+mBkzvnkIborrrnoJTorqg76K2m5Yqh5oiY5pyv56CU6K6oO+S/oeaBr+WMluaOqOi/m+W5tOeugOaKpTvmiZPpmLLmjqflupTnlKjlubPlj7Dlu7rorr475YWo5Zu9UEdJU+ivleeCueWfjuW4gjvmtY7ljZflhazlronnp5HmioDkuJPliIo756eR5oqA5rS75Yqo5pyIO+a1juWNl+WFrOWuieeugOaKpTvmlL/lt6XnroDmiqU76YeN54K55bel5L2c5o6o6L+b566A5oqlO+W3peS9nOeugOaKpeWvvOiIqjvlj5bkv53lgJnlrqHnqoHlh7rpl67popjkuJPpobnnnaPlr5875bGA6ZW/552j5Yqe5LukO+edo+Wvn+mAmuaKpTvluILlsYDogIPmoLg75oyH5oyl6YOo6ICD5qC4O+aUv+ayu+mDqOiAg+aguDvnuqrlp5TogIPmoLg75a6h6K6h5bel5L2c6ICD5qC4O+itpuWKoeedo+Wvn+iAg+aguDvlrqPkvKDlt6XkvZzogIPmoLg75rOV5Yi25Lia5Yqh6ICD5qC4O+S/oeiuv+W3peS9nOiAg+aguDvoo4XotKLlt6XkvZzogIPmoLg756eR5oqA5L+h6YCa5bel5L2c6ICD5qC4O+aIt+aUv+S4muWKoeiAg+aguDvlh7rlhaXlooPkuJrliqHogIPmoLg7572R6K2m5Lia5Yqh6ICD5qC4O+itpuWNq+W3peS9nOiAg+aguDvkv53lronnrqHnkIbogIPmoLg75Zu95L+d5Lia5Yqh6ICD5qC4O+WPjemCquaVmeS4muWKoeiAg+aguDvnu4/kvqbkuJrliqHogIPmoLg75rK75a6J5Lia5Yqh6ICD5qC4O+e7j+aWh+S/neS4muWKoeiAg+aguDvnpoHmr5LkuJrliqHogIPmoLg755uR566h5Lia5Yqh6ICD5qC4O+WIkeitpuS4muWKoeiAg+aguDvlj43mgZDkuJrliqHogIPmoLg75Lqk6K2m5Lia5Yqh6ICD5qC4O+W3oeitpuS4muWKoeiAg+aguDvmtojpmLLkuJrliqHogIPmoLg76KeG6aKR5Lit5b+DO+egtOahiOaUu+WdmuS8muaImDvmr4/mnIjljYHpopg76LCD5p+l56CU56m26K2m5Yqh5o6i6K6oO+W6lOeUqOezu+e7n+WvvOiIqjvlpb3orabnvZHlkozosJDnvZE75bmy6YOo5Lu75YWNO+ahiOS+i+mAmuaKpTvlj43ohZDlnKjnur875Zu95aSW5Y+N6IWQO+WPpOmVnOS7iumJtDvnvZHnq5nlr7zoiKo75Yaz562W5pyN5YqhO+WbvueJh+aWsOmXuzvlhYnovonkuovov7k75oK85b+15oiY5Y+LO+iwg+afpeeglOeptjvlhajlkZjnm67moIfnrqHnkIbnu6nmlYjogIPmoLjns7vnu5875a6J5YWo6YCa5oqlO+WuieWFqOinhOWumjvov5DooYznrqHnkIY76YCa55+l5YWs5ZGKO+mHjeeCueaWsOmXuzvorabliqHop4bnqpc75pe25LqL6KaB6Ze7O+ezu+e7n+i9r+S7tjvnvZHnu5zlt6Xlhbc75a6J5YWo6Ziy5oqkO+WbvuW9ouWbvuWDjzvlip7lhaznm7jlhbM75YaF6YOo6L2v5Lu2O+WuieWFqOajgOafpeS4k+agjzvmlbDlrZfor4HkuaY756e75Yqo6K2m5YqhO+WtpuS5oOWfueiurTvpgq7ku7bns7vnu5876K2m5oOF5YiG5p6QO+a1geWKqOitpuWKoTvmlofku7borrLor5075bel5L2c5Yqo5oCBO+aWh+S7tuiusuivnTvmiJjmnpzlv6vmiqU75Yuk5Yqh5qOA5p+lO+itpuaDheWIhuaekDvpmLLmjqfmjIfku6Q76K2m5Yqb5oql5aSHO+e7j+mqjOS6pOa1gTvnp5HmioDpgJrkv6E75YWo6L+Q6K2m5Yqb6YWN572u6KGoO+mYn+S8jeW7uuiuvjvmsJHnlJ/orabliqHlt6XkvZzmg4XlhrU75q+P5pel6K2m5oOF6YCa5oqlO+avj+WRqOitpuaDhemAmuaKpTvmr4/mnIjorabmg4XpgJrmiqU76K2m5Yqb6YOo572yO+WLpOWKoeajgOafpTvpmLLmjqfmjIfku6Q75q+P5pel5oOF5Ya1O+eOsOahiOS+puegtDvmmI7kvKDnlLXmiqU75LiJ5Z+65LiJ6aG55bu66K6+O+Wuo+S8oOagjzvlh4bpqb7kurrlkZjlpIfmoYjooag75YWs5Yqh55So6L2m5aSH5qGI6KGoOz47QDxcZTswNDAxOzA0MDI7MDQwMzswOTAyOzEzMDE7MTQwMTsyNDAxOzI0MDI7MjQwMzsyOTAxOzI5MDI7MjkwMzszMDAxOzMwMDM7MzEwMzszMTA0OzMxMDg7MzEwOTszMjAxOzM0MDE7MzQwMzszNTAxOzM1MDI7MzUwMzszNTA0OzM1MDU7MzUwNjszNTA3OzM1MDg7MzUwOTszNTEwOzM1MTE7MzUxMjszNTEzOzM1MTQ7MzUxNTszNTE2OzM1MTc7MzUxODszNTE5OzM1MjA7MzUyMTszNTIyOzM1MjM7MzUyNDszNTI1OzM1MjY7MzUyNzszNTI4OzM3MDE7MzkwMTs0MTAxOzQzMDE7NDQwMTs0NTAxOzQ5MDE7NTEwMTs1MTAyOzUxMDM7NTEwNDs1NDAzOzU1MDE7NTYwMjs1NjAzOzU2MDQ7NTkwMTs2MjQwOzY0MDE7NjQwMjs2NDA2OzY2MDE7NjYwMjs2NzAxOzY4MDE7NjkwMTs2OTAyOzY5MDM7NjkwNDs2OTA1OzY5MDY7NjkwNzs2OTA4OzY5MDk7NjkxMDs2OTIwOzcxMDE7NzIwMTs3NDAxOzc1MDE7NzUwMjs3NTAzOzc1MDQ7NzUwNTs3NTA2Ozc1MDc7NzUwODs3NjAxOzc3MDE7NzgwMTs3OTAxOzgxMDE7ODEwMjs4MTAzOzgyMDE7ODMwMTs4NDAxOzg1MDE7ODYwMTs4NzAxOzg4MDE7ODkwMjs4OTAzOzg5MDQ7Pj47Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8QDA8cDxwPGw8XyFJdGVtQ291bnQ7RGF0YUtleXM7PjtsPGk8MTA+O2w8Pjs+Pjs+Ozs7Ozs7Ozs+Ozs+Oz4+O3Q8O2w8aTwxPjtpPDM+O2k8NT47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8bDxpbm5lcmh0bWw7PjtsPFw8Qlw+XDxGT05UIGNvbG9yPSMyZTdiYWVcPuaWh+S7tuiusuivnVw8L0ZPTlRcPlw8L0JcPjs+Pjs7Pjs+Pjs+Pjt0PEAwPHA8cDxsPF8hSXRlbUNvdW50O0RhdGFLZXlzOz47bDxpPDk+O2w8Pjs+Pjs+Ozs7Ozs7Ozs+Ozs+O3Q8cDxwPGw8TmF2aWdhdGVVcmw7VGFyZ2V0Oz47bDwvaW5mb2xpc3QvdGVjaGxpc3QuYXNweD9zaWQ9NzQwMTtfYmxhbms7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDU+Oz47bDx0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPGw8aW5uZXJodG1sOz47bDxcPEJcPlw8Rk9OVCBjb2xvcj0jMmU3YmFlXD7pmJ/kvI3lu7rorr5cPC9GT05UXD5cPC9CXD47Pj47Oz47Pj47Pj47dDxAMDxwPHA8bDxfIUl0ZW1Db3VudDtEYXRhS2V5czs+O2w8aTw5PjtsPD47Pj47Pjs7Ozs7Ozs7Pjs7Pjt0PHA8cDxsPE5hdmlnYXRlVXJsO1RhcmdldDs+O2w8L2luZm9saXN0L3RlY2hsaXN0LmFzcHg/c2lkPTc4MDE7X2JsYW5rOz4+Oz47Oz47Pj47dDw7bDxpPDE+O2k8Mz47aTw1Pjs+O2w8dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxsPGlubmVyaHRtbDs+O2w8XDxCXD5cPEZPTlQgY29sb3I9IzJlN2JhZVw+6K2m5Yqh6KeG56qXXDwvRk9OVFw+XDwvQlw+Oz4+Ozs+Oz4+Oz4+O3Q8QDA8cDxwPGw8XyFJdGVtQ291bnQ7RGF0YUtleXM7PjtsPGk8MTA+O2w8Pjs+Pjs+Ozs7Ozs7Ozs+Ozs+O3Q8cDxwPGw8TmF2aWdhdGVVcmw7VGFyZ2V0Oz47bDwvaW5mb2xpc3QvdGVjaGxpc3QuYXNweD9zaWQ9NjcwMTtfYmxhbms7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDU+Oz47bDx0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPGw8aW5uZXJodG1sOz47bDxcPEJcPlw8Rk9OVCBjb2xvcj0jMmU3YmFlXD7ml7bkuovopoHpl7tcPC9GT05UXD5cPC9CXD47Pj47Oz47Pj47Pj47dDxAMDxwPHA8bDxfIUl0ZW1Db3VudDtEYXRhS2V5czs+O2w8aTwxMD47bDw+Oz4+Oz47Ozs7Ozs7Oz47Oz47dDxwPHA8bDxOYXZpZ2F0ZVVybDtUYXJnZXQ7PjtsPC9pbmZvbGlzdC90ZWNobGlzdC5hc3B4P3NpZD02ODAxO19ibGFuazs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxAMDxwPHA8bDxfIUl0ZW1Db3VudDtEYXRhS2V5czs+O2w8aTwyMD47bDw+Oz4+Oz47Ozs7Ozs7Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PEAwPHA8cDxsPF8hSXRlbUNvdW50O0RhdGFLZXlzOz47bDxpPDY+O2w8Pjs+Pjs+Ozs7Ozs7Ozs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxAMDxwPHA8bDxfIUl0ZW1Db3VudDtEYXRhS2V5czs+O2w8aTw2PjtsPD47Pj47Pjs7Ozs7Ozs7Pjs7Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8bDxpbm5lcmh0bWw7PjtsPOermeeCueiuv+mXrumHj++8mlw8Zm9udCBjb2xvcj1yZWRcPlw8Ylw+NDQ0ODY3NzhcPC9iXD5cPC9mb250XD47Pj47Oz47Pj47Pj47Pj47dDxwPHA8bDxUZXh0Oz47bDxcZTs+Pjs+Ozs+Oz4+Oz4+Oz4xgPw3sCWxtQQkgbhFqqyb73Y1NA==" />
+
+			<table cellSpacing="0" cellPadding="0" width="1001" align="center" border="0">
+				<TBODY>
+					<tr>
+						<td>
+							<div id="menuDiv" style="Z-INDEX: 2; VISIBILITY: hidden; POSITION: absolute"></div>
+							<table style="BACKGROUND: url(images/border2_bg.gif) repeat-x; WIDTH: 1008px; HEIGHT: 30px">
+								<tr>
+									<td width="800">
+										<div>
+											<table class="zhandian" style="MARGIN-LEFT: 1px" height="100%" cellSpacing="0" cellPadding="0"
+												width="400" border="0">
+												<tbody>
+													<tr>
+														<td onmouseover="HideMenu();ShowMenu(quanguo)" onmouseout="HideMenu()" align="center"
+															width="150"><a>全国站点</a></td>
+														<td>|</td>
+														<td onmouseover="HideMenu();ShowMenu(quansheng)" onmouseout="HideMenu()" align="center"
+															width="150"><a>全省站点</a></td>
+														<td>|</td>
+														<td onmouseover="HideMenu();ShowMenu(juzhi)" onmouseout="HideMenu()" align="center"
+															width="150"><a>局直单位站点</a></td>
+														<td>|</td>
+														<td onmouseover="HideMenu();ShowMenu(gefenshi)" onmouseout="HideMenu()" align="center"
+															width="150"><a>各分市局站点</a></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+									<td>
+										<div style="PADDING-RIGHT: 15px; FLOAT: right">
+											<table cellSpacing="0" cellPadding="0" width="500" border="0">
+												<tr>
+													<td style="WIDTH: 60px; PADDING-TOP: 5px" width="60"></td>
+													<td style="PADDING-TOP: 5px" align="right"><a>站内检索：</a>
+													</td>
+													<td style="PADDING-TOP: 4px" width="120"><INPUT class="smallInput" onkeypress="if(event.keyCode==13){search();}" id="topic" type="text"
+															size="20">
+													</td>
+													<td width="30"></td>
+													<td style="PADDING-TOP: 6px" width="100"><IMG style="CURSOR: hand" onclick="search();" src="images/sousuo.jpg">
+													</td>
+												</tr>
+												<script type="text/javascript">
+function search()
+{
+	window.open("infolist/search.aspx?sort="+document.getElementById("Search1_searchsort").value+"&topic="+document.getElementById("topic").value);
+}
+												</script>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr background="/images/bg.jpg">
+		<td width="493"><img src="/images/logo.jpg" width="493" height="136"></td>
+		<td bgcolor="#a5c7ef"><iframe src="/UserControl/banner.htm" width="509" frameborder="0" height="136" scrolling="no"></iframe></td>
+	</tr>
+</table></td>
+					</tr>
+					<tr>
+						<td align="right" background="/images/menubg.gif" height="32"><table id="Menu1_menulist" cellspacing="0" cellpadding="0" border="0" style="height:32px;width:99%;background-image:url(/images/menubg.gif);border-collapse:collapse;">
+	<tr>
+		<td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.10.9/default.aspx' target='_blank'>首页</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.10.9/infolist/techshow.aspx?sid=3109' target='_blank'>公安简报</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.9.213:8088/' target='_blank'>政治工作</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='/infolist/techshow.aspx?sid=09' target='_blank'>法制110</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.10.9/infolist/tech.aspx?sid=51' target='_blank'>警钟长鸣</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.10.9/infolist/tech.aspx?sid=30' target='_blank'>科技强警</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='/infolist/techlist.aspx?sid=14' target='_blank'>公安大事记</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='https://10.49.6.195:8443/sologin/linkToDoc.jsp' target='_blank'>办公自动化</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.10.9/infolist/techlist.aspx?sid=8701' target='_blank'>明传电报</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.6.164/Main_zj.aspx?page=zjlist.aspx' target='_blank'>图片中心</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='/infolist/techshow.aspx?sid=37' target='_blank'>视频中心</A></td><td nowrap="nowrap" background="/images/menu.gif">&nbsp;&nbsp;&nbsp;&nbsp;<A class='green' href='http://10.49.10.9/infolist/techshow.aspx?sid=4401' target='_blank'>应用系统导航</A></td>
+	</tr>
+</table>
+</td>
+					</tr>
+
+					<tr>
+						<td style="HEIGHT: 401px" align="center">
+							<table cellSpacing="0" cellPadding="0" width="992" border="0">
+								<tr>
+									<td vAlign="top" width="242">
+										<table cellSpacing="0" cellPadding="0" width="242" border="0">
+											<tr>
+												<td style="HEIGHT: 1px">
+	<TABLE id="Table1" height="212" cellSpacing="0" cellPadding="0" width="242" border="0" background="/images/news2.gif">
+		<TR>
+			<TD background="/images/news1.gif" align="right" height="27" valign="bottom">
+				<table id="News1_Table2" cellspacing="0" cellpadding="0" width="30" border="0">
+	<tr>
+		<TD valign="top" height="18"><a id="News1_HyperLink1" class="green" href="/infolist/techlist.aspx?sid=6601" target="_blank">更多</a></TD>
+	</tr>
+</table>
+
+			</TD>
+		</TR>
+		<TR>
+			<TD align="right" valign="top"><table id="News1_datalist1" cellspacing="0" cellpadding="0" border="0" style="width:240px;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46624' class=green target=_blank>关于组织参加司法考试培训面</a></td><td width=45><font color=#086FAB>(08-20)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46623' class=green target=_blank>关于召开全市重大火灾隐患集</a></td><td width=45><font color=#086FAB>(08-20)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46613' class=green target=_blank>关于做好民生警务热线集中接</a></td><td width=45><font color=#086FAB>(08-19)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46598' class=green target=_blank>关于参加德廉知识集中测试的</a></td><td width=45><font color=#086FAB>(08-18)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46597' class=green target=_blank>关于加强中秋节、国庆节期间</a></td><td width=45><font color=#086FAB>(08-18)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46596' class=green target=_blank>关于学习贯彻公安部政治部印</a></td><td width=45><font color=#086FAB>(08-18)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46577' class=green target=_blank>关于报送二季度民生警务平台</a></td><td width=45><font color=#086FAB>(08-15)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46576' class=green target=_blank>关于做好全市公安机关与机动</a></td><td width=45><font color=#086FAB>(08-15)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46575' class=green target=_blank>关于申报2014年度山东公</a></td><td width=45><font color=#086FAB>(08-15)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46573' class=green target=_blank>关于举办2014年第二季度</a></td><td width=45><font color=#086FAB>(08-15)</font></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+					<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=5><IMG src=images/button3.gif></td><td><A href='/infolist/show.aspx?id=46571' class=green target=_blank>关于充实市政府门户网站内容</a></td><td width=45><font color=#086FAB>(08-15)</font></td></tr></table></td>
+	</tr>
+</table></TD>
+		</TR>
+		<TR>
+			<TD><IMG src="/images/news3.gif"></TD>
+		</TR>
+	</TABLE></td>
+											</tr>
+											<tr>
+												<td><IMG height="8" src="#" width="0"></td>
+											</tr>
+											<tr>
+												<td><iframe src="/UserControl/elogin.aspx" frameBorder="0" width="242" scrolling="no" height="61"></iframe>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td vAlign="top" width="765">
+										<table cellSpacing="0" cellPadding="0" width="765" border="0">
+											<tr vAlign="top" height="68" border="0" width="770">
+												<td colSpan="2">
+													<!--这里是前台图片修改开始,href为目标地址--><a href="\banner\banner.htm" border="0" target="_blank">
+													<IMG src="\banner\banner.gif" width="760" border="0">
+													<!--这里是前台图片修改结束,上src为图片名称--></a></td>
+											</tr>
+											<tr>
+												<td vAlign="top" width="330"><IFRAME src="http://10.49.7.209/mypage/index.php?name=indexpic2013" frameBorder="0" width="320" scrolling="no"
+														height="290"></IFRAME>
+												</td>
+												<td vAlign="top" width="426">
+													<table cellSpacing="0" cellPadding="0" width="100" background="/images/news5.gif" border="0">
+														<tr>
+															<td align="right" background="/images/news4.gif" height="27"><IMG height="5" src="#" width="0"><br>
+																<A class="green" href="/sjzy/sjyw/index.html" target="_blank">更多</A>&nbsp;&nbsp;</td>
+														</tr>
+														<tr>
+															<td align="center"><iframe marginWidth="0" marginHeight="0" src="/zhb/sjywlist.html" frameBorder="0" width="99%"
+																	scrolling="no" height="260"></iframe>
+															</td>
+														</tr>
+														<tr>
+															<td><IMG src="/images/news6.gif"></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<!--
+<div  style="WIDTH: 1000px; POSITION: static; ">
+<img src="http://10.49.11.111/images/banner.png" border="0" />
+
+
+</div>
+--></td>
+					</tr>
+					<!--
+					<tr>
+						<td><IMG height="10" src="#" width="0"></td>
+					</tr>
+					-->
+					<tr>
+						<td align="center">
+							<table cellSpacing="0" cellPadding="0" width="992" border="0">
+								<TBODY>
+									<tr>
+										<td vAlign="top" width="209">
+											<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+												<TBODY>
+													<tr>
+														<td>
+<TABLE id="Table1" height="113" cellSpacing="0" cellPadding="0" width="209" border="0">
+	<TR>
+		<TD background="/images/day.gif" align="right"><img src="#" height="18" width="0">
+			<table id="Board1_menulist" cellspacing="0" cellpadding="0" border="0" style="width:95%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:29px;">
+				&nbsp;&nbsp;&nbsp;<A href='/infolist/tech.aspx?sid=81' target='_blank' class=green>警情通报</A></td><td align="Center" style="height:29px;">
+				&nbsp;&nbsp;&nbsp;<A href='/infolist/techlist.aspx?sid=8201' target='_blank' class=green>警力部署</A></td>
+	</tr><tr>
+		<td align="Center" style="height:29px;">
+				&nbsp;&nbsp;&nbsp;<A href='/infolist/techlist.aspx?sid=8301' target='_blank' class=green>勤务检查</A></td><td align="Center" style="height:29px;">
+				&nbsp;&nbsp;&nbsp;<A href='/infolist/techlist.aspx?sid=8401' target='_blank' class=green>防控指令</A></td>
+	</tr><tr>
+		<td align="Center" style="height:29px;">
+				&nbsp;&nbsp;&nbsp;<A href='/infolist/techlist.aspx?sid=8501' target='_blank' class=green>每日情况</A></td><td align="Center" style="height:29px;">
+				&nbsp;&nbsp;&nbsp;<A href='/infolist/techlist.aspx?sid=8601' target='_blank' class=green>现案侦破</A></td>
+	</tr>
+</table></TD>
+	</TR>
+</TABLE>
+</td>
+													</tr>
+													<tr>
+														<td><IMG height="8" src="#" width="0"></td>
+													</tr>
+													<tr>
+														<td>
+<TABLE id="Table1" cellSpacing="0" background="/images/left2.gif" cellPadding="0" width="209"
+	border="0">
+	<TR>
+		<TD height="29"><img src="/images/left1.gif"></TD>
+	</TR>
+	<TR>
+		<TD align="center"><table id="Ztlist1_datalist1" cellspacing="0" cellpadding="0" border="0" style="height:240px;width:207px;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.10.185:8080/portal' target='_blank'><img src=/upfiles/2013724152134610.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.58.9/jnxf/jxcszl/' target='_blank'><img src=/upfiles/20121119232346681.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.9.194/otype.asp?classid=5&boardname=大讨论大走访创满意' target='_blank'><img src=/upfiles/201282292707140.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.9.194/' target='_blank'><img src=/upfiles/20091225211114609.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.6.39/zhuanti/index.php?id=23' target='_blank'><img src=/upfiles/2011610105448841.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.71.8/bhweb/web/dj/index.jsp' target='_blank'><img src=/upfiles/2013411161043298.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.10.9:8080' target='_blank'><img src=/upfiles/201061885420450.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.9.194:82/default.asp' target='_blank'><img src=/upfiles/2013321160634344.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.9.212:8090/' target='_blank'><img src=/upfiles/201442391450271.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.9.212/gj/' target='_blank'><img src=/upfiles/201268151710953.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.11.173/sacw/' target='_blank'><img src=/upfiles/2011429152041304.gif border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:18px;">
+				<A href='http://10.49.10.31:8080/' target='_blank'><img src=/upfiles/2012810112333140.gif border=0></a></td>
+	</tr>
+</table></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="/images/left3.gif"></TD>
+	</TR>
+</TABLE>
+</td>
+													</tr>
+													<TR>
+														<TD></TD>
+													</TR>
+													<TR>
+														<TD>
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" background="images/left2.gif" width="209"
+	border="0">
+	<TR>
+		<TD><img src="/images/left6.jpg"></TD>
+	</TR>
+	<tr>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="5" border="0">
+				<tr>
+					<td align="center"><a style="CURSOR: hand" onclick="javascript:changerxform('1');"><img src="/images/quxian2.gif" border="0"></a></td>
+					<td align="center"><a style="CURSOR: hand" onclick="javascript:changerxform('2');"><img src="/images/bumen2.gif" border="0"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<TR>
+		<TD height="164" align="center" id="rxtable" background="/images/pm1.gif"><iframe src="/UserControl/12345rxlist.htm" frameBorder="0" scrolling="no" width="200" height="160"></iframe>
+		</TD>
+	</TR>
+	<TR>
+		<TD><IMG src="#" width="0" height="3"></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="/images/left3.gif"></TD>
+	</TR>
+</TABLE>
+<script language="javascript">
+<!--
+function changerxform(obj)
+{
+	var sign=obj;
+	if(sign=="1")
+	{
+		rxtable.innerHTML="<iframe src='/UserControl/12345rxlist.htm' frameBorder='0' scrolling='no' width='200' height='160'></iframe>";
+	}
+	else
+	{
+		rxtable.innerHTML="<iframe src='/UserControl/12345rxlist1.htm' frameBorder='0' scrolling='no' width='200' height='160'></iframe>";
+	}
+}
+//-->
+</script>
+</TD>
+													</TR>
+													<tr>
+														<td><IMG height="8" src="#" width="0"></td>
+													</tr>
+													<tr>
+														<td>
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" background="images/left2.gif" width="209" border="0">
+	<TR>
+		<TD><img src="/images/left4.gif"></TD>
+	</TR>
+	<tr>
+		<td>
+			<table width="100%" cellpadding="0" cellspacing="5" border="0">
+				<tr>
+					<td align="center"><a style="CURSOR: hand;" onclick="javascript:changeform('1');"><img src="/images/quxian.gif" border="0"></a></td>
+					<td align="center"><a style="CURSOR: hand;" onclick="javascript:changeform('2');"><img src="/images/bumen.gif" border="0"></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<TR>
+		<TD height="164" align="center" id="pmtable" background="/images/pm1.gif"><iframe src="/UserControl/pmlist.htm" frameBorder="0" scrolling="no" width="200" height="160"></iframe></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="#" width="0" height="3"></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="/images/left3.gif"></TD>
+	</TR>
+</TABLE>
+<script language=javascript>
+<!--
+function changeform(obj)
+{
+	var sign=obj;
+	if(sign=="1")
+	{
+		pmtable.innerHTML="<iframe src='/UserControl/pmlist.htm' frameBorder='0' scrolling='no' width='200' height='160'></iframe>";
+	}
+	else
+	{
+		pmtable.innerHTML="<iframe src='/UserControl/pmlist1.htm' frameBorder='0' scrolling='no' width='200' height='160'></iframe>";
+	}
+}
+//-->
+</script>
+</td>
+													</tr>
+													<TR>
+														<TD><IMG height="8" src="#" width="0"></TD>
+													</TR>
+													<tr>
+														<td>
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="209" border="0">
+	<TR>
+		<TD><IMG src="images/left5.gif"></TD>
+	</TR>
+	<TR>
+		<TD background="images/left2.gif" align="center">
+			<TABLE id="Table2" cellSpacing="5" cellPadding="0" width="95%" height="80" border="0">
+				<TR>
+					<TD align="center"><INPUT type="text" class="smallInput" id="topic" size="20" onkeypress="if(event.keyCode==13){search();}"></TD>
+					<TD align="center"><img src="images/search.gif" style="CURSOR: hand" onclick="search();"></TD>
+				</TR>
+				<TR>
+					<TD align="center" colspan="2">分类：<select name="Search1:searchsort" id="Search1_searchsort" style="width:140px;">
+	<option value=""></option>
+	<option value="0401">警情分析</option>
+	<option value="0402">即时防控</option>
+	<option value="0403">110接处警</option>
+	<option value="0902">法制110</option>
+	<option value="1301">科技强警</option>
+	<option value="1401">公安大事记</option>
+	<option value="2401">为警之道</option>
+	<option value="2402">理论研讨</option>
+	<option value="2403">警务战术研讨</option>
+	<option value="2901">信息化推进年简报</option>
+	<option value="2902">打防控应用平台建设</option>
+	<option value="2903">全国PGIS试点城市</option>
+	<option value="3001">济南公安科技专刊</option>
+	<option value="3003">科技活动月</option>
+	<option value="3103">济南公安简报</option>
+	<option value="3104">政工简报</option>
+	<option value="3108">重点工作推进简报</option>
+	<option value="3109">工作简报导航</option>
+	<option value="3201">取保候审突出问题专项督察</option>
+	<option value="3401">局长督办令</option>
+	<option value="3403">督察通报</option>
+	<option value="3501">市局考核</option>
+	<option value="3502">指挥部考核</option>
+	<option value="3503">政治部考核</option>
+	<option value="3504">纪委考核</option>
+	<option value="3505">审计工作考核</option>
+	<option value="3506">警务督察考核</option>
+	<option value="3507">宣传工作考核</option>
+	<option value="3508">法制业务考核</option>
+	<option value="3509">信访工作考核</option>
+	<option value="3510">装财工作考核</option>
+	<option value="3511">科技信通工作考核</option>
+	<option value="3512">户政业务考核</option>
+	<option value="3513">出入境业务考核</option>
+	<option value="3514">网警业务考核</option>
+	<option value="3515">警卫工作考核</option>
+	<option value="3516">保安管理考核</option>
+	<option value="3517">国保业务考核</option>
+	<option value="3518">反邪教业务考核</option>
+	<option value="3519">经侦业务考核</option>
+	<option value="3520">治安业务考核</option>
+	<option value="3521">经文保业务考核</option>
+	<option value="3522">禁毒业务考核</option>
+	<option value="3523">监管业务考核</option>
+	<option value="3524">刑警业务考核</option>
+	<option value="3525">反恐业务考核</option>
+	<option value="3526">交警业务考核</option>
+	<option value="3527">巡警业务考核</option>
+	<option value="3528">消防业务考核</option>
+	<option value="3701">视频中心</option>
+	<option value="3901">破案攻坚会战</option>
+	<option value="4101">每月十题</option>
+	<option value="4301">调查研究警务探讨</option>
+	<option value="4401">应用系统导航</option>
+	<option value="4501">好警网和谐网</option>
+	<option value="4901">干部任免</option>
+	<option value="5101">案例通报</option>
+	<option value="5102">反腐在线</option>
+	<option value="5103">国外反腐</option>
+	<option value="5104">古镜今鉴</option>
+	<option value="5403">网站导航</option>
+	<option value="5501">决策服务</option>
+	<option value="5602">图片新闻</option>
+	<option value="5603">光辉事迹</option>
+	<option value="5604">悼念战友</option>
+	<option value="5901">调查研究</option>
+	<option value="6240">全员目标管理绩效考核系统</option>
+	<option value="6401">安全通报</option>
+	<option value="6402">安全规定</option>
+	<option value="6406">运行管理</option>
+	<option value="6601">通知公告</option>
+	<option value="6602">重点新闻</option>
+	<option value="6701">警务视窗</option>
+	<option value="6801">时事要闻</option>
+	<option value="6901">系统软件</option>
+	<option value="6902">网络工具</option>
+	<option value="6903">安全防护</option>
+	<option value="6904">图形图像</option>
+	<option value="6905">办公相关</option>
+	<option value="6906">内部软件</option>
+	<option value="6907">安全检查专栏</option>
+	<option value="6908">数字证书</option>
+	<option value="6909">移动警务</option>
+	<option value="6910">学习培训</option>
+	<option value="6920">邮件系统</option>
+	<option value="7101">警情分析</option>
+	<option value="7201">流动警务</option>
+	<option value="7401">文件讲话</option>
+	<option value="7501">工作动态</option>
+	<option value="7502">文件讲话</option>
+	<option value="7503">战果快报</option>
+	<option value="7504">勤务检查</option>
+	<option value="7505">警情分析</option>
+	<option value="7506">防控指令</option>
+	<option value="7507">警力报备</option>
+	<option value="7508">经验交流</option>
+	<option value="7601">科技通信</option>
+	<option value="7701">全运警力配置表</option>
+	<option value="7801">队伍建设</option>
+	<option value="7901">民生警务工作情况</option>
+	<option value="8101">每日警情通报</option>
+	<option value="8102">每周警情通报</option>
+	<option value="8103">每月警情通报</option>
+	<option value="8201">警力部署</option>
+	<option value="8301">勤务检查</option>
+	<option value="8401">防控指令</option>
+	<option value="8501">每日情况</option>
+	<option value="8601">现案侦破</option>
+	<option value="8701">明传电报</option>
+	<option value="8801">三基三项建设</option>
+	<option value="8902">宣传栏</option>
+	<option value="8903">准驾人员备案表</option>
+	<option value="8904">公务用车备案表</option>
+
+</select></TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD><IMG src="images/left3.gif"></TD>
+	</TR>
+</TABLE>
+<script type="text/javascript">
+function search()
+{
+	window.open("infolist/search.aspx?sort="+document.getElementById("Search1_searchsort").value+"&topic="+document.getElementById("topic").value);
+}
+</script>
+</td>
+													</tr>
+												</TBODY>
+											</table>
+										</td>
+										<td vAlign="top" align="center" width="603">
+											<table cellSpacing="0" cellPadding="0" width="593" border="0">
+												<tr>
+													<td vAlign="top" height="85"><table id="Quicklist1_DataList1" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:46px;">
+	<a href=http://10.49.9.213:8090 target=_blank><img src=upfiles/20111229121720768.gif alt=打防管控 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=http://10.49.9.213:8086 target=_blank><img src=upfiles/2012516142905703.gif alt=创意警务 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=http://10.49.9.213:8096/ target=_blank><img src=upfiles/201281485517343.gif alt=重点工作 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=http://10.49.6.48:9004/ target=_blank><img src=upfiles/20091225210242625.gif alt=电子杂志 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=http://10.49.6.54/ target=_blank><img src=upfiles/20091225210340359.gif alt=外网镜像 border=0></a></td>
+	</tr><tr>
+		<td align="Center" style="height:46px;">
+	<a href=http://10.49.6.166:8090/ target=_blank><img src=upfiles/201262795249921.gif alt=民生警务 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=http://10.49.9.9/ target=_blank><img src=upfiles/2009122521043531.gif alt=情报信息 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=http://10.49.9.215/zhifa/ target=_blank><img src=upfiles/201057175234362.gif alt=执法规范化 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=/infolist/techlist.aspx?sid=75 target=_blank><img src=upfiles/2010418102318609.gif alt=明传电报 border=0></a></td><td align="Center" style="height:46px;">
+	<a href=/infolist/tech.aspx?sid=34 target=_blank><img src=upfiles/201231102652349.gif alt=监督台 border=0></a></td>
+	</tr>
+</table>
+</td>
+												</tr>
+												<tr>
+													<td>
+														<table cellSpacing="5" cellPadding="0" width="100%" border="0">
+															<tr>
+																<td vAlign="top">
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="293" border="0" background="images/info2.gif">
+	<TR>
+		<TD background="images/info1.gif" height="30">
+			<table id="Info3_Table2" cellspacing="0" cellpadding="0" width="100%" border="0">
+	<tr>
+		<TD align="center" width="110" height="20" valign="bottom"><B><FONT color=#2e7bae>文件讲话</FONT></B></TD>
+	</tr>
+</table>
+
+		</TD>
+	</TR>
+	<TR>
+		<TD vAlign="top" align="right">
+			<table id="Info3_datalist1" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46612' class=gray target=_blank>关于印发《济南市第二届泉水节“船游第</a></td><td width=20><font color=#7B7B7B>(301)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46611' class=gray target=_blank>关于印发《“泉水叮咚舞动泉城“广场舞</a></td><td width=20><font color=#7B7B7B>(229)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46610' class=gray target=_blank>关于印发《济南市第二届泉水节“泉水情</a></td><td width=20><font color=#7B7B7B>(140)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46609' class=gray target=_blank>关于印发《济南市第二届泉水节启动仪式</a></td><td width=20><font color=#7B7B7B>(181)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46557' class=gray target=_blank>关于给张冲等同志记功的命令</a></td><td width=20><font color=#7B7B7B>(3663)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46556' class=gray target=_blank>关于给赵文广同志记功的命令</a></td><td width=20><font color=#7B7B7B>(2836)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46555' class=gray target=_blank>关于给陆斌同志记功的命令</a></td><td width=20><font color=#7B7B7B>(2657)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46513' class=gray target=_blank>转发公安部《关于2014年上半年公安</a></td><td width=20><font color=#7B7B7B>(1268)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46495' class=gray target=_blank>关于转发省厅《全省公安机关敏感案事件</a></td><td width=20><font color=#7B7B7B>(780)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr>
+</table></TD>
+	</TR>
+	<tr>
+		<td align="right" height="25" valign="bottom"><a id="Info3_HyperLink1" href="/infolist/techlist.aspx?sid=7401" target="_blank"><img src="/images/more1.gif" alt="" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td><img src="images/info3.gif"></td>
+	</tr>
+</TABLE>
+</td>
+																<td vAlign="top" width="50%" height="258">
+																	<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="293" background="images/info2.gif"
+																		border="0">
+																		<TR>
+																			<TD background="images/info1.gif" height="30">
+																				<TABLE id="Table3" cellSpacing="0" cellPadding="0" width="100%" border="0">
+																					<TR>
+																						<TD vAlign="bottom" align="center" width="110" height="20"><B><FONT color="#2e7bae">部门工作</FONT></B></TD>
+																					</TR>
+																				</TABLE>
+																			</TD>
+																		</TR>
+																		<TR>
+																			<TD vAlign="top" align="center"><iframe marginWidth="0" marginHeight="0" src="/zhb/bmjwlist.html" frameBorder="0" width="99%"
+																					scrolling="no" height="225"></iframe>
+																			</TD>
+																		</TR>
+																		<tr>
+																			<td vAlign="bottom" align="right" height="25"><A href="/sjzy/bmjw/" target="_blank"><IMG src="/images/more1.gif" border="0"></A>&nbsp;&nbsp;&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td><IMG src="images/info3.gif"></td>
+																		</tr>
+																	</TABLE>
+																</td>
+															</tr>
+															<tr>
+																<td vAlign="top">
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="293" border="0" background="images/info2.gif">
+	<TR>
+		<TD background="images/info1.gif" height="30">
+			<table id="Info4_Table2" cellspacing="0" cellpadding="0" width="100%" border="0">
+	<tr>
+		<TD align="center" width="110" height="20" valign="bottom"><B><FONT color=#2e7bae>队伍建设</FONT></B></TD>
+	</tr>
+</table>
+
+		</TD>
+	</TR>
+	<TR>
+		<TD vAlign="top" align="right">
+			<table id="Info4_datalist1" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46593' class=gray target=_blank>市局召开推进青年民警读书学习活动调研</a></td><td width=20><font color=#7B7B7B>(226)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46539' class=gray target=_blank>槐荫分局举办政工信息报送工作培训班</a></td><td width=20><font color=#7B7B7B>(265)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46490' class=gray target=_blank>我局63名民警获取公安管理自考本科法</a></td><td width=20><font color=#7B7B7B>(1687)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46485' class=gray target=_blank>我局10名同志荣获全国心理咨询师资格</a></td><td width=20><font color=#7B7B7B>(1409)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46435' class=gray target=_blank>关于全市县级公安机关国保大队业务技能</a></td><td width=20><font color=#7B7B7B>(773)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46408' class=gray target=_blank>山东警察学院第一期转录警人员培训班来</a></td><td width=20><font color=#7B7B7B>(3902)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46381' class=gray target=_blank>我局吴颖同志和干部人事处受到省委省政</a></td><td width=20><font color=#7B7B7B>(2330)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46378' class=gray target=_blank>《公安政治工作》刊登我局民警教育训练</a></td><td width=20><font color=#7B7B7B>(527)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46343' class=gray target=_blank>巡警支队坚持“四个到位”圆满完成基层</a></td><td width=20><font color=#7B7B7B>(372)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr>
+</table></TD>
+	</TR>
+	<tr>
+		<td align="right" height="25" valign="bottom"><a id="Info4_HyperLink1" href="/infolist/techlist.aspx?sid=7801" target="_blank"><img src="/images/more1.gif" alt="" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td><img src="images/info3.gif"></td>
+	</tr>
+</TABLE>
+</td>
+																<td vAlign="top" align="right">
+																	<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="293" background="images/info2.gif"
+																		border="0">
+																		<TR>
+																			<TD background="images/info1.gif" height="30">
+																				<TABLE id="Table3" cellSpacing="0" cellPadding="0" width="100%" border="0">
+																					<TR>
+																						<TD vAlign="bottom" align="center" width="110" height="20"><B><FONT color="#2e7bae">区县动态</FONT></B></TD>
+																					</TR>
+																				</TABLE>
+																			</TD>
+																		</TR>
+																		<TR>
+																			<TD vAlign="top" align="center"><iframe marginWidth="0" marginHeight="0" src="/zhb/qxjwlist.html" frameBorder="0" width="99%"
+																					scrolling="no" height="225"></iframe>
+																			</TD>
+																		</TR>
+																		<tr>
+																			<td vAlign="bottom" align="right" height="25"><A href="/sjzy/qxjw/" target="_blank"><IMG src="/images/more1.gif" border="0"></A>&nbsp;&nbsp;&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td><IMG src="images/info3.gif"></td>
+																		</tr>
+																	</TABLE>
+																</td>
+															</tr>
+															<tr>
+																<td vAlign="top">
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="293" border="0" background="images/info2.gif">
+	<TR>
+		<TD background="images/info1.gif" height="30">
+			<table id="Info1_Table2" cellspacing="0" cellpadding="0" width="100%" border="0">
+	<tr>
+		<TD align="center" width="110" height="20" valign="bottom"><B><FONT color=#2e7bae>警务视窗</FONT></B></TD>
+	</tr>
+</table>
+
+		</TD>
+	</TR>
+	<TR>
+		<TD vAlign="top" align="right">
+			<table id="Info1_datalist1" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46614' class=gray target=_blank> 涉警舆情工作动态（第201430期</a></td><td width=20><font color=#7B7B7B>(83)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46605' class=gray target=_blank>我国将开展互联网领域侵权假冒专项整治</a></td><td width=20><font color=#7B7B7B>(43)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46535' class=gray target=_blank>涉警舆情工作动态（第201429期）</a></td><td width=20><font color=#7B7B7B>(603)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46507' class=gray target=_blank>网传闯红灯躲抓拍有四招 交警称纯属坑</a></td><td width=20><font color=#7B7B7B>(1824)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46471' class=gray target=_blank>国家邮政局发通告要求严格落实收寄验视</a></td><td width=20><font color=#7B7B7B>(317)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46444' class=gray target=_blank>公安部、央行联合行动打击整治假币违法</a></td><td width=20><font color=#7B7B7B>(238)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46436' class=gray target=_blank> 涉警舆情工作动态（第201428期</a></td><td width=20><font color=#7B7B7B>(595)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46374' class=gray target=_blank>涉警舆情工作动态（第201427期）</a></td><td width=20><font color=#7B7B7B>(772)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46334' class=gray target=_blank>孟建柱：让见义勇为精神在中华大地上发</a></td><td width=20><font color=#7B7B7B>(641)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46317' class=gray target=_blank>《泉城警苑》2014年第七期编辑出版</a></td><td width=20><font color=#7B7B7B>(374)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr>
+</table></TD>
+	</TR>
+	<tr>
+		<td align="right" height="25" valign="bottom"><a id="Info1_HyperLink1" href="/infolist/techlist.aspx?sid=6701" target="_blank"><img src="/images/more1.gif" alt="" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td><img src="images/info3.gif"></td>
+	</tr>
+</TABLE>
+</td>
+																<td vAlign="top">
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="293" border="0" background="images/info2.gif">
+	<TR>
+		<TD background="images/info1.gif" height="30">
+			<table id="Info2_Table2" cellspacing="0" cellpadding="0" width="100%" border="0">
+	<tr>
+		<TD align="center" width="110" height="20" valign="bottom"><B><FONT color=#2e7bae>时事要闻</FONT></B></TD>
+	</tr>
+</table>
+
+		</TD>
+	</TR>
+	<TR>
+		<TD vAlign="top" align="right">
+			<table id="Info2_datalist1" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46620' class=gray target=_blank>《习近平总书记系列重要讲话读本》深受</a></td><td width=20><font color=#7B7B7B>(93)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46619' class=gray target=_blank>中国首台千万亿次超算开始应用于“智慧</a></td><td width=20><font color=#7B7B7B>(114)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46618' class=gray target=_blank>苹果将中国用户信息转存中国电信服务器</a></td><td width=20><font color=#7B7B7B>(127)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46617' class=gray target=_blank>贵州：媒体发布违法广告情节严重将被纳</a></td><td width=20><font color=#7B7B7B>(61)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46616' class=gray target=_blank>南京警方查处9名网上散布谣言、发表极</a></td><td width=20><font color=#7B7B7B>(122)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46603' class=gray target=_blank>新华社评论员：为改革想招，为改革发力</a></td><td width=20><font color=#7B7B7B>(531)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46602' class=gray target=_blank>精华版“唐宋名篇”音乐朗诵会将巡演６</a></td><td width=20><font color=#7B7B7B>(552)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46601' class=gray target=_blank>擅用QQ企鹅形象 腾讯诉两商家侵权获</a></td><td width=20><font color=#7B7B7B>(437)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46600' class=gray target=_blank>Finnciti网站涉嫌网络传销应警</a></td><td width=20><font color=#7B7B7B>(206)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr><tr>
+		<td align="Center" style="height:21px;">
+				<table cellSpacing=5 cellPadding=0 width=100% border=0><tr><td width=4><IMG height=5 src=images/button4.gif width=4></td><td><A href='/infolist/show.aspx?id=46599' class=gray target=_blank>云南发生灭门惨案六口人全部遇害 疑因</a></td><td width=20><font color=#7B7B7B>(1811)</font></td></tr></table><table cellSpacing=0 cellPadding=0 width=100% border=0><tr><td background=images/line1.gif><IMG height=1 src=images/line1.gif width=3></td></tr></table></td>
+	</tr>
+</table></TD>
+	</TR>
+	<tr>
+		<td align="right" height="25" valign="bottom"><a id="Info2_HyperLink1" href="/infolist/techlist.aspx?sid=6801" target="_blank"><img src="/images/more1.gif" alt="" border="0" /></a>&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td><img src="images/info3.gif"></td>
+	</tr>
+</TABLE>
+</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td vAlign="top" width="180">
+											<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+												<tr>
+													<td>
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="180" border="0">
+	<TR>
+		<TD height="29" background="images/right1.gif" align="right"><a href="http://10.49.10.9/infolist/techshow.aspx?sid=4401" target="_blank"><img src="images/more2.gif" border="0"></a></TD>
+	</TR>
+	<TR>
+		<TD align="center" background="images/right2.gif"><table id="datalist1_datalist1" cellspacing="0" cellpadding="0" border="0" style="width:80%;border-collapse:collapse;">
+	<tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.6.37:3700/casserver/login target=_blank><img src=/upfiles/2010525163806193.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=https://10.49.10.187 target=_blank><img src=/upfiles/2013717103413671.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.10.186/pcp/login.htm target=_blank><img src=/upfiles/20131112143904884.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.7.202/license!getExpireDateOfDays.action target=_blank><img src=/upfiles/201411430456540.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=https://10.49.6.97 target=_blank><img src=/upfiles/20131122113423297.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.6.91:9501/base/plugin/indexLogin.action target=_blank><img src=/upfiles/2013112119565122.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.6.117/ target=_blank><img src=/upfiles/2014114165210727.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.10.66/PGIS_Portal/login.jsp target=_blank><img src=/upfiles/2009122605919875.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.10.54 target=_blank><img src=/upfiles/2009122605951312.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=https://10.49.8.81/gsweb/ target=_blank><img src=/upfiles/200912261000546.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=https://10.49.6.184/rybbxt target=_blank><img src=/upfiles/2010525142051365.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.6.157:81/ target=_blank><img src=/upfiles/20131122113328703.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.7.22/ydhccj/ target=_blank><img src=/upfiles/2012112115818625.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=https://10.49.6.171/hotel/default.asp target=_blank><img src=/upfiles/2009122610142437.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.231.10.10:8888/EHL_ITGS/ target=_blank><img src=/upfiles/20131122113657703.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.49.6.162/zjgl/ target=_blank><img src=/upfiles/2013113180140235.JPG border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=http://10.231.3.64/jtglzc/ target=_blank><img src=/upfiles/2014312145913421.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=https://10.49.6.188/jwbm target=_blank><img src=/upfiles/201378142237390.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=/infolist/techshow.aspx?sid=4401 target=_blank><img src=/upfiles/200912261035493.gif border=0></A></td>
+	</tr><tr>
+		<td align="Center" style="height:31px;"><A href=/infolist/techshow.aspx?sid=4401 target=_blank><img src=/upfiles/2009122610439109.gif border=0></A></td>
+	</tr>
+</table></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="images/right3.gif"></TD>
+	</TR>
+</TABLE>
+</td>
+												</tr>
+												<tr>
+													<td><IMG height="7" src="#" width="0"></td>
+												</tr>
+												<tr>
+													<td>
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="180" border="0">
+	<TR>
+		<TD><IMG src="images/right4.gif"></TD>
+	</TR>
+	<TR>
+		<TD background="images/right2.gif"><table id="Netlist1_menulist" cellspacing="10" cellpadding="0" border="0" style="width:100%;">
+	<tr>
+		<td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='infolist/techlist.aspx?sid=6401' target='_blank'>安全通报</A></TD></TR></TABLE></td><td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='infolist/techlist.aspx?sid=6402' target='_blank'>安全规定</A></TD></TR></TABLE></td>
+	</tr><tr>
+		<td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://10.49.10.110/vrveis/soft/index.asp' target='_blank'>入网注册</A></TD></TR></TABLE></td><td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://10.49.10.110/vrveis/soft/patch.asp' target='_blank'>补丁更新</A></TD></TR></TABLE></td>
+	</tr><tr>
+		<td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='/infolist/techlist.aspx?sid=69' target='_blank'>软件下载</A></TD></TR></TABLE></td><td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='infolist/techlist.aspx?sid=6406' target='_blank'>运行管理</A></TD></TR></TABLE></td>
+	</tr>
+</table></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="images/right3.gif"></TD>
+	</TR>
+</TABLE>
+</td>
+												</tr>
+												<tr>
+													<td><IMG height="7" src="#" width="0"></td>
+												</tr>
+												<tr>
+													<td>
+<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="180" border="0">
+	<TR>
+		<TD><IMG src="images/right5.gif"></TD>
+	</TR>
+	<TR>
+		<TD background="images/right2.gif"><table id="Serlist1_menulist" cellspacing="13" cellpadding="0" border="0" style="width:100%;">
+	<tr>
+		<td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='/tel.htm' target='_blank'>电话号码</A></TD></TR></TABLE></td><td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://10.49.13.124:8090/sms' target='_blank'>短信平台</A></TD></TR></TABLE></td>
+	</tr><tr>
+		<td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://10.49.9.213:8092/' target='_blank'>心理在线</A></TD></TR></TABLE></td><td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://10.49.10.31/site' target='_blank'>电子书屋</A></TD></TR></TABLE></td>
+	</tr><tr>
+		<td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://ssyq.zx.ga/keySearch.trs' target='_blank'>公安部搜索</A></TD></TR></TABLE></td><td align="Center">
+				<TABLE cellSpacing=0 cellPadding=0 width=72 height=26 border=0 align=center><TR><TD background=/images/button5.gif align=center>&nbsp;&nbsp;<A href='http://10.49.6.167:8090/' target='_blank'>公车管理</A></TD></TR></TABLE></td>
+	</tr>
+</table></TD>
+	</TR>
+	<TR>
+		<TD><IMG src="images/right3.gif"></TD>
+	</TR>
+</TABLE>
+</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</TBODY>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td><IMG height="5" src="#" width="0"></td>
+					</tr>
+					<tr>
+						<td align="center">
+							<table height="142" cellSpacing="0" cellPadding="0" width="992" background="/images/pic2.gif"
+								border="0">
+								<tr>
+									<td width="5"><IMG src="/images/pic1.gif"></td>
+									<td align="center" width="982"><iframe marginWidth="0" marginHeight="0" src="http://10.49.6.164/js08.aspx" frameBorder="0"
+											width="980" scrolling="no" height="135"></iframe>
+									</td>
+									<td width="5"><IMG src="/images/pic3.gif"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td><IMG height="5" src="#" width="0"></td>
+					</tr>
+					<tr>
+						<td><IMG src="/images/line2.gif"></td>
+					</tr>
+					<tr>
+						<td><IMG height="5" src="#" width="0"></td>
+					</tr>
+					<tr>
+						<td height="30"><table id="Botton1_TABLE1" width="90%" border="0" cellspacing="5" cellpadding="0" align="center">
+	<tr>
+		<td align="center">济南市公安局版权所有 地址：济南市旅游路17777号 邮编:250001 指挥部主办 科技信息通信处技术支持</td>
+		<td width="190" align="center">站点访问量：<font color=red><b>44486778</b></font></td>
+		<td><a href="/manager/default.aspx" class="blue" target="_blank">信息发布</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://10.49.7.209/admin/" class="blue" target="_blank">信息管理</a></td>
+	</tr>
+</table>
+
+</td>
+					</tr>
+				</TBODY>
+			</table>
+			<span id="Label1"></span></form>
+		</TR></TBODY></TABLE></TR></TBODY></TABLE></TR></TBODY></TABLE></FORM>
+	</body>
+</HTML>

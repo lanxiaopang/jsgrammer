@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据质量监控2</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery1.42.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+<div class="mainWrap">
+<div id="content" class="body-wrap clearfix">
+
+
+<!-- 左侧 -->
+<div class="menu-nav">
+    <div class="slideTxtBox">
+        <div class="hd">
+            <ul>
+                <li class="on">
+                    <div class="si si1 tab_icon"></div><div class="tab_tit">类别</div>
+                </li>
+                <li class="" style="float:left;padding-right: 2px;">
+                    <div class="si si2 tab_icon"></div><div class="tab_tit">要素</div>
+                </li>
+                <li class="" style="float:left;padding-right: 2px;">
+                    <div class="si si3 tab_icon"></div><div class="tab_tit">单位</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="wi-body">
+            <div style="background-color: #f0f0f0;border-bottom: 1px solid #dedede;padding: 0 4px 5px;">
+                <span id="treespan1" class="meta_w_tree" title="返回"></span>
+                                    <span id="treeReturn1" title="返回" style="float: left;margin-top: 7px;margin-left:10px;color: #4C92F2;display: none;">
+                                        <a class="btn-imitate btn-black" style="padding: 5px 3px;margin-top: 2px;">返回</a>
+                                    </span>
+                <span class="meta_span_vline"></span>
+                                    <span id="searchspan1" class="meta_searchwarp">
+                                        <span id="iconspan1" class="meta_w_seachicon"></span>
+                                        <input class="meta_w_searchtext" name="searchKey" id="searchKey1" onkeypress="if(event.keyCode==13){dicSearchHandler();return false;}" type="text">
+                                    </span>
+            </div>
+            <div class="bd">
+                <div id="div_tree1">
+                    1
+                </div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    jQuery(".slideTxtBox").slide({delayTime:100});
+</script>
+<!-- 右侧 -->
+<div class="content-wrap clearfix" style="width:736px;">
+<div id="dataView">
+<div class="content-wrap wbg">
+
+<div class="result_sum border_grey grey_color3">
+                        <span id="sum_txt" class="grey_txt_color2">
+                            <span class="tname2" style="color: black;float: left;">数据列表</span>
+                        </span>
+    <a href="index3.html" target="_self">
+                            <span id="display_mode3" class="display_mode12 grey_color3">
+                                <img src="images/result/icon3_2.gif">
+                            </span>
+    </a>
+    <span class="separator grey_color4"></span>
+    <a href="index2.html" target="_self">
+                            <span id="display_mode2" class="display_mode12 white_bg_color">
+                                <img src="images/result/icon2_1.gif">
+                            </span>
+    </a>
+    <span class="separator grey_color4"></span>
+    <a href="index.html" target="_self">
+                            <span id="display_mode1" class="display_mode12 grey_color3">
+                                <img src="images/result/icon1_2.gif">
+                            </span>
+    </a>
+    <span class="separator grey_color4"></span>
+                        <span id="display_mode" class="grey_txt_color2">
+                            显示模式
+                        </span>
+                        <span id="searchspan0" class="meta_searchwarp" style="line-height: 25px;">
+                            <span id="iconspan0" class="meta_w_seachicon"></span>
+                            <input class="meta_w_searchtext" name="searchKey" id="searchKey0" onkeypress="if(event.keyCode==13){dicSearchHandler();return false;}" type="text">
+                        </span>
+</div>
+<div class="dt_list_con border_grey clearfix">
+    <div class="tab_con1 clearfix">
+    <table class="detail_tableview" id="code_table" style="margin-bottom: 10px;" border="0" cellspacing="0">
+        <thead>
+        <tr>
+            <th width="8%">序号</th>
+            <th width="12%">资源名称</th>
+            <th width="10%">数据总量</th>
+            <th width="12%">最近一次增量</th>
+            <th width="12%">最近更新时间</th>
+            <th width="12%">数据提供单位</th>
+            <th width="8%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>1</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>3</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>4</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>5</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>6</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>8</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td>内部数据名称一</td>
+            <td>120,000,000</td>
+            <td>120,000</td>
+            <td>2012-09-06<br>12:07:34</td>
+            <td>太原通信处</td>
+            <td>
+                <div class="si si5 l op1"></div>
+                <div class="si si8 l op1"></div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    </div>
+
+    <div id="result_pagination">
+        <div id="pagination_con">
+            <a><div class="page_num border_grey current_page">1</div></a>
+            <a><div class="page_num border_grey">2</div></a>
+            <a><div class="page_num border_grey">3</div></a>
+            <a><div class="page_num border_grey">4</div></a>
+            <a><div class="page_num border_grey">5</div></a>
+            <div class="page_num">...</div>
+            <a><div class="page_num border_grey">35</div></a>
+            <div class="page_next border_grey">下一页</div>
+            <div class="page_sum">共35页</div>
+            <div class="page_general">第</div>
+            <div class="page_general"><input id="page_input" class="border_grey" type="text"></div>
+            <div class="page_general">页</div>
+            <div class="page_general"><img src="images/result/tiaozhuan.gif"></div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

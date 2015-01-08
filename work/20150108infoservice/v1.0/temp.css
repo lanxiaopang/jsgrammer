@@ -1,0 +1,14 @@
+.si1{ background-position: 0 0; width: 16px; height: 16px; }
+.si2{ background-position: 0 -16px; width: 16px; height: 16px; }
+.si3{ background-position: 0 -32px; width: 16px; height: 16px; }
+.si4{ background-position: 0 -48px; width: 16px; height: 16px; }
+.si5{ background-position: 0 -64px; width: 16px; height: 16px; }
+.si6{ background-position: 0 -80px; width: 16px; height: 16px; }
+.si7{ background-position: 0 -96px; width: 16px; height: 16px; }
+.si8{ background-position: 0 -112px; width: 16px; height: 16px; }
+.vsi1{ background-position: 0 0; width: 12px; height: 12px; }
+.vsi2{ background-position: 0 -12px; width: 12px; height: 12px; }
+.vsi3{ background-position: 0 -24px; width: 12px; height: 12px; }
+.vsi4{ background-position: 0 -36px; width: 12px; height: 12px; }
+.vsi5{ background-position: 0 -48px; width: 12px; height: 12px; }
+.vsi6{ background-position: 0 -60px; width: 12px; height: 12px; }
