@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css hack</title>
+    <style type="text/css">
+        p{
+            background-color: green; /*普通*/
+            background-color:yellow\0; /* ie8+*/
+            background-color: grey\9\0;/*IE10、IE9*/
+        +background-color: blue; /*IE7*/
+            -background-color: red;  /*IE6*/
+        }
+    </style>
+</head>
+<body>
+<P>123</P>
+</body>
+</html>
