@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*颜色区域*/
+.white_bg_color{
+  background-color:#ffffff;
+}
+.blue_color1{
+  background-color:#226ab2;
+}
+.blue_txt_color{
+  color: #0064DC;
+}
+.darkBlue_txt_color {
+  color: #0089D1;
+}
+.grey_color1{
+  background-color: #eeeeee;
+}
+.grey_color2{
+  background-color: #f7f7f7;
+}
+.grey_color3{
+  background-color: #f2f2f2;
+}
+$grey_color3: #f2f2f2;
+
+.grey_color4{
+  background-color: #e0e0e0;
+}
+
+$grey_color4:#e0e0e0;
+
+.grey_color5{
+  background-color: #f6f6f6;
+}
+.grey_color6{
+  background-color: #f3f3f3;
+}
+.green_color7{
+  background-color: #fafafa;
+}
+$green_color7:#fafafa;
+.grey_txt_color1{
+  color:#9c9c9c;
+}
+.grey_txt_color2{
+  color:#666666;
+}
+.orange_txt_color1{
+  color: #ff8041;
+}
+.orange_border_color1{
+  border:1px solid #ff8041;
+}
+.green_color1{
+  color:#008001;
+}
+.p_relative{
+  position:relative;
+}
+.red_color{
+  color: red;
+}
+.border_red{
+  border: 1px solid red;
+}

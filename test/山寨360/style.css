@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}/*合并边线*/
+html,body,fieldset,img,iframe,abbr{border:0;}   /*去除边宽*/
+caption,th,i,cite,em,var,address,dfn{font-style:normal;} /*正常字体*/
+[hidefocus],summary{outline:0;} /*当元素获得焦点的时候，焦点框为0(貌似不太好使,网上找的是:
+:focus{outline: 0;})*/
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}/*定义默认字体大小*/
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}/*手性图标*/
+strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}/*去掉下滑线*/
+body,textarea,input,button,select,keygen,legend{font:12px/1.5 arial,"Microsoft YaHei","宋体";color:#333;outline:0;}
+body{background:#fff;}
+a,a:hover{color:#000;}
+
+/*===========body S===========*/
+body{opacity: 1;filter: alpha(opacity=100);position: relative;}/*body不透明*/
+body,html{height: 100%;overflow-x: hidden!important;}
+.wallpaper-current, .wallpaper-prev {
+    position: absolute;z-index: 1;left: 0;top: 0;
+    width: 100%;height: 100%;background-color: #fff;
+}
+.ntp-body {
+    margin: 0!important;overflow: hidden;position: relative;
+    z-index: 10;width: 100%;height: 100%;
+}
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 600px;
+    -webkit-user-select: none;
+    overflow: hidden;
+}
+#search-form {
+    width: 586px;
+    margin: 50px auto 0;
+    /*position: fixed;
+    left:50%;top:10%;
+    margin-left:-280px;
+    margin-top: 50px;*/
+}
+.search-ui {
+    width: 560px;float: left;
+}
+.search-cat {
+    padding-bottom: 6px;
+    padding-top: 5px;
+    padding-left: 40px;
+   /* visibility: hidden;*/
+}
+.search-cat a {
+    padding: 2px 7px 4px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .5);
+    border-radius: 2px;
+    position: relative;
+}
+.search-cat a.on {
+    color: #fff;
+    background: #36a01a;
+}
+.search-cat a:hover {
+    background: rgba(0, 0, 0, .1);
+}
+.search {
+    display: -webkit-box;
+    display: -moz-box;
+    /*overflow: hidden;*/
+    position: relative;
+    z-index: 0;
+}
+.search .ipt {
+    -webkit-box-flex: 1;
+    box-shadow: 0 1px 1px rgba(6,0,1,.09);
+    border: solid 1px #46c458;
+    background: #fff;
+    border-radius: 2px;
+    float:left;
+    width: 450px;height:40px;
+}
+.search-engine {
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    cursor: pointer;
+    overflow: visible;
+    display: block;
+}
+.search-engine a.so, a.news_so, a.video_so, a.image_so, a.music_so, a.map_so, a.wenda_so {
+    background: url(image/search.png) no-repeat;
+}
+.search-engine a {
+    float: left;
+    width: 16px;
+    height: 16px;
+}
+.search-arr {
+    float: left;
+    overflow: hidden;
+    margin-left: 6px;
+}
+.search-arr span {
+    float: left;
+    width: 1px;
+    height: 16px;
+    background: #d2d2d2;
+}
+.w1024 .search .ipt input {
+    width: 378px;
+}
+.search .ipt input {
+    width: 404px;
+    font-size: 16px;
+    border: none;
+    line-height: 22px;
+    margin-top: 8px;
+    padding-bottom: 7px;
+    padding-left: 44px;
+    background-color: transparent;
+}
+#search-hotword {
+    position: absolute;
+    top: 7px;
+    right: 110px;
+    width: 28px;
+    height: 26px;
+    background-position: 11px -19px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url("image/updown.png") no-repeat;
+    display: block;
+}
+.search .btn {
+    width: 101px;
+    height:40px;
+    margin-left: 5px;
+    border: 1px solid #36b148;
+    border-radius: 2px;
+    background-color: #5cce50;
+    background-image: -webkit-linear-gradient(bottom, #64cd4f 31%, #43d454);
+    background-image: -moz-linear-gradient(bottom, #64cd4f 31%, #43d454);
+    box-shadow: 0 1px 1px rgba(6,0,1,.09);
+    float: left;
+}
+.btn:hover{
+    background-image: -moz-linear-gradient(bottom, #76de62 31%, #76de62);
+}
+.search .btn input {
+    background: none;
+    border: none;
+    width: 100%;
+    line-height: 38px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: 0;
+}
+.page-area {
+    width: 820px;
+    height:auto;
+    margin: 20px auto;
+}
+.cloud-links {
+    clear: both;
+    padding-top: 5px;
+}
+
+
+
+#content{ margin:0 auto; padding:0px;  position:relative; text-align:left; z-index:0; }
+.demoBox .bd{ padding:0px; overflow:hidden; zoom:1;  }
+.slideTxtBox {
+    text-align: left;
+}
+.slideTxtBox .tempWrap{margin:0 auto;}
+.slideTxtBox .hd{
+    height:35px; line-height:35px;
+    background:#f4f4f4;
+    position: fixed;
+    z-index: 300;left: 0;
+    bottom: 0px;
+    text-align: center;
+    overflow: visible;
+    background-image: -webkit-linear-gradient(bottom, #e3e3e3, #ececec);
+    background-image: -moz-linear-gradient(bottom, #e3e3e3, #ececec);
+    box-shadow: 0 -1px rgba(0,0,0,.15);
+    width: 100%;
+    min-width: 910px;
+
+}
+.slideTxtBox .hd ul{
+    display: inline-block;
+    display:inline-block;
+    *zoom:1;*display:inline;
+    }
+.slideTxtBox .hd ul li{
+    font-size: 14px;height: 35px;
+    float:left; padding:0 15px; cursor:pointer;
+}
+.slideTxtBox .hd ul li.on{
+    height: 32px;
+    background: #fff;
+    border-bottom: 3px solid #328c05;
+    color: #328c05;
+    background-image: -moz-linear-gradient(bottom, #efefef, #fcfcfc 95%);
+}
+
+
+
+.slideTxtBox .arrow a{ display:block;  width:40px; height:72px;
+    position:fixed;top:40%;overflow:hidden;background-repeat: no-repeat;
+    cursor:pointer;
+}
+.slideTxtBox .arrow .prev{
+    background-image:url("image/slider_l.png");
+    left:20px;}
+.slideTxtBox .arrow .next{
+    background-image:url("image/slider_r.png");
+    right:20px;}
+.slideTxtBox .arrow .prev:hover{
+    background-image:url("image/slider_lg.png");
+}
+.slideTxtBox .arrow .next:hover{
+    background-image:url("image/slider_rg.png");
+}
+.slideTxtBox .arrow .prevStop{ background-position:-60px 0; }
+.slideTxtBox .arrow .nextStop{ background-position:-60px -50px; }
+
+
+.u_bd1 li,.u_bd2 li,.u_bd3 li,.u_bd4 li{
+    float: left;margin:10px;
+}
+.g_tabIcon{
+    width:180px;height: 108px;
+    position: relative;opacity: 1;
+    overflow: hidden;border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.35);
+}
+.g_tabIcon_t{width:100%;height: 100%;display: block;}
+.g_tabIcon_t img{width:180px;height: 108px;}
+.g_tabIcon_b{
+    width: 100%;height: 20px;text-align: center;
+    position: absolute;bottom: -20px;color:#fff;
+    background: #7e7e7e;
+    background: rgba(0, 0, 0, .45);display: block;
+}
+.g_tabIcon_b:hover{color:white;}
+.sliders li:nth-child(1) {
+    border-left: 1px solid #D9D9D9;
+}
+.sliders li{box-shadow: 1px 0 rgba(204,204,204,.5), inset 0 1px rgba(255,255,255,.22);}
+.sliders li:not(.on):hover {
+    background-image: -moz-linear-gradient(bottom, #efefef, #fcfcfc 95%);
+}
+.sliders li i{
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    left: -3px;
+    width: 18px;
+    height: 18px;
+    background: url("image/tab.png") 0 0 no-repeat;
+}
+.sliders li.mosts.on i {
+    background-position: 0 -18px;
+}
+.sliders li.video i {
+    background-position: -18px 0;
+}
+.sliders li.video.on i {
+    background-position: -18px -18px;
+}
+.sliders li.news i {
+    background-position: -36px 0;
+}
+.sliders li.news.on i {
+    background-position: -36px -18px;
+}
+.sliders li.games i {
+    background-position: -54px 0;
+}
+.sliders li.games.on i {
+    background-position: -54px -18px;
+}
+.sliders li.musics i {
+    background-position: -72px 0;
+}
+.sliders li.musics.on i {
+    background-position: -72px -18px;
+}
+.sliders li.shopping i {
+    background-position: -108px 0;
+}
+.sliders li.shopping.on i {
+    background-position: -108px -18px;
+}
+.sliders li.customs i {
+    background-position: -90px 0;
+}
+.sliders li.customs.on i {
+    background-position: -90px -18px;
+}
+.u_bd{
+    width: 800px;margin: 0 auto;
+}
+.sliders_left:hover{
+
+    background-color: rgba(0,0,0,0.06);
+}
+.sliders_left{
+    position: fixed;top:0;left:0;
+}
+
+
+/*===========body E===========*/

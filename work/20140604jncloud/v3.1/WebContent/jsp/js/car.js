@@ -29,13 +29,7 @@ $(function(){
         $('#tria1').css('background-color','#f7f7f7');
     });
 
-    $('#tria2').click(
-        function(){
-            var a=$('#tria2 a')[0].innerHTML;
-            $('#tria2 a')[0].innerHTML=$('#tria1 a')[0].innerHTML;
-            $('#tria1 a')[0].innerHTML=a;
-        }
-    );
+
 
     $('#item_basic_table tbody tr:even').addClass('eventr1');
     $('#item_reg_table tbody tr:even').addClass('eventr1');

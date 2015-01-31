@@ -12,6 +12,7 @@ $('.g_train_num span').click(function(){
         }
     });
     var train_num = $(this).attr("id").replace('t','');
+
     var train_sum = $('.g_train_num').find("span").length;//总数
     if(train_num==1){
         $('.prev').removeClass('prev1');
@@ -223,8 +224,6 @@ $('.g_train_num span').click(function(){
     $('.display_mode12').click(function(){
         if($(this).attr('id')=='tabimg_1_1'){
             if(curtab1==2){
-                return;
-            }else if(curtab1==1){
                 $(this).removeClass('grey_color3').addClass('white_bg_color');
                 temp1 = $(this).find('img:first').attr('src').replace('2_2','2_1');
                 $(this).find('img:first').attr('src',temp1);
@@ -236,9 +235,15 @@ $('.g_train_num span').click(function(){
                 $('#g_tab12_bot').css('display','none');
                 $('#g_tab11_bot').css('display','block');
                 curtab1=2;
+
+            }else if(curtab1==1){
+                return;
             }
         }else if($(this).attr('id')=='tabimg_1_2'){
             if(curtab1==2){
+                return;
+            }else if(curtab1==1){
+
                 $(this).removeClass('grey_color3').addClass('white_bg_color');
                 temp1 = $(this).find('img:first').attr('src').replace('3_2','3_1');
                 $(this).find('img:first').attr('src',temp1);
@@ -250,8 +255,6 @@ $('.g_train_num span').click(function(){
                 $('#g_tab11_bot').css('display','none');
                 $('#g_tab12_bot').css('display','block');
                 curtab1=1;
-            }else if(curtab1==1){
-                return;
             }
         }else if($(this).attr('id')=='tabimg_2_1'){
             if(curtab2==2){

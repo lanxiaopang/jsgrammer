@@ -1,0 +1,27 @@
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    // creates the tiled background to show off opacity
+    @include background(image-url("subtlenet2.png"));
+    //@include background(linear-gradient(top, #fff, #fefefe));
+    @extend %font-sansation;
+    // Modernizr fallback for when there is no fontface support
+    .no-fontface & {
+    	font-family: "Verdana";
+    }
+}
+ul,li {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #3D518F;
+}
+::-moz-selection {
+    background: $color1;
+    text-shadow: none;
+}
+::selection {
+    background: $color1;
+    text-shadow: none;
+}

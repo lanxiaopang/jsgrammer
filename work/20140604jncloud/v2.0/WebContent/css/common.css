@@ -88,24 +88,7 @@ html body{
     color: red;
 }
 /*字体区域*/
-.ft12{
-    font-size: 12px;
-}
-.ft13{
-    font-size: 13px;
-}
-.ft14{
-    font-size: 14px;
-}
-.ft16{
-    font-size: 16px;
-}
-.ft18{
-    font-size: 18px;
-}
-.ft22{
-    font-size: 22px;
-}
+
 .margin_r10{
     margin-right: 10px;
 }

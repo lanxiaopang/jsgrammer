@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        .ieCss {
+            display:-moz-inline-box;
+            display:inline-block;
+            width:100;
+            height:100;
+            background-color:red;
+            filter:alpha(opacity=50);
+        }
+        .fireFox35Css {
+            display:-moz-inline-box;
+            display:inline-block;
+            width:100;
+            height:100;
+            background-color:blue;
+            opacity:0.5;
+        }
+        .fireFoxCss {
+            display:-moz-inline-box;
+            display:inline-block;
+            width:100;
+            height:100;
+            background-color:yellow;
+            -moz-opacity:0.5;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //设置IE
+            var ieSpanJs = document.getElementById("ieSpanJs");
+            ieSpanJs.style.display = "inline-block";  //ie支持
+            ieSpanJs.style.width = 100;
+            ieSpanJs.style.height = 100;
+            ieSpanJs.style.backgroundColor = "red";
+            ieSpanJs.style.filter="alpha(opacity=50)";
+
+            //设置firefox3.5.*
+            var firefox35SpanJs = document.getElementById("firefox35SpanJs");
+            try
+            {
+                firefox35SpanJs.style.display = "-moz-inline-box"; //firefox支持
+            }
+            catch (e)
+            {
+                firefox35SpanJs.style.display = "inline-block"; //支持IE
+            }
+
+            firefox35SpanJs.style.width = 100;
+            firefox35SpanJs.style.height = 100;
+            firefox35SpanJs.style.backgroundColor = "blue";
+            firefox35SpanJs.style.opacity="0.5";
+
+            //设置firefox
+            var firefoxSpanJs = document.getElementById("firefoxSpanJs");
+            try
+            {
+                firefoxSpanJs.style.display = "-moz-inline-box"; //firefox支持
+            }
+            catch (e)
+            {
+                firefoxSpanJs.style.display = "inline-block"; //支持IE
+            }
+
+            firefoxSpanJs.style.width = 100;
+            firefoxSpanJs.style.height = 100;
+            firefoxSpanJs.style.backgroundColor = "yellow";
+            firefoxSpanJs.style.mozOpacity="0.5";
+
+        }
+    </script>
+</head>
+<body>
+    <span id="ieSpanCss" class="ieCss">IE_css</span>
+    <span id="firefox35SpanCss" class="fireFox35Css">firefox3.5_css</span>
+    <span id="firefoxSpanCss" class="fireFoxCss">firefox_css</span>
+    <br>
+    <br>
+    <span id="ieSpanJs">IE_Js</span>
+    <span id="firefox35SpanJs">firefox3.5_Js</span>
+    <span id="firefoxSpanJs">firefox_Js</span>
+</body>
+</html>
