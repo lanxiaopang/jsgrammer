@@ -1,17 +1,10 @@
-html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td,header,footer,section,article,nav{padding:0;margin:0;}
-  header,footer,section,article,nav{display:block; }
-    h1, h2, h3, h4, h5, h6 {font-weight: normal;font-size: 100%;}
-      table, td, tr, th {font-size:12px }
-        li{list-style-type:none }
-          table { border-collapse:collapse;  border:0 none;  border-spacing:0; margin:0 auto;}
-            img,body,html{border:0 none }
-              ol, ul{list-style:none }
-                pre{white-space:pre-wrap; /* css3.0 */white-space:-moz-pre-wrap; /* Firefox */white-space:-pre-wrap; /* Opera 4-6 */white-space:-o-pre-wrap; /* Opera 7 */word-wrap:break-word; /* Internet Explorer 5.5+ */}
-                  caption, th{text-align:left }
-                    select {border: 1px solid #BDC7D8;margin-right: 5px}
-                      em{color:#999;font-family: Tahoma, Verdana, helvetica;font-size: 12px;font-style: normal;white-space: nowrap}
-                        strong { font-weight:bold; }
-                          abbr, acronym {border:0;}
-                            address, caption, cite, code, dfn, em, th, var {font-weight:normal;font-style:normal }
-                              textarea{resize:none;}
-                                a{cursor:pointer;}
+@charset "UTF-8";
+@import "compass";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/fonts";
+@import "partials/normalize";
+@import "partials/placeholders";
+@import "partials/base";
+@import "partials/layout";
+/*@import "partials/modules";*/

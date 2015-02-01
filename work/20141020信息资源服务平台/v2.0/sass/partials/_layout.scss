@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/*body宽度*/
+.con_w{
+  width: 1000px;
+  @include center();
+}
+.login_bar{
+  @extend %w100;height:31px;
+  border-top: 3px solid $c2;
+  border-bottom: 1px solid $c_border1;
+}
+.login_bar_bd,.banner_bd{
+  @extend .con_w;
+  @include clearfix;
+}
+.banner{
+  @extend %w100;height: 71px;
+  background-color: $c_bg1;
+}
+.nav{
+  @extend %w100;
+  @include valign_m(40px);
+  @include bg_col($c2);
+}
+.cont{
+  @extend %w100;
+  @include bg_col($c_bg2);
+  @extend %clearfix;
+}
+
+.cont_c1,.cont_c2,.cont_c3{
+  @extend .con_w;
+  @include center();
+  @include bg_col();
+}
+.footer{
+  @extend %w100;height: 220px;
+  @include bg_col($c2);
+  @extend %clearfix;
+}
+.welcome{
+  margin-left: 10px;
+  @extend .fl;
+  @include valign_m(31px);
+}
+.user_info{
+  margin-right: 10px;
+  @extend .fr;
+  @include valign_m(31px);
+}
+.user_info span{
+  @extend .fb;
+}
+.user_info a{
+  color:#000000;
+  &:hover{
+    color:$c_hover1;
+  }
+}
+.banner_logo{
+  margin-left: 10px;
+  @include div_bgimg("logo.jpg");
+  @extend .fl;
+}
+.search_bd{
+  width: 338px;height: 36px;margin-top: 18px;
+  margin-right: 10px;
+  position: relative;
+  @extend .fr;@extend %clearfix;
+  display: inline-block;
+}
+.search_panel{
+  height:33px;
+  border:1px solid $c5;
+  border-right:none;
+  /*padding: 1px 0px 1px 1px;
+  height: 33px;
+  background: none repeat scroll 0% 0% $c5;*/
+}
+.search_box{
+  background-color: #ffffff;
+  display: inline-block;
+}
+.search_box_ipt{
+  padding: 5px 10px 5px 10px;
+  margin:0px 39px 0px 0px;
+  height: 22px;
+  line-height: 22px;
+  width: 278px;
+  border: 0px none;
+  outline: 0px none;
+  background: none repeat scroll 0% 0% #FFF;
+  @extend .ft14;@extend .fb;
+  display: inline-block;
+}
+.search_btn{
+  width: 39px;height: 35px;
+  /*margin-right: 10px;*/
+  position: absolute;right:0px;top:0px;
+}
+.btn_search{
+  cursor: pointer;
+  border: 0px none;
+  @include div_bgimg("search.gif");
+}
