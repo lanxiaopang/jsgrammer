@@ -100,10 +100,15 @@ $(function(){
     $('#sideCatalogBtn').click(function(){
         $('#sideCatalog').toggle();
     });
+
     var elFix = document.getElementById('sideToolbar');
     elFix.style.display="none";
 
-
+    $('#sideToolbar').hover(function(){
+        $("#sideCatalog-updown").css("visibility","visible");
+    },function(){
+        $("#sideCatalog-updown").css("visibility","hidden");
+    });
 })
 
 

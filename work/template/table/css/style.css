@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.table1{
+    border-collapse: collapse;/*必加*/
+    border-spacing: 0px;/*必加*/
+    width: 100%;
+}
+.table1 thead td {
+    height: 30px;/*高度*/
+    line-height: 30px;
+    border:1px solid #E0E0E0;/*边框颜色*/
+    background-color: #f1f1f1;/*头部颜色*/
+    overflow: hidden;/*！！！必加！！！*/
+    font-size: 14px;/*字体*/
+    font-weight: bold;
+    text-align: center;/*居中*/
+}
+.table1 tbody td {
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #E0E0E0;
+    background-color: #fcfcfc;/*td颜色*/
+    overflow: hidden;/*必加*/
+    font-size: 12px;
+    text-align: center;/*居中*/
+}
+
+.table2{
+    border-collapse: collapse;/*必加*/
+    border-spacing: 0px;/*必加*/
+    width: 400px;
+}
+.table2 thead td {
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #E0E0E0;/*边框颜色*/
+    background-color: #f1f1f1;/*头部颜色*/
+    overflow: hidden;/*必加*/
+}
+.table2 tbody td {
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #E0E0E0;
+    overflow: hidden;/*必加*/
+}
+
