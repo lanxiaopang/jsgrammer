@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.ft12 {
+  font-size: 12px; }
+
+.ft13 {
+  font-size: 13px; }
+
+.ft14 {
+  font-size: 14px; }
+
+.ft16 {
+  font-size: 16px; }
+
+.ft18 {
+  font-size: 18px; }
+
+.ft22 {
+  font-size: 22px; }
+
+.yahei {
+  font-family: 'Microsoft Yahei','微软雅黑','宋体',Tahoma,Arial,Helvetica,STHeiti; }
+
+/*# sourceMappingURL=_fonts.css.map */

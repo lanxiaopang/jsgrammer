@@ -70,7 +70,7 @@ body,html{height: 100%;overflow-x: hidden!important;}
     background: rgba(0, 0, 0, .1);
 }
 .search {
-    display: -webkit-box;
+    /*display: -webkit-box;*/
     display: -moz-box;
     /*overflow: hidden;*/
     position: relative;

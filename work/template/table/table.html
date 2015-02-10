@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<h1>按照宽度分类</h1>
-<h2>1、自适应宽度table</h2>
+<h2>布局table</h2>
 <table class="table1">
     <thead>
     <tr>
@@ -38,33 +37,50 @@
     </tr>
     </tbody>
 </table>
-<h2>2、定宽table</h2>
+<h2>展示table</h2>
 <table class="table2">
     <thead>
     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
+        <td>标题1</td>
+        <td>标题2</td>
+        <td>标题3</td>
+        <td>标题4</td>
+        <td>标题5</td>
+        <td>标题6</td>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
+        <td>姓名：</td>
+        <td>晓明</td>
+        <td>性别：</td>
+        <td>男</td>
+        <td>年龄：</td>
+        <td>13</td>
     </tr>
     <tr>
         <td>3</td>
         <td>2</td>
+        <td>3</td>
+        <td>2</td>
+        <td>3</td>
         <td>3</td>
     </tr>
     <tr>
         <td>4</td>
         <td>2</td>
         <td>3</td>
+        <td>4</td>
+        <td>2</td>
+        <td>3</td>
     </tr>
     </tbody>
 </table>
-
+<script src="jquery-1.4.2.min.js"></script>
+<script>
+$(function(){
+    $(".table2>tbody>tr:eq(0)>td:nth-child(4n+3)").css('text-align', 'right');
+})
+</script>
 </body>
 </html>

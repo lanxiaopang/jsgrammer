@@ -27,13 +27,14 @@
 .table2{
     border-collapse: collapse;/*必加*/
     border-spacing: 0px;/*必加*/
-    width: 400px;
+    width: 600px;/*跨度可修改为百分比或者任意宽度*/
 }
 .table2 thead td {
     height: 30px;
     line-height: 30px;
     border:1px solid #E0E0E0;/*边框颜色*/
     background-color: #f1f1f1;/*头部颜色*/
+    text-align: center;
     overflow: hidden;/*必加*/
 }
 .table2 tbody td {
