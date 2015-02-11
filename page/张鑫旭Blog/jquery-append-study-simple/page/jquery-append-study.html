@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="张鑫旭web前端学习之jquery学习实例页面" />
+<meta name="keywords" content="张鑫旭,鑫空间-鑫生活,博客,web前端,jquery,insertBefore,append,demo页面,学习" />
+<meta name="author" content="张鑫旭" />
+<title>jquery之append与insertBefore插入图片</title>
+<link rel="shortcut icon" href="http://www.zhangxinxu.com/zxx_ico.png" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+<style type="text/css">
+#choose{padding:8px 0 3px 8px; border-bottom:1px solid #dddddd;}
+#box{padding:10px 0 40px 0; font-size:0;}
+.btn{display:inline-block; background:#f4f4f4; color:#333333; border:1px solid #73818C; -moz-border-radius:2px; -webkit-border-radius:2px; padding:4px 9px; text-decoration:none; cursor:pointer;}
+.btn:hover{color:#000000; background:#eeeeee;}
+.append_finish{display:none; width:40%; line-height:1.3; background:#ffffc0; border:1px solid #ffcc00; color:#ff6600; text-align:center; margin-left:17%;}
+.zxx_img_list{display:inline-block; width:1.1em; margin-top:20px; font-size:128px; text-align:center; vertical-align:middle;}
+.pic_will_show{display:inline-block; width:1em; height:1em; margin:20px 0.05em 0; *margin-top:0; font-size:128px; color:#999999; background:#f3f3f3; border:1px solid #dddddd; text-align:center; vertical-align:middle; _overflow:hidden;}
+.pic_will_show .w{display:inline-block; margin-top:2em; font-size:22px; font-weight:bold; vertical-align:middle;}
+</style>
+</head>
+
+<body>
+<div class="zxx_out_box">
+    <div class="zxx_in_box">
+        <div class="zxx_header">
+            <a href="http://www.zhangxinxu.com/">
+                <img class="l" src="http://www.zhangxinxu.com/wordpress/wp-content/themes/default/images/index_logo.gif" />
+            </a>
+            <span class="zxx_author_time">by zhangxinxu 2009-08-31 16:52</span>
+        </div>
+        <h3 class="zxx_title">jquery之append与insertBefore使用实例</h3>
+        <div class="zxx_main_con">
+			 <div id="choose">
+                <span class="btn" id="insert_pic">插入图片</span>
+                <span id="append_finish" class="append_finish">图片插入完毕！</span>
+            </div>
+            <div id="box">
+                <span class="pic_will_show" id="pic_show_flag">
+                    <span class="w">显示图片</span>
+                </span>
+            </div>
+        </div>
+        <div class="zxx_footer">
+            &copy;<a href="http://www.zhangxinxu.com/">张鑫旭-鑫空间-鑫生活</a>
+            |
+            <a href="http://www.zhangxinxu.com/wordpress/?p=110">该篇相关文章</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var hrefArray = ["http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm2.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm3.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm4.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm5.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm6.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm7.jpg","http://image.zhangxinxu.com/image/study/s/s512/mm8.jpg"];
+		var srcArray = ["http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm2.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm4.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm5.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm6.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm7.jpg","http://image.zhangxinxu.com/image/study/s/s128/mm8.jpg"];
+		var flag = 0;
+		var picInsert = function(){
+			if(flag>7){
+				$("#append_finish").css("display","inline-block");
+				$("#pic_show_flag").fadeOut();
+				return;
+			}
+			else{
+				var picHref = $("<a></a>").attr("href",hrefArray[flag]).attr("class","zxx_img_list");
+				var picSrc = $("<img></img>").attr("src",srcArray[flag]).attr("class","zxx_img vm");
+				//picSrc = "<img src='"+srcArray[flag]+"' class='xwt_picasa_img' />";//或者这种写法
+				picHref.append(picSrc);
+				picHref.insertBefore($("#pic_show_flag"));
+				$(".zxx_img").show();
+				flag++;
+			}
+		};
+		$("#insert_pic").click(function(){
+			picInsert();							
+		});
+	});
+</script>
+</body>
+</html>
