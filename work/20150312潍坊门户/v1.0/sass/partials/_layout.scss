@@ -60,6 +60,22 @@
   border: 1px solid $c_border1;
   margin-top: 58px;
   margin-left: 35px;
+  cursor: pointer;
+}
+.img_mall{
+  width: 20px;height:20px;
+  position: relative;top:5px;left:5px;
+}
+.app_mall{
+  margin-left: 8px;
+}
+.mall_float{
+  width: 300px;height:200px;
+  position: relative;top:9px;left:-195px;
+  border: 1px solid $c_border1;
+  @include bg_col();
+  cursor: auto;
+  display: none;
 }
 .qr{
   @extend .fl;
@@ -89,7 +105,27 @@
   @include div_bgimg("close.gif");
 }
 .search_hd{
-  width: 338px;height: 25px;
+  height: 25px;
+}
+.switchabel_nav li{
+  display: block;
+  height: 25px;line-height: 25px;
+  @extend .fl;
+  padding:0px 10px;
+  cursor: pointer;
+  &:not(.switch_on):hover{
+    color:lighten($c1,50%);
+    background-color:transparentize(darken($c1,5%),0.7);
+  }
+}
+.switch_on{
+  color:#ffffff;
+  @extend .fb;
+  background-color:darken($c1,5%);
+  &:hover{
+    color:#ffffff;
+    background-color:darken($c1,5%);
+  }
 }
 .search_bd{
   height: 40px;
@@ -143,6 +179,11 @@
   @include bg_col($c_bg1);
   @extend %clearfix;
 }
+.common_bd2{
+  @extend .common_bd;
+  @include bg_col($c_bg1);
+  overflow: visible;
+}
 .cont_r1c1,.cont_r1c2,.cont_r1c3{
   height:470px;
   @extend .fl;
@@ -157,6 +198,20 @@
 .r1c1_tit{
   @include div_bgimg("r1c1_tit.gif");
 }
+.sys_app_icon,.sys_app_tit,.sys_app_more{
+  @extend .fl;
+}
+.sys_app_icon{
+  @include div_bgimg("icon1.gif");
+}
+.sys_app_tit{
+  width: 150px;
+  @extend .ft14;@extend .fb;
+}
+
+
+
+
 
 .cont_r2c1,.cont_r2c2,.cont_r2c3{
   height:455px;
