@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" >
+<title>山东公安出入境政务服务网</title>
+<!--#include virtual="include/include_0.html"-->
+<style type="text/css">
+	a:link {
+		text-decoration: none;
+	} 
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+	a:active {
+		text-decoration: none;
+	}
+</style>
+    <script src="http://www.sdcrj.com/applySkin/jquery-1.2.6.pack.js"></script>
+    <script src="http://www.sdcrj.com/applySkin/jquery.messager.js"></script>
+</head>
+<body>
+<!--#include virtual="include/head_0.html"-->
+<div class="containt">
+	<div class="con">
+  	<div class="content">
+    	<!--#include virtual="include/navigater_0.html"-->
+    	<div class="hall">
+    		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1004" height="420" id="FlashID2" title="">
+					<param name="movie" value="images/hall.swf" />
+					<param name="quality" value="high" />
+					<param name="wmode" value="transparent" />
+					<param name="swfversion" value="6.0.65.0" />
+					<!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+					<param name="expressinstall" value="Scripts/expressInstall.swf" />
+					<!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+					<!--[if !IE]>-->
+					<object>
+						<embed src="images/hall.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1004" height="420" wmode="transparent" ></embed>
+					<!--<![endif]-->
+					<param name="quality" value="high" />
+					<param name="wmode" value="transparent" />
+					<param name="swfversion" value="6.0.65.0" />
+					<param name="expressinstall" value="Scripts/expressInstall.swf" />
+					<!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+					<div>
+					<h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+					<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" /></a></p>
+					</div>
+					<!--[if !IE]>-->
+					</object>
+					<!--<![endif]-->
+				</object>
+			</div>
+      <div class="search">
+	    	<span class="search_left"></span>
+				<span class="search_center">
+					<form  id="MegForm" method="post"  action="http://www.sdcrj.com/wwwroot/sdsgatcrjzwfww/services/ApplyProcessQuery.jsp?SiteID=230" onSubmit="return chekcQuery()">
+					<table width="789" height="40" border="0" cellspacing="0" cellpadding="0" align="left" style=" margin-left:0px; float:left;">
+						<tr style="font-size:14px; font-family:"华文细黑"">
+							<td width="75" height="40" scope="row">受理编号：</td>
+		    	    <td width="155"><input size="20" type="text" id="taskCode" name="taskCode" value=""/></td>
+							<td width="90">身份证号码：</td>
+							<td width="155"><input type="text" id="idCard" name="idCard" value="" size="20" /></td>
+		          <td width="60">认证码：</td>
+							<td width="65"><input id="VerifyCode" name="VerifyCode" type="text" class="search_input" size="5"/></td>
+	            <td width="90" style="text-align:center;"><img src="services/AuthCode.jsp" alt="点击刷新验证码" name="yzm" height="20" align="middle" id="yzm" class="yanheng" style="cursor:pointer;" onClick="yzm.src='services/AuthCode.jsp?'+new Date().getTime()" /></td>
+	    				<td width="104" style="text-align:right;"><input style="border:0px;" type="image" name="Submit" src="images/crj/search.gif" onClick="return chekcQuery()"></td>
+						</tr>
+					</table>
+					</form>
+					<script type="text/javascript">
+								function chekcQuery(){
+									var idCard = document.getElementById("idCard");
+									if(idCard.value==""){
+										alert("请输入身份证号码后查询！");
+										idCard.focus();
+										return false;
+									}
+									var taskCode = document.getElementById("taskCode");
+									if(taskCode.value==""){
+										alert("请输入条形码编号后查询！");
+										taskCode.focus();
+										return false;
+									}
+									var VerifyCode = document.getElementById("VerifyCode");
+									if(VerifyCode.value==""){
+										alert("请输入认证码后查询！");
+										VerifyCode.focus();
+										return false;
+									}				
+									
+									
+								   $.get(url,null,function(data, textStatus){
+													 if($.trim(data)=="Y"){
+														 var f = $("#MegForm")[0];
+														 	f.action="$http://www.sdcrj.com/wwwroot/sdsgatcrjzwfww/services/ApplyProcessQuery.jsp?SiteID=230" ;
+														  f.method="post";
+														  f.submit();
+													 }else{
+														 alert(data);
+													 }
+												  });
+									return false;
+								}
+								
+								</script>
+				</span>
+				<span class="search_right"></span>
+      </div>
+      <div class="main">
+      	<div class="gzdt">
+        	<div class="title1">
+          	<span class="title_name">公告公示</span>
+            <span class="more1"><a href="gsgg/index.shtml" target="_blank"><img src="images/crj/more2.png" /></a></span>
+          </div>
+          <div class="title_body1">
+          	<ul class="newsul">
+							<!--#include virtual="cache/page/block_9420_article_default_8_89932c4a_0.html"-->
+						</ul>
+          </div>                    
+        </div>
+        <div class="flfg">
+        	<div class="title1">
+          	<span class="title_name">法律法规</span>
+            <span class="more1"><a href="flfg/index.shtml"  target="_blank"><img src="images/crj/more2.png" /></a></span>
+          </div>
+        	<div class="title_body1">
+        		<ul class="newsul">
+							<!--#include virtual="cache/page/block_9422_article_default_8_616c1ec3_0.html"-->
+						</ul>	
+        	</div>   
+        </div>
+        <div class="bszn">
+        	<div class="title2">
+          	<span class="title_name">办事指南</span>
+            <span class="more1"><a href="bszn/index.shtml"  target="_blank"><img src="images/crj/more2.png" /></a></span>
+          </div>
+          <div class="title_body1">
+          	<ul class="newsul">
+	          	<!--#include virtual="cache/page/block_9424_article_default_8_d3ebf4d1_0.html"-->
+						</ul>	
+          </div>   
+        </div>
+        <div class="wxts">
+        	<div class="title2">
+          	<span class="title_name">温馨提示</span>
+            <span class="more1"><a href="w0ts/index.shtml"  target="_blank"><img src="images/crj/more2.png" /></a></span>
+          </div>
+          <div class="title_body1">
+          	<ul class="newsul">
+	          	<!--#include virtual="cache/page/block_9428_article_default_8_5d6dc3a0_0.html"-->
+						</ul>	
+          </div>  
+        </div>
+      </div>
+      <div class="hall_pic">
+      	<table width="991" border="0" align="center" cellpadding="0" cellspacing="0"  style="margin-top:5px" background="red">
+				<tr> 
+					<td>
+						<table width="991" height="144" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<div id="MarqueeImg" style="overflow: hidden;width:991px; height:155px; margin-top:0px;">
+									<table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td id="MarqueeImg1">
+											<table border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<!--#include virtual="cache/page/block_9431_article_default_17_e38ae84f_0.html"-->
+												</tr>
+											</table>
+										</td>
+										<td id="MarqueeImg2"></td>
+									</tr>
+									</table>
+								</div>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+				<script>                                      
+					var speed = 100; 
+					var MarqueeImg2 = document.getElementById("MarqueeImg2");
+					var MarqueeImg1 = document.getElementById("MarqueeImg1");
+					var MarqueeImg = document.getElementById("MarqueeImg");
+						MarqueeImg2.innerHTML = MarqueeImg1.innerHTML;                                
+					function Marquee(){                                     
+						if(MarqueeImg2.offsetWidth-MarqueeImg.scrollLeft<=0) {                                 
+							MarqueeImg.scrollLeft-=MarqueeImg1.offsetWidth;
+						}else{                                     
+							MarqueeImg.scrollLeft++;                                     
+						}                                     
+					}                                     
+					var MyMar = setInterval(Marquee,speed);//由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。
+					
+					MarqueeImg.onmouseover=function(){
+						clearInterval(MyMar);
+					}
+					MarqueeImg.onmouseout = function() {
+						MyMar = setInterval(Marquee,speed);
+					}
+				</script>
+      </div>
+      <table class="link">
+      	<tr>
+      		<td class="link_img"><img src="images/crj/link_icon.gif" /></td>
+      		<td class="link_name">友情链接</td>
+      		<td class="link_content_one">
+      			<select class="yqlj_ontent_one" onchange="javascript:window.open(this.options[this.selectedIndex].value)">
+							<option selected>&nbsp;----各地出入境管理部门----&nbsp;</option>
+							<!--#include virtual="cache/page/block_0_friendlink_100_GDCRJGLBM_0.html"-->
+						</select>
+      		</td>
+      		<td class="link_content_two">
+      			<select class="yqlj_ontent_two" onchange="javascript:window.open(this.options[this.selectedIndex].value)">
+							<option selected>&nbsp;----国务院各部门网站----&nbsp;</option>
+							<!--#include virtual="cache/page/block_0_friendlink_100_GWYGBMWZ_0.html"-->
+						</select>
+      		</td>
+      		<td class="link_content_three">
+      			<select class="yqlj_ontent_three" onchange="javascript:window.open(this.options[this.selectedIndex].value)">
+							<option selected>&nbsp;----地方公安----&nbsp;</option>
+							<!--#include virtual="cache/page/block_0_friendlink_100_DFGA_0.html"-->
+						</select>
+      		</td>
+      	</tr>
+      </table>
+      </div>
+	</div>
+</div>      		       
+<!--#include virtual="include/footer_0.html"-->	
+</body>
+</html>
+
+<script src="http://www.sdcrj.com/Services/Stat.js" type="text/javascript"></script>
+<script>
+if(window._zcms_stat)_zcms_stat("SiteID=230&Type=Article&Dest=http://www.sdcrj.com/Services/Stat.jsp");
+</script>
+
+<!-- Published by CRJPORTAL(浪潮出入境门户管理系统) 1.0 PublishDate 2015-01-09 17:31:30-->

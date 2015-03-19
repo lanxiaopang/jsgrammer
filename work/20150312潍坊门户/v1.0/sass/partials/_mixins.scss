@@ -16,4 +16,5 @@
   background-image: image-url($img);
   background-size:image_width($img)
     image_height($img);
+  background-repeat: no-repeat;
 }
