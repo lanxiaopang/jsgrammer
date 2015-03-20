@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>SuperSlide - 基础效果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery1.42.min.js"></script>
+<script type="text/javascript" src="jquery.SuperSlide.2.1.1.js"></script>
+<link href="demo_part2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="focusNews" class="demoBox">
+    <div id="slideBox" class="slideBox">
+        <div class="hd">
+            <ul><li>1</li><li>2</li><li>3</li></ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/images/pic1.jpg" /></a></li>
+                <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/images/pic2.jpg" /></a></li>
+                <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/images/pic3.jpg" /></a></li>
+            </ul>
+        </div>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+    </div>
+    <p class="botTit"><em>焦点图/幻灯片</em></p>
+</div>
+<script type="text/javascript">
+    jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+</script>
+</body>
+</html>
+
