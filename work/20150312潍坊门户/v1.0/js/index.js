@@ -2,7 +2,9 @@
  * Created by Sun on 15-3-19.
  */
 $(document).ready(function(){
-    jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+    jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:false});
+    jQuery(".slideTxtBox").slide({});
+    jQuery(".slideTxtBox3").slide({});
 //导航智能浮动
     var search=$(".banner");
     var nav=$(".bannerbg");

@@ -48,7 +48,7 @@ table .new td{ color:#f60; font-weight:bold;  }
 
 /* 下面是前/后按钮代码，如果不需要删除即可 */
 .slideBox .prev,
-.slideBox .next{ position:absolute; left:3%; top:50%; margin-top:-25px; display:block; width:32px; height:40px; background:url(images/images/slider-arrow.png) -110px 5px no-repeat; filter:alpha(opacity=50);opacity:0.5;   }
+.slideBox .next{ position:absolute; left:3%; top:50%; margin-top:-25px; display:block; width:32px; height:40px; background:url(../images/images/slider-arrow.png) -110px 5px no-repeat; filter:alpha(opacity=50);opacity:0.5;   }
 .slideBox .next{ left:auto; right:3%; background-position:8px 5px; }
 .slideBox .prev:hover,
 .slideBox .next:hover{ filter:alpha(opacity=100);opacity:1;  }

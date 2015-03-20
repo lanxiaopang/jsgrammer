@@ -308,7 +308,7 @@
   height:59px;line-height: 22px;@include bg_col();
 }
 /*.r1c31,.r1c32,.r1c33{width: }*/
-.r1c31{height:140px;border-bottom: 1px solid $c_border1;}
+.r1c31{height:140px;}
 .r1c32{
   height:90px;border-bottom: 1px solid $c_border1;
   @include clearfix;
@@ -508,6 +508,14 @@
 }
 
 
+
+
+.footer {
+  height: 220px;
+  @include bg_col($c_bg1);
+}
+
+
 /*首页焦点图*/
 .demoBox .hd{ padding:0;}
 .demoBox .hd h3{ font-size:30px; font-weight:bold; color:#39A4DC; line-height:60px; }
@@ -522,10 +530,23 @@
 .demoBox .botTit span a:hover{ text-decoration:none; background:#f60;  }
 
 .slideBox{ width:660px; height:300px; overflow:hidden; position:relative; border:1px solid #ddd;  }
-.slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:5px; bottom:5px; z-index:1; }
+.slideBox .hd{
+  height:15px; overflow:hidden;
+  position:absolute; right:50%; bottom:5px;
+  text-align: center;margin-right: -50px;
+  z-index:1; }
 .slideBox .hd ul{ overflow:hidden; zoom:1; float:left;  }
-.slideBox .hd ul li{ float:left; margin-right:2px;  width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }
-.slideBox .hd ul li.on{ background:#f00; color:#fff; }
+.slideBox .hd ul li{
+  float: left;
+  width: 9px;
+  height: 9px;
+  overflow: hidden;
+  margin-right: 15px;
+  text-indent: -999px;
+  cursor: pointer;
+  background: image_url("icoCircle.gif") no-repeat scroll 0px -9px transparent;
+  &.on{background-position: 0px 0px;}
+  }
 .slideBox .bd{ position:relative; height:100%; z-index:0;   }
 .slideBox .bd li{ zoom:1; vertical-align:middle; }
 .slideBox .bd img{display:block;  }
@@ -533,14 +554,84 @@
 .slideBox .prev,
 .slideBox .next{ position:absolute; left:3%; top:50%; margin-top:-25px; display:block; width:32px; height:40px;
   background:image-url("slider-arrow.png") -110px 5px no-repeat;
-  filter:alpha(opacity=50);opacity:0.5;   }
+  filter:alpha(opacity=50);opacity:0.5;}
 .slideBox .next{ left:auto; right:3%; background-position:8px 5px; }
 .slideBox .prev:hover,
 .slideBox .next:hover{ filter:alpha(opacity=100);opacity:1;  }
 .slideBox .prevStop{ display:none;  }
 .slideBox .nextStop{ display:none;  }
 
-.footer {
-  height: 220px;
-  @include bg_col($c_bg1);
+
+/* 首页右侧tab */
+.slideTxtBox{ width:288px; border:1px solid #ddd; text-align:left;  }
+.slideTxtBox .hd{ height:30px; line-height:30px; background:#f4f4f4;  border-bottom:1px solid #ddd;  position:relative; }
+.slideTxtBox .hd ul{ float:left; position:absolute; left:0px; top:-1px; height:32px;   }
+.slideTxtBox .hd ul li{ float:left; padding:0 11px; cursor:pointer;  }
+.slideTxtBox .hd ul li.on{
+  height: 30px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top:2px solid #00a2c9;
+  border-bottom: 2px solid #fff;
 }
+.slideTxtBox .bd ul{ padding:15px;  zoom:1;  }
+.slideTxtBox .bd li{ height:24px; line-height:24px;   }
+.slideTxtBox .bd li .date{ float:right; color:#999;  }
+
+.tab2_wrap{height:105px;line-height: 20px;overflow: hidden;}
+
+/* 云资源tab */
+.slideTxtBox3{ text-align:left;  }
+.slideTxtBox3 .hd {
+  height: 54px;
+  line-height: 54px;
+  position: relative;
+  @include clearfix;
+  margin-top: 10px;
+}
+
+.slideTxtBox3 .hd ul {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  height: 54px;
+}
+
+.slideTxtBox3 .hd ul li {
+  float: left;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.slideTxtBox3 .hd ul li.on{
+  height: 30px;
+  background: #fff;
+}
+.slideTxtBox3 .bd{
+  width: 412px;margin-left: 6px;
+}
+.slideTxtBox3 .bd ul{ padding:15px;  zoom:1;  }
+.slideTxtBox3 .bd li{ height:24px; line-height:24px;   }
+.slideTxtBox3 .bd li .date{ float:right; color:#999;  }
+
+.slideTxtBox3 .hd ul li.tab3_hd_wrap1 {
+  @include div_bgimg("tab_icon2.gif");
+  &.on{
+    @include div_bgimg("tab_icon1.gif");
+  }
+}
+.slideTxtBox3 .hd ul li.tab3_hd_wrap2 {
+  @include div_bgimg("tab_icon4.gif");
+  &.on{
+    @include div_bgimg("tab_icon3.gif");
+  }
+}
+.slideTxtBox3 .hd ul li.tab3_hd_wrap3 {
+  @include div_bgimg("tab_icon6.gif");
+  &.on{
+    @include div_bgimg("tab_icon5.gif");
+  }
+}
+
+.tab3_bd_wrap{height:385px;}
