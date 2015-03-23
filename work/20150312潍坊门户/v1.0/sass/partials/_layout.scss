@@ -213,10 +213,11 @@
 }
 .sys_app1{
   line-height: 30px;
-
+  width: 210px;
   padding-top: 7px;
+  z-index: 9999;
   &:hover{
-    width: 220px;z-index: 3;
+    width: 210px;z-index: 3;
     position: relative;
     background-color: white;
   }
@@ -227,9 +228,10 @@
   cursor: pointer;
 }
 .app1_wrap{
-  @include clearfix;margin-left: 10px;margin-right:10px;
+  @include clearfix;margin-left: 10px;
   padding-bottom:6px;
   border-bottom: 1px solid $c_border1;
+
   ul li a{
     color:#666;
     &:hover{
@@ -255,17 +257,20 @@
   background-repeat: no-repeat;
 }
 .app1_wrap ul li{
-    width: 100px;@include valign_m(23px);
+    width: 80px;@include valign_m(23px);
     overflow: hidden;
     @extend .fl;
 }
 .sys_app1_sub1{
   width: 180px;height:140px;
   padding:10px;
-  position: relative;left:219px;top:-113px;
+  position: relative;left:209px;top:-114px;
   border: 1px solid $c_border1;@include bg_col();
   z-index:2;
   display: none;
+  &:hover{
+    z-index:2000;
+  }
   & li{
     @include valign_m(22px);
     a{color:#666;}
@@ -273,11 +278,11 @@
 }
 .sys_app1_sub2{
    @extend .sys_app1_sub1;
-   top:-90px;
+   top:-91px;
  }
 .sys_app1_sub3{
   @extend .sys_app1_sub1;
-  top:-67px;
+  top:-68px;
 }
 .sys_app1_sub4{
   @extend .sys_app1_sub1;
@@ -472,7 +477,7 @@
   @include div_bgimg("slogan.gif");
 }
 .app{
-  height:200px;margin-bottom: 10px;
+  height:28px;
 }
 .recommend_l{
   @include div_bgimg("title4.gif");
@@ -483,6 +488,9 @@
   width: 1079px;
   height:27px;
   border-bottom: 1px solid $c_border1;
+}
+.app_wrap1{
+  width: 1190px;height:175px;margin-bottom: 10px;overflow: hidden;
 }
 
 .cont_r5c1,.cont_r5c2,.cont_r5c3{
@@ -775,3 +783,62 @@
     height:30px;line-height: 30px;margin-top: 30px;
   }
 }
+
+/* 推荐云应用app */
+.picScroll-left {
+  overflow: hidden;
+  position: relative;
+  margin-left: 35px;
+}
+.picScroll-left .hd{ overflow:hidden;  height:30px;}
+
+.picScroll-left .hd .prev, .picScroll-left .hd .next {
+  display: block;
+  width: 17px;
+  height: 25px;
+  float: right;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: image-url("prev.gif");
+}
+.picScroll-left .hd .prev {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  background-image: image-url("prev.gif");
+}
+.picScroll-left .hd .next {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  background-image: image-url("next.gif");
+}
+.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+
+.picScroll-left .hd ul {
+  float: right;
+  overflow: hidden;
+  zoom: 1;
+  margin-top: 10px;
+  zoom: 1;
+  position: relative;
+  right: 50%;
+  margin-right: -25px;
+}
+.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:image-url("icoCircle.gif") 0 -9px no-repeat; }
+.picScroll-left .hd ul li.on{ background-position:0 0; }
+.picScroll-left .bd{padding: 10px 20px 0px;}
+.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+.picScroll-left .bd ul li{ margin:0 20px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+.picScroll-left .bd ul li .pic{ text-align:center; }
+
+.picScroll-left .bd ul li .pic img {
+  width: 64px;
+  height: 64px;
+  display: block;
+  padding: 2px;
+}
+.picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+.picScroll-left .bd ul li .title{ line-height:24px;   }
+.picScroll-left .bd ul li .star{ line-height:24px;width:80px;height:20px;}

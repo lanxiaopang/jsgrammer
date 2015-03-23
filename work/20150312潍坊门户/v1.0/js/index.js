@@ -6,6 +6,7 @@ $(document).ready(function(){
     jQuery(".slideTxtBox").slide({});
     jQuery(".slideTxtBox3").slide({});
     jQuery(".slideTxtBox4").slide({});
+    jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:9});
 
     $(".row_ul>li").first().find("div.row").hide();
     $(".row_ul>li").first().find("div.desc_row").show();
@@ -45,4 +46,9 @@ $(document).ready(function(){
     $(".qr_close").click(function(){
         $(".qr").hide();
     });
+    /*$(".app1_hd").click(function(){
+        $(this).parent().next().toggle();
+    },function(){
+        $(this).parent().next().toggle();
+    })*/
 });

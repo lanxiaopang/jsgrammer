@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="http://img.daqianduan.com/ui/favicon.ico" rel="shortcut icon">
+    <title>模块拖拽-大前端</title>
+    <link type="text/css" rel="stylesheet" href="http://www.daqianduan.com/demo/css/common.css" />
+    <script type="text/javascript" src="../ajs/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<h2><a href="http://www.daqianduan.com/" tittle="大前端-web前端开发">大前端</a></h2>
+<h1>模块拖拽</h1>
+<style type="text/css">
+    /*模块拖拽*/
+    .drag{position:absolute;width:100px;height:100px;border:1px solid #ddd;background:#FBF2BD;text-align:center;padding:5px;top:100px;left:20px;cursor:move;}
+    .drag1{position:absolute;width:100px;height:100px;border:1px solid #ddd;background:#FBF2BD;text-align:center;padding:5px;top:200px;left:20px;cursor:move;}
+    .drag2{position:absolute;width:100px;height:100px;border:1px solid #ddd;background:#FBF2BD;text-align:center;padding:5px;top:300px;left:20px;cursor:move;}
+    .drag3{position:absolute;width:100px;height:100px;border:1px solid #ddd;background:#FBF2BD;text-align:center;padding:5px;top:400px;left:20px;cursor:move;}
+</style>
+<!--模块拖拽-->
+<div class="drag">这个可以拖动哦 ^_^</div>
+<div class="drag1">这个可以拖动哦1 ^_^</div>
+<div class="drag2">这个可以拖动哦2 ^_^</div>
+<div class="drag3">这个可以拖动哦3 ^_^</div>
+<script type="text/javascript">
+    // 模块拖拽
+$(function(){
+    var _move=false;//移动标记
+    var _x,_y;//鼠标离控件左上角的相对位置
+    $(".drag").click(function(){
+
+    }).mousedown(function(e){
+        _move=true;
+        _x=e.pageX-parseInt($(".drag").css("left"));
+        _y=e.pageY-parseInt($(".drag").css("top"));
+        $(".drag").fadeTo(20, 0.5);//点击后开始拖动并透明显示
+    });
+    $(document).mousemove(function(e){
+        if(_move){
+            var x=e.pageX-_x;//移动时根据鼠标位置计算控件左上角的绝对位置
+            var y=e.pageY-_y;
+            $(".drag").css({top:y,left:x});//控件新位置
+          }
+    }).mouseup(function(){
+            _move=false;
+            $(".drag").fadeTo("fast", 1);//松开鼠标后停止移动并恢复成不透明
+    });
+});
+</script>
+</body>
+</html>

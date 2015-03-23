@@ -23,7 +23,7 @@ table .new td{ color:#f60; font-weight:bold;  }
 
 /* 案例 - demo.html ---------------------------------------------- */
 
-.demoBox .hd{ padding:40px 10px 0 10px;  }
+.demoBox .hd{ padding:0px;  }
 .demoBox .hd h3{ font-size:30px; font-weight:bold; color:#39A4DC; line-height:60px; }
 .demoBox .hd h3 span{ color:#ccc; font-style:italic; font-size:60px;  }
 .demoBox .bd{ overflow:hidden; zoom:1;  }
@@ -47,23 +47,59 @@ table .new td{ color:#f60; font-weight:bold;  }
 #sideMenu iframe{  height:227px;  }
 
 /* 本例子css */
-.picScroll-left{ overflow:hidden; position:relative;  border:1px solid #ccc;   }
-.picScroll-left .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
-.picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
-    cursor:pointer; background:url("../images/arrow.png") 0 0 no-repeat;}
-.picScroll-left .hd .next{ background-position:0 -50px;  }
+.picScroll-left{ overflow:hidden; position:relative;   }
+.picScroll-left .hd{ overflow:hidden;  height:30px;}
+
+.picScroll-left .hd .prev, .picScroll-left .hd .next {
+    display: block;
+    width: 17px;
+    height: 25px;
+    float: right;
+    overflow: hidden;
+    cursor: pointer;
+    background:url("prev.gif") 0 0 no-repeat;
+}
+.picScroll-left .hd .prev {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    background:url("prev.gif") 0 0 no-repeat;
+}
+.picScroll-left .hd .next {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background:url("next.gif") 0 0 no-repeat;
+}
 .picScroll-left .hd .prevStop{ background-position:-60px 0; }
 .picScroll-left .hd .nextStop{ background-position:-60px -50px; }
-.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+
+.picScroll-left .hd ul {
+    float: right;
+    overflow: hidden;
+    zoom: 1;
+    margin-top: 10px;
+    zoom: 1;
+    position: relative;
+    right: 50%;
+    margin-right: -25px;
+}
 .picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../images/images/icoCircle.gif") 0 -9px no-repeat; }
 .picScroll-left .hd ul li.on{ background-position:0 0; }
-.picScroll-left .bd{ padding:10px;   }
+.picScroll-left .bd{padding: 10px 20px 0px;}
 .picScroll-left .bd ul{ overflow:hidden; zoom:1; }
-.picScroll-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+.picScroll-left .bd ul li{ margin:0 20px; float:left; _display:inline; overflow:hidden; text-align:center;  }
 .picScroll-left .bd ul li .pic{ text-align:center; }
-.picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
+
+.picScroll-left .bd ul li .pic img {
+    width: 64px;
+    height: 64px;
+    display: block;
+    padding: 2px;
+}
 .picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
 .picScroll-left .bd ul li .title{ line-height:24px;   }
+.picScroll-left .bd ul li .star{ line-height:24px;width:80px;height:20px;}
 
 
 
