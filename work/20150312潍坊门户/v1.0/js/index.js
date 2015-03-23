@@ -5,8 +5,19 @@ $(document).ready(function(){
     jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:false});
     jQuery(".slideTxtBox").slide({});
     jQuery(".slideTxtBox3").slide({});
+    jQuery(".slideTxtBox4").slide({});
+
+    $(".row_ul>li").first().find("div.row").hide();
+    $(".row_ul>li").first().find("div.desc_row").show();
+    $(".row_ul>li").hover(function(){
+        $(this).siblings("li").find("div.row").show();
+        $(this).siblings("li").find("div.desc_row").hide();
+        $(this).find("div.row").hide();
+        $(this).find("div.desc_row").show();
+    },function(){
+    })/*well done!*/
 //导航智能浮动
-    var search=$(".banner");
+    /*var search=$(".banner");
     var nav=$(".bannerbg");
     var topMain=$(".login_bar").height()+$(".banner").height();
     $(window).scroll(function(){
@@ -21,7 +32,7 @@ $(document).ready(function(){
             nav.hide();
             $("body").css("padding-top","0");
         }
-    });
+    });*/
 //tab切换
     $(".switchabel_nav li").click(function(){
             if($(this).index()<=2){

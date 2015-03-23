@@ -18,3 +18,20 @@
     image_height($img);
   background-repeat: no-repeat;
 }
+@mixin border_col($col:$c_border1){
+  border-width: 1px;
+  border-style: solid;
+  border-color: $col;
+}
+@mixin border_l_col($col:$c_border1){
+  border-left: 1px solid $col;
+}
+@mixin border_r_col($col:$c_border1){
+  border-right: 1px solid $col;
+}
+@mixin border_top_col($col:$c_border1){
+  border-top: 1px solid $col;
+}
+@mixin border_bot_col($col:$c_border1){
+  border-bottom: 1px solid $col;
+}

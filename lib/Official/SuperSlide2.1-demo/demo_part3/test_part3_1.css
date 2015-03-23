@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td,img { padding: 0; margin: 0; }
+fieldset,img { border: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,i { font-weight: normal; font-style: normal; }
+ol,ul,li { list-style: none; }
+caption,th { text-align: left; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size: 100%; }
+q:before,q:after { content:''; }
+abbr,acronym { border: 0; }
+
+/*-- All --*/
+html{ min-width:1000px; }
+body{ color:#333;font:12px/20px Arial,"Microsoft YaHei","宋体",sans-serif; text-align:center; background:#fff;  }
+a{ color:#333; text-decoration:none; outline:none;}
+a:hover {color:#f00; text-decoration:underline; }
+table { border-collapse: collapse; border-spacing: 0; empty-cells:show; }
+table td,table th{ border:#ddd solid 1px; padding: 5px 0; }
+table th{ background:#39A4DC; color:#fff;  }
+table .new td{ color:#f60; font-weight:bold;  }
+
+/* 案例 - demo.html ---------------------------------------------- */
+
+.demoBox .hd{ padding:40px 10px 0 10px;  }
+.demoBox .hd h3{ font-size:30px; font-weight:bold; color:#39A4DC; line-height:60px; }
+.demoBox .hd h3 span{ color:#ccc; font-style:italic; font-size:60px;  }
+.demoBox .bd{ overflow:hidden; zoom:1;  }
+.demoBox .bd .iframeWrap{ overflow:hidden; float:left;  }
+.demoBox iframe{ width:100%; height:100%;  vertical-align:middle; }
+.demoBox .botTit{ height:22px; line-height:22px; overflow:hidden; background:#eee; text-align:right; padding:5px 0; overflow:hidden; display:none;
+}
+.demoBox .botTit em{ float:left; font-weight:bold; padding-left:10px;  }
+.demoBox .botTit span a{ display:block; float:right; height:20px; line-height:20px; padding:0 5px; background:#f60; margin-right:10px; color:#fff; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; cursor:pointer; display:none;  }
+.demoBox .botTit span a:hover{ text-decoration:none; background:#f60;  }
+
+
+#picScroll-left iframe{  height:174px;  }
+#picScroll-top iframe{  height:415px;  }
+#picMarquee-left iframe{  height:172px;  }
+#picMarquee-top iframe{  height:415px;  }
+#txtScroll-left iframe{  height:80px;  }
+#txtScroll-top iframe{  height:182px;  }
+#txtMarquee-left iframe{  height:107px;  }
+#txtMarquee-top iframe{  height:184px;  }
+#sideMenu iframe{  height:227px;  }
+
+/* 本例子css */
+.picScroll-left{ overflow:hidden; position:relative;  border:1px solid #ccc;   }
+.picScroll-left .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
+.picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+    cursor:pointer; background:url("../images/arrow.png") 0 0 no-repeat;}
+.picScroll-left .hd .next{ background-position:0 -50px;  }
+.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("../images/images/icoCircle.gif") 0 -9px no-repeat; }
+.picScroll-left .hd ul li.on{ background-position:0 0; }
+.picScroll-left .bd{ padding:10px;   }
+.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+.picScroll-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+.picScroll-left .bd ul li .pic{ text-align:center; }
+.picScroll-left .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
+.picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+.picScroll-left .bd ul li .title{ line-height:24px;   }
+
+
+
+
