@@ -6,6 +6,7 @@ $(document).ready(function(){
     jQuery(".slideTxtBox").slide({});
     jQuery(".slideTxtBox3").slide({});
     jQuery(".slideTxtBox4").slide({});
+    jQuery(".slideTxtBox5").slide({});
     jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:9});
 
     $(".row_ul>li").first().find("div.row").hide();
@@ -18,37 +19,54 @@ $(document).ready(function(){
     },function(){
     })/*well done!*/
 //导航智能浮动
-    /*var search=$(".banner");
+    var search=$(".banner");
     var nav=$(".bannerbg");
     var topMain=$(".login_bar").height()+$(".banner").height();
     $(window).scroll(function(){
         if ($(window).scrollTop()>(topMain)){
-            $("#header").hide();
             $("body").css("padding-top",topMain);
-            search.hide();
-            nav.show();
+            search.addClass("banner_fix");
+            /*search.animate({top:"0px"});*/
+            $(".mall").hide();
+            $(".qr").hide();
         }else{
-            $("#header").show();
-            search.show();
-            nav.hide();
             $("body").css("padding-top","0");
+            search.removeClass("banner_fix");
+            /*search.animate({top:"-75px"});*/
+            $(".mall").show();
+            $(".qr").show();
         }
-    });*/
+    });
 //tab切换
     $(".switchabel_nav li").click(function(){
-            if($(this).index()<=2){
-                $(".switchabel_nav li").slice(0,3).removeClass('switch_on');
-                $(this).addClass('switch_on');
-            }
+        if($(this).index()<=2){
+            $(".switchabel_nav li").slice(0,3).removeClass('switch_on');
+            $(this).addClass('switch_on');
         }
-    );
+    });
 //关闭二维码
     $(".qr_close").click(function(){
         $(".qr").hide();
     });
-    /*$(".app1_hd").click(function(){
-        $(this).parent().next().toggle();
-    },function(){
-        $(this).parent().next().toggle();
-    })*/
+//菜单浮动层
+    $(".app1_hd0").powerFloat({
+        target: $(".sys_app1_sub0"),
+        offsets:{x:220, y:-30}
+    });
+    $(".app1_hd1").powerFloat({
+        target: $(".sys_app1_sub1"),
+        offsets:{x:220, y:-30}
+    });
+    $(".app1_hd2").powerFloat({
+        target: $(".sys_app1_sub2"),
+        offsets:{x:220, y:-30}
+    });
+    $(".app1_hd3").powerFloat({
+        target: $(".sys_app1_sub3"),
+        offsets:{x:220, y:-30}
+    });
+    $(".app1_hd4").powerFloat({
+        target: $(".sys_app1_sub4"),
+        offsets:{x:220, y:-30}
+    });
 });

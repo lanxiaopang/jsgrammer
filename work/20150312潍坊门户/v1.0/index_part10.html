@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>智慧公安-大数据警务云应用平台</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="cont_r5c2">
+
+    <div id="switchTab5" class="demoBox">
+        <div class="bd">
+            <div class="slideTxtBox4">
+                <div class="hd">
+                    <ul>
+                        <li class="tab4_hd_wrap1"></li>
+                        <li class="tab4_hd_wrap2"></li>
+                    </ul>
+                    <div class="testFloat1"></div>
+                    <div class="testFloat2"></div>
+                </div>
+                <div class="bd">
+                    <div class="tab3_bd_wrap">
+                        <ul class="row_ul2">
+                            <li>
+                                <ul class="row_sub_ul5">
+                                    <li>
+                                        <div class="q1"></div>
+                                    </li>
+                                    <li class="q2">
+                                        <div class="q2_1">
+                                            点击消息页面，出现的是个人中心页面提示，提示消息数...
+                                        </div>
+                                        <div class="q2_2">
+                                            143次浏览
+                                        </div>
+                                    </li>
+                                    <li class="q3">2015-01-23</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="row_sub_ul5">
+                                    <li>
+                                        <div class="q1"></div>
+                                    </li>
+                                    <li class="q2">
+                                        <div class="q2_1">
+                                            点击消息页面，出现的是个人中心页面提示，提示消息数...
+                                        </div>
+                                        <div class="q2_2">
+                                            143次浏览
+                                        </div>
+                                    </li>
+                                    <li class="q3">2015-01-23</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="row_sub_ul5">
+                                    <li>
+                                        <div class="q1"></div>
+                                    </li>
+                                    <li class="q2">
+                                        <div class="q2_1">
+                                            点击消息页面，出现的是个人中心页面提示，提示消息数...
+                                        </div>
+                                        <div class="q2_2">
+                                            143次浏览
+                                        </div>
+                                    </li>
+                                    <li class="q3">2015-01-23</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="row_sub_ul5">
+                                    <li>
+                                        <div class="q1"></div>
+                                    </li>
+                                    <li class="q2">
+                                        <div class="q2_1">
+                                            点击消息页面，出现的是个人中心页面提示，提示消息数...
+                                        </div>
+                                        <div class="q2_2">
+                                            143次浏览
+                                        </div>
+                                    </li>
+                                    <li class="q3">2015-01-23</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="row_sub_ul5">
+                                    <li>
+                                        <div class="q1"></div>
+                                    </li>
+                                    <li class="q2">
+                                        <div class="q2_1">
+                                            点击消息页面，出现的是个人中心页面提示，提示消息数...
+                                        </div>
+                                        <div class="q2_2">
+                                            143次浏览
+                                        </div>
+                                    </li>
+                                    <li class="q3">2015-01-23</li>
+                                </ul>
+                            </li>
+                            <li style="border-bottom: 0;">
+                                <ul class="row_sub_ul5">
+                                    <li>
+                                        <div class="q1"></div>
+                                    </li>
+                                    <li class="q2">
+                                        <div class="q2_1">
+                                            点击消息页面，出现的是个人中心页面提示，提示消息数...
+                                        </div>
+                                        <div class="q2_2">
+                                            143次浏览
+                                        </div>
+                                    </li>
+                                    <li class="q3">2015-01-23</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab3_bd_wrap">b</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+$(document).ready(function(){
+    jQuery(".slideTxtBox4").slide({});
+
+    $(".row_ul>li").first().find("div.row").hide();
+    $(".row_ul>li").first().find("div.desc_row").show();
+    $(".row_ul>li").hover(function(){
+        $(this).siblings("li").find("div.row").show();
+        $(this).siblings("li").find("div.desc_row").hide();
+        $(this).find("div.row").hide();
+        $(this).find("div.desc_row").show();
+    },function(){
+    })
+})
+</script>
+</html>

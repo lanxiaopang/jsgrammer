@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/*body宽度*/
+#main_body{
+  background-color: $c_bg2;
+}
+.con_w{
+  width: $w_index;
+  @include center();
+}
+.nav_bar{
+  @extend %w100;
+  @include valign_m(100px);
+  @extend .theme1;
+}
+.common_bd{
+  @extend .con_w;
+  @include clearfix;
+}
+.nav_bar_li{
+  @extend .fl;
+  margin-left: 30px;
+  &:first-child{margin-left: 0px;}
+}
+.g_platform_icon{
+  display: block;
+  @include div_bgimg("logo.png");
+  margin-top:5px;
+  &:hover{
+
+  }
+}
+.sub_nav_ul{
+  li{
+    @extend .fl;
+    margin-left: 30px;
+    img{
+      width: 27px;height: 23px;
+      position: relative;
+      top:5px;
+      *top:0px;
+      _top:5px;
+    }
+  }
+}
+.search{
+  @include div_bgimg("search.png");
+  line-height: 33px;
+  margin-top: 35px;
+}
+.search_box_input{
+  padding: 4px 10px;
+  height: 23px;
+  line-height: 23px;
+  width: 139px;
+  border: 0px none;
+  outline: 0px none;
+  background: none repeat scroll 0% 0% #FFF;
+  margin: 1px 0px 0px 8px;
+  border-radius: 15px;
+  @extend .fl;
+}
+.search_box_submit{
+  width: 30px;height:33px;
+  display: block;
+  @extend .fl;
+}
+.custom{
+  display: block;
+  @include div_bgimg("module1.png");
+  margin-top: 20px;
+  &:hover{
+    @include div_bgimg("module2.png");
+  }
+}
+.skin{
+  @extend .custom;
+  @include div_bgimg("skin1.png");
+  &:hover{
+    @include div_bgimg("skin2.png");
+  }
+}
+.layout{
+  @extend .custom;
+  @include div_bgimg("layout1.png");
+  &:hover{
+    @include div_bgimg("layout2.png");
+  }
+}
+.main_wrap{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 100;
+  display:none;
+  background-color: white;
+  @include clearfix;
+}
+.skin_wrap,.layout_wrap{
+  @extend .main_wrap;
+}

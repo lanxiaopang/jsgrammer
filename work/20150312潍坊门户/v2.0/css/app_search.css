@@ -1,0 +1,40 @@
+/**********************搜索应用***********************************************/
+.app-list-view-h{
+    width: 800px;
+    margin: 0 auto;
+}
+.app-list-view-h li {
+    display: block;
+    float: left;
+    width: 230px;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 10px 10px 20px;
+}
+.app-list-view-h .app-item-icon {
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+.app-list-view-h .app-item-icon:hover{
+    filter:alpha(opacity=80); /*IE滤镜，透明度80%*/
+    -moz-opacity:0.8; /*Firefox私有，透明度80%*/
+    opacity:0.8;/*其他，透明度80%*/
+}
+.app-list-view-h li a.app-name {
+    color: #333333;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    _width: 150px;
+}
+.app-list-view-h .app-tags {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
