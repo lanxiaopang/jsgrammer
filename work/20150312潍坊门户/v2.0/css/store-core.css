@@ -366,7 +366,9 @@ a.bline, a.bline:hover {color: #52B8ED;text-decoration: underline;}
 	line-height: 44px;
 	font-size: 16px;
 	margin-bottom: 1px;
-	background: #DFDFDF;
+	cursor: pointer;
+	/*
+	background: #DFDFDF;*/
 }
 .menu-item.sub {
 	font-size: 15px;
@@ -414,8 +416,8 @@ a.bline, a.bline:hover {color: #52B8ED;text-decoration: underline;}
 	background-position: -110px -220px;
 }
 .menu-item.on,.menu-item.sub.on {
-	color: #FFF;
-	background: #67C1F0;
+	/*color: #FFF;*/
+	/*background: #67C1F0;*/
 }
 .menu-item.on .right_arrow {
 	display: block;
@@ -454,7 +456,7 @@ a.bline, a.bline:hover {color: #52B8ED;text-decoration: underline;}
 .form-box-title .icons.iconr {
 	right: -2px;
 }
-.menu-nav .menu-item-title,.menu-nav .menu-item {
+.menu-nav ul{
 	position: relative;
 	display: block;
 	width: 100%;
@@ -462,7 +464,7 @@ a.bline, a.bline:hover {color: #52B8ED;text-decoration: underline;}
 	background: #EFEFEF;
 }
 .menu-nav .menu-item:hover {
-	background: #e1e2e2;
+	/*background: #e1e2e2;*/
 }
 .menu-nav .menu-item-title {
 	height: 52px;
@@ -473,7 +475,10 @@ a.bline, a.bline:hover {color: #52B8ED;text-decoration: underline;}
 	text-indent: 61px;
 	font-size: 18px;
 }
-.menu-nav .menu-item-title.on, .menu-nav .menu-item.on {
-	color: #FFF;
-	background: #23B2DA;
+.menu-nav .menu-item-title.on, .menu-nav li.on {
+    color: #fff;
+	background: #67C1F0;
+}
+.menu-nav li.on .menu-item{
+    color:#fff;
 }

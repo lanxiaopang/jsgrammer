@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link href="css/base.css" type="text/css" rel="stylesheet">
+    <link href="css/base1.css" type="text/css" rel="stylesheet">
     <link href="css/store-header.css" type="text/css" rel="stylesheet">
     <link href="css/store-core.css" type="text/css" rel="stylesheet">
     <link href="css/app_search.css" type="text/css" rel="stylesheet">
-    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <link href="css/index1.css" type="text/css" rel="stylesheet">
     <link href="css/gscore.css" type="text/css" rel="stylesheet">
     <link href="css/app-store.css" type="text/css" rel="stylesheet">
     <link href="css/app_type_filter.css" type="text/css" rel="stylesheet">
@@ -375,7 +375,10 @@
         });
         var cur_group_id = "00008";
         $("#group_id_"+cur_group_id).addClass("on");
-
+        $(".menu-nav ul li").click(function(){
+           $(this).find(".right_arrow").show();
+            $(this).siblings().find(".right_arrow").hide();
+        });
     });
 </script>
 <script>
