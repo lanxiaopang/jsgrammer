@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>批量数据比对</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="../../skins/css/bdcss.css">
+    <script src="../../skins/js/jquery/jquery.js"></script>
+    <script src="../../skins/js/jquery.movebg.js"></script>
+
+    <link rel="stylesheet" href="../../skins/js/jquery-ui-1.8.18/themes/redmond/jquery-ui.css" />
+    <script src="../../skins/js/jquery-ui-1.8.18/ui/jquery-ui.js"></script>
+    <script src="../../skins/js/jquery/jquery.bgiframe.min.js"></script>
+    <script src="../../skins/js/My97DatePicker/WdatePicker.js"></script>
+    <script src="../../jsp/bech/databd.js"></script>
+    <script src="../../jsp/bech/pageTools.js"></script>
+    <link href="../../skins/css/interactive/index.css" type="text/css" rel="stylesheet" />
+    <link href="../../skins/css/bdcss.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<table valign="top" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+    <tr>
+        <td colspan="2" valign="top">
+            <link href="../../skins/css/layout/header.css" type="text/css"
+                  rel="stylesheet">
+            <table valign="top" style="border:none" cellpadding="0" cellspacing="0"
+                   width="100%">
+                <tbody>
+                <tr height="75px">
+                    <td width="100%">
+                        <table valign="top" style="border:none" cellpadding="0"
+                               cellspacing="0" width="100%">
+                            <tbody>
+                            <tr height="75px">
+                                <td height="75px" valign="top" width="250"><a
+                                        href="/index.jsp"><img
+                                        class="i_profile_logo"
+                                        src="../../images/2.0/title_l.gif" align="top"
+                                        height="75" width="250"></a></td>
+                                <td width="100%" class="header_r_bg">
+                                    <ul class="account_area">
+                                        <li>
+                                            <div class="nav_wraper">
+                                                <div class="nav">
+                                                    <ul>
+                                                        <li class="nav-item cur"><a href="#"
+                                                                                target="_blank">常用数据比对</a>
+                                                        </li>
+                                                        <li class="nav-item"><a href="#"
+                                                                                target="_blank">自定义数据比对</a>
+                                                        </li>
+                                                        <li class="nav-item"><a href="#"
+                                                                                target="_blank">上传文件比对</a>
+                                                        </li>
+                                                        <li class="nav-item"><a href="#"
+                                                                                    target="_blank">任务列表</a>
+                                                        </li>
+                                                        <li class="nav-item"><a href="#"
+                                                                                target="_blank">系统管理</a>
+                                                        </li>
+                                                    </ul>
+                                                    <div style="display: block; border-radius: 8px;"
+                                                         class="move-bg"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="margin-top: 10px;color: #ffffff; font-size:13px;font-family:Arial">
+                                                省公安厅&nbsp;&nbsp;admin&nbsp;&nbsp;
+                                                <a href="user.htm" target="_blank"
+                                                   class="user_manage">管理用户</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="top_content_holder">
+                            <div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" width="200">
+            <link href="../../skins/css/interactive/index.css" type="text/css"
+                  rel="stylesheet">
+            <div class="left_menu" style="height:100%;width:200px;">
+                <div id="divid" class="menu_box"
+                     style="height:100%;width:200px;overflow:hidden;">
+                    <ul class="sidebar_menu">
+                        <li class="active">
+                            <div class="styleA"
+                                 onmouseover="this.className='styleC'"
+                                 onmouseout="this.className='styleA'">
+                                <a id="住宿上网信息比对"
+                                   href="/pbc/bech/zsswxxbd?parentMenuCode=cysjbd"
+                                   style="text-decoration:none;color:#5a595a ">
+                                    住宿上网信息比对
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="styleA"
+                                 onmouseover="this.className='styleC'"
+                                 onmouseout="this.className='styleA'">
+                                <a id="常住人口住宿比对"
+                                   href="/pbc/bech/czrkzsxxbd?parentMenuCode=cysjbd"
+                                   style="text-decoration:none;color:#5a595a ">
+                                    常住人口住宿比对
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="styleA"
+                                 onmouseover="this.className='styleC'"
+                                 onmouseout="this.className='styleA'">
+                                <a id="常住人口上网比对"
+                                   href="/pbc/bech/czrkswxxbd?parentMenuCode=cysjbd"
+                                   style="text-decoration:none;color:#5a595a ">
+                                    常住人口上网比对
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="styleA"
+                                 onmouseover="this.className='styleC'"
+                                 onmouseout="this.className='styleA'">
+                                <a id="重点人员住宿比对"
+                                   href="/pbc/bech/jzzdryzsxxbd?parentMenuCode=cysjbd"
+                                   style="text-decoration:none;color:#5a595a ">
+                                    重点人员住宿比对
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="styleA"
+                                 onmouseover="this.className='styleC'"
+                                 onmouseout="this.className='styleA'">
+                                <a id="重点人员上网比对"
+                                   href="/pbc/bech/zdryswxxbd?parentMenuCode=cysjbd"
+                                   style="text-decoration:none;color:#5a595a ">
+                                    重点人员上网比对
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <script language="javascript">
+                var wyzwH = document.body.clientHeight;
+                var divH = wyzwH - 15 - 75 - 40;
+                document.getElementById("divid").style.height = divH;
+
+                /*$(function () {
+                    $(".nav").movebg({
+                        width: 110*//*滑块的大小*//*,
+                        extra: 20*//*额外反弹的距离*//*,
+                        speed: 300*//*滑块移动的速度*//*,
+                        rebound_speed: 400*//*滑块反弹的速度*//*
+                    });
+                })*/
+            </script>
+        </td>
+        <td align="left" valign="top" style="background-color: #f5f5f5;">
+            <table border="0" width="100%">
+                <tbody><tr id="queryBT"><td>
+                    <div style="border: 1px solid #d7e4ea">
+                        <table style="background-color: #edf6fa" border="0" cellspacing="4px" width="100%">
+                            <tbody><tr>
+                                <td>选择关联条件
+                                    <select id="gltj">
+                                        <option value="0" selected="selected">证件号码</option>
+                                    </select>
+                                </td>
+                                <td algin="right" width="115PX">
+                                    <img style="float: right;cursor:pointer" id="btnAddDS" alt="" src="../../images/2.0/add_Module.gif" onmouseover="this.src='../../images/2.0/add_Module_2.gif'" onmouseout="this.src='../../images/2.0/add_Module.gif'">
+                                </td>
+                                <td algin="right" width="115PX">
+                                    <img style="float: right;cursor:pointer" onclick="save();" alt="" src="../../images/2.0/comparison.gif" onmouseover="this.src='../../images/2.0/comparison_2.gif'" onmouseout="this.src='../../images/2.0/comparison.gif'"></td>
+                                <td algin="right" width="85PX">
+                                    <img id="sqTjButton" onclick="pack();" style="float: right;cursor:pointer" alt="" src="../../images/2.0/pack_up.gif" onmouseover="imageChangeOver(this)" onmouseout="imageChangeOut(this)">
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                </td>
+                </tr>
+
+                <tr id="queryTJ"><td>
+                    <div id="dg" class="dgstyle">
+                        <input id="taskId" value="" type="hidden">
+                        <div id="module" style="width: 100%">
+                            <div id="MOD-GSD_LY_CH_STAY-1" class="dgcl" style="border: 1px solid #cddce4;margin-right: 10px">
+                                <div class="mod_title" style="background-color: #1380cb;padding: 6px;">
+                                    <img id="IMG-GSD_LY_CH_STAY-1" title="展开/收起" src="../../images/2.0/but_up.jpg" style="float: right;cursor:pointer" onclick="openCondition('MOD-GSD_LY_CH_STAY-1')">
+                                    <img title="增加条件组" src="../../images/2.0/but_add.jpg" style="float: right;cursor:pointer" onclick="addCondition('GSD_LY_CH_STAY-1-SELECT','DIALOG-GSD_LY_CH_STAY','MOD-GSD_LY_CH_STAY-1')">
+                                    <div style="color:#ffffff">
+                                        <h4>旅店住宿1</h4>
+                                    </div>
+                                </div>
+                                <div id="GSD_LY_CH_STAY-1-SELECT" style="padding: 0px 0px 0px 0px;"></div>
+                            </div>
+                            <div id="MOD-GSD_JZ_WBZY_WBSWRY-1" class="dgcl" style="border: 1px solid #cddce4;margin-right: 10px">
+                                <div class="mod_title" style="background-color: #1380cb;padding: 6px;">
+                                    <img id="IMG-GSD_JZ_WBZY_WBSWRY-1" title="展开/收起" src="../../images/2.0/but_up.jpg" style="float: right;cursor:pointer" onclick="openCondition('MOD-GSD_JZ_WBZY_WBSWRY-1')">
+                                    <img title="增加条件组" src="../../images/2.0/but_add.jpg" style="float: right;cursor:pointer" onclick="addCondition('GSD_JZ_WBZY_WBSWRY-1-SELECT','DIALOG-GSD_JZ_WBZY_WBSWRY','MOD-GSD_JZ_WBZY_WBSWRY-1')">
+                                    <div style="color:#ffffff">
+                                        <h4>网吧上网人员1</h4>
+                                    </div>
+                                </div>
+                                <div id="GSD_JZ_WBZY_WBSWRY-1-SELECT" style="padding: 0px 0px 0px 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;" id="dbjgbtdiv"></div>
+                    <div id="jgInfo"></div>
+                </td></tr>
+                </tbody></table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div id="moduleList" title="数据源列表" style="display:none;" class="cata_box">
+    <ul class="catalog_ul">
+
+        <li>
+            <div class="cata_desc" style="cursor:pointer" onclick="checkSelect('GSD_JZ_WBZY_WBSWRY');">
+                <div class="cata_desc_box">
+                    <img alt="" src="../../images/2.0/mokuai2.png">
+                </div>
+                <div class="cata_title_service2">总量：167442243</div>
+            </div>
+            <div class="cata_extra">
+                <input id="GSD_JZ_WBZY_WBSWRY" value="网吧上网人员" name="module" type="checkbox">网吧上网人员
+            </div>
+        </li>
+
+
+        <li>
+            <div class="cata_desc" style="cursor:pointer" onclick="checkSelect('GSD_HZ_CZRK');">
+                <div class="cata_desc_box">
+                    <img alt="" src="../../images/2.0/mokuai1.png">
+                </div>
+                <div class="cata_title_service2">总量：8495787</div>
+            </div>
+            <div class="cata_extra">
+                <input id="GSD_HZ_CZRK" value="常住人口" name="module" type="checkbox">常住人口
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+<div id="DIALOG-GSD_LY_CH_STAY" title="旅店住宿" style="display:none;">
+    <fieldset>
+        <legend>条件组</legend>
+
+        <div>
+            <input name="IN_TIME" value="入住时间|0|0" checked="checked" disabled="true" type="checkbox">入住时间
+        </div>
+
+        <div>
+            <input name="HOTELNAME" value="旅馆名称|2|0" type="checkbox">旅馆名称
+        </div>
+
+        <div>
+            <input name="SEX" value="人员性别|1|GADIC.DIC_XB~CODE~CONTENT" type="checkbox">人员性别
+        </div>
+
+        <div>
+            <input name="AREA_CODE" value="所属辖区|3|0" type="checkbox">所属辖区
+        </div>
+
+    </fieldset></div>
+<div id="DIALOG-GSD_JZ_WBZY_WBSWRY" title="网吧上网人员" style="display:none;">
+    <fieldset>
+        <legend>条件组</legend>
+
+        <div>
+            <input name="SWKSSJ" value="上网时间|0|0" checked="checked" disabled="true" type="checkbox">上网时间
+        </div>
+
+        <div>
+            <input name="YYCSDM" value="网吧名称|2|0" type="checkbox">网吧名称
+        </div>
+
+    </fieldset></div>
+<div id="DIALOG-GSD_JZ_ZDRYXX" title="重点人员" style="display:none;">
+    <fieldset>
+        <legend>条件组</legend>
+
+        <div>
+            <input name="ZDRYLBBJ" value="类别|1|GADIC.DIC_ZDRYLB~CODE~CONTENT" type="checkbox">类别
+        </div>
+
+        <div>
+            <input name="XB" value="人员性别|1|GADIC.DIC_XB~CODE~CONTENT" type="checkbox">人员性别
+        </div>
+
+    </fieldset></div>
+<div id="DIALOG-TIC_HCPXX" title="火车票信息" style="display:none;">
+    <fieldset>
+        <legend>条件组</legend>
+
+        <div>
+            <input name="XM" value="人员姓名|2|0" type="checkbox">人员姓名
+        </div>
+
+        <div>
+            <input name="KH" value="身份证号|2|0" type="checkbox">身份证号
+        </div>
+
+        <div>
+            <input name="CCRQ" value="乘车日期|0|0" checked="checked" disabled="true" type="checkbox">乘车日期
+        </div>
+
+        <div>
+            <input name="CCZ" value="乘车站|3|0" type="checkbox">乘车站
+        </div>
+
+        <div>
+            <input name="DDZ" value="到达站|3|0" type="checkbox">到达站
+        </div>
+
+        <div>
+            <input name="CC" value="车次|2|0" type="checkbox">车次
+        </div>
+
+    </fieldset></div>
+<div id="DIALOG-GSD_JJ_DRIVINGLICENSE" title="驾驶员信息" style="display:none;">
+    <fieldset>
+        <legend>条件组</legend>
+
+        <div>
+            <input name="ZJCX" value="准驾车型|1|GADIC.DIC_ZJCX~CODE~concat(code ,content)" type="checkbox">准驾车型
+        </div>
+
+    </fieldset></div>
+<div id="DIALOG-GSD_LDRK_DJB" title="流动人口" style="display:none;">
+    <fieldset>
+        <legend>条件组</legend>
+
+        <div>
+            <input name="XM" value="姓名|2|0" type="checkbox">姓名
+        </div>
+
+        <div>
+            <input name="XB" value="性别|1|GADIC.DIC_XB~CODE~CONTENT" type="checkbox">性别
+        </div>
+
+    </fieldset></div>
+<div style="position: absolute; top: -1970px; left: -1970px;" id="_my97DP"><iframe style="width: 186px; height: 198px;" src="http://localhost:8080/pbc/skins/js/My97DatePicker/My97DatePicker.htm" border="0" scrolling="no" frameborder="0"></iframe></div>
+</body>
+</html>
