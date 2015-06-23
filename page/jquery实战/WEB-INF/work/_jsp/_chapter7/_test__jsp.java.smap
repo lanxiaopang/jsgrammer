@@ -1,0 +1,14 @@
+SMAP
+_test__jsp.java
+JSP
+*S JSP
+*F
++ 1 prelude.jspf
+prelude.jspf
++ 2 test.jsp
+chapter7/test.jsp
+*L
+1#1:27
+8#2:28,2
+12#2:30
+*E

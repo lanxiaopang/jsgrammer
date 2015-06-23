@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>换类名</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"
+     onmouseover="document.getElementById('div1').className='box';"
+     onmouseout="document.getElementById('div1').className='';"></div>
+</body>
+</html>

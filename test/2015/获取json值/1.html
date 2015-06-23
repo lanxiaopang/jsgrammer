@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-1.7.2.js"></script>
+    <script src="json.js"></script>
+    <script>
+        var $u = {};
+        /*获取window对象 */
+        $u.findWindow = function(target, includeOpener) {
+            var win = window;
+            while(true) {
+                if (typeof target =='string' && win[target]) {
+                    return win;
+                } else if ($.isFunction(target) && target(win)){
+                    return win;
+                }
+
+                if (win.parent && win.parent != win) {
+                    win = win.parent;
+                } else if (includeOpener && win.opener && win.opener != win) {
+                    win = win.opener;
+                } else {
+                    return null;
+                }
+            }
+        };
+        $u.getCommonRes = function(id) {
+            var mainFrame = $u.findWindow('isMainFrame', true);
+            if (mainFrame) {
+                return mainFrame[id];
+            } else {
+                return window[id];
+            }
+        };
+
+
+        //获取参数数组
+        $u.getParamArray = function(id) {
+            var param = window[id];
+            if (!$.isArray(param)) {
+                var paramList = $u.getCommonRes('paramList');
+                param = paramList ? paramList[id] : [];
+            }
+            return param;
+        };
+
+        //获取参数显示信息
+        //增加一个选中默认值形参，参数表中找不到则显示这个值,此形参不传则返回原值
+        $u.getParamDisplay = function(id, value, lang, defval) {
+            var param = $u.getParamArray(id);
+            if ($.isArray(param)) {
+//	var record = param.find(function(entry) {
+//		return entry.key == value;
+//	});
+//		var record = $.each(param,function(){
+//			if (entry.key == value){
+//				return entry;
+//			}
+//		});
+                var record;
+                for (var i = 0 ;i<param.length;i++){
+                    if(param[i].key==value){
+                        record= param[i];
+                        break;
+                    }
+                }
+                if (record) {
+                    if (lang && record.i18n && record.i18n[lang])
+                        return record.i18n[lang];
+                    return record.text;
+                } else {
+                    if(defval)
+                        return defval;
+                    else
+                        return value;
+                }
+            } else {
+                if(defval)
+                    return defval;
+                else
+                    return value;
+            }
+        };
+
+        $(function(){
+            $("#getParamDisplay").bind("click",function(){
+                var data=$u.getParamDisplay("PB_REMIND_FLAG","2");
+                alert(data);
+                alert(people.programmers[1].lastName);
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="getParamDisplay">获取text值</button>
+</body>
+</html>
