@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/stepbar.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #demo {
+            padding: 50px;
+        }
+    </style>
+    <script type="text/javascript">
+        var step;
+        function scriptComplete() {
+            require(["stepbar"], function () {
+                step = $("#demo").stepbar({
+                    data: ["填写账户信息", "绑定银行卡", "设置电子账户交易密码", "开户成功"],
+                    complete: function () {
+                        alert("全部完成");
+                    }
+                });
+            });
+        }
+
+        function prev() {
+            step.prev();
+        }
+        function next() {
+            step.next();
+        }
+
+    </script>
+</head>
+<body>
+    <div id="demo"></div>
+    <div style="text-align:center; margin:10px;">
+        <button onclick="prev()">上一步</button>
+        <button onclick="next()">下一步</button>
+    </div>
+
+</body>
+</html>

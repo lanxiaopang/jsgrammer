@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FormCtrls-表单数据控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>FormCtrls-表单数据控件</h1>
+    <p>FormCtrls做为表单内的数据控件，必须遵循统一的开发规范才可以为表单提供获取、更改等事件的处理。</p>
+    <p>表单控件在加载时会自动对其内的所有控件进行初始化，所以一般不建议对外使用此控件，但为了扩展性，我们公开了2个接口。</p>
+    <p><b>此控件为表单的数据扩展插件，内部已集成了常用插件。</b></p>
+    <p>控件类型优先读取<code>data-ctrl-type</code>若没有则读取<code>type</code>(对于不支持的type类型建议使用data-ctrl-type)</p>
+    <p><b>提示：</b>FormCtrls做为<code>Form</code>表单控件的附属扩展插件，在通常情况下是不会主动使用该插件的接口方法，都是由Form表单来自动触发。之所以有该控件的API文档是为了扩展表单控件做指导说明。</p>
+    <h2>表单数据控件开发规范</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>elem</td>
+                <td>控件元素</td>
+                <td>jQuery Element</td>
+                <td></td>
+                <td>在调用初始化之前会把当前控件标签赋值给此变量</td>
+            </tr>
+            <tr>
+                <td>target</td>
+                <td>实际展示的控件</td>
+                <td>jQuery Element</td>
+                <td>undefined</td>
+                <td>
+                    <b>高级应用：</b> 控件可以在<code>init</code>方法内为其赋值。
+                    应用场合例如：例如div定制select控件，实际显示的为 div控件，而内容值为一个隐藏域控件，则在init时，应
+                    指定elem为隐藏域，target为div展示层。
+                </td>
+            </tr>
+            <tr>
+                <td>tagName</td>
+                <td>支持标签类型</td>
+                <td>String</td>
+                <td></td>
+                <td>
+                    若指定了控件tagName，则优先按tagName进行筛选，tagName于类型都符合的优先，若没有则按照第一次匹配的做为控件，若没有匹配项则全部按默认处理。
+                    默认为<code>""</code>/<code>undefined</code>/<code>*</code>则表示支持所有标签类型。
+                    也可以设置例如:<code>"input,radio" </code>以逗号分割，表示支持这两种类型。
+                </td>
+            </tr>
+            <tr>
+                <td>init</td>
+                <td>表单控件初始化</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td>
+                    <p>调用此方法时会传入当前控件的<code>elem</code>标签和自定义的配置信息（用于手动调取init方法使用，form不会传入自定义配置消息）。</p>
+                    <p>在此方法内可以为控件进行事件的注册，或者为控件进行重新编码，并指定<code>target</code>和<code>elem</code>。</p>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>validate</td>
+                <td>表单数据控件验证方法</td>
+                <td>Function</td>
+                <td>默认使用<code>Validate</code>进行验证。</td>
+                <td>
+                    如需要重写则必须返回<code>JSON</code>:
+                    {result:false,message:"错误消息"}/{result:true,message:""}
+                    <p>调用此方法时会传入当前控件的<code>elem</code>标签。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>getValue</td>
+                <td>获取控件值</td>
+                <td>Function</td>
+                <td>默认为elem.val();</td>
+                <td>
+                    调用此方法时会传入当前控件的<code>elem</code>标签。
+                </td>
+            </tr>
+            <tr>
+                <td>setValue</td>
+                <td>设置表单数据控件的值</td>
+                <td>Function</td>
+                <td>默认为elem.val(value);</td>
+                <td>
+                    调用此方法时会传入当前控件的<code>elem</code>标签和<code>值</code>。
+                </td>
+            </tr>
+            <tr>
+                <td>setOption</td>
+                <td>设置表单数据控件配置参数</td>
+                <td>Function</td>
+                <td></td>
+                <td>
+                    若控件需要动态更改配置，则可以通过此方法为控件进行重新配置，调用时会传入<code>控件元素</code>和<code>配置信息</code>。
+                    <b>提示：</b><code>Form</code>表单控件在为表单内控件设置配置参数时(参考Form中的<code>setOption</code>接口)，会自动调取此方法。
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>init</h3>
+    <p>初始化控件，参数为控件元素和控件的自定义配置参数，<code>Form</code>表单会自动执行，若有特殊需要可手动初始化一个控件。</p>
+    <pre class="brush: js;">
+            require(['formCtrls'], function (f) {
+                f.init($elem,{...});
+            });
+    </pre>
+    <h3>add</h3>
+    <p>添加一个表单数据控件，参数与上述的开发规范相同，但是必须设置一个name值做为控件的类型。</p>
+    <pre class="brush: js;">
+            define(['formCtrls'], function (f) {
+                f.add({
+                    name:"text",
+                    tagName:"input"
+                });
+                f.add({
+                    name:"number",
+                    tagName:"input",
+                    init:function(elem){
+                        elem.attr("type","text");
+                        elem.attr("data-val-number");
+                    }
+                });
+            });
+    </pre>
+    <h2>已支持的插件列表</h2>
+    <p>下列为插件列表其中括号里面为tagName，<code>type(tagName)</code>。</p>
+    <h3>text（input）</h3>
+    <pre class="brush: xml">
+    <input name="demo" type="text" data-val-required />
+    </pre>
+    <iframe src="demo/formCtrls/text.html" frameborder="0" height="150" width="100%"></iframe>
+    <h3>number（input）</h3>
+    <pre class="brush: xml">
+    <input name="demo" data-ctrl-type="number" data-val-required />
+    </pre>
+    <iframe src="demo/formCtrls/number.html" frameborder="0" height="150" width="100%"></iframe>
+    <h3>currency（input）</h3>
+    <pre class="brush: xml">
+    <input name="demo" data-ctrl-type="currency" data-val-required />
+    </pre>
+    <iframe src="demo/formCtrls/currency.html" frameborder="0" height="150" width="100%"></iframe>
+    <h3>radio（input）</h3>
+    <pre class="brush: xml">
+        <label><input type="radio" name="demo" value="1" checked="checked" /><span>选项1</span></label>
+        <label><input type="radio" name="demo" value="2" /><span>选项2</span></label>
+        <label><input type="radio" name="demo" value="3" /><span>选项3</span></label>
+    </pre>
+    <iframe src="demo/formCtrls/radio.html" frameborder="0" height="150" width="100%"></iframe>
+    <h3>datepicker（input）</h3>
+    <p>日期控件采用jQuery-ui的<code>datepicker</code>控件，详细设置参数请参考jQuery-ui-datepicker</p>
+    <pre class="brush: xml">
+    <input name="demo" data-ctrl-type="datepicker" data-val-required />
+    </pre>
+    <pre class="brush: js">
+            require(["form","datepicker"], function () {
+                form = $("#demo").form();
+                form.setOption('demo', {
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+    </pre>
+    <iframe src="demo/formCtrls/datepicker.html" frameborder="0" height="300" width="100%"></iframe>
+    <h3>select（select）</h3>
+    <pre class="brush: xml">
+    <select name="demo" data-custom="xxxx">
+    <option>下拉框1</option>
+    <option>下拉框2</option>
+    <option>下拉框3</option>
+    <option>下拉框4</option>
+    <option>下拉框5</option>
+    <option>下拉框6</option>
+    </select>
+    </pre>
+    <iframe src="demo/formCtrls/select.html" frameborder="0" height="300" width="100%"></iframe>
+    <h3>autocomplete（input）</h3>
+    <p>参数说明</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>appenTo</td>
+                <td>下拉框输出容器</td>
+                <td>jQuery Element</td>
+                <td></td>
+                <td>默认为当前控件下方</td>
+            </tr>
+            <tr>
+                <td>delay</td>
+                <td>延时查询时间</td>
+                <td>毫秒</td>
+                <td>300</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>minLength</td>
+                <td>最小查询字数</td>
+                <td>Int</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>JSON</td>
+                <td>
+                    my: "left top",
+                    at: "left bottom",
+                    collision: "none"
+                </td>
+                <td>详细参考jQuery UI Position</td>
+            </tr>
+            <tr>
+                <td>source</td>
+                <td>数据源</td>
+                <td>Array</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <pre class="brush: xml">
+    <input type="text" name="demo" data-ctrl-type="autocomplete" data-val-required />
+    </pre>
+    <iframe src="demo/formCtrls/autocomplete.html" frameborder="0" height="350" width="100%"></iframe>
+    <h3>slider（input）</h3>
+    <pre class="brush: xml">
+    <input name="demo" type="text" data-ctrl-type="slider" />
+    </pre>
+    <iframe src="demo/formCtrls/slider.html" frameborder="0" height="200" width="100%"></iframe>
+</body>
+</html>

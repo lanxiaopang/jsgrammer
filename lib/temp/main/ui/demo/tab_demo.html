@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/tab.css" rel="stylesheet" />
+    <link href="../css/ui/message.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #container {
+            margin: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        function scriptComplete() {
+            require(["tab"], function (t) {
+                var tab = new t({
+                    to: "#container"
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul class="tab-head">
+            <li data-tab-name="home" class="active">Home</li>
+            <li data-tab-name="profile">Profile<span class="close"></span></li>
+            <li data-tab-name="message">Messages<span class="close"></span></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home">
+                <p>home</p>
+                <p>home</p>
+                <p>home</p>
+            </div>
+            <div id="profile">
+                <p>profile</p>
+                <p>profile</p>
+                <p>profile</p>
+            </div>
+            <div id="message">
+                <p>message</p>
+                <p>message</p>
+                <p>message</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/loading.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #demo {
+            margin: 20px;
+            width: 700px;
+        }
+    </style>
+    <script>
+        function demo() {
+            require(["loading"], function (t) {
+                var loading = new t({
+                    to: "body",
+                    text: "3秒后自动消失"
+                });
+                loading.open();
+                setTimeout(function () {
+                    loading.close();
+                }, 3000);
+            });
+        }
+        function demo1() {
+            require(["loading"], function (t) {
+                var loading = new t({
+                    to: "body",
+                    className:"loading-point",
+                    text: "3秒后自动消失"
+                });
+                loading.open();
+                setTimeout(function () {
+                    loading.close();
+                }, 3000);
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="demo()">展示一个Loading，3秒后隐藏,样式：loading-default</button>
+
+    <button onclick="demo1()">展示一个Loading，3秒后隐藏,样式：loading-point</button>
+</body>
+</html>

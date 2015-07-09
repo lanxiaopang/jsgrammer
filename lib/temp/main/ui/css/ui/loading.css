@@ -1,0 +1,26 @@
+﻿.loading{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#fff;
+}
+
+.loading .loading-body{
+    position:absolute;
+}
+.loading .loading-body p{
+    text-align:center;
+    line-height:25px;
+}
+.loading.loading-default .loading-body .loading-img{
+    width:84px;
+    height:84px;
+    background:url(images/loading.gif) no-repeat center center;
+}
+.loading.loading-point .loading-body .loading-img{
+    width:160px;
+    height:20px;
+    background:url(images/loadpont.gif) no-repeat center center;
+}

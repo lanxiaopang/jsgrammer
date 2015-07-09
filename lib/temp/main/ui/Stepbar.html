@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Stepbar步骤条控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Stepbar步骤条控件</h1>
+    <p>步骤条用于在多步操作中向用户指示当前进度。步骤条也被称为进度条（progress bar）但为了和显示百分比进度的进度条进行区分，这里称为步骤条（step bar）。<p>
+    <p>步骤条通常由若干个圆形节点和水平的条形背景形成的单元所组成。每个节点可以有“未激活”、“已激活”和“以完成”三种显示状态。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['stepbar'], function () {
+                var stepbar=$("selector").stepbar(...);
+                stepbar.next();
+                stepbar.prev();
+                stepbar.active(index,"runing/complete");
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>data</td>
+                <td>步骤数据</td>
+                <td>Array</td>
+                <td></td>
+                <td><b>必须设置</b></td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>默认激活哪一项</td>
+                <td>Int</td>
+                <td>0</td>
+                <td>从0开始</td>
+            </tr>
+            <tr>
+                <td>theme</td>
+                <td>主题样式</td>
+                <td>String</td>
+                <td>stepbar-default</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>change</td>
+                <td>当步骤反生改变时执行</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>complete</td>
+                <td>当完成所有步骤时执行</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>next</h3>
+    <p>激活下一步，若没有下一步则表明全部完成</p>
+    <pre class="brush: js;">
+            require(['stepbar'], function () {
+                var stepbar=$("selector").stepbar(...);
+                stepbar.next();
+            });
+    </pre>
+    <h3>prev</h3>
+    <p>激活上一步，若没有上一步则不执行</p>
+    <pre class="brush: js;">
+            require(['stepbar'], function () {
+                var stepbar=$("selector").stepbar(...);
+                stepbar.prev();
+            });
+    </pre>
+    <h3>active</h3>
+    <p>使某一步变为<code>正在执行</code>或<code>已完成</code>，需要传递两个参数，第一个为步骤索引<code>从0开始</code>，第二个为状态<code>runing</code>/<code>complete</code>，若不填则默认为runing</p>
+    <pre class="brush: js;">
+            require(['stepbar'], function () {
+                var stepbar=$("selector").stepbar(...);
+                stepbar.active(index,"runing/complete");
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <h3>上一步/下一步</h3>
+    <pre class="brush: xml;">
+    <div id="demo"></div>
+    </pre>
+    <pre class="brush: js;">
+        var step;
+        function scriptComplete() {
+            require(["stepbar"], function () {
+                step = $("#demo").stepbar({
+                    data: ["填写账户信息", "绑定银行卡", "设置电子账户交易密码", "开户成功"],
+                    complete: function () {
+                        alert("全部完成");
+                    }
+                });
+            });
+        }
+        function prev() {
+            step.prev();
+        }
+        function next() {
+            step.next();
+        }
+    </pre>
+    <iframe src="demo/stepbar_demo.html" frameborder="0" height="250" width="100%"></iframe>
+    <h3>指定某一项的状态</h3>
+    <pre class="brush: xml;">
+    <div id="demo"></div>
+    </pre>
+    <pre class="brush: js;">
+        var  step;
+        function scriptComplete() {
+            require(["stepbar"], function () {
+                step = $("#demo").stepbar({
+                    data: ["填写账户信息", "绑定银行卡", "设置电子账户交易密码", "开户成功"],
+                    complete: function () {
+                        alert("全部完成");
+                    }
+                });
+            });
+        }
+        function active() {
+            var stepIndex = $("#steps").val();
+            var tag = $("#tag").val();
+            step.active(stepIndex, tag);
+        }
+    </pre>
+    <iframe src="demo/stepbar_demo1.html" frameborder="0" height="250" width="100%"></iframe>
+</body>
+</html>

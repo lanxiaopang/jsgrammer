@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/tooltip.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #container {
+            margin: 40px 50px;
+        }
+    </style>
+
+    <script>
+        var tooltip;
+        function scriptComplete() {
+            require(["tooltip"], function (t) {
+                tooltip = t;
+            });
+        }
+
+        function demo() {
+           tooltip.show("#demo", "我是提示信息我是提示信息我是提示信息我是提示信息我是提示信息", "right");
+        }
+        function demo1() {
+            tooltip.hide("#demo");
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <input id="demo" type="text" />
+        <div style="margin-top:10px;">
+            <button onclick="demo()">打开提示</button>
+            <button onclick="demo1()">关闭提示</button>
+        </div>
+    </div>
+</body>
+</html>

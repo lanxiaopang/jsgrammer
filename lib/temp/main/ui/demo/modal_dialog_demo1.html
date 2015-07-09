@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/overlay.css" rel="stylesheet" />
+    <link href="../css/ui/modal.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <script>
+        function scriptComplete() {
+            require(['modal'], function (m) {
+                m.dialog({
+                    title: "临时弹出框",
+                    content: getDemoContent(),
+                    btnData: [
+                        {
+                            text: "确定"
+                        }
+                    ]
+                });
+            });
+        }
+
+        function getDemoContent() {
+            var html = [];
+            for (var i = 0; i < 100; i++) {
+                html.push("<p>大文本测试内容，大文本测试内容" + i + "</p>");
+            }
+            return html.join('');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

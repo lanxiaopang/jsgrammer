@@ -1,6 +1,61 @@
-// This is the custom JavaScript file referenced by index.html. You will notice
-// that this file is currently empty. By adding code to this empty file and
-// then viewing index.html in a browser, you can experiment with the example
-// page or follow along with the examples in the book.
-//
-// See README.txt for more information.
+(function($) {
+    $(document).on('mouseenter mouseleave', 'div.photo', function(event) {
+        var $details = $(this).find('.details');
+        if (event.type == 'mouseenter') {
+            $details.fadeTo('fast', 0.7);
+        } else {
+            $details.fadeOut('fast');
+        }
+    });
+
+    $(document).on('nextPage', function(event, scrollToVisible) {
+        var url = $('#more-photos').attr('href');
+        if (url) {
+            $.get(url, function(data) {
+                var $data = $(data).appendTo('#gallery');
+                if (scrollToVisible) {
+                    var newTop = $data.offset().top;
+                    $(window).scrollTop(newTop);
+                }
+                checkScrollPosition();
+            });
+        }
+    });
+
+    var pageNum = 1;
+    $(document).on('nextPage', function() {
+        pageNum++;
+        if (pageNum < 20) {
+            $('#more-photos').attr('href', 'pages/' + pageNum + '.html');
+        }
+        else {
+            $('#more-photos').remove();
+        }
+    });
+
+    function checkScrollPosition() {
+        var distance = $(window).scrollTop() + $(window).height();
+        if ($('#container').height() <= distance) {
+            $(document).trigger('nextPage');
+        }
+    }
+
+    $(document).ready(function() {
+        $('#more-photos').click(function(event) {
+            event.preventDefault();
+            $(this).trigger('nextPage', [true]);
+        });
+
+        var scrolled = false;
+        $(window).scroll(function() {
+            scrolled = true;
+        });
+        setInterval(function() {
+            if (scrolled) {
+                checkScrollPosition();
+                scrolled = false;
+            }
+        }, 250);
+        checkScrollPosition();
+    });
+})(jQuery);

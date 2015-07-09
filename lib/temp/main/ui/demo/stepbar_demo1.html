@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/stepbar.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #demo {
+            padding: 50px;
+        }
+    </style>
+    <script type="text/javascript">
+        var  step;
+        function scriptComplete() {
+            require(["stepbar"], function () {
+                step = $("#demo").stepbar({
+                    data: ["填写账户信息", "绑定银行卡", "设置电子账户交易密码", "开户成功"],
+                    complete: function () {
+                        alert("全部完成");
+                    }
+                });
+            });
+        }
+        function active() {
+            var stepIndex = $("#steps").val();
+            var tag = $("#tag").val();
+            step.active(stepIndex, tag);
+        }
+    </script>
+</head>
+<body>
+
+    <div id="demo"></div>
+    <div style="text-align:center; margin:10px;">
+        <select id="steps">
+            <option value="0">第1步</option>
+            <option value="1">第2步</option>
+            <option value="2">第3步</option>
+            <option value="3">第4步</option>
+        </select>
+        <select id="tag">
+            <option value="runing">执行中</option>
+            <option value="complete">完成</option>
+        </select>
+        <button onclick="active()">执行</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        .demo {
+            width: 100px;
+            height: 100px;
+            border: solid 1px #ccc;
+            float: left;
+        }
+
+        #container {
+            padding: 50px;
+        }
+    </style>
+
+    <script>
+        var card;
+        function scriptComplete() {
+            require(["card"], function (c) {
+
+                $(".demo").each(function () {
+                    $(this).css("background", $(this).attr("id"));
+                });
+
+                card = new c(["#red", "#blue", "#black", "#yellow", "#green"]);
+            });
+        }
+
+        function demo() {
+            var id = $("#color").val();
+            card.show(id);
+        }
+
+        function prev() {
+            card.prev();
+        }
+
+        function next() {
+            card.next();
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div style="margin-bottom:10px;">
+            <button onclick="prev()">上一个</button>
+            <button onclick="next()">下一个</button>
+
+            颜色： <select id="color">
+                <option value="0">red</option>
+                <option value="1">blue</option>
+                <option value="2">black</option>
+                <option value="3">yellow</option>
+                <option value="4">green</option>
+            </select>
+
+            <button onclick="demo()">执行</button>
+
+        </div>
+        <div id="red" class="demo"></div>
+        <div id="blue" class="demo"></div>
+        <div id="black" class="demo"></div>
+        <div id="yellow" class="demo"></div>
+        <div id="green" class="demo"></div>
+    </div>
+
+</body>
+</html>

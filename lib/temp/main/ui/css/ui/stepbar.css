@@ -1,0 +1,50 @@
+﻿.stepbar .stepbar-item {
+    float: left;
+}
+
+    .stepbar .stepbar-item p {
+        text-align: center;
+        line-height: 30px;
+    }
+
+.stepbar .stepbar-content {
+    text-align: center;
+}
+
+
+
+/*default*/
+.stepbar-default .stepbar-content {
+    height: 28px;
+    background: url(images/stepbar-bg.png) 0 -90px;
+}
+
+    .stepbar-default .stepbar-content i {
+        display: block;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        font-style: normal;
+        color: #fff;
+        margin: 0 auto;
+        background: url(images/stepbar-bg.png);
+    }
+
+    .stepbar-default .stepbar-item.runing .stepbar-content{
+        background-position:0 -120px;
+    }
+
+     .stepbar-default .stepbar-item.runing .stepbar-content i{
+         background-position: 0 -30px;
+     }
+
+      .stepbar-default .stepbar-item.complete .stepbar-content{
+        background-position:0 -120px;
+    }
+
+     .stepbar-default .stepbar-item.complete .stepbar-content i{
+         background-position: 0 -60px;
+         text-indent:-999999px;
+         overflow:hidden;
+     }

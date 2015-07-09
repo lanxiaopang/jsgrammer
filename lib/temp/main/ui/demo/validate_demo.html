@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/tooltip.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <script src="../scripts/lib/jQuery_1.8.2.min.js"></script>
+    <style>
+        #container{
+            padding:50px;
+        }
+         #container >div{
+             margin-top:20px;
+         }
+    </style>
+
+    <script>
+        function demo() {
+            require(["validate"], function (validate) {
+                $("input").each(function () {
+                    var message = $(this).validate();
+                    if (message) {
+
+                    }
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div>
+            必填：<input type="text" data-val-required />
+        </div>
+        <div>
+            数字：<input type="text" data-val-number data-val-required />
+        </div>
+        <div>
+            整数：<input type="text" data-val-int data-val-required />
+        </div>
+        <div>
+            长度：<input type="text" data-val-length="长度必须5到10位" data-val-length-max="10" data-val-length-min="5">
+        </div>
+        <div>
+            正则：<input type="text" data-val-regex-pattrn="^\s*([A-Za-z0-9_-]+(\.\w+)*@([\w-]+\.)+\w{2,10})\s*$" data-val-regex="请填写正确的邮箱">
+        </div>
+        <div>
+            邮箱：<input type="text" data-val-type="email" />
+        </div>
+        <div>
+            <button onclick="demo()">验证</button>
+        </div>
+    </div>
+</body>
+</html>

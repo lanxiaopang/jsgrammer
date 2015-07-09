@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/message.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        body {
+            background: #484860;
+        }
+
+        #demoContainer {
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function demo() {
+            require(["message"], function (m) {
+                m[$("select").val()]("提示消息，测试消息测试消息测试消息测试消息测试消息");
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="demoContainer">
+        选择一种类型：<select>
+            <option>success</option>
+            <option>warn</option>
+            <option>error</option>
+            <option>info</option>
+        </select>
+        <button onclick="demo()">弹出一个消息</button>
+    </div>
+</body>
+</html>

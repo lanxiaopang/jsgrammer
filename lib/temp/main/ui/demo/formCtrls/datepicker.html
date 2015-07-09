@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../css/ui/clear.css" rel="stylesheet" />
+    <link href="../../css/ui/tooltip.css" rel="stylesheet" />
+    <link href="../../css/ui/message.css" rel="stylesheet" />
+    <link href="../../css/ui/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../../scripts/lib/require.js" data-main="../../scripts/ui.js"></script>
+    <style>
+        #container {
+            padding: 20px;
+        }
+
+            #container form > div {
+                margin-top: 20px;
+            }
+    </style>
+    <script>
+        var form;
+        function scriptComplete() {
+            require(["form", "datepicker"], function () {
+                form = $("#demo").form();
+                form.setOption('demo', {
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+        }
+        function setValue() {
+            form.set("demo", "20150618");
+        }
+        function getValue() {
+            alert(form.get("demo"));
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <form id="demo" method="get">
+            <div>
+                demo：<input readonly="readonly" name="demo" data-ctrl-type="datepicker" data-datepicker-format="yyyy-MM-dd" data-val-required />
+            </div>
+            <div>
+                <button type="button" onclick="setValue()">设置值</button>
+                <button type="button" onclick="getValue()">读取值</button>
+                <button type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

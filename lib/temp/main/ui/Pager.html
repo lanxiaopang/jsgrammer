@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pager分页控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Pager-分页控件</h1>
+    <p>Pager分页控件，只负责页码的管理和跳转事件的触发，具体业务都是由实现接口来实现的。</p>
+    <p>目前Pager具有两种类型：<code>fullPager</code>（全页码）和<code>loadMore</code>（加载更多）。其中全页码类型，可以设置按钮是否显示，例如隐藏首页按钮等。</p>
+    <p><code>loadMore</code>暂时未支持，敬请期待</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['pager'], function (p) {
+                //实例化pager 对象
+                var pager=new p(...);
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>to</td>
+                <td>需要输出到的容器</td>
+                <td>Selector/jQuery Element</td>
+                <td></td>
+                <td><b>注意：</b>必须设置此参数。</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>分页类型</td>
+                <td>String</td>
+                <td>fullPager</td>
+                <td>可选值：fullPager、loadMore</td>
+            </tr>
+            <tr>
+                <td>pagerOption</td>
+                <td>分页配置信息</td>
+                <td>JSON</td>
+                <td></td>
+                <td>请参考：<code>pagerOption</code>参数说明</td>
+            </tr>
+            <tr>
+                <td>pagerData</td>
+                <td>分页控件数据</td>
+                <td>JSON</td>
+                <td></td>
+                <td>此数据做为分页控件初始化依据，详细请参考：<code>pagerData</code>参数说明</td>
+            </tr>
+            <tr>
+                <td>goPage</td>
+                <td>分页页面跳转事件</td>
+                <td>Function</td>
+                <td></td>
+                <td>执行回调时，会把当前点击的页码传递到回调方法中</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>pagerOption-参数说明</h3>
+    <p>pagerOption 只有当分页类型是fullPager才有作用，loadMore类型下的分页，不需要设置此属性</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>theme</td>
+                <td>分页主题</td>
+                <td>String</td>
+                <td>pager-default</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showPageText</td>
+                <td>是否显示分页信息文本</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td>若使用页码初始化分页，则不现实共多少条数据。</td>
+            </tr>
+            <tr>
+                <td>alwaysShowFirstLastPageNumber</td>
+                <td>是否一直显示第一页和最后一页的页码</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showPageWhenNotEnoughOnePage</td>
+                <td>当不足一页的时候也显示分页</td>
+                <td>Bool</td>
+                <td>false</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showDisabledPagerItems</td>
+                <td>是否显示禁用的分页按钮</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showPrevNext</td>
+                <td>是否显示上一页和下一页</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>prevPageText</td>
+                <td>上一页按钮的文本</td>
+                <td>String</td>
+                <td>上一页</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>nextPageText</td>
+                <td>下一页按钮的文本</td>
+                <td>String</td>
+                <td>下一页</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showNumericPagerItems</td>
+                <td>是否显示页码</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>numericPagerItemCount</td>
+                <td>页面显示页码条数</td>
+                <td>Int</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showFirstLast</td>
+                <td>是否显示首页和尾页</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>firstPageText</td>
+                <td>首页文本</td>
+                <td>String</td>
+                <td>首页</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>lastPageText</td>
+                <td>尾页文本</td>
+                <td>String</td>
+                <td>尾页</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>showMorePagerItems</td>
+                <td>是否显示更多</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>morePageText</td>
+                <td>更多的按钮文本</td>
+                <td>Bool</td>
+                <td>...</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>pagerData-参数说明</h3>
+    <p>pagerData 做为分页控件初始化的依据，无论类型是<code>fullPager</code>或者<code>loadMore</code>此参数都需要设置。</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>pageIndex</td>
+                <td>当前页码</td>
+                <td>Int</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>pageCount</td>
+                <td>总页数</td>
+                <td>Int</td>
+                <td></td>
+                <td><b>注意：</b>与pageIndex配合使用</td>
+            </tr>
+            <tr>
+                <td>dataIndex</td>
+                <td>数据起始索引</td>
+                <td>Int</td>
+                <td></td>
+                <td><b>注意：</b>与下面两个属性配合使用</td>
+            </tr>
+            <tr>
+                <td>dataCount</td>
+                <td>总数据行数</td>
+                <td>Int</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>pageSize</td>
+                <td>一页显示多少条数据</td>
+                <td>Int</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>参考实例-（全参数）</h3>
+    <pre class="brush: js;">
+            require(['pager'], function (p) {
+                //实例化pager 对象
+                var pager=new p({
+                    to:"#demo",
+                    type:"fullPager",
+                    pagerOption:{
+                    //...
+                    },
+                    pagerData:{
+                    //..
+                    },
+                    goPage:function(){  }
+                });
+            });
+    </pre>
+    <h3>参考实例-（简约参数）</h3>
+    <p>参数依次为：to、pagerData、goPage、pagerOpton，最少2个参数</p>
+    <pre class="brush: js;">
+            require(['pager'], function (p) {
+                //实例化pager 对象
+                var pager=new p("#demo",{
+                    //pagerData
+                },function(){
+                    //goPage
+                },{
+                    //pagerOption
+                });
+            });
+    </pre>
+    <h2>接口说明</h2>
+    <h3>reload</h3>
+    <p>一般用于重置总页数或更改主题等操作，设置的新数据是于初始化时的数据进行合并，所以如果想保留初始化时设置的值，不用设置即可。</p>
+    <p>参数与<code>pager</code>默认参数相同，但更改<code>to</code>属性无效。</p>
+    <h4>调用方法</h4>
+    <pre class="brush: js;">
+            require(['pager'], function (p) {
+                //实例化pager 对象
+                var pager=new p(...);
+                pager.reload(...);
+            });
+    </pre>
+    <h3>goByPage</h3>
+    <p>传入需要跳转的页码，直接跳转到指定页码</p>
+    <h4>调用方法</h4>
+    <pre class="brush: js;">
+            require(['pager'], function (p) {
+                //实例化pager 对象
+                var pager=new p(...);
+                pager.goByPage(10);
+            });
+    </pre>
+    <h3>goByData</h3>
+    <p>传入需要跳转的数据起始索引，直接跳转到指定页码</p>
+    <h4>调用方法</h4>
+    <pre class="brush: js;">
+            require(['pager'], function (p) {
+                //实例化pager 对象
+                var pager=new p(...);
+                pager.goByData(201);
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <h3>默认实例</h3>
+    <pre class="brush: js;">
+             require(["pager"], function (p) {
+                //使用页码初始化分页
+                var pager = new p({
+                    to: "#demo1",
+                    pagerData: {
+                        pageIndex: 1,
+                        pageCount:10
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+                
+                //使用数据索引初始化分页
+                var pager1 = new p({
+                    to: "#demo2",
+                    pagerData: {
+                        dataIndex: 20,
+                        dataCount: 20000
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+            });
+    </pre>
+    <iframe src="demo/pager_demo.html" frameborder="0" height="100" width="100%"></iframe>
+    <h3>reload重新加载</h3>
+    <pre class="brush: js;">
+        <button onclick="demo()">重新初始化分页</button>
+        <div class="container" id="demo"></div>
+
+        var pager;
+        function scriptComplete() {
+            require(["pager"], function (p) {
+                //使用页码初始化分页
+                pager = new p({
+                    to: "#demo",
+                    pagerData: {
+                        pageIndex: 1,
+                        pageCount: 10
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+            });
+        }
+        function demo() {
+            pager.reload({
+                pagerData: {
+                    pageIndex: 10,
+                    pageCount: 100
+                },
+                pagerOption: {
+                    theme: "jogger",
+                    showFirstLast:false
+                },
+                goPage: function (pageIndex) {
+                    alert("我是:" + pageIndex);
+                }
+            });
+        }
+    </pre>
+    <iframe src="demo/pager_demo1.html" frameborder="0" height="100" width="100%"></iframe>
+    <h3>goByPage 使用页码跳转</h3>
+    <pre class="brush: js;">
+        <div class="container">跳转到：<select></select></div>
+        <div class="container" id="demo"></div>
+
+            require(["pager"], function (p) {
+                var pager = new p({
+                    to: "#demo",
+                    pagerData: {
+                        pageIndex: 1,
+                        pageCount:10
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+          
+                $("select").change(function () {
+                    pager.goByPage($(this).val());
+                });
+            });
+    </pre>
+    <iframe src="demo/pager_demo2.html" frameborder="0" height="100" width="100%"></iframe>
+    <h3>goByData 使用数据索引跳转</h3>
+    <pre class="brush: js;">
+        <div class="container">跳转到：<input type="text" /></div>
+        <div class="container" id="demo"></div>
+            require(["pager"], function (p) {
+                var pager = new p({
+                    to: "#demo",
+                    pagerData: {
+                        dataIndex: 1,
+                        dataCount:100
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+          
+                $("input[type='text']").blur(function () {
+                    var value = parseInt($(this).val());
+                    if (value && isNaN(value) == false) {
+                        pager.goByData($(this).val());
+                    }
+                });
+            });
+    </pre>
+    <iframe src="demo/pager_demo3.html" frameborder="0" height="100" width="100%"></iframe>
+</body>
+</html>

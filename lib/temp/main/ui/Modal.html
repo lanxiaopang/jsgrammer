@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Modal消息控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Modal-模态窗口</h1>
+    <p>模态窗口控件包括Alert、Confirm、Dialog三种展示式，并支持自定义的扩展。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['modal'], function (m) {
+                //m 即 modal 对象
+                //m.alert(..);
+                //m.confirm(..)
+                //m.dialog(..)
+            });
+    </pre>
+    <h2>接口说明</h2>
+    <h3>dialog</h3>
+    <p>dialog模态窗口，此方法为modal核心接口，用于创建窗口，并可以通过参数来设置展示形式，例如有哪些按钮，按钮文本等等。</p>
+    <h4>参数说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>唯一标识</td>
+                <td>String</td>
+                <td>时间戳加随机数</td>
+                <td>默认自动生成一个时间戳做为唯一标识，也可以自定义id，如果设置了id，作用是可以过滤掉重复的弹出操作，例如“登录超时”等</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>提示框标题</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td>需要提示的内容</td>
+                <td>String</td>
+                <td></td>
+                <td>可以是HTML文本，也可以是提示信息</td>
+            </tr>
+            <tr>
+                <td>src</td>
+                <td>展示的HTML地址</td>
+                <td>String</td>
+                <td></td>
+                <td>如果采用src地址，会使用load方法，异步加载页面，<code>content</code>则会失效</td>
+            </tr>
+            <tr>
+                <td>modalQueue</td>
+                <td>是否等待列队</td>
+                <td>Bool</td>
+                <td>false</td>
+                <td>是否等待列队，此设置是<code>modal</code>控件特殊属性，它可以有效阻止页面频繁执行模态窗口的弹出，如果设置为true则必须等待上一个模态窗口关闭后才可以弹出，例如：Alert，Confirm等。</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>弹窗宽度</td>
+                <td>Folat</td>
+                <td>450</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>弹窗高度</td>
+                <td>Folat</td>
+                <td>0</td>
+                <td>默认为0，<code>0</code>代表自适应高度，随页面高度绝对</td>
+            </tr>
+            <tr>
+                <td>btnData</td>
+                <td>按钮数据</td>
+                <td>JSON</td>
+                <td></td>
+                <td>
+                    <p>1.若不传递<code>btnData</code>则表示此弹窗不需要插件创建按钮，可以在<code>content</code>或<code>src</code>中自定义按钮。</p>
+                    <p>2.若需要控件生成按钮，此<code>btnData</code>格式为：</p>
+                    <pre class="brush: js;">
+                     //其中modalObject为modal对象,e为jquery的event事件对象
+                     //可以执行modalObject.close(); 来实现点击按钮后关闭窗口。
+                     [
+                        { text: "btnName1", className="className1", click: function (modalObject,e) { } },
+                        { text: "btnName2", className="className2", click: function (modalObject,e) { } }
+                     ];
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>close</td>
+                <td>弹窗关闭后执行事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td>高级应用：如果自定义了<code>close</code>方法， 若方法返回false时，窗口不会执行关闭。可以用作表单验证提示。</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例 - 模拟alert</h4>
+    <pre class="brush: js;">
+            require(['modal'], function (m) {
+                m.dialog({
+                    title:"提醒",
+                    message:"提醒消息",
+                    width:450,
+                    btnData:[
+                        {
+                            text:"确定",
+                            className:"ok",
+                            click:function(modalObject){
+                                 modalObject.close();
+                            }
+                        }    
+                    ],
+                    close:function(){}
+                });
+            });
+    </pre>
+    <h3>alert</h3>
+    <p>alert提示框，此消息提醒模式只有<code>ok（确定）</code>和<code>close（关闭）</code>两种事件，<b>注意：</b>Alert为等待列队模式！</p>
+    <h4>参数说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>title</td>
+                <td>提示框标题</td>
+                <td>String</td>
+                <td>提醒</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>message</td>
+                <td>需要提示的信息</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>弹窗宽度</td>
+                <td>Folat</td>
+                <td>450</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ok</td>
+                <td>点击确定执行事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>close</td>
+                <td>弹窗关闭后执行事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td>当点击确定后，也会执行close事件。</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例 - 调用方式1（全参数）</h4>
+    <pre class="brush: js;">
+            require(['modal'], function (m) {
+                m.alert({
+                    title:"",
+                    message:"",
+                    width:450,
+                    ok:function(){},
+                    close:function(){}
+                });
+            });
+    </pre>
+    <h4>参考实例 - 调用方式2（简约参数）</h4>
+    <pre class="brush: js;">
+            /*\
+            *   参数分别为：消息内容、ok回调方法、close回调函数
+            *   参数为自动补充式，但至少要传入一个参数。
+            \*/
+            require(['modal'], function (m) {             
+                //简约全参数
+                m.alert("message",function(){
+                    //ok 执行事件
+                },function(){
+                    //关闭事件
+                });
+                //简约最少参数方式
+                m.alert("message");
+            });
+    </pre>
+    <h3>confirm</h3>
+    <p>confirm提示框，此消息提醒模式有<code>ok（确定）</code>、<code>close（关闭）</code>和<code>cancle（取消）</code>三种事件</p>
+    <h4>参数说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>title</td>
+                <td>提示框标题</td>
+                <td>String</td>
+                <td>请选择</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>message</td>
+                <td>需要提示的信息</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>btnTitle</td>
+                <td>ok、cancle按钮名称</td>
+                <td>Array</td>
+                <td>["确定","取消"]</td>
+                <td>更改名称后仍然是执行ok、cancle事件，注意顺序！</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>弹窗宽度</td>
+                <td>Folat</td>
+                <td>450</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ok</td>
+                <td>点击确定执行事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>cancle</td>
+                <td>点击取消执行事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>close</td>
+                <td>弹窗关闭后执行事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td>当点击确定后，也会执行close事件。</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例 - 调用方式1（全参数）</h4>
+    <pre class="brush: js;">
+            require(['modal'], function (m) {
+                m.confirm({
+                    title:"",
+                    message:"",
+                    btnTitle:["确定","取消"],
+                    width:450,
+                    cancle:function(){},
+                    ok:function(){},
+                    close:function(){}
+                });
+            });
+    </pre>
+    <h4>参考实例 - 调用方式2（简约参数）</h4>
+    <pre class="brush: js;">
+            /*\
+            *   参数分别为：消息内容、ok回调方法、cancle回调函数、close回调函数
+            *   参数为自动补充式，但至少要传入两个参数。
+            \*/
+            require(['modal'], function (m) {             
+                //简约全参数
+                m.confirm("message",function(){
+                    //ok 执行事件
+                },function(){
+                    //cancle
+                },function(){
+                    //close
+                });
+                //简约最少参数方式
+                m.confirm("message",function(){ 
+                    //ok 执行事件
+                });
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <h3>Dialog</h3>
+    <h4>自定义按钮</h4>
+    <pre class="brush: js;">
+        function scriptComplete() {
+            require(['modal'], function (m) {
+                m.dialog({
+                    title: "临时弹出框",
+                    content: "测试内容",
+                    btnData: [
+                        {
+                            text: "按钮1",
+                            click: function () { alert("我是按钮1"); }
+                        },
+                        {
+                            text: "按钮2",
+                            click: function () { alert("我是按钮2"); }
+                        },
+                        {
+                            text: "按钮3",
+                            click: function () { alert("我是按钮3"); }
+                        }
+                    ]
+                });
+            });
+        }
+    </pre>
+    <iframe src="demo/modal_dialog_demo.html" frameborder="0" height="250" width="100%"></iframe>
+    <h4>大文本内容展示</h4>
+    <pre class="brush: js;">
+        function scriptComplete() {
+            require(['modal'], function (m) {
+                m.dialog({
+                    title: "临时弹出框",
+                    content: getDemoContent(),
+                    btnData: [
+                        {
+                            text: "确定"
+                        }
+                    ]
+                });
+            });
+        }
+        function getDemoContent() {
+            var html = [];
+            for (var i = 0; i < 100; i++) {
+                html.push("<p>大文本测试内容，大文本测试内容" + i + "</p>");
+            }
+            return html.join('');
+        }
+    </pre>
+    <iframe src="demo/modal_dialog_demo1.html" frameborder="0" height="250" width="100%"></iframe>
+    <h3>Alert</h3>
+    <h4>同时弹出多个</h4>
+    <pre class="brush: js;">
+    <button onclick="demo()">打开窗口</button>
+        function demo() {
+            require(['modal'], function (m) {
+                //当同时弹出多个消息时，会采用列队形式，等待消息提醒关闭后，才会打开下一个消息
+                m.alert("消息提醒一");
+                m.alert("消息提醒二");
+            });
+        }
+    </pre>
+    <iframe src="demo/modal_alert_demo.html" frameborder="0" height="250" width="100%"></iframe>
+    <h4>禁止关闭</h4>
+    <pre class="brush: js;">
+        function scriptComplete() {
+            require(['modal'], function (m) {
+                m.alert("消息提醒一", null, function () {
+                    alert("禁止关闭");
+                    return false;
+                });
+            });
+        }
+    </pre>
+    <iframe src="demo/modal_alert_demo1.html" frameborder="0" height="250" width="100%"></iframe>
+    <h4>只允许提示一次</h4>
+    <pre class="brush: js;">
+    <button onclick="demo()" id="demo">Alert一次</button>
+        function demo() {
+            require(['modal'], function (m) {
+                m.alert({
+                    title: "登录超时",
+                    message:"登录超时，请重新登录"
+                });
+            });
+        }
+    </pre>
+    <iframe src="demo/modal_alert_demo2.html" frameborder="0" height="250" width="100%"></iframe>
+    <h3>confirm</h3>
+    <pre class="brush: js;">
+    <button onclick="demo()" id="demo">Alert一次</button>
+        function demo() {
+            require(['modal'], function (m) {
+                m.confirm("你确定要如此操作吗？", function () {
+                    alert("选择确定");
+                }, function () {
+                    alert("选择取消");
+                });
+            });
+        }
+    </pre>
+    <iframe src="demo/modal_confirm_demo.html" frameborder="0" height="250" width="100%"></iframe>
+</body>
+</html>

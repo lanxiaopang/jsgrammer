@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Card-卡片布局控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Card-卡片布局控件</h1>
+    <p>Card卡片布局控件，此控件用于控制多个容器的显示和隐藏。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['card'], function (c) {
+                //stack 即 stack 对象
+                var card=new s(...);
+                card.show("name");
+                card.show(0);
+                card.next();
+                card.prev();
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <h3>Array 类型</h3>
+    <p>jQuery Selector/jQuery Element</p>
+    <p>例如：["#id",".className",$("selector"),"[data-name='name']"]</p>
+    <h3>JSON 类型</h3>
+    <p>采用别名标识的方式，例如：</p>
+    <pre class="brush: js;">
+     {
+        stepOne:"#id",
+        stepTow:".className",
+        otherStep:$("selector")
+     }
+    </pre>
+    <h2>接口说明</h2>
+    <h3>show</h3>
+    <p>支持两种形式的参数：String / Int； String 时代表值为JSON中的name值，Int 时代表索引，若在初始化时，传入的是JSON参数，则String和Int 都可以；若为Array时，只能使用Int 索引进行操作。</p>
+    <pre class="brush: js;">
+            require(['card'], function (c) {
+                //stack 即 stack 对象
+                var card=new c(...);
+                card.show("name");
+                card.show(0);
+            });
+    </pre>
+    <h3>next</h3>
+    <p>显示下一个</p>
+    <pre class="brush: js;">
+            require(['card'], function (c) {
+                //stack 即 stack 对象
+                var card=new c(...);
+                card.next();
+            });
+    </pre>
+    <h3>prev</h3>
+    <p>显示上一个</p>
+    <pre class="brush: js;">
+            require(['card'], function (c) {
+                //stack 即 stack 对象
+                var card=new c(...);
+                card.prev();
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <pre class="brush: xml;">
+        <div id="red" class="demo"></div>
+        <div id="blue" class="demo"></div>
+        <div id="black" class="demo"></div>
+        <div id="yellow" class="demo"></div>
+        <div id="green" class="demo"></div>
+    </pre>
+    <pre class="brush: js;">
+        var card;
+        function scriptComplete() {
+            require(["card"], function (c) {
+                card = new c(["#red", "#blue", "#black", "#yellow", "#green"]);
+            });
+        }
+    </pre>
+    <iframe src="demo/card_demo.html" frameborder="0" height="250" width="100%"></iframe>
+</body>
+</html>

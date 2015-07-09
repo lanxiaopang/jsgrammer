@@ -1,0 +1,110 @@
+﻿.tab-head {
+    height: 30px;
+    line-height: 30px;
+}
+
+    .tab-head li {
+        float: left;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tab-head.autoWidth li {
+        padding: 0;
+        margin: 0;
+    }
+
+.tab-content {
+    position: relative;
+}
+
+    .tab-content > div {
+        display: none;
+    }
+
+.tab-head li span.close {
+    position: absolute;
+}
+
+/*默认主题*/
+.tab-default .tab-head {
+    border-bottom: solid 1px #ddd;
+}
+
+    .tab-default .tab-head li {
+        border-radius: 3px 3px 0 0;
+        padding: 0 20px;
+        color: #337ab7;
+        margin-right: 2px;
+    }
+
+        .tab-default .tab-head li:hover {
+            background-color: #eee;
+            color: #555;
+        }
+
+            .tab-default .tab-head li:hover span.close {
+                background-color: #eee;
+            }
+
+        .tab-default .tab-head li.active {
+            color: #555;
+            cursor: default;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+        }
+         .tab-default .tab-head li.active span.close{
+               background-color: #fff;
+         }
+
+        .tab-default .tab-head li span.close {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            filter: alpha(opacity=20);
+            opacity: .2;
+            line-height: 30px;
+            cursor: pointer;
+            height: 100%;
+            display: block;
+            width: 20px;
+            top: 0;
+            right: 0;
+            text-align: center;
+            background: #fff;
+        }
+
+            .tab-default .tab-head li span.close:hover {
+                color: #000;
+                cursor: pointer;
+                filter: alpha(opacity=50);
+                opacity: .5;
+            }
+
+.tab-default .tab-content {
+    padding: 10px;
+    border: solid 1px #ddd;
+    border-top: none;
+}
+
+.tab-default .tab-head.autoWidth li {
+    padding: 0;
+    margin: 0;
+}
+
+    .tab-default .tab-head.autoWidth li .close {
+        opacity: 1;
+        color: #999;
+    }
+
+        .tab-default .tab-head.autoWidth li .close:hover {
+            opacity: 1;
+            color: #999;
+        }

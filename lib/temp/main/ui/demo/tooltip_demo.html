@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/tooltip.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #container {
+            margin:80px 50px ;
+        }
+        #container >span{
+            margin:0 50px;
+            cursor:default;
+            display:inline-block;
+            padding:3px 10px;
+            background:#0094ff;
+            color:#fff;
+        }
+    </style>
+
+    <script>
+        function scriptComplete() {
+            require(["tooltip"]);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <span data-tooltip-text="提示内容提示内容提示内容提示内容提示内容" role="tooltip">鼠标移动到这里</span>
+        <span data-tooltip-text="提示内容提示内容提示内容提示内容提示内容" role="tooltip" data-tooltip-position="bottom">鼠标移动到这里</span>
+        <span data-tooltip-text="提示内容提示内容提示内容提示内容提示内容" role="tooltip" data-tooltip-position="right">鼠标移动到这里</span>
+        <span data-tooltip-text="提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容" role="tooltip" data-tooltip-position="left">鼠标移动到这里</span>
+    </div>
+</body>
+</html>

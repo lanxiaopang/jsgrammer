@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Message-消息提醒</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Message-消息提醒</h1>
+    <p>消息提醒控件，用于友好的提示给用过操作结果或提示消息。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['message'], function (m) {
+                //m 即 message 对象
+                //m.open(..);
+                //m.warn(..)
+                //...
+            });
+    </pre>
+    <h2>接口说明</h2>
+    <h3>open</h3>
+    <p>打开一个消息提醒，通过传入不通的配置信息，展示不同的消息提醒</p>
+    <h4>参数说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>content</td>
+                <td>消息内容</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>点击执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>timer</td>
+                <td>多少秒后消失</td>
+                <td>秒</td>
+                <td>10</td>
+                <td>若<code>timer</code>为0，则表示不自动消失</td>
+            </tr>
+            <tr>
+                <td>theme</td>
+                <td>主题样式</td>
+                <td>String</td>
+                <td>default</td>
+                <td>可选值：warn、error、success、info、default，也可以自定义样式</td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>Array</td>
+                <td>["right","top"] 右上角</td>
+                <td>
+                    <b>注意：</b>第一个为水平方位（<code>x</code>），第二个为垂直方位（<code>y</code>）,类似于<code>jquery-ui</code>中的<code>position</code>方法。
+                    <p>暂时支持：["left","top"]、["left","bottom"]、["right","top"]、["right","bottom"] 4种方位。</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例-（全参数）</h4>
+    <pre class="brush: js;">
+           require(["message"], function (m) {
+                m.open({
+                    content: "有人给您发送了一条消息",
+                    theme: "default",
+                    timer: 10,
+                    click: function () {
+                        alert("您点击了一条消息");
+                    }
+                });
+            });
+    </pre>
+    <h4>参考实例-（简单参数数）</h4>
+    <pre class="brush: js;">
+           require(["message"], function (m) {
+                m.open("提示消息",function(){
+                    //click
+                });
+            });
+    </pre>
+    <h3>sucess</h3>
+    <p>success消息框，默认为自动消失、主题样式为success样式</p>
+    <h4>接口说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>content</td>
+                <td>消息内容</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>点击执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>Array</td>
+                <td>["right","top"] 右上角</td>
+                <td>
+                    <code>请参考open中的参数说明</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例</h4>
+    <pre class="brush: js;">
+            require(["message"], function (m) {
+                m.success("操作成功",function(){
+                    //click
+                });
+            });
+    </pre>
+    <h3>warn</h3>
+    <p>warn消息提示框，默认为<b>不自动消失</b>、主题样式为warn样式</p>
+    <h4>接口说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>content</td>
+                <td>消息内容</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>点击执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>Array</td>
+                <td>["right","top"] 右上角</td>
+                <td>
+                    <code>请参考open中的参数说明</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例</h4>
+    <pre class="brush: js;">
+            require(["message"], function (m) {
+                m.warn("警告消息",function(){
+                    //click
+                });
+            });
+    </pre>
+    <h3>error</h3>
+    <p>error消息提示框，默认为<b>不自动消失</b>、主题样式为error样式</p>
+    <h4>接口说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>content</td>
+                <td>消息内容</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>点击执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>Array</td>
+                <td>["right","top"] 右上角</td>
+                <td>
+                    <code>请参考open中的参数说明</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例</h4>
+    <pre class="brush: js;">
+            require(["message"], function (m) {
+                m.error("警告消息",function(){
+                    //click
+                });
+            });
+    </pre>
+    <h3>info</h3>
+    <p>info消息提示框，默认为自动消失、主题样式为info样式</p>
+    <h4>接口说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>content</td>
+                <td>消息内容</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>点击执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>Array</td>
+                <td>["right","top"] 右上角</td>
+                <td>
+                    <code>请参考open中的参数说明</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例</h4>
+    <pre class="brush: js;">
+            require(["message"], function (m) {
+                m.info("警告消息",function(){
+                    //click
+                });
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <h3>默认实例</h3>
+    <pre class="brush: js;">
+           require(["message"], function (m) {
+                m.open({
+                    content: "有人给您发送了一条消息",
+                    theme: "default",
+                    timer: 10,
+                    click: function () {
+                        alert("您点击了一条消息");
+                    }
+                });
+            });
+    </pre>
+    <iframe src="demo/message_demo.html" frameborder="0" height="250" width="100%"></iframe>
+    <h3>不同类型</h3>
+    <pre class="brush: js;">
+        <select>
+            <option>success</option>
+            <option>warn</option>
+            <option>error</option>
+            <option>info</option>
+        </select>
+        <button onclick="demo()">弹出一个消息</button>
+
+         require(["message"], function (m) {
+                m[$("select").val()]("提示消息，测试消息测试消息测试消息测试消息测试消息");
+         });
+    </pre>
+    <iframe src="demo/message_demo1.html" frameborder="0" height="500" width="100%"></iframe>
+</body>
+</html>

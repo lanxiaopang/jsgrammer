@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/table.css" rel="stylesheet" />
+    <link href="../css/ui/pager.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #demo {
+            margin: 20px;
+            width: 700px;
+        }
+    </style>
+    <script>
+        function scriptComplete() {
+            require(["table"], function (t) {
+
+                var datas = [];
+                for (var i = 0; i < 100; i++) {
+                    datas.push([i + 1, "我是FirstName" + i, "我是LastName" + i, "我是UserName" + i, "我是CreateTime" + i]);
+                }
+
+                var table = new t({
+                    to: "#demo",
+                    columns: [
+                        "#", "First Name", "Last Name", "User Name", "Create Time"
+                    ],
+                    datas: datas
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

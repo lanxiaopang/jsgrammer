@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/table.css" rel="stylesheet" />
+    <link href="../css/ui/pager.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        #demo {
+            margin: 20px;
+            width: 700px;
+        }
+    </style>
+    <script>
+        var table;
+        var datas = [];
+        for (var i = 0; i < 100; i++) {
+            datas.push([i + 1, "我是FirstName" + i, "我是LastName" + i, "我是UserName" + i, "我是CreateTime" + i]);
+        }
+        function scriptComplete() {
+            require(["table"], function (t) {
+                table = new t({
+                    to: "#demo",
+                    columns: [
+                        { text: "#", name: "#", sort: true },
+                        { text: "First Name", name: "FirstName", sort: true },
+                        { text: "Last Name", name: "LastName", sort: true },
+                        { text: "User Name", name: "UserName", sort: false },
+                        { text: "Create Time", sort: true }
+                    ],
+                    datas: datas,
+                    tableOption: {
+                        onSort: function (name, isDesc, table) {
+                            alert(name + (isDesc ? "倒序" : "正序"));
+                            //在这里进行数据请求
+                            //table.loadData(...);
+                        }
+                    }
+                });
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿.table .table-content table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+}
+
+.table tr td {
+    cursor: default;
+}
+
+.table .table-pager {
+    margin-top: 20px;
+}
+
+.table .table-content thead tr td {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+    line-height: 1.42857143;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+    .table .table-content thead tr td[data-table-sort='true'] {
+        cursor: pointer;
+    }
+
+    .table .table-content thead tr td span.sort {
+        background: url(images/sort.png) no-repeat;
+        display: none;
+        width: 16px;
+        height: 8px;
+    }
+
+    .table .table-content thead tr td.desc span {
+        background-position: center -8px;
+        display: inline-block;
+    }
+
+    .table .table-content thead tr td.ease span {
+        background-position: center 0px;
+        display: inline-block;
+    }
+
+.table .table-content tbody tr td {
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    line-height: 1.42857143;
+    box-sizing: border-box;
+}

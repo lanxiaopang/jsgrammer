@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Validate-验证控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Validate-验证控件</h1>
+    <p>Validate验证控件本身提供基础的验证方法，例如"必填"、"长度"、"正则"等验证。</p>
+    <p>用户也可以添加自定义验证控件，但必须遵循Validate提供的接口约束。以便于提供给表单的验证依据。</p>
+    <h2>控件调用方法</h2>
+    <h3>标签格式</h3>
+    <pre class="brush: xml;">
+    <input type="text" data-val-required="请填写内容" />
+    <input type="text" data-val-number="请填写数字类型" />
+    <input type="text" data-val-length="长度必须1到3位" data-val-length-max="3" data-val-length-min="1" />
+    <input type="text" data-val-regex-pattrn="^\s*([A-Za-z0-9_-]+(\.\w+)*@([\w-]+\.)+\w{2,10})\s*$" data-val-regex="请填写正确的邮箱" />
+
+    <input type="text" data-val-type="bankaccount" data-val-number="请填写数字类型" />
+    </pre>
+    <h3>脚本调用</h3>
+    <p>提供两种方式进行数据验证，调用validate方法，传入参数进行验证；$.fn.validate方法验证。</p>
+    <pre class="brush: js;">
+            require(['validate'], function (validate) {
+                var result= validate.verify(...);
+                var result= $("selector").validate(...);
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <p><b>注意：</b>若使用$.fn.validate进行验证时，无参数表示完全采用标签特性验证。建议采用$.fn.validate方式。</p>
+    <p><b>注意：</b>验证时会先执行默认的验证条件再执行扩展验证插件(<code>data-val-type</code>)的验证条件，最后执行extra验证。</p>
+    <p>方法返回<code>true</code>/<code>false</code>。</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>of</td>
+                <td>需要验证的元素</td>
+                <td>Selector/jQuery Element</td>
+                <td></td>
+                <td><b>注意：</b>必须设置此参数。若使用$.fn.validate则此参数默认为选择器本身，可不填写。</td>
+            </tr>
+            <tr>
+                <td>extra</td>
+                <td>额外的验证</td>
+                <td>Array</td>
+                <td></td>
+                <td>
+                    数组内的项有两种类型可选择：
+                    <p>1.<code>String</code>验证插件名称，使用指定验证扩展插件进行验证。</p>
+                    <p>2.<code>Function</code> 方法类型，执行此方法时，会传入当前验证对象<code>jQuery Element</code>和<code>value</code>。此方法必须返回String错误信息，若为<code>""</code>或<code>undefined</code>则代表验证通过，否则返回错误提示信息。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>标签元素的值</td>
+                <td></td>
+                <td>默认执行jQuery的<code>val</code>取值</td>
+                <td>
+                    一般适用于复杂的控件取值，可使用外部方法先获取到值，然后传入方法内。
+                    若为<code>undefined</code>则表示使用<code>validate</code>控件自动获取内容。
+                </td>
+            </tr>
+            <tr>
+                <td>showTip</td>
+                <td>当验证失败时是否显示错误提示</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tipOption</td>
+                <td>气泡提示配置参数</td>
+                <td>JSON</td>
+                <td></td>
+                <td>请参考<code>tooltip</code>控件的参数说明，其中of可不填写。</td>
+            </tr>
+            <tr>
+                <td>errorHandler</td>
+                <td>当验证失败后执行脚本</td>
+                <td>Function</td>
+                <td></td>
+                <td>调用回调函数时，会传入两个参数:<code>错误信息</code>、<code>当前验证的标签元素</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>参考实例</h3>
+    <pre class="brush: js;">
+            require(['validate'], function (validate) {
+                var result= validate.verify({
+                    of:"selector",
+                    extra:[],
+                    showTip:true,
+                    tipOption:{
+                        position:"bottom"
+                    }
+                });
+                //简约时调用方式，至少传入一个参数。
+                var result= validate.verify("selector",[],"value",true);
+                var result= $("selector").validate({
+                    extra:[],
+                    showTip:true
+                });
+                
+                //简约时调用方式。
+                var result= $("selector").validate();
+                var result= $("selector").validate([],"value",true);
+            });
+    </pre>
+    <h2>标签属性说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>属性名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>data-val-require</td>
+                <td>是否是必填</td>
+                <td>String</td>
+                <td>此项必填。</td>
+                <td>若具有这个属性则表示为必填，若为空则提示该属性的值。</td>
+            </tr>
+            <tr>
+                <td>data-val-number</td>
+                <td>是否是数字类型</td>
+                <td>string</td>
+                <td>请填写数字类型的值</td>
+                <td>若具有这个属性则表示为必须是整数类型，若错误则提示该属性的值。</td>
+            </tr>
+            <tr>
+                <td>data-val-int</td>
+                <td>是否是整数类型</td>
+                <td>string</td>
+                <td>请填写整数类型的值</td>
+                <td>若具有这个属性则表示为必须是数字类型，若错误则提示该属性的值。可以为整数或小数。</td>
+            </tr>
+            <tr>
+                <td>data-val-length</td>
+                <td>长度约束</td>
+                <td>String</td>
+                <td>
+                    <p>长度必须是{0}到{1}位，请重新输入</p>
+                    <p>最小长度为{0}位，请重新输入</p>
+                    <p>最大长度为{0}位，请重新输入</p>
+                </td>
+                <td>
+                    此属性依赖于：<code>data-val-length-min</code>最小值，默认为0；
+                    <code>data-val-length-max</code>最大值，默认为0
+                    必须至少设置一个最小值或者最大值，才可进行验证。
+                </td>
+            </tr>
+            <tr>
+                <td>data-val-range</td>
+                <td>值范围</td>
+                <td>String</td>
+                <td>
+                    <p>输入值必须在{0}到{1}，请重新输入</p>
+                    <p>最小为{0}，请重新输入</p>
+                    <p>最大为{0}，请重新输入</p>
+                </td>
+                <td>
+                    此属性依赖于：<code>data-val-range-min</code>最小值，默认为0；
+                    <code>data-val-range-max</code>最大值，默认为0
+                    必须至少设置一个最小值或者最大值，才可进行验证。
+                </td>
+            </tr>
+            <tr>
+                <td>data-val-regex</td>
+                <td>正则验证</td>
+                <td>String</td>
+                <td>正则匹配失败</td>
+                <td>
+                    此属性依赖于:<code>data-val-regex-pattrn</code>正则值，若正则匹配失败则提示<code>data-val-regex</code>的值。
+                </td>
+            </tr>
+            <tr>
+                <td>data-val-type</td>
+                <td>扩展验证控件名称</td>
+                <td>String</td>
+                <td></td>
+                <td>
+                    扩展插件名称，采用此扩展验证的内部验证方法，页面必须引用此扩展控件脚本。
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>扩展验证插件的编写规范</h2>
+    <p>扩展验证控件必须遵循<code>Validate</code>控件的接口约束。</p>
+    <h3>参数说明</h3>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>验证插件名称</td>
+                <td>String</td>
+                <td></td>
+                <td><b>注意：</b>必须设置此参数，做为引用依据。</td>
+            </tr>
+            <tr>
+                <td>tag</td>
+                <td>标识属性</td>
+                <td>String</td>
+                <td></td>
+                <td>
+                    若此验证为全局验证，可以设置自定义的attribute名称。例如：<code>required</code>验证的tag值为<code>data-val-required</code>，只要有这个attribute，则会自动触发。
+                    <p>若不填写，则表明此验证插件为非全局验证插件，可以通过指定<code>data-val-type</code>或<code>extra</code>参数来主动进行验证。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>validate</td>
+                <td>验证主体方法</td>
+                <td>Function</td>
+                <td></td>
+                <td>
+                    <b>注意：</b>必须设置此参数，做为验证依据。
+                    <code>validate</code>控件在调用扩展验证时，会传入两个参数，第一个参数为<code>jQuery Element</code>要验证的标签元素；第二个为<code>value</code>值，第三个参数为<code>attributeValue</code>属性值，若没有设置tag标识则此参数为空。
+                    <p>返回<code>String</code>类型的错误提示信息，若为<code>""</code>或<code>undefined</code>则表示验证成功。</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>使用方法</h3>
+    <pre class="brush: js;">
+        define(["validate"], function (validate) {
+            validate.add({...});
+        });
+    </pre>
+    <h2>接口说明</h2>
+    <h3>verify</h3>
+    <p>执行验证，参数参考<code>validate</code>参数说明，建议使用<code>$.fn.validate</code>方式调用。</p>
+    <h3>add</h3>
+    <p>添加验证插件，参数参考<code>扩展验证插件的编写规范</code>的参数说明。</p>
+    <p>不建议在页面中直接调用此方法添加自定义的验证插件，若公用型较强的采用add方式进行扩展，若私有验证建议采用<code>extra</code>参数进行扩展。</p>
+    <h2>参考实例</h2>
+    <h3>标签式实例</h3>
+    <pre class="brush: xml;">
+    <input type="text" data-val-required />
+    <input type="text" data-val-number data-val-required />
+    <input type="text" data-val-int data-val-required />
+    <input type="text" data-val-length="长度必须5到10位" data-val-length-max="10" data-val-length-min="5">
+    <input type="text" data-val-regex-pattrn="^\s*([A-Za-z0-9_-]+(\.\w+)*@([\w-]+\.)+\w{2,10})\s*$" data-val-regex="请填写正确的邮箱">
+
+    
+    <input type="text" data-val-type="email" />
+    </pre>
+    <pre class="brush: js;">
+        require(["validate"], function (validate) {
+                $("input").each(function () {
+                    $(this).validate();
+                });
+        });
+    </pre>
+    <iframe src="demo/validate_demo.html" frameborder="0" height="400" width="100%"></iframe>
+</body>
+</html>

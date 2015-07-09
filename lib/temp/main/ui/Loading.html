@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Loading等待控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script> 
+    <script src="scripts/demoInit.js"></script>
+</head>  
+<body>
+    <h1>Loading-等待控件</h1>
+    <p>此空间可以显示Loading界面，可用于页面加载等情况，是页面更友好。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['loading'], function (l) {
+                //loading 即 loading 对象
+                var loading=new l(...);
+                //loading.open();
+                //loading.close();
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>to</td>
+                <td>需要输出到的容器</td>
+                <td>Selector/jQuery Element</td>
+                <td></td>
+                <td><b>注意：</b>必须设置此参数。</td>
+            </tr>
+            <tr>
+                <td>className</td>
+                <td>样式名称</td>
+                <td>String</td>
+                <td>loading-default</td>
+                <td>默认提供：<code>loading-default</code>和<code>loading-point</code>两种。</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>显示文本</td>
+                <td>String</td>
+                <td>请耐心等待...</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>open</h3>
+    <p>打开Loading等待界面</p>
+    <pre class="brush: js;">
+            require(['loading'], function (l) {
+                //loading 即 loading 对象
+                var loading=new l(...);
+                loading.open();
+            });
+    </pre>
+    <h3>close</h3>
+    <p>关闭Loading等待界面</p>
+    <pre class="brush: js;">
+            require(['loading'], function (l) {
+                //loading 即 loading 对象
+                var loading=new l(...);
+                loading.close();
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <pre class="brush: js;">
+       function demo() {
+            require(["loading"], function (t) {
+                var loading = new t({
+                    to: "body",
+                    text: "3秒后自动消失"
+                });
+                loading.open();
+                setTimeout(function () {
+                    loading.close();
+                }, 3000);
+            });
+        }
+        function demo1() {
+            require(["loading"], function (t) {
+                var loading = new t({
+                    to: "body",
+                    className:"loading-point",
+                    text: "3秒后自动消失"
+                });
+                loading.open();
+                setTimeout(function () {
+                    loading.close();
+                }, 3000);
+            });
+        }
+    </pre>
+    <iframe src="demo/loading_demo.html" frameborder="0" height="250" width="100%"></iframe>
+</body>
+</html>

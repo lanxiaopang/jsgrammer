@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ToolTip-提示气泡</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>ToolTip-提示气泡控件</h1>
+    <p>提示气泡主要用于用户鼠标悬浮于某一元素之上时弹出一个小的消息气泡向用户显示提示信息。</p>
+    <p>提示气泡也可以用于主动悬浮在一个元素的<code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>四个方位。</p>
+    <h2>控件调用方法</h2>
+    <h3>标签式调用方式</h3>
+    <p>可以直接在DOM元素中添加指定的属性，来设置提示气泡的信息。但页面中必须引用<code>tootip</code>组件。</p>
+    <p>此方法适用于所有类型的标签，其中元素必须设置role为<code>tooltip</code>，以表明要采用ToolTip控件展示，</p>
+    <p><code>data-tooltip-position</code>为展示位置，默认为<code>top</code>；<code>data-tooltip-class</code>为自定义tooltip样式，默认为tooltip-default。</p>
+    <pre class="brush: xml;">
+    <span data-tooltip-text="提示内容" role="tooltip"></span>
+    <span data-tooltip-text="提示内容" role="tooltip" data-tooltip-position="bottom" data-tooltip-class="xxx"></span>
+    </pre>
+    <h3>脚本式调用方式</h3>
+    <pre class="brush: js;">
+            require(['tooltip'], function (t) {
+                //t 即 tooltip 对象
+                //t.show(..);
+                //t.hide(..);
+            });
+    </pre>
+    <h2>接口说明</h2>
+    <h3>show</h3>
+    <p>可以主动显示<code>role="tooltip"</code>元素的提示信息，也可以为没有设置role的元素展示一个提示气泡。</p>
+    <h4>参数说明</h4>
+    <p>若传入<code>jQuery Element</code>/<code>Selector</code>可以显示已经设置<code>role="tooltip"</code>的提示。</p>
+    <p>若要重新展示一个气泡提示，请参考下面的配置参数：</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>of</td>
+                <td>需要展示的控件</td>
+                <td>Selector/jQuery Element</td>
+                <td></td>
+                <td><b>必须设置此参数</b></td>
+            </tr>
+            <tr>
+                <td>to</td>
+                <td>气泡提示输出到哪个容器内</td>
+                <td>Selector</td>
+                <td>body</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td>提示内容</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>className</td>
+                <td>自定义样式</td>
+                <td>String</td>
+                <td>tooltip-default</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>maxWidth</td>
+                <td>最大宽度</td>
+                <td>Int</td>
+                <td>250</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>宽度</td>
+                <td>String</td>
+                <td>auto</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>textalign</td>
+                <td>文本靠齐类型</td>
+                <td>String</td>
+                <td>left</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>显示位置</td>
+                <td>String</td>
+                <td>top</td>
+                <td>
+                    可选值：<code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>
+                </td>
+            </tr>
+            <tr>
+                <td>fit</td>
+                <td>当内容尺寸超出范围，是否允许自动调整</td>
+                <td>bool</td>
+                <td>false</td>
+                <td>
+                    默认值为<code>false</code>，若鼠标移动触发的气泡提示则fit总是为<code>true</code>
+                    <p>此属性为高级应用，在表单验证或其他场合fit会解决部分超出定位问题。</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>参考实例</h4>
+    <pre class="brush: js;">
+            require(['tooltip'], function (t) {
+                //t 即 tooltip 对象
+                t.show("#demo");
+                t.show("#demo","提示内容");
+                t.show("#demo","提示内容","bottom","className");
+                t.show({
+                    of:"#demo",
+                    content:"提示内容",
+                    className:"className",
+                    position:"left"
+                });
+            });
+    </pre>
+    <h3>hide</h3>
+    <p>隐藏元素的提示气泡，参数为<code>jQuery Element</code>/<code>Selector</code></p>
+    <pre class="brush: js;">
+            require(['tooltip'], function (t) {
+                //t 即 tooltip 对象
+                t.hide("#demo");
+            });
+    </pre>
+    <h3>hideAll</h3>
+    <p>隐藏指定容器下的所有气泡提示，参数为<code>jQuery Element</code>，默认是<code>body</code></p>
+    <pre class="brush: js;">
+            require(['tooltip'], function (t) {
+                //t 即 tooltip 对象
+                t.hideAll();
+                t.hideAll($("#container"));
+            });
+    </pre>
+    <h3>setText</h3>
+    <p>设置已显示出来的tip中的值，参数为<code>jQuery Element</code>，第二个参数为value值</p>
+    <pre class="brush: js;">
+            require(['tooltip'], function (t) {
+                //t 即 tooltip 对象
+                t.setText("selector",value);
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <h3>标签式气泡提示</h3>
+    <pre class="brush: xml;">
+    <span data-tooltip-text="..." role="tooltip">鼠标移动到这里</span>
+    <span data-tooltip-text="..." role="tooltip" data-tooltip-position="bottom">鼠标移动到这里</span>
+    <span data-tooltip-text="..." role="tooltip" data-tooltip-position="right">鼠标移动到这里</span>
+    <span data-tooltip-text="..." role="tooltip" data-tooltip-position="left">鼠标移动到这里</span>
+    </pre>
+    <iframe src="demo/tooltip_demo.html" frameborder="0" height="250" width="100%"></iframe>
+    <h3>脚本展示气泡</h3>
+    <pre class="brush: xml;">
+    <input id="demo" type="text" />
+    </pre>
+    <pre class="brush: js;">
+            require(['tooltip'], function (tooltip) {
+                tooltip.show("#demo", "我是提示信息我是提示信息我是提示信息我是提示信息我是提示信息", "right");
+                tooltip.hide("#demo");
+            });
+    </pre>
+    <iframe src="demo/tooltip_demo1.html" frameborder="0" height="150" width="100%"></iframe>
+    <h3>气泡主题样式</h3>
+    <pre class="brush: xml;">
+    <select id="demo" onchange="demo()">
+        <option>tooltip-default</option>
+        <option>tooltip-error</option>
+        <option>tooltip-warn</option>
+        <option>tooltip-success</option>
+        <option>tooltip-info</option>
+    </select>
+    </pre>
+    <pre class="brush: js;">
+        function demo() {
+            tooltip.hide("#demo");
+            tooltip.show({
+                of: "#demo",
+                content: "我是提示信息我是提示信息我是提示信息我是提示信息我是提示信息",
+                position: "right",
+                className: $("#demo").val()
+            });
+        }
+    </pre>
+    <iframe src="demo/tooltip_demo2.html" frameborder="0" height="150" width="100%"></iframe>
+</body>
+</html>

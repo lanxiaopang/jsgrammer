@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/overlay.css" rel="stylesheet" />
+    <link href="../css/ui/modal.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <script>
+        function demo() {
+            require(['modal'], function (m) {
+                m.confirm("你确定要如此操作吗？", function () {
+                    alert("选择确定");
+                }, function () {
+                    alert("选择取消");
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="demo()">打开窗口</button>
+</body>
+</html>

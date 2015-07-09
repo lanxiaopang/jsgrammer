@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="ui/css/demo/init.css" rel="stylesheet" />
+    <link href="css/demoHome.css" rel="stylesheet" />
+    <script src="ui/scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script>
+        var gui = require("nw.gui");
+        var win = gui.Window.get();
+   
+        function closePage() {
+            win.close();
+        }
+        function minPage() {
+            win.minimize();
+        }
+
+        var serverConfig = require("../Config.js")
+                   , fs=require("fs")
+                   , express = require("express")
+                   , http = require("http")
+                   , app = new express();
+
+        //注册公共资源，图片/样式
+        app.use('/', express.static("./ui"));
+
+        http.createServer(app).listen(serverConfig.port, function () {
+           
+        });
+
+        var colorList = [ "#A52A2A","#0094ff","#30b426", "#A9A9A9",  "#DAA520","rgb(51, 51, 51)" ];
+        var colorIndex = 0;
+        
+        function getColor() {
+            if (colorIndex === colorList.length ) {
+                colorIndex = 0;
+            }
+
+            return colorList[colorIndex++];
+        }
+
+        $(window).load(function () {
+            fs.readdir("./ui", function (err, list) {
+                if (err) return;
+                var i = 0;
+                (function next() {
+                    var file = list[i++];
+                    if (!file) { initHandler(); return; };
+                    filePath = "./ui/" + file;
+                    fs.stat(filePath, function (err, stat) {
+                        if (stat && stat.isDirectory()) {
+                            next();
+                        }
+                        else {
+                            if (file) {
+                                $(".nav").append([
+                               '<li>',
+                               '<a href="http://localhost:' + serverConfig.port + '/' + file + '" target="ifcontent">' + (file.replace(".html", "")) + '</a>',
+                               '<span style="background:' + getColor ()+ '"></span>',
+                               '</li>'
+                                ].join(''));
+                            }
+                            next();
+                        }
+                    });
+                })();
+            });
+
+
+        });
+
+        function initHandler() {
+            var src = $(".nav li:first a").attr("href");
+            $("iframe").attr("src", src);
+            $(".nav li:first").addClass("active");
+
+            $(".nav").on({
+                click: function () {
+
+                    $(".nav li").removeClass("active");
+                    $(this).parent().addClass("active");
+
+                }
+            }, "li a");
+        }
+
+        function openInWeb() {
+            var src = $(".active a").attr("href");
+            gui.Shell.openExternal(src);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="left">
+            <ul class="nav"></ul>
+        </div>
+        <div id="content">
+            <div id="pageOption">
+                <div id="dragbar"></div>
+                <a href="javascript:void(0)" class="close" onclick="closePage()">×</a>
+                <a href="javascript:void(0)" class="min" onclick="minPage()">-</a>
+                <a href="javascript:void(0)" class="openInWeb" onclick="openInWeb()">在浏览器中打开</a>
+            </div>
+
+            <iframe frameborder="0" name="ifcontent"></iframe>
+        </div>
+    </div>
+</body>
+</html>

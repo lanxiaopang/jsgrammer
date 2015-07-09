@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/message.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        body {
+            background: #484860;
+        }
+
+        #demoContainer {
+            color: #fff;
+            text-align:center;
+        }
+    </style>
+    <script>
+        function demo() {
+            require(["message"], function (m) {
+                m.open({
+                    content: "有人给您发送了一条消息",
+                    theme: "default",
+                    timer: 10,
+                    position: [$("#px").val(), $("#py").val()],
+                    click: function () {
+                        alert("您点击了一条消息");
+                    }
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="demoContainer">
+        水平方位：<select id="px"><option>right</option><option>left</option></select>
+        垂直方位：<select id="py"><option>top</option><option>bottom</option></select>
+        <button onclick="demo()">弹出一个消息</button>
+    </div>
+</body>
+</html>

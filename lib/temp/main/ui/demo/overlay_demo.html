@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        a {
+            z-index: 999;
+            position: relative;
+        }
+    </style>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/overlay.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <script>
+        var overlay;
+        function scriptComplete() {
+            require(['overlay'], function (ov) {
+                //实例化遮罩层控件
+                overlay = new ov();
+            });
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:void(0)" onclick="overlay.open()">打开遮罩层</a>
+    <a href="javascript:void(0)" onclick="overlay.close()">关闭遮罩层</a>
+    <div>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+        <p>我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容，我是内容</p>
+    </div>
+</body>
+</html>

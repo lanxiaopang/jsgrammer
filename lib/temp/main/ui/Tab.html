@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tab标签页控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Tab-标签页控件</h1>
+    <p>tab标签页控件可实现标签页之间的互相切换</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['tab'], function (t) {
+                //tab 即 tab 对象
+                var tab=new t(...);
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>to</td>
+                <td>需要输出到的容器</td>
+                <td>Selector/jQuery Element</td>
+                <td></td>
+                <td><b>注意：</b>必须设置此参数。</td>
+            </tr>
+            <tr>
+                <td>defaultSelect</td>
+                <td>默认选中tab</td>
+                <td>TabName/TabIndex</td>
+                <td>0</td>
+                <td>可以设置为Tab的<code>name</code>值，或者Tab的<code>index</code>索引。默认为0</td>
+            </tr>
+            <tr>
+                <td>onselect</td>
+                <td>当标签被选中后执行事件</td>
+                <td>Function</td>
+                <td></td>
+                <td>若重复选中同一个tab标签，只会执行一次此事件。</td>
+            </tr>
+            <tr>
+                <td>onfocus</td>
+                <td>当标签页选中时执行事件</td>
+                <td>Function</td>
+                <td></td>
+                <td>若重复选中同一个tab标签，会执行多次此事件。执行顺序是先<code>onselect</code>然后<code>onfocus</code>。</td>
+            </tr>
+            <tr>
+                <td>onblur</td>
+                <td>当标签页失去焦点时执行事件</td>
+                <td>Function</td>
+                <td></td>
+                <td>若方法返回<code>false</code>时，则会终止tab页的切换。可用作对tab内容验证。</td>
+            </tr>
+            <tr>
+                <td>maxTabLength</td>
+                <td>最大tab项个数</td>
+                <td>Int</td>
+                <td>10</td>
+                <td>此方法只在<code>add</code>动态添加tab项中起作用，若页面HTML中已存在超过限制的个数时不会提示。默认最大10个。</td>
+            </tr>
+            <tr>
+                <td>className</td>
+                <td>样式名称</td>
+                <td>String</td>
+                <td>tab-default</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>selectTab</h3>
+    <p>选中一个标签页，参数可以为标签页的<code>name</code>也可是<code>tabIndex</code>索引(从0开始)。</p>
+    <pre class="brush: js;">
+            require(['tab'], function (t) {
+                //tab 即 tab 对象
+                var tab=new t(...);
+                tab.selectTab("name");
+                tab.selectTab(0);
+            });
+    </pre>
+    <h3>add</h3>
+    <p>动态添加一个标签页</p>
+    <h4>参数说明</h4>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>tab标签name值</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>tab显示文本</td>
+                <td></td>
+                <td></td>
+                <td><code>name</code>和<code>text</code>至少要设置一个</td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td>tab标签页内容</td>
+                <td>String/HTML</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>className</td>
+                <td>自定义标签样式</td>
+                <td>String</td>
+                <td></td>
+                <td><code>onselect</code>然后<code>onfocus</code>。</td>
+            </tr>
+            <tr>
+                <td>autoSelect</td>
+                <td>是否默认选中</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>hideClose</td>
+                <td>是否隐藏关闭按钮</td>
+                <td>bool</td>
+                <td>false</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>调用实例</h4>
+    <pre class="brush: js;">
+           require(['tab'], function (t) {
+                //tab 即 tab 对象
+                var tab=new t(...);
+                tab.add(...);
+            });
+    </pre>
+    <h3>remove</h3>
+    <p>移除指定的tab标签，参数可以是<code>tabName</code>或者<code>tabIndex</code>。</p>
+    <pre class="brush: js;">
+           require(['tab'], function (t) {
+                //tab 即 tab 对象
+                var tab=new t(...);
+                tab.remove("name");
+                tab.remove(0);
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <h3>默认实例</h3>
+    <pre class="brush: xml;">
+    <div id="container">
+        <ul class="tab-head">
+            <li data-tab-name="home" class="active">Home</li>
+            <li data-tab-name="profile">Profile<span class="close"></span></li>
+            <li data-tab-name="message">Messages<span class="close"></span></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home">...</div>
+            <div id="profile">...</div>
+            <div id="message">...</div>
+        </div>
+    </div>
+    </pre>
+    <pre class="brush: js;">
+         require(["tab"], function (t) {
+                var tab = new t({
+                    to: "#container"
+                });
+         });
+    </pre>
+    <iframe src="demo/tab_demo.html" frameborder="0" height="200" width="100%"></iframe>
+    <h3>动态添加Tab</h3>
+    <pre class="brush: js;">
+         require(["tab"], function (t) {
+                var tab = new t({
+                    to: "#container"
+                });
+            
+                tab.add({
+                    name: "demoTab" + (index++),
+                    content: "<p>我是测试数据" + index + "</p>"
+                });
+         });
+    </pre>
+    <iframe src="demo/tab_demo1.html" frameborder="0" height="200" width="100%"></iframe>
+</body>
+</html>

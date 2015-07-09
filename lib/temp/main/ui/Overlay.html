@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Overlay-遮罩DEMO</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Overlay-遮罩</h1>
+    <p>Overlay为遮罩层控件，是很多控件的基础功能，例如弹窗、Loading等，可以让我们限制用户禁止控制遮罩层下方的内容。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['overlay'], function (ov) {
+                //实例化遮罩层控件
+                var overlay = new ov();
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>color</td>
+                <td>遮罩颜色</td>
+                <td>String</td>
+                <td>#000</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>zindex</td>
+                <td>遮罩层z-index值</td>
+                <td>Int</td>
+                <td>500</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>to</td>
+                <td>遮罩层输出到的容器</td>
+                <td>Selector</td>
+                <td>body</td>
+                <td>如果指定了to，需要为to设置position:relative</td>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>点击遮罩层触发事件</td>
+                <td>Function</td>
+                <td>undefined</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>open</h3>
+    <p>打开遮罩层，当打开遮罩层时，若已经存在遮罩层，会隐藏掉其他遮罩层</p>
+    <pre class="brush: js;">
+            require(['overlay'], function (ov) {
+                //实例化遮罩层控件
+                var overlay = new ov();
+                //打开遮罩层
+                overlay.open();
+            });
+    </pre>
+    <h3>close</h3>
+    <p>关闭遮罩层，若之前打开过多个遮罩层，当关闭遮罩层时，会自动显示出下一个遮罩层，参考<code>showNext()</code>接口</p>
+    <pre class="brush: js;">
+            require(['overlay'], function (ov) {
+                //实例化遮罩层控件
+                var overlay = new ov();
+                //打开遮罩层
+                overlay.open();
+                //关闭遮罩层
+                overlay.close();
+            });
+    </pre>
+    <h3>showNext</h3>
+    <p>显示下一个遮罩层，<b>不建议单独使用，在close时，会自动调用此方法</b></p>
+    <pre class="brush: js;">
+            require(['overlay'], function (ov) {
+                //实例化遮罩层控件
+                var overlay = new ov();
+                //显示下一个遮罩层
+                overlay.showNext();
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <p>HTML</p>
+    <pre class="brush: js;">
+    <a href="javascript:void(0)" onclick="overlay.open()">打开遮罩层</a>
+    <a href="javascript:void(0)" onclick="overlay.close()">关闭遮罩层</a>
+    </pre>
+    <p>脚本</p>
+    <pre class="brush: js;">
+        var overlay;
+        function scriptComplete() {
+            require(['overlay'], function (ov) {
+                //实例化遮罩层控件
+                overlay = new ov();
+            });
+        }
+    </pre>
+    <iframe src="demo/overlay_demo.html" frameborder="0" width="100%"></iframe>
+</body>
+</html>

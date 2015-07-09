@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>From-表单控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>From-表单控件</h1>
+    <p>表单组件依附原生的form元素，并针对ajax应用进行增强。Form组件在初始化时会扫描表单所有表单元素，并根据类型实例化。</p>
+    <p>表单内控件的编写方式具体参考<code>FormCtrls</code>控件。</p>
+    <p>表单获取数据时只会获取带有<code>name</code>并可见的非禁用控件（包括隐藏域控件）。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['form'], function (f) {
+                //form 即 form 对象
+                var form=new f(...);
+                $("selector").form(...);
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <h3>脚本式初始化</h3>
+    <p>使用javascript方式初始化form时，可使用下列参数进行初始化</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>of</td>
+                <td>需要展示的控件</td>
+                <td>Selector/jQuery Element</td>
+                <td></td>
+                <td><b>必须设置此参数,并必须是form标签。</b>，若使用$.fn.form方式可以不传递of参数，默认为当前选择器。</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>提交地址</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>success</td>
+                <td>提交成功后执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>error</td>
+                <td>提交失败后执行方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>always</td>
+                <td>无论提交成功还失败都执行此方法</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ajaxType</td>
+                <td>提交方式</td>
+                <td>String</td>
+                <td>post</td>
+                <td>可选值：post、get</td>
+            </tr>
+            <tr>
+                <td>fullValidate</td>
+                <td>是否进行整体验证</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td>当为<code>false</code>时则表示，若有一项验证失败则不再继续验证。</td>
+            </tr>
+            <tr>
+                <td>getDataFunction</td>
+                <td>自定义模型获取方法</td>
+                <td>Function</td>
+                <td></td>
+                <td>此方法用于在提交之前获取表单数据时触发，触发式会传入表单内的所有数据，可以对数据进行操作后再返回，调用此方法时会传入表单默认获取的数据。此方法<b>不影响</b>表单控件的<code>get</code>方法。</td>
+            </tr>
+            <tr>
+                <td>sumbitFunction</td>
+                <td>自定义提交方法</td>
+                <td>Function</td>
+                <td></td>
+                <td>此方法可以自定义提交方法，若指定了自定义提交方法则不会执行表单默认提交逻辑。可以在特殊的需求中使用。执行此回调时，会传入当前<code>form</code>标签元素和表单数据。</td>
+            </tr>
+            <tr>
+                <td>validateFunction</td>
+                <td>自定义表单验证方法</td>
+                <td>Function</td>
+                <td></td>
+                <td>此方法可以自定义表单验证方法，若不指定默认采用控件的<code>Validate</code>进行验证。执行此回调时，会传入当前<code>form</code>标签元素和当前表单配置信息。并返回<code>true</code>/<code>false</code>的验证结果。</td>
+            </tr>
+            <tr>
+                <td>validateErrorShowFunction</td>
+                <td>自定义表单验证失败提示方法</td>
+                <td>Function</td>
+                <td></td>
+                <td>此方法可以自定义验证失败后的提示展示，默认使用<code>ToolTip</code>气泡提示。执行此回调时会传入出错控件<code>name</code>、错误控件标签元素<code>jQuery Element</code>和<code>form</code>标签元素。</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>标签式初始化</h3>
+    <p>如果不想通过初始化form传递参数方式初始化表单控件，也可以使用自定义属性来设置参数。但javascript方式优先级高于标签设置参数。</p>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>属性名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>method</td>
+                <td>提交方式</td>
+                <td>String</td>
+                <td>post</td>
+                <td>对应：<code>ajaxType</code></td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>提交地址</td>
+                <td>String</td>
+                <td></td>
+                <td>对应：<code>url</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>get</h3>
+    <p>若传入<code>name</code>值时，获取指定<code>name</code>控件值；若为空则则表示获取表单所有控件的值，返回类型为<code>JSON</code>。</p>
+    <pre class="brush: js;">
+            require(['form'], function (f) {
+                //form 即 form 对象
+                var form=new f(...);
+                form.get("name");
+                form.get();
+            });
+    </pre>
+    <h3>set</h3>
+    <p>若传入的第一个参数为<code>String</code>值时，设置指定<code>name</code>控件值；若为<code>JSON</code>则则表示设置表单所有控件的值</p>
+    <pre class="brush: js;">
+            require(['form'], function (f) {
+                //form 即 form 对象
+                var form=new f(...);
+                form.set("name","value");
+                form.set({
+                    name:"value",
+                    name1:"value1"
+                });
+            });
+    </pre>
+    <h3>sumbit</h3>
+    <p>可以主动提交表单内的数据，默认情况下当点击表单内的<code>sumbit</code>类型的按钮时会自动触发此接口。</p>
+    <h4>执行流程</h4>
+    <p>1. 表单验证（自定义验证方法/默认验证）</p>
+    <p>2. 若表单验证成功，则执行获取表单数据（自定义数据获取方法/默认获取数据）</p>
+    <p>3. 执行提交数据方法（自定义提交方法/默认提交方法）</p>
+    <p>4. 返回异步提交延时对象。</p>
+    <h4>参考实例</h4>
+    <pre class="brush: js;">
+            require(['form'], function (f) {
+                //form 即 form 对象
+                var form=new f(...);
+                form.sumbit();
+            });
+    </pre>
+    <h3>setOption</h3>
+    <p>可以重新配置表单的设置，但此方法不会再次重新初始化表单内的控件。可用作动态的url设置等情景。<b>参数于初始化参数用法相同。</b></p>
+    <p>若传入一个<code>JSON</code>则是对表单参数重新设置，若传入控件<code>name</code>和配置参数，则是对表单内的控件进行设置</p>
+    <pre class="brush: js;">
+            require(['form'], function (f) {
+                //form 即 form 对象
+                var form=new f(...);
+                form.setOption(...);
+
+                form.setOption("demo",{...});
+            });
+    </pre>
+    <h3>ctrls</h3>
+    <p><b>高级应用：</b>此属性接口为<code>JSON</code>类型，里面是表单内的所有控件，例如获取name为demo的控件则：form.ctrls.demo</p>
+    <p>控件项的配置参数说明请参考<code>formCtrls</code>参数说明。</p>
+    <h2>参考实例</h2>
+    <h3>默认实例</h3>
+    <pre class="brush: xml">
+    <form id="demo" method="get">
+    <div>必填：<input name="required" type="text" data-val-required /></div>
+    <div>数字：<input name="number" type="text" data-val-number data-val-required /></div>
+    <div>整数：<input name="int" type="text" data-val-int data-val-required /></div>
+    <div>长度：<input name="length" type="text" data-val-length="长度必须5到10位" data-val-length-max="10" data-val-length-min="5"></div>
+    <div>正则：<input name="regex" type="text" data-val-regex-pattrn="^\s*([A-Za-z0-9_-]+(\.\w+)*@([\w-]+\.)+\w{2,10})\s*$" data-val-regex="请填写正确的邮箱"></div>
+    <div>邮箱：<input name="email" type="text" data-val-type="email" /></div>
+    <div><button type="submit">提交</button></div>
+    </form>
+    </pre>
+    <pre class="brush: js">
+       function scriptComplete() {
+            require(["form"], function () {
+                $("#demo").form({
+                    url: "xxx"
+                });
+            });
+        }
+    </pre>
+    <iframe src="demo/form_demo.html" frameborder="0" height="450" width="100%"></iframe>
+    <h3>常用接口实例</h3>
+    <pre class="brush: js">
+        function scriptComplete() {
+            require(["form"], function () {
+                var form = $("#demo").form(...);
+                form.set({...});
+                form.get();
+                form.set("required","111111");
+                form.get("required");
+                form.get(["required","number"]);
+                form.sumbit();
+            });
+        }
+       
+    </pre>
+    <iframe src="demo/form_demo1.html" frameborder="0" height="350" width="100%"></iframe>
+</body>
+</html>

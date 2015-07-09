@@ -1,0 +1,115 @@
+﻿.pager {
+    text-align: right;
+}
+
+    .pager .pager-item {
+        line-height: 30px;
+        display: inline-block;
+    }
+
+        .pager .pager-item a {
+            padding: 0px 12px;
+            display: block;
+            height: 100%;
+            text-decoration: none;
+        }
+
+    .pager .pager-text {
+        display: inline-block;
+        padding: 0 5px;
+        line-height:30px;
+        float:left;
+        color:#222;
+    }
+
+    /*default主题*/
+    .pager.pager-default .pager-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        border-right: none;
+    }
+
+        .pager.pager-default .pager-item:first-child {
+            border-radius: 3px 0 0 3px;
+        }
+
+        .pager.pager-default .pager-item:last-child {
+            border-right: solid 1px #ddd;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .pager.pager-default .pager-item a {
+            color: #337ab7;
+        }
+
+            .pager.pager-default .pager-item a:hover {
+                color: #23527c;
+                background-color: #eee;
+                border-color: #ddd;
+            }
+
+        .pager.pager-default .pager-item.currentPage {
+            border-color: #337ab7;
+        }
+
+            .pager.pager-default .pager-item.currentPage a, .pager.pager-default .pager-item.currentPage a:hover {
+                color: #fff;
+                cursor: default;
+                background-color: #337ab7;
+                border-color: #337ab7;
+            }
+
+        .pager.pager-default .pager-item.disabled a {
+            color: #777;
+            cursor: not-allowed;
+            background-color: #fff;
+            border-color: #ddd;
+        }
+
+
+    /*jogger主题*/
+    .pager.jogger .pager-item {
+        background-color: #ee4e4e;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        border-right: none;
+    }
+
+        .pager.jogger .pager-item:first-child {
+            border-radius: 3px 0 0 3px;
+        }
+
+        .pager.jogger .pager-item:last-child {
+            border-right: solid 1px #ddd;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .pager.jogger .pager-item a {
+            color: #fff;
+        }
+
+            .pager.jogger .pager-item a:hover {
+                color: #23527c;
+                background-color: #eee;
+                border-color: #ddd;
+            }
+
+        .pager.jogger .pager-item.currentPage {
+            color: #6d643c;
+            border-color: #f6efcc;
+        }
+
+            .pager.jogger .pager-item.currentPage a, .pager.blue .pager-item.currentPage a:hover {
+                color: #6d643c;
+                cursor: default;
+                background-color: #f6efcc;
+                border-color: #6d643c;
+            }
+
+        .pager.jogger .pager-item.disabled a {
+            color: #777;
+            cursor: not-allowed;
+            background-color: #fff;
+            border-color: #ddd;
+        }

@@ -16,8 +16,7 @@
             this.subproperty = false;
         }
         
-        //inherit from SuperType
-        SubType.prototype = new SuperType();
+
         
         //new method
         SubType.prototype.getSubValue = function (){
@@ -28,7 +27,8 @@
         SubType.prototype.getSuperValue = function (){
             return false;
         };
-        
+        //inherit from SuperType
+        SubType.prototype = new SuperType();
         var instance = new SubType();
         alert(instance.getSuperValue());   //false
 

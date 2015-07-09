@@ -1,0 +1,23 @@
+﻿{
+    "main": "index.html",
+    "name": "Ui-API",
+    "description": "Ui-API",
+    "version": "0.1.0",
+    "nodejs": true,
+    "authors": [
+        "Zohar <414768208@qq.com.com>"
+    ],
+    "window": {
+        "title": "Ui-API",
+        "toolbar": false,
+        "frame": false,
+        "width": 1200,
+        "height": 700,
+        "position": "center",
+        "transparent": true,
+        "icon": "icon.png"
+    },
+    "webkit": {
+        "plugin": true
+    }
+}

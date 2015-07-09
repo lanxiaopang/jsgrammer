@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/pager.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        .container {
+            padding: 10px;
+            height: 30px;
+        }
+    </style>
+    <script>
+
+        function scriptComplete() {
+            require(["pager"], function (p) {
+                var pager = new p({
+                    to: "#demo",
+                    pagerData: {
+                        pageIndex: 1,
+                        pageCount:10
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+          
+                $("select").change(function () {
+                    pager.goByPage($(this).val());
+                });
+            });
+
+            require(["jquery"],function($){
+                for(var i=1;i<11;i++){
+                    $("select").append("<option value='"+i+"'>"+i+"</option>");
+                }
+
+               
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">跳转到：<select></select></div>
+    <div class="container" id="demo"></div>
+</body>
+</html>

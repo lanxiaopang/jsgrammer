@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/ui/clear.css" rel="stylesheet" />
+    <link href="../css/ui/pager.css" rel="stylesheet" />
+    <script src="../scripts/lib/require.js" data-main="../scripts/ui.js"></script>
+    <style>
+        .container{
+            padding:10px;
+            height:30px;
+        }
+    </style>
+    <script>
+        function scriptComplete() {
+            require(["pager"], function (p) {
+                //使用页码初始化分页
+                var pager = new p({
+                    to: "#demo1",
+                    pagerData: {
+                        pageIndex: 1,
+                        pageCount:10
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+                
+                //使用数据索引初始化分页
+                var pager1 = new p({
+                    to: "#demo2",
+                    pagerData: {
+                        dataIndex: 20,
+                        dataCount: 20000
+                    },
+                    goPage: function (pageIndex) {
+                        alert(pageIndex);
+                    }
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container" id="demo1"></div>
+    <div class="container" id="demo2"></div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Progressbar-进度条控件</title>
+    <script src="scripts/lib/shCore/shCore.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushXml.js"></script>
+    <script src="scripts/lib/shCore/extend/shBrushJScript.js"></script>
+    <link href="css/demo/shCore/shCoreDefault.css" rel="stylesheet" />
+    <link href="css/demo/init.css" rel="stylesheet" />
+    <link href="css/demo/demoCommon.css" rel="stylesheet" />
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script src="scripts/lib/jQuery_1.8.2.min.js"></script>
+    <script src="scripts/demoInit.js"></script>
+</head>
+<body>
+    <h1>Progressbar-进度条控件</h1>
+    <p>进度条用于显示一个百分比进度，由一个外框和一个表示进度的内框构成，另外还有一个显示文字的标签位于进度条内部或外侧上下左右四个方向上。</p>
+    <h2>控件调用方法</h2>
+    <pre class="brush: js;">
+            require(['progressbar'], function () {
+                $("selector").progressbar(...);
+            });
+    </pre>
+    <h2>参数说明</h2>
+    <table class="param">
+        <thead>
+            <tr>
+                <td>参数名</td>
+                <td>作用</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>备注</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>max</td>
+                <td>最大值</td>
+                <td>Int</td>
+                <td>100</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>theme</td>
+                <td>主题样式</td>
+                <td>String</td>
+                <td>progress-default</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>默认值</td>
+                <td>Folat</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tipText</td>
+                <td>自定义tip文本显示内容</td>
+                <td>Function</td>
+                <td>0%</td>
+                <td>调用此回调时会将当前百分比传入，并要求返回显示内容。与<code>showTip</code>相关联。</td>
+            </tr>
+            <tr>
+                <td>showTip</td>
+                <td>是否显示气泡提示</td>
+                <td>Bool</td>
+                <td>true</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>change</td>
+                <td>发生改变时触发事件</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>complete</td>
+                <td>当到达最大值时触发事件</td>
+                <td>Function</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>接口说明</h2>
+    <h3>setValue</h3>
+    <p>设置进度条值，必须大于等于0，并且小于等于最大值<code>max</code></p>
+    <pre class="brush: js">    
+            require(["progressbar","jqueryui"], function () {
+                var progressbar= $("#demo").progressbar();
+                progressbar.setValue(20);
+            });
+    </pre>
+    <h2>参考实例</h2>
+    <pre class="brush: xml">    
+    <div id="demo"></div>
+    </pre>
+    <pre class="brush: js">    
+            require(["progressbar","jqueryui"], function () {
+                var progressbar= $("#demo").progressbar({value:20});
+            });
+    </pre>
+    <iframe src="demo/progressbar_demo.html" frameborder="0" height="250" width="100%"></iframe>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿.progressbar .progressbar-value span{
+    float:right;
+    position:relative;
+}
+
+/*default*/
+.progressbar-default {
+    border: 1px solid #dddddd;
+    background: #eeeeee;
+    color: #333333;
+    border-radius: 5px;
+    height: 30px;
+}
+
+    .progressbar-default .progressbar-value {
+        width: 5px;
+        border: 1px solid #e78f08;
+        background: #f6a828;
+        color: #ffffff;
+        font-weight: bold;
+        float:left;
+        height:100%;
+        height:28px;
+        border-radius:5px;
+    }

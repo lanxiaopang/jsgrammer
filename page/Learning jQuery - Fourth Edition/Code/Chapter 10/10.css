@@ -109,6 +109,9 @@ a {
 .selected .details {
   background-color: #060;
 }
+.entered{
+    border:1px solid red;
+}
 
 
 
