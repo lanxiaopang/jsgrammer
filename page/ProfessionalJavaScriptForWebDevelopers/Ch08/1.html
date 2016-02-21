@@ -4,17 +4,52 @@
     <meta charset="utf-8">
     <title></title>
     <script>
-        var num = 0;
-        var max = 10;
-        var n=null;
-        function increaceNum(){
-            num++;
-            if(num==max){
-               clearInterval(n) ;
-                alert("done");
+        function getQS(){
+            var qs = location.search.length>0?location.search.substring(1):"",
+                    items = qs.length>0?qs.split("&"):[],
+                    len=items.length,
+                    item = null,
+                    name=null,
+                    value=null,
+                    args = {};
+
+            for(var i=0;i<len;i++){
+                item = items[i].split("=");
+                if(item){
+                    name= decodeURIComponent(item[0]);
+                    value= decodeURIComponent(item[1]);
+                }
+                args[name] = value;
+
             }
+            return args;
         }
-        n = setInterval(increaceNum,500);
+        var args = getQS();
+        alert(args["q"]);
+        alert(args["f"]);
+        /*function getQueryStringArgs(){
+
+            var qs = location.search.length>0?location.search.substring(1):"",
+            args = {},
+            items =  qs.length>0?qs.split("&"):"",
+            item = null,
+            name = null,
+            value = null;
+
+            for(var i = 0;i<items.length;i++){
+                item = items[i].split("=");
+                if(item.length){
+                    alert("in");
+                    name = decodeURIComponent(item[0]);//中文编码
+                    value = decodeURIComponent(item[1]);
+                    args[name] = value;
+                }
+            }
+
+            return args;
+        }
+        var args = getQueryStringArgs();
+        alert(args["q"]);*/
     </script>
 </head>
 <body>
