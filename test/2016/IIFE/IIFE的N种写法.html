@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<pre>
+    var module1 = (function(){
+        //do something
+    })();
+    var module2 = (function(){
+        //do something
+    }());
+    !function(){
+        //do something
+    }();
+    +function(){
+        //do something
+    }();
+    ~function(){
+        //do something
+    }();
+    这么多种写法，只有第一第二种可以用来返回值，然后作为模块应用，定义
+</pre>
+<script>
+    var module1 = (function(){
+        var _count = 0;
+        var f1 = function(){
+            console.info("moudule1.f1");
+        };
+        return {m1:f1};
+    })();
+    module1.m1();
+    var module2 = (function(){
+        var _count = 0;
+        var f1 = function(){
+            console.info("moudule2.f1");
+        };
+        return {m1:f1};
+    }());
+    module2.m1();
+    !function(){
+        var _count = 0;
+        console.info("fffffuuuccckkkk");
+        var f1 = function(){
+            console.info("moudule3.f1");
+        };
+        return {m1:f1};
+    }();
+</script>
+</body>
+</html>

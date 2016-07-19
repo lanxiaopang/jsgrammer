@@ -5,7 +5,7 @@
 //
 // See README.txt for more information.
 $(document).ready(function(){
-    $("#selected-plays>li").addClass("horizontal");
+    /*$("#selected-plays>li").addClass("horizontal");
     $("#selected-plays li:not(.horizontal)").addClass("sub-level");
     //另外一种写法获取父节点的非一级子节点
     // $("#selected-plays li").not("#selected-plays > li").addClass("sub-level");
@@ -22,5 +22,10 @@ $(document).ready(function(){
         .addClass('highlight') // Add the "highlight" class
         .end() // Return to the parent of the cell containing "Henry"
         .find('td:eq(2)') // Find the 3rd descendant cell
-        .addClass('highlight'); // Add the "highlight" class
+        .addClass('highlight'); // Add the "highlight" class*/
+
+
+    $('#selected-plays > li').addClass('horizontal');
+    console.log($('#selected-plays > li'));
+    $('#selected-plays li:not(.horizontal)').addClass("sub-level");
 })

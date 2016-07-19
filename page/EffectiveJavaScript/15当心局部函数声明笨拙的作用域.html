@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function f() {
+        return "global";
+    }
+    function test(x) {
+        var g = f, result = [];
+        if (x) {
+            g = function () {
+                return "local";
+            };
+            result.push(g());
+        }
+        result.push(g());
+        return result;
+    }
+    alert(test(true));
+    alert(test(false));
+</script>
+</body>
+</html>

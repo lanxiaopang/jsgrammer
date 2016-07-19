@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p><input type="text" /> <span>focusout fire</span></p>
+<p><input type="password" /> <span>focusout fire</span></p>
+<script>
+    $("p").focusin(function() {
+        $(this).find("span").css('display','inline').fadeOut(1000);
+    });
+</script>
+</body>
+</html>

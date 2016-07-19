@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="test" name="aaa">Click Here!</div>
+<script src="../../2014/ajs/jquery-1.9.1.min.js"></script>
+<script>
+    var obj = {
+        name: "John",
+        test: function () {
+            alert(this.name);
+            $("#test").unbind("click", obj.test);
+        }
+    };
+
+    //$("#test").click(jQuery.proxy(obj, "test"));
+    $("#test").click(obj.test );
+
+</script>
+</body>
+</html>

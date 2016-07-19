@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div title="111" data-type="01"></div>
+<div title="222" data-type="02"></div>
+<span>为了验证设置或返回被选元素的属性值回调函数的两个参数</span>
+<script>
+    $("div").attr("data-type", function(index,attr) {
+        console.log("attr:"+attr);
+        return this.title
+    });
+</script>
+</body>
+</html>

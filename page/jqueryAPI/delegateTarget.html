@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+<div class="box" style="background-color: #00003f;">
+    <div>
+        <button>button</button>
+    </div>
+</div>
+<p>当点击.box中的button时，.box背景变色。委派好神奇</p>
+<script>
+    $(".box").on("click", "button", function (event) {
+        $(event.delegateTarget).css("background-color", "red");
+        //$(this).css("background-color", "red");
+    });
+</script>
+</body>
+</html>

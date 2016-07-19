@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p>callbacks.lock的测试</p>
+<script>
+    var log = function( value1){
+        console.log( 'Received:' + value1 );
+    };
+    var callbacks = $.Callbacks();
+    callbacks.add( log );
+    callbacks.fire("foo");
+    callbacks.lock();
+    callbacks.fire("bar");
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<button id="run">Run</button><div style="border:1px solid red;position: absolute;"></div>
+只有没有动画的div才会增加！
+<script>
+    $("#run").click(function(){
+        $("div:not(:animated)").animate({ width:1000,height:40,left: 50, opacity: 'show'}, 1000);
+    });
+
+</script>
+</body>
+</html>

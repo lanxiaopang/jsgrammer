@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.7.1.js"></script>
+</head>
+<body>
+<p>在元素上存放数据,返回jQuery对象。</p>
+<script>
+    $("body").prepend("<div id='a'>123</div>");
+    $("#a").data("role","developer");
+    console.info($("#a").data("role"));
+</script>
+</body>
+</html>

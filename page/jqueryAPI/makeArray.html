@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div>First</div><div>Second</div><div>Third</div><div>Fourth</div>
+<p></p>
+<script>
+    var arr = jQuery.makeArray(document.getElementsByTagName("div"));
+    var newArr = arr.reverse(); // 使用数组翻转函数
+    for(var i =0;i<newArr.length;i++){
+        $("p").append(newArr[i].innerHTML+"<br/>");
+    }
+    /*another way*/
+    $.each(newArr,function(i,n){
+        $("p").append(n.innerHTML+"<br/>");
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<script language="javascript">
+    /*
+     函数：shss
+     参数：id,index,other,secod,three
+     功能：通过onMouseOver函数，根据传入的不同参数，返回当前标签的CLASS
+     */
+    function shss(id,index,other,secod,three)
+    {
+        eval("document.getElementById('y_iw"+id+"').className='y_isearchmd'");
+        eval("document.getElementById('y_iw"+index+"').className='y_isearchms'");
+        eval("document.getElementById('y_iw"+other+"').className='y_isearchms'");
+        eval("document.getElementById('y_iw"+secod+"').className='y_isearchms'");
+        eval("document.getElementById('y_iw"+three+"').className='y_isearchms'");
+        eval("document.getElementById('y_iss"+id+"').style.display='block'");
+        eval("document.getElementById('y_iss"+index+"').style.display='none'");
+        eval("document.getElementById('y_iss"+other+"').style.display='none'");
+        eval("document.getElementById('y_iss"+secod+"').style.display='none'");
+        eval("document.getElementById('y_iss"+three+"').style.display='none'");
+    }
+</script>
+
+<style type="text/css">
+    .y_isearch {width:400px;}
+    .y_isearchm {width:400px;height:25px;;text-align:left;padding-top:5px;}
+    .y_isearchmd{width:42px;height:24px;border-top:#B4CCEB 1px solid;border-left:#B4CCEB 1px solid;border-right:#B4CCEB 1px solid;background:#FFF;font-weight:bold;color:#555;float:left;margin:0 2px;line-height:24px;text-align:center;cursor:pointer;}
+    .y_isearchms{width:42px;height:25px;float:left;line-height:25px;text-align:center;margin:0 2px;}
+    .y_isearchc {width:400px;height:32px;padding-top:10px;font-size:14px;padding-left:10px;cursor:pointer;}
+</style>
+
+<div class="y_isearch">
+
+    <div class="y_isearchm">
+        <div class="y_isearchmd" id="y_iw1" onMouseOver="shss(1,2,4,5,6)">产品</div>
+        <div class="y_isearchms" id="y_iw2" onMouseOver="shss(2,1,4,5,6)">文章</div>
+        <div class="y_isearchms" id="y_iw4" onMouseOver="shss(4,2,1,5,6)">社区</div>
+        <div class="y_isearchms" id="y_iw5" onMouseOver="shss(5,2,4,1,6)">图片</div>
+        <div class="y_isearchms" id="y_iw6" onMouseOver="shss(6,2,4,5,1)">下载</div>
+    </div>
+
+    <div class="y_isearchc">
+        <div id="y_iss1">产品搜索</div>
+        <div id="y_iss2">文章搜索</div>
+        <div id="y_iss4">社区搜索</div>
+        <div id="y_iss5">图片搜索</div>
+        <div id="y_iss6">下载搜索</div>
+    </div>
+</div>  

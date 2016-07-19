@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<button>click me</button>
+<div id="stop-log"></div>
+<script>
+    function immediatePropStopped(e) {
+        var msg = "";
+        if ( e.isImmediatePropagationStopped() ) {
+            msg =  "called";
+        } else {
+            msg = "not called";
+        }
+        $("#stop-log").append( "<div>" + msg + "</div>" );
+    }
+    $("button").click(function(event) {
+        immediatePropStopped(event);
+        event.stopImmediatePropagation();
+        immediatePropStopped(event);
+    });
+
+</script>
+</body>
+</html>

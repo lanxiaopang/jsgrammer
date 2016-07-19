@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p></p>
+<script>
+    var a = { what: "A regular JS object" },
+            b = $('body');
+    if ( a.jquery ) { // falsy, since it's undefined
+        alert(' a is a jQuery object! ');
+    }    if ( b.jquery ) { // truthy, since it's a string
+        alert(' b is a jQuery object! ');
+    }
+    alert( 'You are running jQuery version: ' + $.fn.jquery );
+</script>
+</body>
+</html>

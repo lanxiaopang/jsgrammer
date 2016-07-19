@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div class="foo">
+    <span>hello world!</span>
+</div>
+<span>click here!nothing happened!</span>
+<p>传进了this当前作context限定当前查找范围！</p>
+<p>$("span",this) 等于 $(this).find("span")</p>
+<script>
+$("div.foo").click(function(){
+    $("span",this).css({"background-color":"red","border":"1px solid black"});
+    //等价于
+    //$(this).find("span").css({"background-color":"red","border":"1px solid black"});
+});
+</script>
+</body>
+</html>

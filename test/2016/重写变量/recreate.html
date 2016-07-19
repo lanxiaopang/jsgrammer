@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="test" name="aaa">foo bar</div>
+<script src="../../2014/ajs/jquery-1.9.1.min.js"></script>
+<script>
+
+    $.fn.extend({
+        sayHello:function(){
+            document.write("hello," +arguments[0]+ "<br>");
+        }
+    });
+    $("#test").sayHello("little boy!");
+    //开玩笑，以上只不过是脑子一热罢了 下面才入主题
+
+
+    //第一种重写的方式
+    $.usa = (function (usa) {
+        return function () {
+            document.write("hello,I am caption American!" + arguments[0] + "<br>");
+        };
+    })($.usa);
+    $.usa("wow");
+
+    //第二种重写的方式
+    //
+    /*$.fn.extend({
+        sayHi: (function (words) {
+            return function(){
+                document.write("what I want to say is that "+words + "<br>");
+            }
+
+        })($.fn.extend)
+    });
+    $("#test").sayHi;*/
+//    function helloBoth (){
+//        document.write("hello,both of U!");
+//    }
+
+    $.fn.extend({
+        recreate:(function(method){
+            return function(str,flag){
+                flag?this.each(function(){
+                    document.write("hello ca and im!"+str);
+                }):method.apply(this,arguments);
+            }
+        })($.fn.recreate)
+    })
+    $("#test").recreate(" how R U?",true);
+
+
+</script>
+</body>
+</html>

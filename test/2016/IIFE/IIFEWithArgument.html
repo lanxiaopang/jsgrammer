@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+放大模式
+代码为module1模块添加了一个新方法m3()，然后返回新的module1模块。
+<script>
+    var module1 = (function(){
+        var _count = 0;
+        var f1 = function(){
+            console.info("f1");
+            return("hello");
+        };
+        var f2 = function(){
+            console.info("f2");
+        };
+        return {
+            m1:f1,
+            m2:f2
+        }
+    })();
+    var module1 = (function (mod){
+
+        mod.f3 = function () {
+            console.info("f3");
+        };
+
+        return mod;
+
+    })(module1);
+
+    module1.f3();
+</script>
+
+
+</body>
+</html>

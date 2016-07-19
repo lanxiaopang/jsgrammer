@@ -1,0 +1,23 @@
+<meta charset="utf-8"/>
+<script>
+    var duck = {
+        duckSing: function () {
+            console.info("gagaga");
+        }
+    };
+    var chicken = {
+        duckSing: function () {
+            console.info("jijiji");
+        }
+    };
+    var choir = [];
+    var joinChoir = function (animal) {
+        if (animal && typeof animal.duckSing === "function") {
+            choir.push(animal);
+            animal.duckSing();
+            console.info("合唱团数量：" + choir.length);
+        }
+    };
+    joinChoir(duck);
+    joinChoir(chicken);
+</script>

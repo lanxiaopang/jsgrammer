@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<input id="whichkey" value="type something">
+<div id="log"></div>
+<p>event.which 将 event.keyCode 和 event.charCode 标准化了。推荐用 event.which 来监视键盘输入。</p>
+<script>
+    $('#whichkey').bind('keydown',function(e){
+        $('#log').html(e.type + ': ' +  e.which );  });
+</script>
+
+</body>
+</html>

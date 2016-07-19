@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table id="fundRecAdvLst">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a id="aaa" href="">a123123123</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script src="jquery.js"></script>
+<script>
+    $("#aaa").click(function(){
+        var n = $("#fundRecAdvLst tr").index($(this).closest("tr"));
+        alert(n);
+    })
+
+
+
+</script>
+</body>
+</html>

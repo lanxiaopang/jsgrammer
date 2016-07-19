@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>  p { height: 30px; width: 150px; background-color: #ccf; }
+    div {height: 30px; width: 150px; background-color: #cfc; }  </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div><p>paragraph</p></div>
+division
+<script>
+    $("p").click(function(event){
+        alert(1);
+        event.stopImmediatePropagation();
+    });
+    $("p").click(function(event){
+        alert(2);
+        // This function won't be executed
+        $(this).css("background-color", "#f00");
+    });
+    $("div").click(function(event) {
+        // This function will be executed
+        alert(3);
+        $(this).css("background-color", "#f00");
+    });
+</script>
+</body>
+</html>

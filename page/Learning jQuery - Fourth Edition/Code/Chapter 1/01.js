@@ -4,3 +4,9 @@
 // page or follow along with the examples in the book.
 //
 // See README.txt for more information.
+$(document).ready(function() {
+    console.log('hello');
+    console.log(52);
+    console.log($('div.poem-stanza'));
+    console.log($('div.poem-stanza').context.childElementCount);
+});

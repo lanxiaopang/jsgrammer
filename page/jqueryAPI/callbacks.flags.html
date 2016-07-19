@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p>callbacks.flags的四种参数测试</p>
+<script>
+    function fn1( value ){
+        console.log( value );
+    }
+
+    function fn2( value ){
+        fn1("fn2 says:" + value);
+        return false;
+    }
+    var callbacks = $.Callbacks( "memory" );
+    callbacks.add( fn1 );
+    callbacks.fire( "foo" );
+    callbacks.add( fn2 );
+    callbacks.fire( "bar" );
+    callbacks.remove( fn2 );
+    callbacks.fire( "foobar" );
+</script>
+</body>
+</html>

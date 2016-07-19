@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="CompassSettings">
+    <option name="compassConfigPath" value="F:\WebStormProject\jsgrammer\work\20140604jncloud\v4.0\config.rb" />
+    <option name="compassExecutableFilePath" value="D:\Ruby193\lib\ruby\gems\1.9.1\gems\compass-0.12.7\bin\compass" />
+    <option name="compassSupportEnabled" value="true" />
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/test/2014/LCHistory" />
+      <excludeFolder url="file://$MODULE_DIR$/test/2016/grunt_test" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sass-stdlib" level="application" />
+    <orderEntry type="library" name="compass-library" level="project" />
+  </component>
+</module>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<input type="radio" name="y" checked/>
+<input type="radio" name="y"/>
+<input type="radio" name="y"/>
+<input type="radio" name="y"/>
+<input type="checkbox" name="x" checked/>
+<input type="checkbox" name="x"/>
+<input type="checkbox" name="x"/>
+<input type="checkbox" name="x"/>
+<span>为了测试prop的相关用法</span>
+<script>
+    var t = $("input[type='checkbox']").prop("checked");
+    alert(t);
+    $("input[type='radio']:eq(1)").prop("checked", true);
+    //回调函数用法 通过函数来设置所有页面上未被选中的复选框被选中
+    $("input[type='checkbox']").prop("checked", function( i, val ) {
+        return !val;
+    });
+    //禁用所有复选框
+    $("input[type='checkbox']").prop("disabled", false);
+    //复选框选中还可以这么做
+    $("input[type='checkbox']").attr("checked", true);
+    $("input[type='checkbox']").attr("checked", undefined);
+</script>
+</body>
+</html>

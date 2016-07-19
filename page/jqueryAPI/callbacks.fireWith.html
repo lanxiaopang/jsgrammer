@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p>callbacks执行环境的测试</p>
+<script>
+    var environment = {
+        log:function(value1,value2){
+            console.log("environment:"+value1+","+value2);
+        }
+    };
+    var log = function( value1, value2 ){
+        console.log( 'Received:' + value1 + ',' + value2 );
+    };
+    var callbacks = $.Callbacks();
+    callbacks.add( log );
+    callbacks.fireWith( window, ['foo','bar']);
+    callbacks.empty();
+    callbacks.add( log );
+    callbacks.fireWith(environment,[1,2]);
+</script>
+
+</body>
+</html>

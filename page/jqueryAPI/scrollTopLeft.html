@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p>Hello</p><p>2nd Paragraph</p>
+<div class="demo">333</div>
+<script>
+    /*var $p = $("p:last");
+    $("p:first").text($p.scrollTop()+"&"+$p.scrollLeft());
+    $p.scrollTop(100);
+    $("p:first").text($p.scrollTop()+"&"+$p.scrollLeft());*/
+
+    var p = $("p:first");
+    $("p:last").text( "scrollTop:" + p.scrollTop());
+    $("div.demo").scrollLeft(300);
+    $("p:last").text( "scrollTop:" + $("div.demo").scrollLeft());
+    $("p").height(40);
+
+    var p = $("p:first");
+    $("p:last").text( "innerHeight:" + p.innerWidth());
+    var p = $("p:first");
+    $("p:last").text( "outerHeight:" + p.outerHeight() + " , outerHeight(true):" + p.outerHeight(true) );
+    $("div");
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<p class="p1">
+    <select id="single">
+        <option selected>Single</option>
+        <option>Single2</option>
+        <option>Single3</option>
+    </select>
+    <select id="multiple" multiple="multiple">
+        <option selected="selected">Multiple</option>
+        <option>Multiple2</option>
+        <option selected="selected">Multiple3</option>
+    </select>
+</p>
+<p class="p2">
+    <input type="radio" name="r1" value="radio1" checked/> radio1
+    <input type="radio" name="r1" value="radio2"/> radio2
+    <input type="radio" name="r1" value="radio3"/> radio3
+</p>
+<p class="p3">
+    <input type="checkbox" name="check1" value="check1"/> check1
+    <input type="checkbox" name="check1" value="check2"/> check2
+    <input type="checkbox" name="check1" value="check3"/> check2
+</p>
+<script>
+    //设置下拉框选择
+    $("#single").val("Single2");
+    alert($("#single").val());
+    //设置下拉框多选原选13，新选23
+    $("#multiple").val(["Multiple2", "Multiple3"]);
+    alert($("#multiple").val());
+    //设置下拉框第二个选中
+    $("#multiple")[0].selectedIndex = 1;
+    alert($("#multiple").val());
+    //设置单选按钮 注意：标签一定要写name，否则IE67下设置不上值！type一定要加单引号
+    //val用法参数是一个字符数组，不能直接设置单字符串值。
+    $("input[type='radio']").val(["radio2"]);
+    alert($("input[type='radio']:checked").val());
+
+    $("input[type='radio']:eq(2)").prop("checked", true);
+    alert($("input:radio:checked").val());
+
+    $("input[type='radio']:eq(0)").prop("checked", "checked");
+    alert($("input:radio:checked").val());
+
+    alert($("input:checkbox:checked").val());//undefined
+
+</script>
+</body>
+</html>

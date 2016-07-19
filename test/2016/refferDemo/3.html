@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var defferURL = document.referrer;
+    if(defferURL.indexOf("1.html")>-1){
+        alert("Welcome! You came from 1.html");
+    }else if(defferURL.indexOf("2.html")>-1){
+        alert("Welcome! You came from 2.html");
+    }else{
+        alert("Welcome! You came from some other place!");
+    }
+</script>
+</body>
+</html>

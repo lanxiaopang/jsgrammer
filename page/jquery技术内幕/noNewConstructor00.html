@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>无new构造</h1>
+<pre>
+    (function(window){
+        var person = (function(){
+            var Person = function(name,alias){
+                return new Person.fn.init(name,alias);
+            };
+            Person.fn = Person.prototype = {
+                constructor : Person,
+                init : function(name,alias){
+                    this.name = name;
+                    this.alias = alias;
+                },
+                sayName : function(){
+                    alert(this.name);
+                },
+                sayAlias : function(){
+                    alert(this.alias);
+                }
+            };
+            Person.fn.init.prototype = Person.fn;
+            return Person;
+        })();
+        window.p = person;
+    })(window);
+    var p =p("高寻","乡长");
+    p.sayName();
+    p.sayAlias();
+</pre>
+<script>
+    (function(window){
+        var person = (function(){
+            var Person = function(name,alias){
+                return new Person.fn.init(name,alias);
+            };
+            Person.fn = Person.prototype = {
+                constructor : Person,
+                init : function(name,alias){
+                    this.name = name;
+                    this.alias = alias;
+                },
+                sayName : function(){
+                    alert(this.name);
+                },
+                sayAlias : function(){
+                    alert(this.alias);
+                }
+            };
+            Person.fn.init.prototype = Person.fn;
+            return Person;
+        })();
+        window.p = person;
+    })(window);
+    var p =p("高寻","乡长");
+    p.sayName();
+    p.sayAlias();
+</script>
+</body>
+</html>

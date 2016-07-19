@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <style>
+        .old{
+            color:red;
+        }
+        .new{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>Hello</li>
+    <li>Hello</li>
+    <li class="old">Hello</li>
+</ul>
+<span>为了测试addClass回调函数的相关用法</span>
+<script>
+    $("ul li").addClass(function(index,className){
+        var newClass;
+        console.log(index);
+        return newClass=className==="old"?"new":"";
+    })
+</script>
+</body>
+</html>

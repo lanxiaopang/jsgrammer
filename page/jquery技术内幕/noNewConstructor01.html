@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>虽然构造函数有默认方法，但是返回的方法（return中的sayName()）先！！！！！</h1>
+<pre>
+    function p(){
+        this.name = name;
+        this.sayName = function(){
+            alert(this.name);
+        };
+        return {
+            "name":"name",
+            sayName : function(){
+                alert("1!!!");
+            }
+        };
+    };
+    var p = new p("高寻");
+    p.sayName();
+</pre>
+<script>
+    function p(){
+        this.name = name;
+        this.sayName = function(){
+            alert(this.name);
+        };
+        return {
+            "name":"name",
+            sayName : function(){
+                alert("1!!!");
+            }
+        };
+    };
+    var p = new p("高寻");
+    p.sayName();
+</script>
+</body>
+</html>
