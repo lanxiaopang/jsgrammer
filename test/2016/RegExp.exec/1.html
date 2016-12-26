@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var pattern = /.a./g;
+    var text = "sales1.xls orders3.xls sales2.xls";
+    var result;
+    console.log(pattern.exec(text));
+    /*while((result = pattern.exec(text)) != null) {
+        alert("Matched '" + result[0] +
+        "' at position " + result.index +
+        " next search begins at position " + pattern.lastIndex);
+    }*/
+</script>
+</body>
+</html>
