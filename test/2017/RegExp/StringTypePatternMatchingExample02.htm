@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>String Type Pattern Matching Example</title>
+    <script type="text/javascript">
+        /*
+        //用法一 exec方法
+        var str = "cct,bat,sat,cat";
+        var pattern1 = /.at/g;
+        var m1 = pattern1.exec(str);
+        console.info(m1);//array
+
+        var len=m1.length;
+        while(len--){
+            console.log(m1[len]);
+        }
+        console.info("\n");*/
+
+        var arr = ["cct","bat","sat","cat"];
+        var result = result1 = [];
+        var pattern0 = /.at/;
+        for(var item in arr){
+            if(pattern0.test(arr[item])){
+                result = result.concat(arr[item])
+            }
+        }
+        console.info(result);
+
+        for(var i = 0;i<arr.length;i++){
+            if(pattern0.test(arr[i])){
+                result1 = result1.concat(arr[i]);
+            }
+        }
+        console.info(result1);
+
+        //用法二 test方法 用于判断
+        var t1 = "hello",t2 = "helloworld";
+        var p1 = /hellowor*/;
+        console.info(p1.test(t1));
+        console.info(p1.test(t2));
+        console.info("\n");
+
+
+
+        /*
+        //字符串的正则用法 search replace match split
+
+        //正则表达式的两种用法 用法一 match
+        //从一堆字符串中检索出所有符合的 注意是全局匹配
+        var text = "cct, bat, sat, fat";
+        var pattern = /.at/g;
+
+        var matches = text.match(pattern);
+        //遍历数组一
+        for(name in matches){
+            console.info(matches[name]);
+        }
+        console.info("\n");
+        //遍历数组二
+        for(var i = 0;i<matches.length;i++){
+            console.info(matches[i]);
+        }
+        console.info("\n");
+
+        //从一堆字符串中检索出所有符合的 注意是  非全局匹配
+        var text1 = "cct,bat,sat,fat";
+        var pattern1 = /.at/;
+        var matches1 = text1.match(pattern1);
+        console.info(matches1.index);        //4
+        console.info(matches1[0]);           //"cat"
+        console.info(matches1[1]);           //"undefined"
+        console.info(matches1.lastIndex);    //undefined
+        console.info("\n");
+
+
+        var pos = text.search(/at/);
+        console.info(pos);   //1
+
+        var result = text.replace("at", "ond");
+        alert(result);    //"cond, bat, sat, fat"
+
+        result = text.replace(/at/g, "ond");
+        alert(result);    //"cond, bond, sond, fond"
+
+        result = text.replace(/(.at)/g, "word ($1)");
+        alert(result);    //word (cat), word (bat), word (sat), word (fat)*!/
+
+        function htmlEscape(text){
+            return text.replace(/[<>"&]/g, function(match, pos, originalText){
+                switch(match){
+                    case "<":
+                        return "&lt;";
+                    case ">":
+                        return "&gt;";
+                    case "&":
+                        return "&amp;";
+                    case "\"":
+                        return "&quot;";
+                }
+            });
+        }
+
+        alert(htmlEscape("<p class=\"greeting\">Hello world!</p>")); //&lt;p class=&quot;greeting&quot;&gt;Hello world!&lt;/p&gt;
+
+        var colorText = "red,blue,green,yellow";
+        var colors1 = colorText.split(",");      //["red", "blue", "green", "yellow"]
+        var colors2 = colorText.split(",", 2);   //["red", "blue"]
+        var colors3 = colorText.split(/[^\,]+/); //["", ",", ",", ",", ""]*!/
+*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

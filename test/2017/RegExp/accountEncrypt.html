@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>正则表达式测试</title>
+</head>
+<body>
+<p>规则：以!@开头，|分隔 如： !@*守敏|wianJq!@vdR9ZpZNuXgRFQ==|sakldjflsjad</p>
+<script>
+    var patterns = {
+        p1: /^!@([^|]+)|/,
+        p2: /^!@([^|]+)|/g,
+        p3: /\d+/g,
+        p4: /\d+/
+    };
+    var text = {
+        t1: "!@*守敏|wianJqzTvdR9ZpZNuXgRFQ==",
+        t2:"1,2,3,4,5",
+        t3:"1 and 2 and 3 plus 4"
+    };
+
+    /*match用法*/
+    var matches = text.t1.match(patterns.p1);
+    console.info(matches);
+    matches = text.t1.match(patterns.p2);
+    console.info(matches);
+    console.info("\n");
+
+    /*search用法*/
+    console.info(text.t1.search(patterns.p1));
+    if(text.t1.search(patterns.p1)>0){
+        console.info("matches!!!");
+    }
+    console.info("\n");
+
+    /*replace用法*/
+    var newStr = text.t1.replace(patterns.p1,"孙大圣");
+    console.info(newStr);
+    console.info(text.t1);
+    console.info("\n");
+
+    /*split用法*/
+    console.info(text.t2.split(/\s*,\s*/));
+    console.info("\n");
+
+    /*test用法*/
+    console.info(patterns.p4.test(text.t3));
+    console.info("\n");
+
+    /*exec用法*/
+    console.info(patterns.p3.exec(text.t3));
+    console.info(patterns.p4.exec(text.t3));
+    console.info(text.t3.match(patterns.p3));
+    console.info(text.t3.match(patterns.p4));
+    console.info("\n");
+</script>
+</body>
+</html>
