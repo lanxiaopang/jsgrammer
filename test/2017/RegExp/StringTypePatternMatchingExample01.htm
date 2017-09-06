@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>String Type Pattern Matching Example</title>
+    <script type="text/javascript">
+        var text = "Hello,my name is Ben.Please visit my website";
+        var p1 = /hello/;
+        var p2 = /Hello/;
+        var p3 = /my/;
+        var p4 = /my/g;
+        console.info(text.match(p1));
+        console.info(text.match(p2));
+        console.info(text.match(p3));
+        console.info(text.match(p4));
+
+//        查找所有匹配
+        var myRe = /ab*/g;
+        var str = 'abbcdefabh';
+        var myArray;
+        while ((myArray = myRe.exec(str)) !== null) {
+            var msg = 'Found ' + myArray[0] + '. ';
+            msg += 'Next match starts at ' + myRe.lastIndex;
+            console.log(msg);
+        }
+//        结合 RegExp 字面量使用 exec()
+        var matches = /(hello \S+)/.exec('This is a hello world!');
+        console.log(matches[1]);
+
+    </script>
+</head>
+<body>
+    <p>匹配单个字符，包括返回单个结果和多个结果</p>
+</body>
+</html>
